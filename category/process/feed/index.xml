@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>Process Archives - Simple Oriented Architecture</title>
+	<title>Process &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Tue, 16 Apr 2019 04:23:01 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -35,9 +35,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=875</guid>
 
-					<description><![CDATA[<p>Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../never-stop-making-process-improvements/index.html">Never stop making Process Improvements</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../never-stop-making-process-improvements/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -58,9 +56,7 @@
 		<category><![CDATA[NoEstimates]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=960</guid>
 
-					<description><![CDATA[<p>As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-no-estimates/index.html">Book Review: No Estimates</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-no-estimates/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -78,9 +74,7 @@
 		<category><![CDATA[NoEstimates]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=962</guid>
 
-					<description><![CDATA[<p>I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="./../../../why-i-dont-like-estimating/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../why-i-dont-like-estimating/index.html">Why I don&#8217;t like estimating</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="./../../../why-i-dont-like-estimating/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../why-i-dont-like-estimating/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

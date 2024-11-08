@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>quality Archives - Simple Oriented Architecture</title>
+	<title>quality &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Fri, 17 Jan 2020 13:51:03 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -38,9 +38,7 @@
 		<category><![CDATA[testing pyramid]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1060</guid>
 
-					<description><![CDATA[<p>Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../test-strategy-for-continuous-delivery/index.html">Defining a Test Strategy for Continuous Delivery</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../test-strategy-for-continuous-delivery/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -67,9 +65,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
 
-					<description><![CDATA[<p>I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../defining-test-boundaries/index.html">Defining Test Boundaries &#8211; An example</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../defining-test-boundaries/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -89,9 +85,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=875</guid>
 
-					<description><![CDATA[<p>Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../never-stop-making-process-improvements/index.html">Never stop making Process Improvements</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../never-stop-making-process-improvements/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -122,9 +116,7 @@
 		<category><![CDATA[versioning]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=974</guid>
 
-					<description><![CDATA[<p>We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Protecting the Design and Architecture of your application using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -150,9 +142,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=942</guid>
 
-					<description><![CDATA[<p>Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">What I&#8217;ve learned on the Crafted Code course</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../what-ive-learned-on-the-crafted-code-course/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -177,9 +167,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=719</guid>
 
-					<description><![CDATA[<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-your-code-as-a-crime-scene/index.html">Book Review: Your Code as a Crime Scene</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-your-code-as-a-crime-scene/feed/index.html</wfw:commentRss>
 			<slash:comments>2</slash:comments>
@@ -207,9 +195,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=503</guid>
 
-					<description><![CDATA[<p>I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Book Review: Object-Oriented Metrics in Practice</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
 			<slash:comments>4</slash:comments>
@@ -234,9 +220,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=141</guid>
 
-					<description><![CDATA[<p>In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="./../../../software-quality-building-the-product-right/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../software-quality-building-the-product-right/index.html">Software Quality: Building the Product Right</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="./../../../software-quality-building-the-product-right/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../software-quality-building-the-product-right/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -261,9 +245,7 @@
 		<category><![CDATA[ubiquitous language]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=133</guid>
 
-					<description><![CDATA[<p>If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../software-quality-building-the-right-product/index.html">Software Quality: Building the Right Product</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
 			<slash:comments>1</slash:comments>
@@ -285,9 +267,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=68</guid>
 
-					<description><![CDATA[<p>Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Book Review:  Fifty Quick Ideas to Improve Your Tests</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

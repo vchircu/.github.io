@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>integration Archives - Simple Oriented Architecture</title>
+	<title>integration &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Sat, 13 Jul 2019 09:41:46 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -42,9 +42,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
 
-					<description><![CDATA[<p>In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -71,9 +69,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
 
-					<description><![CDATA[<p>I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../defining-test-boundaries/index.html">Defining Test Boundaries &#8211; An example</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../defining-test-boundaries/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -98,9 +94,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=907</guid>
 
-					<description><![CDATA[<p>In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../storing-the-state-of-a-long-running-process/index.html">Storing the state of a Long Running Process</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -125,9 +119,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=873</guid>
 
-					<description><![CDATA[<p>In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Modelling Long Running Processes: Choreography versus Orchestration</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../modelling-long-running-processes-choreography-versus-orchestration/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -148,9 +140,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=845</guid>
 
-					<description><![CDATA[<p>Most of us are working on distributed systems. Most of us are implementing long running processes. Of course we would <a class="more-link" href="./../../../what-are-long-running-processes/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../what-are-long-running-processes/index.html">What are Long Running Processes?</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Most of us are working on distributed systems. Most of us are implementing long running processes. Of course we would <a class="more-link" href="./../../../what-are-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../what-are-long-running-processes/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -171,9 +161,7 @@
 		<category><![CDATA[NServiceBus]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=15</guid>
 
-					<description><![CDATA[<p>Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-enterprise-integration-patterns/index.html">Book Review: Enterprise Integration Patterns</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-enterprise-integration-patterns/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

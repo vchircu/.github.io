@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>unit of work Archives - Simple Oriented Architecture</title>
+	<title>unit of work &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Sun, 10 Jul 2016 15:56:32 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -33,9 +33,7 @@
 		<category><![CDATA[unit of work]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=240</guid>
 
-					<description><![CDATA[<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in <a class="more-link" href="./../../../managing-units-of-work-in-nservicebus/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../managing-units-of-work-in-nservicebus/index.html">Managing Units of Work in NServiceBus</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in <a class="more-link" href="./../../../managing-units-of-work-in-nservicebus/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../managing-units-of-work-in-nservicebus/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

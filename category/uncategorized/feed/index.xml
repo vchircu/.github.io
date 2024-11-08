@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>Uncategorized Archives - Simple Oriented Architecture</title>
+	<title>Uncategorized &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Wed, 23 Oct 2019 03:10:35 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -32,9 +32,7 @@
 				<category><![CDATA[Uncategorized]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=5</guid>
 
-					<description><![CDATA[<p>When I first thought of blogging, it was for two reasons: having an activity log and learning more quickly (and <a class="more-link" href="./../../../why-i-started-blogging/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../why-i-started-blogging/index.html">Why I started blogging</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[When I first thought of blogging, it was for two reasons: having an activity log and learning more quickly (and <a class="more-link" href="./../../../why-i-started-blogging/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../why-i-started-blogging/feed/index.html</wfw:commentRss>
 			<slash:comments>3</slash:comments>

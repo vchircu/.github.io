@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>DSM Archives - Simple Oriented Architecture</title>
+	<title>DSM &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 17 Nov 2016 20:00:07 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -39,9 +39,7 @@
 		<category><![CDATA[NDepend]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=403</guid>
 
-					<description><![CDATA[<p>How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="./../../../visualize-dependencies-with-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../visualize-dependencies-with-ndepend/index.html">Visualize Dependencies with NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="./../../../visualize-dependencies-with-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../visualize-dependencies-with-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>2</slash:comments>

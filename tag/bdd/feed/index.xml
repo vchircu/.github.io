@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>bdd Archives - Simple Oriented Architecture</title>
+	<title>bdd &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 09 Mar 2017 19:12:55 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -37,9 +37,7 @@
 		<category><![CDATA[specifications]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=228</guid>
 
-					<description><![CDATA[<p>I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="./../../../how-to-organize-bdd-specifications/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../how-to-organize-bdd-specifications/index.html">How to organize BDD Specifications</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="./../../../how-to-organize-bdd-specifications/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../how-to-organize-bdd-specifications/feed/index.html</wfw:commentRss>
 			<slash:comments>1</slash:comments>
@@ -64,9 +62,7 @@
 		<category><![CDATA[ubiquitous language]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=133</guid>
 
-					<description><![CDATA[<p>If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../software-quality-building-the-right-product/index.html">Software Quality: Building the Right Product</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
 			<slash:comments>1</slash:comments>
@@ -88,9 +84,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=68</guid>
 
-					<description><![CDATA[<p>Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Book Review:  Fifty Quick Ideas to Improve Your Tests</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

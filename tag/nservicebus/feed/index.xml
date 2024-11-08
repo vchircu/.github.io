@@ -11,11 +11,11 @@
 	>
 
 <channel>
-	<title>NServiceBus Archives - Simple Oriented Architecture</title>
+	<title>NServiceBus &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 28 Feb 2020 09:49:34 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:13:53 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Interviewing your architecture</title>
 		<link>./../../../interviewing-your-architecture/index.html</link>
-					<comments>./../../../interviewing-your-architecture/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 28 Feb 2020 09:49:27 +0000</pubDate>
@@ -39,19 +38,14 @@
 		<category><![CDATA[neo4j]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1143</guid>
 
-					<description><![CDATA[<p>In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../interviewing-your-architecture/index.html">Interviewing your architecture</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../interviewing-your-architecture/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1143</post-id>	</item>
 		<item>
 		<title>NServiceBus: An Experience Report</title>
 		<link>./../../../nservicebus-an-experience-report/index.html</link>
-					<comments>./../../../nservicebus-an-experience-report/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 30 Aug 2019 14:56:30 +0000</pubDate>
@@ -61,12 +55,8 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1022</guid>
 
-					<description><![CDATA[<p>I&#8217;ve been working with NServiceBus (part of the Particular platform) for the past 5 years. In all this time, I&#8217;ve <a class="more-link" href="./../../../nservicebus-an-experience-report/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I&#8217;ve been working with NServiceBus (part of the Particular platform) for the past 5 years. In all this time, I&#8217;ve <a class="more-link" href="./../../../nservicebus-an-experience-report/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../nservicebus-an-experience-report/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1022</post-id>	</item>
@@ -90,9 +80,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
 
-					<description><![CDATA[<p>In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -117,9 +105,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=907</guid>
 
-					<description><![CDATA[<p>In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../storing-the-state-of-a-long-running-process/index.html">Storing the state of a Long Running Process</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -144,9 +130,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=873</guid>
 
-					<description><![CDATA[<p>In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Modelling Long Running Processes: Choreography versus Orchestration</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../modelling-long-running-processes-choreography-versus-orchestration/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -169,9 +153,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=797</guid>
 
-					<description><![CDATA[<p>Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../8-fallacies-of-distributed-systems/index.html">Understanding the 8 fallacies of Distributed Systems</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../8-fallacies-of-distributed-systems/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -193,9 +175,7 @@
 		<category><![CDATA[msmq]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=393</guid>
 
-					<description><![CDATA[<p>In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../msmq-administration/index.html">MSMQ Administration</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../msmq-administration/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -217,9 +197,7 @@
 		<category><![CDATA[Saga]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=295</guid>
 
-					<description><![CDATA[<p>Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Saga concurrency and coarse-grained locks when using NHibernate Persistence</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../saga-concurrency-coarse-grained-locks-nhibernate/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -237,9 +215,7 @@
 		<category><![CDATA[unit of work]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=240</guid>
 
-					<description><![CDATA[<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in <a class="more-link" href="./../../../managing-units-of-work-in-nservicebus/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../managing-units-of-work-in-nservicebus/index.html">Managing Units of Work in NServiceBus</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in <a class="more-link" href="./../../../managing-units-of-work-in-nservicebus/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../managing-units-of-work-in-nservicebus/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -260,9 +236,7 @@
 		<category><![CDATA[NServiceBus]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=15</guid>
 
-					<description><![CDATA[<p>Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-enterprise-integration-patterns/index.html">Book Review: Enterprise Integration Patterns</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-enterprise-integration-patterns/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

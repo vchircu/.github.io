@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>distributed systems Archives - Simple Oriented Architecture</title>
+	<title>distributed systems &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Tue, 26 Jun 2018 03:46:59 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -38,9 +38,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=797</guid>
 
-					<description><![CDATA[<p>Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../8-fallacies-of-distributed-systems/index.html">Understanding the 8 fallacies of Distributed Systems</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../8-fallacies-of-distributed-systems/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

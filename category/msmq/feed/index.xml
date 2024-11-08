@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>MSMQ Archives - Simple Oriented Architecture</title>
+	<title>MSMQ &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Tue, 26 Jun 2018 03:46:59 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -38,9 +38,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=797</guid>
 
-					<description><![CDATA[<p>Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../8-fallacies-of-distributed-systems/index.html">Understanding the 8 fallacies of Distributed Systems</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../8-fallacies-of-distributed-systems/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -62,9 +60,7 @@
 		<category><![CDATA[msmq]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=393</guid>
 
-					<description><![CDATA[<p>In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../msmq-administration/index.html">MSMQ Administration</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../msmq-administration/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -82,9 +78,7 @@
 		<category><![CDATA[msmq]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=371</guid>
 
-					<description><![CDATA[<p>Microsoft Message Queue Server (MSMQ) is a Message Oriented Middleware that allows applications to communicate among them using queues. In <a class="more-link" href="./../../../msmq-basics/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../msmq-basics/index.html">MSMQ Basics: Queues, Messages, Transactions</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Microsoft Message Queue Server (MSMQ) is a Message Oriented Middleware that allows applications to communicate among them using queues. In <a class="more-link" href="./../../../msmq-basics/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../msmq-basics/feed/index.html</wfw:commentRss>
 			<slash:comments>2</slash:comments>

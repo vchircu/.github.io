@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>aggregate Archives - Simple Oriented Architecture</title>
+	<title>aggregate &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Wed, 21 Sep 2016 11:40:06 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -37,9 +37,7 @@
 		<category><![CDATA[Saga]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=295</guid>
 
-					<description><![CDATA[<p>Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Saga concurrency and coarse-grained locks when using NHibernate Persistence</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../saga-concurrency-coarse-grained-locks-nhibernate/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

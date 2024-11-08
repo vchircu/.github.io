@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>process manager Archives - Simple Oriented Architecture</title>
+	<title>process manager &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 01 Nov 2018 15:00:25 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -40,9 +40,7 @@
 		<category><![CDATA[soa]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=907</guid>
 
-					<description><![CDATA[<p>In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../storing-the-state-of-a-long-running-process/index.html">Storing the state of a Long Running Process</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

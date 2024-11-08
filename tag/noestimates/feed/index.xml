@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>NoEstimates Archives - Simple Oriented Architecture</title>
+	<title>NoEstimates &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Fri, 29 Mar 2019 14:54:45 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -36,9 +36,7 @@
 		<category><![CDATA[NoEstimates]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=960</guid>
 
-					<description><![CDATA[<p>As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-no-estimates/index.html">Book Review: No Estimates</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-no-estimates/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -56,9 +54,7 @@
 		<category><![CDATA[NoEstimates]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=962</guid>
 
-					<description><![CDATA[<p>I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="./../../../why-i-dont-like-estimating/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../why-i-dont-like-estimating/index.html">Why I don&#8217;t like estimating</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="./../../../why-i-dont-like-estimating/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../why-i-dont-like-estimating/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

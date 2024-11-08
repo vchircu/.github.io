@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>books Archives - Simple Oriented Architecture</title>
+	<title>books &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Wed, 08 Nov 2017 06:30:44 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -40,9 +40,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=719</guid>
 
-					<description><![CDATA[<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-your-code-as-a-crime-scene/index.html">Book Review: Your Code as a Crime Scene</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-your-code-as-a-crime-scene/feed/index.html</wfw:commentRss>
 			<slash:comments>2</slash:comments>
@@ -70,9 +68,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=503</guid>
 
-					<description><![CDATA[<p>I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Book Review: Object-Oriented Metrics in Practice</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
 			<slash:comments>4</slash:comments>
@@ -94,9 +90,7 @@
 		<category><![CDATA[user stories]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=325</guid>
 
-					<description><![CDATA[<p>User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Book Review: Fifty Quick Ideas to Improve your User Stories</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -117,9 +111,7 @@
 		<category><![CDATA[NServiceBus]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=15</guid>
 
-					<description><![CDATA[<p>Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-enterprise-integration-patterns/index.html">Book Review: Enterprise Integration Patterns</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-enterprise-integration-patterns/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -145,9 +137,7 @@
 		<category><![CDATA[security]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=120</guid>
 
-					<description><![CDATA[<p>On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-advanced-api-security/index.html">Book Review: Advanced API Security</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-advanced-api-security/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -169,9 +159,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=68</guid>
 
-					<description><![CDATA[<p>Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Book Review:  Fifty Quick Ideas to Improve Your Tests</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

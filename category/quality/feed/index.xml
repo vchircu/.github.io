@@ -11,11 +11,11 @@
 	>
 
 <channel>
-	<title>Quality Archives - Simple Oriented Architecture</title>
+	<title>Quality &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 27 Mar 2020 07:39:10 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:11:04 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify common Code Smells using the NDepend API</title>
 		<link>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html</link>
-					<comments>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 27 Mar 2020 07:39:07 +0000</pubDate>
@@ -38,12 +37,8 @@
 		<category><![CDATA[NDepend.API]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1183</guid>
 
-					<description><![CDATA[<p>Using CQLinq In a previous blog post we saw how we can detect common code smells using NDepend. In that <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Using CQLinq In a previous blog post we saw how we can detect common code smells using NDepend. In that <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1183</post-id>	</item>
@@ -63,9 +58,7 @@
 		<category><![CDATA[testing pyramid]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1060</guid>
 
-					<description><![CDATA[<p>Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../test-strategy-for-continuous-delivery/index.html">Defining a Test Strategy for Continuous Delivery</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../test-strategy-for-continuous-delivery/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -92,9 +85,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
 
-					<description><![CDATA[<p>I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../defining-test-boundaries/index.html">Defining Test Boundaries &#8211; An example</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../defining-test-boundaries/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -125,9 +116,7 @@
 		<category><![CDATA[versioning]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=974</guid>
 
-					<description><![CDATA[<p>We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Protecting the Design and Architecture of your application using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -153,9 +142,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=942</guid>
 
-					<description><![CDATA[<p>Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">What I&#8217;ve learned on the Crafted Code course</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../what-ive-learned-on-the-crafted-code-course/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -180,9 +167,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=719</guid>
 
-					<description><![CDATA[<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-your-code-as-a-crime-scene/index.html">Book Review: Your Code as a Crime Scene</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-your-code-as-a-crime-scene/feed/index.html</wfw:commentRss>
 			<slash:comments>2</slash:comments>
@@ -202,9 +187,7 @@
 		<category><![CDATA[overview pyramid]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=566</guid>
 
-					<description><![CDATA[<p>The Overview Pyramid describes and characterizes the structure of an object oriented system by looking at three main areas: size <a class="more-link" href="./../../../overview-pyramid-metrics-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../overview-pyramid-metrics-ndepend/index.html">Computing the Overview Pyramid metrics with NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[The Overview Pyramid describes and characterizes the structure of an object oriented system by looking at three main areas: size <a class="more-link" href="./../../../overview-pyramid-metrics-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../overview-pyramid-metrics-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>4</slash:comments>
@@ -232,9 +215,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=503</guid>
 
-					<description><![CDATA[<p>I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Book Review: Object-Oriented Metrics in Practice</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
 			<slash:comments>4</slash:comments>
@@ -256,9 +237,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=501</guid>
 
-					<description><![CDATA[<p>Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively <a class="more-link" href="./../../../visualizing-code-metrics-with-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../visualizing-code-metrics-with-ndepend/index.html">Visualizing Code Metrics with NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively <a class="more-link" href="./../../../visualizing-code-metrics-with-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../visualizing-code-metrics-with-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>1</slash:comments>
@@ -279,9 +258,7 @@
 		<category><![CDATA[static analysis]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=452</guid>
 
-					<description><![CDATA[<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../query-your-code-base-using-cqlinq/index.html">Querying Your Code Base Using NDepend&#8217;s CQLinq</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../query-your-code-base-using-cqlinq/feed/index.html</wfw:commentRss>
 			<slash:comments>6</slash:comments>

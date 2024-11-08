@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>process Archives - Simple Oriented Architecture</title>
+	<title>process &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Tue, 16 Apr 2019 04:23:01 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -35,9 +35,7 @@
 		<category><![CDATA[testing]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=875</guid>
 
-					<description><![CDATA[<p>Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../never-stop-making-process-improvements/index.html">Never stop making Process Improvements</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../never-stop-making-process-improvements/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

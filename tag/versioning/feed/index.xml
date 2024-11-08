@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>versioning Archives - Simple Oriented Architecture</title>
+	<title>versioning &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 28 Feb 2019 17:30:03 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -46,9 +46,7 @@
 		<category><![CDATA[versioning]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=974</guid>
 
-					<description><![CDATA[<p>We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Protecting the Design and Architecture of your application using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>

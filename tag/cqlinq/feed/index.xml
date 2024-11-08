@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>CQLinq Archives - Simple Oriented Architecture</title>
+	<title>CQLinq &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Wed, 07 Dec 2016 06:31:39 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -36,9 +36,7 @@
 		<category><![CDATA[static analysis]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=452</guid>
 
-					<description><![CDATA[<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../query-your-code-base-using-cqlinq/index.html">Querying Your Code Base Using NDepend&#8217;s CQLinq</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../query-your-code-base-using-cqlinq/feed/index.html</wfw:commentRss>
 			<slash:comments>6</slash:comments>

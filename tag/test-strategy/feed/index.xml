@@ -11,9 +11,9 @@
 	>
 
 <channel>
-	<title>test strategy Archives - Simple Oriented Architecture</title>
+	<title>test strategy &#8211; Simple Oriented Architecture</title>
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<link>./../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Fri, 17 Jan 2020 13:51:03 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -38,9 +38,7 @@
 		<category><![CDATA[testing pyramid]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1060</guid>
 
-					<description><![CDATA[<p>Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../test-strategy-for-continuous-delivery/index.html">Defining a Test Strategy for Continuous Delivery</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../test-strategy-for-continuous-delivery/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -67,9 +65,7 @@
 		<category><![CDATA[visualization]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
 
-					<description><![CDATA[<p>I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a></p>
-<p>The post <a href="./../../../defining-test-boundaries/index.html">Defining Test Boundaries &#8211; An example</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
-]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
 		
 					<wfw:commentRss>./../../../defining-test-boundaries/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
