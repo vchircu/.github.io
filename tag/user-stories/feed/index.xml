@@ -12,8 +12,8 @@
 
 <channel>
 	<title>user stories &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/user-stories/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:13:57 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-user-stories/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -34,9 +34,9 @@
 		<category><![CDATA[lean]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[user stories]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=325</guid>
+		<guid isPermaLink="false">/?p=325</guid>
 
-					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-user-stories/">Continue Reading</a>]]></description>
 		
 		
 		

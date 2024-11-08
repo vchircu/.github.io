@@ -12,8 +12,8 @@
 
 <channel>
 	<title>specifications &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/specifications/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:17:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-user-stories/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -34,17 +34,17 @@
 		<category><![CDATA[lean]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[user stories]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=325</guid>
+		<guid isPermaLink="false">/?p=325</guid>
 
-					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-user-stories/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">325</post-id>	</item>
 		<item>
 		<title>How to organize BDD Specifications</title>
-		<link>./../../../how-to-organize-bdd-specifications/index.html</link>
-					<comments>./../../../how-to-organize-bdd-specifications/index.html#comments</comments>
+		<link>/how-to-organize-bdd-specifications/</link>
+					<comments>/how-to-organize-bdd-specifications/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 29 Jun 2016 18:53:20 +0000</pubDate>
@@ -54,18 +54,18 @@
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[specflow]]></category>
 		<category><![CDATA[specifications]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=228</guid>
+		<guid isPermaLink="false">/?p=228</guid>
 
-					<description><![CDATA[I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="./../../../how-to-organize-bdd-specifications/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="/how-to-organize-bdd-specifications/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-organize-bdd-specifications/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-organize-bdd-specifications/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">228</post-id>	</item>
 		<item>
 		<title>Book Review:  Fifty Quick Ideas to Improve Your Tests</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-tests/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 10 Apr 2016 15:08:44 +0000</pubDate>
@@ -75,9 +75,9 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=68</guid>
+		<guid isPermaLink="false">/?p=68</guid>
 
-					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-tests/">Continue Reading</a>]]></description>
 		
 		
 		

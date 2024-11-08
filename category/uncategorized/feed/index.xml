@@ -12,8 +12,8 @@
 
 <channel>
 	<title>Uncategorized &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:18:24 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,17 +24,17 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Why I started blogging</title>
-		<link>./../../../why-i-started-blogging/index.html</link>
-					<comments>./../../../why-i-started-blogging/index.html#comments</comments>
+		<link>/why-i-started-blogging/</link>
+					<comments>/why-i-started-blogging/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 19 Mar 2016 07:37:50 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=5</guid>
+		<guid isPermaLink="false">/?p=5</guid>
 
-					<description><![CDATA[When I first thought of blogging, it was for two reasons: having an activity log and learning more quickly (and <a class="more-link" href="./../../../why-i-started-blogging/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[When I first thought of blogging, it was for two reasons: having an activity log and learning more quickly (and <a class="more-link" href="/why-i-started-blogging/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../why-i-started-blogging/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/why-i-started-blogging/feed/</wfw:commentRss>
 			<slash:comments>3</slash:comments>
 		
 		

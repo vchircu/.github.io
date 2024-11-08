@@ -12,8 +12,8 @@
 
 <channel>
 	<title>NDepend &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/ndepend/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:10:02 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify common Code Smells using the NDepend API</title>
-		<link>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html</link>
+		<link>/how-to-identify-common-code-smells-using-the-ndepend-api/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 27 Mar 2020 07:39:07 +0000</pubDate>
@@ -35,16 +35,16 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[NDepend.API]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1183</guid>
+		<guid isPermaLink="false">/?p=1183</guid>
 
-					<description><![CDATA[Using CQLinq In a previous blog post we saw how we can detect common code smells using NDepend. In that <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Using CQLinq In a previous blog post we saw how we can detect common code smells using NDepend. In that <a class="more-link" href="/how-to-identify-common-code-smells-using-the-ndepend-api/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1183</post-id>	</item>
 		<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
-		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
+		<link>/protecting-the-design-and-architecture-of-your-application-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -63,16 +63,16 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[versioning]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=974</guid>
+		<guid isPermaLink="false">/?p=974</guid>
 
-					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="/protecting-the-design-and-architecture-of-your-application-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>
 		<item>
 		<title>How to identify common Code Smells using NDepend</title>
-		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
+		<link>/how-to-identify-common-code-smells-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
@@ -89,17 +89,17 @@
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[refused parent bequest]]></category>
 		<category><![CDATA[shotgun surgery]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=687</guid>
+		<guid isPermaLink="false">/?p=687</guid>
 
-					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="/how-to-identify-common-code-smells-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>
 		<item>
 		<title>How to identify a Tradition Breaker using NDepend</title>
-		<link>./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-a-tradition-breaker-using-ndepend/</link>
+					<comments>/how-to-identify-a-tradition-breaker-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 11 Jan 2017 06:59:55 +0000</pubDate>
@@ -109,18 +109,18 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[tradition breaker]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=670</guid>
+		<guid isPermaLink="false">/?p=670</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-a-tradition-breaker-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-a-tradition-breaker-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-a-tradition-breaker-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">670</post-id>	</item>
 		<item>
 		<title>How to identify Refused Parent Bequest using NDepend</title>
-		<link>./../../../how-to-identify-refused-parent-bequest-using-ndepend/index.html</link>
+		<link>/how-to-identify-refused-parent-bequest-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 08 Jan 2017 19:06:13 +0000</pubDate>
@@ -130,17 +130,17 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[refused parent bequest]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=672</guid>
+		<guid isPermaLink="false">/?p=672</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-refused-parent-bequest-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-refused-parent-bequest-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">672</post-id>	</item>
 		<item>
 		<title>How to identify Shotgun Surgery using NDepend</title>
-		<link>./../../../identify-shotgun-surgery-using-ndepend/index.html</link>
-					<comments>./../../../identify-shotgun-surgery-using-ndepend/index.html#comments</comments>
+		<link>/identify-shotgun-surgery-using-ndepend/</link>
+					<comments>/identify-shotgun-surgery-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 05 Jan 2017 06:13:24 +0000</pubDate>
@@ -150,19 +150,19 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[shotgun surgery]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=660</guid>
+		<guid isPermaLink="false">/?p=660</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../identify-shotgun-surgery-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/identify-shotgun-surgery-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../identify-shotgun-surgery-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/identify-shotgun-surgery-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">660</post-id>	</item>
 		<item>
 		<title>How to identify efferent coupling code smells using NDepend</title>
-		<link>./../../../identify-efferent-coupling-code-smells-using-ndepend/index.html</link>
-					<comments>./../../../identify-efferent-coupling-code-smells-using-ndepend/index.html#comments</comments>
+		<link>/identify-efferent-coupling-code-smells-using-ndepend/</link>
+					<comments>/identify-efferent-coupling-code-smells-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 03 Jan 2017 05:34:02 +0000</pubDate>
@@ -173,19 +173,19 @@
 		<category><![CDATA[intensive coupling]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=650</guid>
+		<guid isPermaLink="false">/?p=650</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../identify-efferent-coupling-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/identify-efferent-coupling-code-smells-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../identify-efferent-coupling-code-smells-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/identify-efferent-coupling-code-smells-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">650</post-id>	</item>
 		<item>
 		<title>How to identify a Brain Method using NDepend</title>
-		<link>./../../../how-to-identify-brain-method-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-brain-method-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-brain-method-using-ndepend/</link>
+					<comments>/how-to-identify-brain-method-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 30 Dec 2016 19:59:44 +0000</pubDate>
@@ -195,18 +195,18 @@
 		<category><![CDATA[detection strategy]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=644</guid>
+		<guid isPermaLink="false">/?p=644</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-brain-method-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-brain-method-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-brain-method-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-brain-method-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">644</post-id>	</item>
 		<item>
 		<title>How to identify a Data Class using NDepend</title>
-		<link>./../../../how-to-identify-data-class-using-ndepend/index.html</link>
+		<link>/how-to-identify-data-class-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 28 Dec 2016 08:56:05 +0000</pubDate>
@@ -216,17 +216,17 @@
 		<category><![CDATA[detection strategy]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=639</guid>
+		<guid isPermaLink="false">/?p=639</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-data-class-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-data-class-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">639</post-id>	</item>
 		<item>
 		<title>How to identify Feature Envy using NDepend</title>
-		<link>./../../../how-to-identify-feature-envy-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-feature-envy-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-feature-envy-using-ndepend/</link>
+					<comments>/how-to-identify-feature-envy-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 24 Dec 2016 13:26:18 +0000</pubDate>
@@ -236,11 +236,11 @@
 		<category><![CDATA[feature envy]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=627</guid>
+		<guid isPermaLink="false">/?p=627</guid>
 
-					<description><![CDATA[In the previous blog post we have seen how to detect potential God Classes with NDepend. In this article we&#8217;ll <a class="more-link" href="./../../../how-to-identify-feature-envy-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous blog post we have seen how to detect potential God Classes with NDepend. In this article we&#8217;ll <a class="more-link" href="/how-to-identify-feature-envy-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-feature-envy-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-feature-envy-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		

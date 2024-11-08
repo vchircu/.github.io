@@ -12,8 +12,8 @@
 
 <channel>
 	<title>brain method &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/brain-method/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:09:22 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify common Code Smells using NDepend</title>
-		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
+		<link>/how-to-identify-common-code-smells-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
@@ -41,17 +41,17 @@
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[refused parent bequest]]></category>
 		<category><![CDATA[shotgun surgery]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=687</guid>
+		<guid isPermaLink="false">/?p=687</guid>
 
-					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="/how-to-identify-common-code-smells-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>
 		<item>
 		<title>How to identify a Brain Method using NDepend</title>
-		<link>./../../../how-to-identify-brain-method-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-brain-method-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-brain-method-using-ndepend/</link>
+					<comments>/how-to-identify-brain-method-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 30 Dec 2016 19:59:44 +0000</pubDate>
@@ -61,11 +61,11 @@
 		<category><![CDATA[detection strategy]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=644</guid>
+		<guid isPermaLink="false">/?p=644</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-brain-method-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-brain-method-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-brain-method-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-brain-method-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

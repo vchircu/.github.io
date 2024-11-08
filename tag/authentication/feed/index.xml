@@ -12,8 +12,8 @@
 
 <channel>
 	<title>authentication &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/authentication/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:17:47 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Advanced API Security</title>
-		<link>./../../../book-review-advanced-api-security/index.html</link>
+		<link>/book-review-advanced-api-security/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
@@ -38,17 +38,17 @@
 		<category><![CDATA[OpenID]]></category>
 		<category><![CDATA[REST]]></category>
 		<category><![CDATA[security]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=120</guid>
+		<guid isPermaLink="false">/?p=120</guid>
 
-					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="/book-review-advanced-api-security/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>
 		<item>
 		<title>OpenID Connect in a nutshell</title>
-		<link>./../../../openid-connect-in-a-nutshell/index.html</link>
-					<comments>./../../../openid-connect-in-a-nutshell/index.html#comments</comments>
+		<link>/openid-connect-in-a-nutshell/</link>
+					<comments>/openid-connect-in-a-nutshell/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 02 Apr 2016 10:15:53 +0000</pubDate>
@@ -58,11 +58,11 @@
 		<category><![CDATA[OpenID]]></category>
 		<category><![CDATA[REST]]></category>
 		<category><![CDATA[security]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=75</guid>
+		<guid isPermaLink="false">/?p=75</guid>
 
-					<description><![CDATA[In the previous post we talked about delegated authorization with OAuth 2.0. After the success of OAuth 2.0, many companies <a class="more-link" href="./../../../openid-connect-in-a-nutshell/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous post we talked about delegated authorization with OAuth 2.0. After the success of OAuth 2.0, many companies <a class="more-link" href="/openid-connect-in-a-nutshell/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../openid-connect-in-a-nutshell/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/openid-connect-in-a-nutshell/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		

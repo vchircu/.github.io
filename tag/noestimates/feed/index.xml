@@ -12,8 +12,8 @@
 
 <channel>
 	<title>NoEstimates &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/noestimates/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:32:35 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: No Estimates</title>
-		<link>./../../../book-review-no-estimates/index.html</link>
+		<link>/book-review-no-estimates/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 29 Mar 2019 14:54:39 +0000</pubDate>
@@ -33,24 +33,24 @@
 		<category><![CDATA[agile]]></category>
 		<category><![CDATA[book]]></category>
 		<category><![CDATA[NoEstimates]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=960</guid>
+		<guid isPermaLink="false">/?p=960</guid>
 
-					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="/book-review-no-estimates/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">960</post-id>	</item>
 		<item>
 		<title>Why I don&#8217;t like estimating</title>
-		<link>./../../../why-i-dont-like-estimating/index.html</link>
+		<link>/why-i-dont-like-estimating/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 22 Jan 2019 04:36:43 +0000</pubDate>
 				<category><![CDATA[Process]]></category>
 		<category><![CDATA[NoEstimates]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=962</guid>
+		<guid isPermaLink="false">/?p=962</guid>
 
-					<description><![CDATA[I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="./../../../why-i-dont-like-estimating/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I suck at estimating! But it seems that our industry considers estimating an important skill. I&#8217;ve always been optimist with <a class="more-link" href="/why-i-dont-like-estimating/">Continue Reading</a>]]></description>
 		
 		
 		

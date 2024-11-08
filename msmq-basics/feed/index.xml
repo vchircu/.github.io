@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: MSMQ Basics: Queues, Messages, Transactions	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/msmq-basics/feed/" rel="self" type="application/rss+xml" />
+	<link>/msmq-basics/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:13:17 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: MSMQ Administration -		</title>
-		<link>./../index.html#comment-22</link>
+		<link>/msmq-basics/#comment-22</link>
 
 		<dc:creator><![CDATA[MSMQ Administration -]]></dc:creator>
 		<pubDate>Mon, 14 Nov 2016 09:08:18 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=371#comment-22</guid>
+		<guid isPermaLink="false">/?p=371#comment-22</guid>
 
 					<description><![CDATA[[&#8230;] the previous post, we went over some of the MSMQ basics. In this post, we&#8217;ll touch on how to monitor, troubleshoot, and back up [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] the previous post, we went over some of the MSMQ basics. In this post, we&#8217;ll touch on how to monitor, troubleshoot, and back up [&#8230;]</p>
@@ -37,11 +37,11 @@
 		<item>
 		<title>
 		By: MSMQ Administration - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-21</link>
+		<link>/msmq-basics/#comment-21</link>
 
 		<dc:creator><![CDATA[MSMQ Administration - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Wed, 12 Oct 2016 05:59:35 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=371#comment-21</guid>
+		<guid isPermaLink="false">/?p=371#comment-21</guid>
 
 					<description><![CDATA[[&#8230;] the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup [&#8230;]</p>

@@ -12,8 +12,8 @@
 
 <channel>
 	<title>code smell &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/code-smell/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:08:21 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify Shotgun Surgery using NDepend</title>
-		<link>./../../../identify-shotgun-surgery-using-ndepend/index.html</link>
-					<comments>./../../../identify-shotgun-surgery-using-ndepend/index.html#comments</comments>
+		<link>/identify-shotgun-surgery-using-ndepend/</link>
+					<comments>/identify-shotgun-surgery-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 05 Jan 2017 06:13:24 +0000</pubDate>
@@ -35,11 +35,11 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[shotgun surgery]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=660</guid>
+		<guid isPermaLink="false">/?p=660</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../identify-shotgun-surgery-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/identify-shotgun-surgery-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../identify-shotgun-surgery-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/identify-shotgun-surgery-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		

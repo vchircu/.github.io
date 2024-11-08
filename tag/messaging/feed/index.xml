@@ -12,8 +12,8 @@
 
 <channel>
 	<title>messaging &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/messaging/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:16:28 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Interviewing your architecture</title>
-		<link>./../../../interviewing-your-architecture/index.html</link>
+		<link>/interviewing-your-architecture/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 28 Feb 2020 09:49:27 +0000</pubDate>
@@ -36,16 +36,16 @@
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[neo4j]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1143</guid>
+		<guid isPermaLink="false">/?p=1143</guid>
 
-					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="/interviewing-your-architecture/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1143</post-id>	</item>
 		<item>
 		<title>Handling Failure in Long Running Processes</title>
-		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
+		<link>/handling-failure-in-long-running-processes/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -60,16 +60,16 @@
 		<category><![CDATA[retries]]></category>
 		<category><![CDATA[Saga]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
+		<guid isPermaLink="false">/?p=1116</guid>
 
-					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="/handling-failure-in-long-running-processes/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
 		<item>
 		<title>Storing the state of a Long Running Process</title>
-		<link>./../../../storing-the-state-of-a-long-running-process/index.html</link>
+		<link>/storing-the-state-of-a-long-running-process/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 04 Jul 2018 04:20:18 +0000</pubDate>
@@ -82,16 +82,16 @@
 		<category><![CDATA[process manager]]></category>
 		<category><![CDATA[routing slip]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=907</guid>
+		<guid isPermaLink="false">/?p=907</guid>
 
-					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="/storing-the-state-of-a-long-running-process/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">907</post-id>	</item>
 		<item>
 		<title>Modelling Long Running Processes: Choreography versus Orchestration</title>
-		<link>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html</link>
+		<link>/modelling-long-running-processes-choreography-versus-orchestration/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Jun 2018 05:18:15 +0000</pubDate>
@@ -104,16 +104,16 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[orchestration]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=873</guid>
+		<guid isPermaLink="false">/?p=873</guid>
 
-					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="/modelling-long-running-processes-choreography-versus-orchestration/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">873</post-id>	</item>
 		<item>
 		<title>Book Review: Enterprise Integration Patterns</title>
-		<link>./../../../book-review-enterprise-integration-patterns/index.html</link>
+		<link>/book-review-enterprise-integration-patterns/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 02 May 2016 17:06:01 +0000</pubDate>
@@ -122,9 +122,9 @@
 		<category><![CDATA[integration]]></category>
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[NServiceBus]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=15</guid>
+		<guid isPermaLink="false">/?p=15</guid>
 
-					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="/book-review-enterprise-integration-patterns/">Continue Reading</a>]]></description>
 		
 		
 		

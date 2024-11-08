@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: Why I started blogging	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/why-i-started-blogging/feed/" rel="self" type="application/rss+xml" />
+	<link>/why-i-started-blogging/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:18:24 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: Booligoosh		</title>
-		<link>./../index.html#comment-58</link>
+		<link>/why-i-started-blogging/#comment-58</link>
 
 		<dc:creator><![CDATA[Booligoosh]]></dc:creator>
 		<pubDate>Sun, 26 Nov 2017 07:51:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=5#comment-58</guid>
+		<guid isPermaLink="false">/?p=5#comment-58</guid>
 
 					<description><![CDATA[Hey,
 I&#039;m a fellow SP blogging course graduate (my blog is https://codetheweb.blog/ ) and couldn&#039;t agree more!
@@ -52,16 +52,16 @@ Especially the bit about learning, that is something that I didn&#8217;t really 
 		<item>
 		<title>
 		By: Victor		</title>
-		<link>./../index.html#comment-7</link>
+		<link>/why-i-started-blogging/#comment-7</link>
 
 		<dc:creator><![CDATA[Victor]]></dc:creator>
 		<pubDate>Wed, 20 Apr 2016 10:59:17 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=5#comment-7</guid>
+		<guid isPermaLink="false">/?p=5#comment-7</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../index.html#comment-6&quot;&gt;Pavneet Singh Saund&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/why-i-started-blogging/#comment-6&quot;&gt;Pavneet Singh Saund&lt;/a&gt;.
 
 Thanks a lot!]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../index.html#comment-6">Pavneet Singh Saund</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/why-i-started-blogging/#comment-6">Pavneet Singh Saund</a>.</p>
 <p>Thanks a lot!</p>
 ]]></content:encoded>
 		
@@ -69,11 +69,11 @@ Thanks a lot!]]></description>
 		<item>
 		<title>
 		By: Pavneet Singh Saund		</title>
-		<link>./../index.html#comment-6</link>
+		<link>/why-i-started-blogging/#comment-6</link>
 
 		<dc:creator><![CDATA[Pavneet Singh Saund]]></dc:creator>
 		<pubDate>Wed, 20 Apr 2016 10:02:56 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=5#comment-6</guid>
+		<guid isPermaLink="false">/?p=5#comment-6</guid>
 
 					<description><![CDATA[Really good to see you&#039;re getting along with your blogging. I like how you&#039;re focusing on learning and logging discoveries in public through your blog.
 

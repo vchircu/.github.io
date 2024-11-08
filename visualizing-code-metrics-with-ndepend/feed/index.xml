@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: Visualizing Code Metrics with NDepend	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/visualizing-code-metrics-with-ndepend/feed/" rel="self" type="application/rss+xml" />
+	<link>/visualizing-code-metrics-with-ndepend/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:11:18 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-28</link>
+		<link>/visualizing-code-metrics-with-ndepend/#comment-28</link>
 
 		<dc:creator><![CDATA[Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sun, 11 Dec 2016 12:00:20 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=501#comment-28</guid>
+		<guid isPermaLink="false">/?p=501#comment-28</guid>
 
 					<description><![CDATA[[&#8230;] for .Net projects. The good news is that it can be done with NDepend. Querying the code base and defining custom code metrics are two powerful features of NDepend. With these tools at your disposal, writing CQLinq queries to [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] for .Net projects. The good news is that it can be done with NDepend. Querying the code base and defining custom code metrics are two powerful features of NDepend. With these tools at your disposal, writing CQLinq queries to [&#8230;]</p>

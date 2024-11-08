@@ -12,8 +12,8 @@
 
 <channel>
 	<title>Architecture &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/category/architecture/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:35:01 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Interviewing your architecture</title>
-		<link>./../../../interviewing-your-architecture/index.html</link>
+		<link>/interviewing-your-architecture/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 28 Feb 2020 09:49:27 +0000</pubDate>
@@ -36,16 +36,16 @@
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[neo4j]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1143</guid>
+		<guid isPermaLink="false">/?p=1143</guid>
 
-					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="/interviewing-your-architecture/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1143</post-id>	</item>
 		<item>
 		<title>Handling Failure in Long Running Processes</title>
-		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
+		<link>/handling-failure-in-long-running-processes/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -60,32 +60,32 @@
 		<category><![CDATA[retries]]></category>
 		<category><![CDATA[Saga]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
+		<guid isPermaLink="false">/?p=1116</guid>
 
-					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="/handling-failure-in-long-running-processes/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
 		<item>
 		<title>7 Strategies for Assigning Ids</title>
-		<link>./../../../7-strategies-for-assigning-ids/index.html</link>
+		<link>/7-strategies-for-assigning-ids/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 21 Jun 2019 06:20:17 +0000</pubDate>
 				<category><![CDATA[Architecture]]></category>
 		<category><![CDATA[id]]></category>
 		<category><![CDATA[identity]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1107</guid>
+		<guid isPermaLink="false">/?p=1107</guid>
 
-					<description><![CDATA[Identities are the defining characteristic of an entity in Domain-Driven Design. And as soon as the Id is public and <a class="more-link" href="./../../../7-strategies-for-assigning-ids/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Identities are the defining characteristic of an entity in Domain-Driven Design. And as soon as the Id is public and <a class="more-link" href="/7-strategies-for-assigning-ids/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1107</post-id>	</item>
 		<item>
 		<title>Defining Test Boundaries &#8211; An example</title>
-		<link>./../../../defining-test-boundaries/index.html</link>
+		<link>/defining-test-boundaries/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 07 Jun 2019 07:58:11 +0000</pubDate>
@@ -100,16 +100,16 @@
 		<category><![CDATA[testing]]></category>
 		<category><![CDATA[unit test]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
+		<guid isPermaLink="false">/?p=1076</guid>
 
-					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="/defining-test-boundaries/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1076</post-id>	</item>
 		<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
-		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
+		<link>/protecting-the-design-and-architecture-of-your-application-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -128,16 +128,16 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[versioning]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=974</guid>
+		<guid isPermaLink="false">/?p=974</guid>
 
-					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="/protecting-the-design-and-architecture-of-your-application-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>
 		<item>
 		<title>What I&#8217;ve learned on the Crafted Code course</title>
-		<link>./../../../what-ive-learned-on-the-crafted-code-course/index.html</link>
+		<link>/what-ive-learned-on-the-crafted-code-course/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 31 Oct 2018 19:08:56 +0000</pubDate>
@@ -151,16 +151,16 @@
 		<category><![CDATA[refactoring]]></category>
 		<category><![CDATA[tdd]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=942</guid>
+		<guid isPermaLink="false">/?p=942</guid>
 
-					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="/what-ive-learned-on-the-crafted-code-course/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">942</post-id>	</item>
 		<item>
 		<title>Storing the state of a Long Running Process</title>
-		<link>./../../../storing-the-state-of-a-long-running-process/index.html</link>
+		<link>/storing-the-state-of-a-long-running-process/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 04 Jul 2018 04:20:18 +0000</pubDate>
@@ -173,16 +173,16 @@
 		<category><![CDATA[process manager]]></category>
 		<category><![CDATA[routing slip]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=907</guid>
+		<guid isPermaLink="false">/?p=907</guid>
 
-					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="/storing-the-state-of-a-long-running-process/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">907</post-id>	</item>
 		<item>
 		<title>Modelling Long Running Processes: Choreography versus Orchestration</title>
-		<link>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html</link>
+		<link>/modelling-long-running-processes-choreography-versus-orchestration/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Jun 2018 05:18:15 +0000</pubDate>
@@ -195,16 +195,16 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[orchestration]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=873</guid>
+		<guid isPermaLink="false">/?p=873</guid>
 
-					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="/modelling-long-running-processes-choreography-versus-orchestration/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">873</post-id>	</item>
 		<item>
 		<title>What are Long Running Processes?</title>
-		<link>./../../../what-are-long-running-processes/index.html</link>
+		<link>/what-are-long-running-processes/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 19 Jun 2018 15:06:22 +0000</pubDate>
@@ -213,16 +213,16 @@
 		<category><![CDATA[long running process]]></category>
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=845</guid>
+		<guid isPermaLink="false">/?p=845</guid>
 
-					<description><![CDATA[Most of us are working on distributed systems. Most of us are implementing long running processes. Of course we would <a class="more-link" href="./../../../what-are-long-running-processes/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Most of us are working on distributed systems. Most of us are implementing long running processes. Of course we would <a class="more-link" href="/what-are-long-running-processes/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">845</post-id>	</item>
 		<item>
 		<title>Understanding the 8 fallacies of Distributed Systems</title>
-		<link>./../../../8-fallacies-of-distributed-systems/index.html</link>
+		<link>/8-fallacies-of-distributed-systems/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2018 19:27:39 +0000</pubDate>
@@ -233,9 +233,9 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[msmq]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=797</guid>
+		<guid isPermaLink="false">/?p=797</guid>
 
-					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="/8-fallacies-of-distributed-systems/">Continue Reading</a>]]></description>
 		
 		
 		

@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments for Simple Oriented Architecture	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../index.html</link>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:18:24 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		Comment on Why I started blogging by Booligoosh		</title>
-		<link>./../../why-i-started-blogging/index.html#comment-58</link>
+		<link>/why-i-started-blogging/#comment-58</link>
 
 		<dc:creator><![CDATA[Booligoosh]]></dc:creator>
 		<pubDate>Sun, 26 Nov 2017 07:51:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=5#comment-58</guid>
+		<guid isPermaLink="false">/?p=5#comment-58</guid>
 
 					<description><![CDATA[Hey,
 I&#039;m a fellow SP blogging course graduate (my blog is https://codetheweb.blog/ ) and couldn&#039;t agree more!
@@ -52,16 +52,16 @@ Especially the bit about learning, that is something that I didn&#8217;t really 
 		<item>
 		<title>
 		Comment on Computing the Overview Pyramid metrics with NDepend by Victor		</title>
-		<link>./../../overview-pyramid-metrics-ndepend/index.html#comment-57</link>
+		<link>/overview-pyramid-metrics-ndepend/#comment-57</link>
 
 		<dc:creator><![CDATA[Victor]]></dc:creator>
 		<pubDate>Fri, 07 Jul 2017 11:46:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=566#comment-57</guid>
+		<guid isPermaLink="false">/?p=566#comment-57</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../overview-pyramid-metrics-ndepend/index.html#comment-56&quot;&gt;Geoffrey&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/overview-pyramid-metrics-ndepend/#comment-56&quot;&gt;Geoffrey&lt;/a&gt;.
 
 Yes. As the name says, these metrics are good for getting an overview of a code base. On my current project, we have multiple repositories, so I use them to have an overview over how big they are and also how do they compare with one another.]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../overview-pyramid-metrics-ndepend/index.html#comment-56">Geoffrey</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/overview-pyramid-metrics-ndepend/#comment-56">Geoffrey</a>.</p>
 <p>Yes. As the name says, these metrics are good for getting an overview of a code base. On my current project, we have multiple repositories, so I use them to have an overview over how big they are and also how do they compare with one another.</p>
 ]]></content:encoded>
 		
@@ -69,16 +69,16 @@ Yes. As the name says, these metrics are good for getting an overview of a code 
 		<item>
 		<title>
 		Comment on Computing the Overview Pyramid metrics with NDepend by Geoffrey		</title>
-		<link>./../../overview-pyramid-metrics-ndepend/index.html#comment-56</link>
+		<link>/overview-pyramid-metrics-ndepend/#comment-56</link>
 
 		<dc:creator><![CDATA[Geoffrey]]></dc:creator>
 		<pubDate>Fri, 07 Jul 2017 06:37:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=566#comment-56</guid>
+		<guid isPermaLink="false">/?p=566#comment-56</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../overview-pyramid-metrics-ndepend/index.html#comment-53&quot;&gt;Victor&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/overview-pyramid-metrics-ndepend/#comment-53&quot;&gt;Victor&lt;/a&gt;.
 
 Thanks for your reply :) Have you actually applied the metrics to your work?]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../overview-pyramid-metrics-ndepend/index.html#comment-53">Victor</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/overview-pyramid-metrics-ndepend/#comment-53">Victor</a>.</p>
 <p>Thanks for your reply 🙂 Have you actually applied the metrics to your work?</p>
 ]]></content:encoded>
 		
@@ -86,16 +86,16 @@ Thanks for your reply :) Have you actually applied the metrics to your work?]]><
 		<item>
 		<title>
 		Comment on Book Review: Object-Oriented Metrics in Practice by Victor		</title>
-		<link>./../../book-review-object-oriented-metrics-in-practice/index.html#comment-55</link>
+		<link>/book-review-object-oriented-metrics-in-practice/#comment-55</link>
 
 		<dc:creator><![CDATA[Victor]]></dc:creator>
 		<pubDate>Sun, 02 Jul 2017 14:07:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=503#comment-55</guid>
+		<guid isPermaLink="false">/?p=503#comment-55</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../book-review-object-oriented-metrics-in-practice/index.html#comment-54&quot;&gt;pschwarz&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/book-review-object-oriented-metrics-in-practice/#comment-54&quot;&gt;pschwarz&lt;/a&gt;.
 
 Hi! Unfortunately not - I was lucky enough to find this book in my company&#039;s library.]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../book-review-object-oriented-metrics-in-practice/index.html#comment-54">pschwarz</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/book-review-object-oriented-metrics-in-practice/#comment-54">pschwarz</a>.</p>
 <p>Hi! Unfortunately not &#8211; I was lucky enough to find this book in my company&#8217;s library.</p>
 ]]></content:encoded>
 		
@@ -103,11 +103,11 @@ Hi! Unfortunately not - I was lucky enough to find this book in my company&#039;
 		<item>
 		<title>
 		Comment on Book Review: Object-Oriented Metrics in Practice by pschwarz		</title>
-		<link>./../../book-review-object-oriented-metrics-in-practice/index.html#comment-54</link>
+		<link>/book-review-object-oriented-metrics-in-practice/#comment-54</link>
 
 		<dc:creator><![CDATA[pschwarz]]></dc:creator>
 		<pubDate>Sun, 02 Jul 2017 10:31:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=503#comment-54</guid>
+		<guid isPermaLink="false">/?p=503#comment-54</guid>
 
 					<description><![CDATA[Hello, any tips on where to find the book at a good price?]]></description>
 			<content:encoded><![CDATA[<p>Hello, any tips on where to find the book at a good price?</p>
@@ -117,16 +117,16 @@ Hi! Unfortunately not - I was lucky enough to find this book in my company&#039;
 		<item>
 		<title>
 		Comment on Computing the Overview Pyramid metrics with NDepend by Victor		</title>
-		<link>./../../overview-pyramid-metrics-ndepend/index.html#comment-53</link>
+		<link>/overview-pyramid-metrics-ndepend/#comment-53</link>
 
 		<dc:creator><![CDATA[Victor]]></dc:creator>
 		<pubDate>Thu, 29 Jun 2017 17:14:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=566#comment-53</guid>
+		<guid isPermaLink="false">/?p=566#comment-53</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../overview-pyramid-metrics-ndepend/index.html#comment-52&quot;&gt;Geoffrey&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/overview-pyramid-metrics-ndepend/#comment-52&quot;&gt;Geoffrey&lt;/a&gt;.
 
 Hi, Geoffrey! Yes, I&#039;m using the thresholds described in the book.]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../overview-pyramid-metrics-ndepend/index.html#comment-52">Geoffrey</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/overview-pyramid-metrics-ndepend/#comment-52">Geoffrey</a>.</p>
 <p>Hi, Geoffrey! Yes, I&#8217;m using the thresholds described in the book.</p>
 ]]></content:encoded>
 		
@@ -134,11 +134,11 @@ Hi, Geoffrey! Yes, I&#039;m using the thresholds described in the book.]]></desc
 		<item>
 		<title>
 		Comment on Computing the Overview Pyramid metrics with NDepend by Geoffrey		</title>
-		<link>./../../overview-pyramid-metrics-ndepend/index.html#comment-52</link>
+		<link>/overview-pyramid-metrics-ndepend/#comment-52</link>
 
 		<dc:creator><![CDATA[Geoffrey]]></dc:creator>
 		<pubDate>Thu, 29 Jun 2017 16:09:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=566#comment-52</guid>
+		<guid isPermaLink="false">/?p=566#comment-52</guid>
 
 					<description><![CDATA[Thanks for the post - I&#039;m currently researching this exact topic myself. Out of interest, are you using the same thresholds for C# as those described in the book for Java?
 
@@ -151,16 +151,16 @@ Your CQLinq approach looks like much less work than mine - I augmented the VS me
 		<item>
 		<title>
 		Comment on Book Review: Your Code as a Crime Scene by Victor		</title>
-		<link>./../../book-review-your-code-as-a-crime-scene/index.html#comment-50</link>
+		<link>/book-review-your-code-as-a-crime-scene/#comment-50</link>
 
 		<dc:creator><![CDATA[Victor]]></dc:creator>
 		<pubDate>Sat, 28 Jan 2017 06:50:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=719#comment-50</guid>
+		<guid isPermaLink="false">/?p=719#comment-50</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../book-review-your-code-as-a-crime-scene/index.html#comment-49&quot;&gt;Adam Tornhill&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/book-review-your-code-as-a-crime-scene/#comment-49&quot;&gt;Adam Tornhill&lt;/a&gt;.
 
 Thanks for sharing the link! Really interesting to see how you approached analyzing a code base of that scale. I&#039;ve just finished reading the Software (r)Evolution article series and they are a great addition to the book!]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../book-review-your-code-as-a-crime-scene/index.html#comment-49">Adam Tornhill</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/book-review-your-code-as-a-crime-scene/#comment-49">Adam Tornhill</a>.</p>
 <p>Thanks for sharing the link! Really interesting to see how you approached analyzing a code base of that scale. I&#8217;ve just finished reading the Software (r)Evolution article series and they are a great addition to the book!</p>
 ]]></content:encoded>
 		
@@ -168,11 +168,11 @@ Thanks for sharing the link! Really interesting to see how you approached analyz
 		<item>
 		<title>
 		Comment on Book Review: Your Code as a Crime Scene by Adam Tornhill		</title>
-		<link>./../../book-review-your-code-as-a-crime-scene/index.html#comment-49</link>
+		<link>/book-review-your-code-as-a-crime-scene/#comment-49</link>
 
 		<dc:creator><![CDATA[Adam Tornhill]]></dc:creator>
 		<pubDate>Thu, 26 Jan 2017 08:47:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=719#comment-49</guid>
+		<guid isPermaLink="false">/?p=719#comment-49</guid>
 
 					<description><![CDATA[Thanks for the review - interesting to get your perspective on the book. The analyses have evolved since I wrote the book. I do have more examples on how the techniques help improve large codebases. For example this case study on Analyzing Patterns in the Evolution of Linux: http://www.empear.com/blog/software-revolution-part4/]]></description>
 			<content:encoded><![CDATA[<p>Thanks for the review &#8211; interesting to get your perspective on the book. The analyses have evolved since I wrote the book. I do have more examples on how the techniques help improve large codebases. For example this case study on Analyzing Patterns in the Evolution of Linux: <a href="http://www.empear.com/blog/software-revolution-part4/" rel="nofollow ugc">http://www.empear.com/blog/software-revolution-part4/</a></p>
@@ -182,11 +182,11 @@ Thanks for sharing the link! Really interesting to see how you approached analyz
 		<item>
 		<title>
 		Comment on How to identify Shotgun Surgery using NDepend by Book Review: Your Code as a Crime Scene - Simple Oriented Architecture		</title>
-		<link>./../../identify-shotgun-surgery-using-ndepend/index.html#comment-48</link>
+		<link>/identify-shotgun-surgery-using-ndepend/#comment-48</link>
 
 		<dc:creator><![CDATA[Book Review: Your Code as a Crime Scene - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Tue, 24 Jan 2017 16:29:38 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=660#comment-48</guid>
+		<guid isPermaLink="false">/?p=660#comment-48</guid>
 
 					<description><![CDATA[[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]</p>

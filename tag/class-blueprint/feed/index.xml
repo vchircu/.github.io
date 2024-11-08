@@ -12,8 +12,8 @@
 
 <channel>
 	<title>class blueprint &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/class-blueprint/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:10:57 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Object-Oriented Metrics in Practice</title>
-		<link>./../../../book-review-object-oriented-metrics-in-practice/index.html</link>
-					<comments>./../../../book-review-object-oriented-metrics-in-practice/index.html#comments</comments>
+		<link>/book-review-object-oriented-metrics-in-practice/</link>
+					<comments>/book-review-object-oriented-metrics-in-practice/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Dec 2016 13:30:46 +0000</pubDate>
@@ -41,11 +41,11 @@
 		<category><![CDATA[polymetric views]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=503</guid>
+		<guid isPermaLink="false">/?p=503</guid>
 
-					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="/book-review-object-oriented-metrics-in-practice/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/book-review-object-oriented-metrics-in-practice/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		

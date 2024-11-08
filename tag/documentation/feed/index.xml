@@ -12,8 +12,8 @@
 
 <channel>
 	<title>documentation &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/documentation/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:13:53 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>NServiceBus: An Experience Report</title>
-		<link>./../../../nservicebus-an-experience-report/index.html</link>
+		<link>/nservicebus-an-experience-report/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 30 Aug 2019 14:56:30 +0000</pubDate>
@@ -32,9 +32,9 @@
 		<category><![CDATA[community]]></category>
 		<category><![CDATA[documentation]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1022</guid>
+		<guid isPermaLink="false">/?p=1022</guid>
 
-					<description><![CDATA[I&#8217;ve been working with NServiceBus (part of the Particular platform) for the past 5 years. In all this time, I&#8217;ve <a class="more-link" href="./../../../nservicebus-an-experience-report/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I&#8217;ve been working with NServiceBus (part of the Particular platform) for the past 5 years. In all this time, I&#8217;ve <a class="more-link" href="/nservicebus-an-experience-report/">Continue Reading</a>]]></description>
 		
 		
 		

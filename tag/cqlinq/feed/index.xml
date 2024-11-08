@@ -12,8 +12,8 @@
 
 <channel>
 	<title>CQLinq &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/cqlinq/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:11:36 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Querying Your Code Base Using NDepend&#8217;s CQLinq</title>
-		<link>./../../../query-your-code-base-using-cqlinq/index.html</link>
-					<comments>./../../../query-your-code-base-using-cqlinq/index.html#comments</comments>
+		<link>/query-your-code-base-using-cqlinq/</link>
+					<comments>/query-your-code-base-using-cqlinq/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 16 Nov 2016 06:50:14 +0000</pubDate>
@@ -34,11 +34,11 @@
 		<category><![CDATA[CQLinq]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[static analysis]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=452</guid>
+		<guid isPermaLink="false">/?p=452</guid>
 
-					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="/query-your-code-base-using-cqlinq/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../query-your-code-base-using-cqlinq/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/query-your-code-base-using-cqlinq/feed/</wfw:commentRss>
 			<slash:comments>6</slash:comments>
 		
 		

@@ -12,8 +12,8 @@
 
 <channel>
 	<title>distributed systems &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/distributed-systems/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:35:01 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Understanding the 8 fallacies of Distributed Systems</title>
-		<link>./../../../8-fallacies-of-distributed-systems/index.html</link>
+		<link>/8-fallacies-of-distributed-systems/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2018 19:27:39 +0000</pubDate>
@@ -35,9 +35,9 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[msmq]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=797</guid>
+		<guid isPermaLink="false">/?p=797</guid>
 
-					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="/8-fallacies-of-distributed-systems/">Continue Reading</a>]]></description>
 		
 		
 		

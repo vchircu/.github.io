@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: How to identify Shotgun Surgery using NDepend	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/identify-shotgun-surgery-using-ndepend/feed/" rel="self" type="application/rss+xml" />
+	<link>/identify-shotgun-surgery-using-ndepend/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:08:21 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: Book Review: Your Code as a Crime Scene - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-48</link>
+		<link>/identify-shotgun-surgery-using-ndepend/#comment-48</link>
 
 		<dc:creator><![CDATA[Book Review: Your Code as a Crime Scene - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Tue, 24 Jan 2017 16:29:38 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=660#comment-48</guid>
+		<guid isPermaLink="false">/?p=660#comment-48</guid>
 
 					<description><![CDATA[[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]</p>
@@ -37,11 +37,11 @@
 		<item>
 		<title>
 		By: How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-41</link>
+		<link>/identify-shotgun-surgery-using-ndepend/#comment-41</link>
 
 		<dc:creator><![CDATA[How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sun, 08 Jan 2017 19:06:42 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=660#comment-41</guid>
+		<guid isPermaLink="false">/?p=660#comment-41</guid>
 
 					<description><![CDATA[[&#8230;] How to identify Shotgun Surgery [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify Shotgun Surgery [&#8230;]</p>

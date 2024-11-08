@@ -12,8 +12,8 @@
 
 <channel>
 	<title>agile &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/agile/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:17:04 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: No Estimates</title>
-		<link>./../../../book-review-no-estimates/index.html</link>
+		<link>/book-review-no-estimates/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 29 Mar 2019 14:54:39 +0000</pubDate>
@@ -33,16 +33,16 @@
 		<category><![CDATA[agile]]></category>
 		<category><![CDATA[book]]></category>
 		<category><![CDATA[NoEstimates]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=960</guid>
+		<guid isPermaLink="false">/?p=960</guid>
 
-					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="/book-review-no-estimates/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">960</post-id>	</item>
 		<item>
 		<title>Book Review: Domain-Driven Design</title>
-		<link>./../../../book-review-domain-driven-design/index.html</link>
+		<link>/book-review-domain-driven-design/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 25 Sep 2016 14:50:13 +0000</pubDate>
@@ -50,16 +50,16 @@
 		<category><![CDATA[agile]]></category>
 		<category><![CDATA[book]]></category>
 		<category><![CDATA[ddd]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=345</guid>
+		<guid isPermaLink="false">/?p=345</guid>
 
-					<description><![CDATA[When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical <a class="more-link" href="./../../../book-review-domain-driven-design/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical <a class="more-link" href="/book-review-domain-driven-design/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">345</post-id>	</item>
 		<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-user-stories/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -69,16 +69,16 @@
 		<category><![CDATA[lean]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[user stories]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=325</guid>
+		<guid isPermaLink="false">/?p=325</guid>
 
-					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-user-stories/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">325</post-id>	</item>
 		<item>
 		<title>Software Quality: Building the Product Right</title>
-		<link>./../../../software-quality-building-the-product-right/index.html</link>
+		<link>/software-quality-building-the-product-right/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 22 Jun 2016 17:39:40 +0000</pubDate>
@@ -91,17 +91,17 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=141</guid>
+		<guid isPermaLink="false">/?p=141</guid>
 
-					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="./../../../software-quality-building-the-product-right/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="/software-quality-building-the-product-right/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">141</post-id>	</item>
 		<item>
 		<title>Software Quality: Building the Right Product</title>
-		<link>./../../../software-quality-building-the-right-product/index.html</link>
-					<comments>./../../../software-quality-building-the-right-product/index.html#comments</comments>
+		<link>/software-quality-building-the-right-product/</link>
+					<comments>/software-quality-building-the-right-product/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 17 Apr 2016 18:21:12 +0000</pubDate>
@@ -114,11 +114,11 @@
 		<category><![CDATA[perceived integrity]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[ubiquitous language]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=133</guid>
+		<guid isPermaLink="false">/?p=133</guid>
 
-					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="/software-quality-building-the-right-product/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/software-quality-building-the-right-product/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

@@ -12,8 +12,8 @@
 
 <channel>
 	<title>process &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/process/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:31:34 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Never stop making Process Improvements</title>
-		<link>./../../../never-stop-making-process-improvements/index.html</link>
+		<link>/never-stop-making-process-improvements/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 16 Apr 2019 04:22:53 +0000</pubDate>
@@ -32,9 +32,9 @@
 		<category><![CDATA[process]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=875</guid>
+		<guid isPermaLink="false">/?p=875</guid>
 
-					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="/never-stop-making-process-improvements/">Continue Reading</a>]]></description>
 		
 		
 		

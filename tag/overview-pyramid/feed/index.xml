@@ -12,8 +12,8 @@
 
 <channel>
 	<title>overview pyramid &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/overview-pyramid/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:10:57 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Computing the Overview Pyramid metrics with NDepend</title>
-		<link>./../../../overview-pyramid-metrics-ndepend/index.html</link>
-					<comments>./../../../overview-pyramid-metrics-ndepend/index.html#comments</comments>
+		<link>/overview-pyramid-metrics-ndepend/</link>
+					<comments>/overview-pyramid-metrics-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 11 Dec 2016 11:54:43 +0000</pubDate>
@@ -33,19 +33,19 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[overview pyramid]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=566</guid>
+		<guid isPermaLink="false">/?p=566</guid>
 
-					<description><![CDATA[The Overview Pyramid describes and characterizes the structure of an object oriented system by looking at three main areas: size <a class="more-link" href="./../../../overview-pyramid-metrics-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[The Overview Pyramid describes and characterizes the structure of an object oriented system by looking at three main areas: size <a class="more-link" href="/overview-pyramid-metrics-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../overview-pyramid-metrics-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/overview-pyramid-metrics-ndepend/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">566</post-id>	</item>
 		<item>
 		<title>Book Review: Object-Oriented Metrics in Practice</title>
-		<link>./../../../book-review-object-oriented-metrics-in-practice/index.html</link>
-					<comments>./../../../book-review-object-oriented-metrics-in-practice/index.html#comments</comments>
+		<link>/book-review-object-oriented-metrics-in-practice/</link>
+					<comments>/book-review-object-oriented-metrics-in-practice/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Dec 2016 13:30:46 +0000</pubDate>
@@ -61,11 +61,11 @@
 		<category><![CDATA[polymetric views]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=503</guid>
+		<guid isPermaLink="false">/?p=503</guid>
 
-					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="/book-review-object-oriented-metrics-in-practice/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/book-review-object-oriented-metrics-in-practice/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		

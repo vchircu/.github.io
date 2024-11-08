@@ -12,8 +12,8 @@
 
 <channel>
 	<title>ddd &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/ddd/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:17:04 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Domain-Driven Design</title>
-		<link>./../../../book-review-domain-driven-design/index.html</link>
+		<link>/book-review-domain-driven-design/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 25 Sep 2016 14:50:13 +0000</pubDate>
@@ -32,16 +32,16 @@
 		<category><![CDATA[agile]]></category>
 		<category><![CDATA[book]]></category>
 		<category><![CDATA[ddd]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=345</guid>
+		<guid isPermaLink="false">/?p=345</guid>
 
-					<description><![CDATA[When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical <a class="more-link" href="./../../../book-review-domain-driven-design/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical <a class="more-link" href="/book-review-domain-driven-design/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">345</post-id>	</item>
 		<item>
 		<title>Saga concurrency and coarse-grained locks when using NHibernate Persistence</title>
-		<link>./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html</link>
+		<link>/saga-concurrency-coarse-grained-locks-nhibernate/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 14 Aug 2016 12:46:49 +0000</pubDate>
@@ -51,16 +51,16 @@
 		<category><![CDATA[ddd]]></category>
 		<category><![CDATA[NHibernate]]></category>
 		<category><![CDATA[Saga]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=295</guid>
+		<guid isPermaLink="false">/?p=295</guid>
 
-					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="/saga-concurrency-coarse-grained-locks-nhibernate/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">295</post-id>	</item>
 		<item>
 		<title>Software Quality: Building the Product Right</title>
-		<link>./../../../software-quality-building-the-product-right/index.html</link>
+		<link>/software-quality-building-the-product-right/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 22 Jun 2016 17:39:40 +0000</pubDate>
@@ -73,17 +73,17 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=141</guid>
+		<guid isPermaLink="false">/?p=141</guid>
 
-					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="./../../../software-quality-building-the-product-right/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="/software-quality-building-the-product-right/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">141</post-id>	</item>
 		<item>
 		<title>Software Quality: Building the Right Product</title>
-		<link>./../../../software-quality-building-the-right-product/index.html</link>
-					<comments>./../../../software-quality-building-the-right-product/index.html#comments</comments>
+		<link>/software-quality-building-the-right-product/</link>
+					<comments>/software-quality-building-the-right-product/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 17 Apr 2016 18:21:12 +0000</pubDate>
@@ -96,11 +96,11 @@
 		<category><![CDATA[perceived integrity]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[ubiquitous language]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=133</guid>
+		<guid isPermaLink="false">/?p=133</guid>
 
-					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="/software-quality-building-the-right-product/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/software-quality-building-the-right-product/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

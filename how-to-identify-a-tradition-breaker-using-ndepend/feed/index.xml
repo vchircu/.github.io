@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: How to identify a Tradition Breaker using NDepend	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/how-to-identify-a-tradition-breaker-using-ndepend/feed/" rel="self" type="application/rss+xml" />
+	<link>/how-to-identify-a-tradition-breaker-using-ndepend/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:07:46 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: How to identify common Code Smells using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-47</link>
+		<link>/how-to-identify-a-tradition-breaker-using-ndepend/#comment-47</link>
 
 		<dc:creator><![CDATA[How to identify common Code Smells using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:09:05 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=670#comment-47</guid>
+		<guid isPermaLink="false">/?p=670#comment-47</guid>
 
 					<description><![CDATA[[&#8230;] Tradition Breaker [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] Tradition Breaker [&#8230;]</p>

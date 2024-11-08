@@ -12,8 +12,8 @@
 
 <channel>
 	<title>continuous delivery &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/continuous-delivery/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:30:40 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Defining a Test Strategy for Continuous Delivery</title>
-		<link>./../../../test-strategy-for-continuous-delivery/index.html</link>
+		<link>/test-strategy-for-continuous-delivery/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 14 Jun 2019 05:26:55 +0000</pubDate>
@@ -35,9 +35,9 @@
 		<category><![CDATA[test strategy]]></category>
 		<category><![CDATA[testing]]></category>
 		<category><![CDATA[testing pyramid]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1060</guid>
+		<guid isPermaLink="false">/?p=1060</guid>
 
-					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="/test-strategy-for-continuous-delivery/">Continue Reading</a>]]></description>
 		
 		
 		

@@ -12,8 +12,8 @@
 
 <channel>
 	<title>god class &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/god-class/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:10:20 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify common Code Smells using NDepend</title>
-		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
+		<link>/how-to-identify-common-code-smells-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
@@ -41,17 +41,17 @@
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[refused parent bequest]]></category>
 		<category><![CDATA[shotgun surgery]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=687</guid>
+		<guid isPermaLink="false">/?p=687</guid>
 
-					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="/how-to-identify-common-code-smells-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>
 		<item>
 		<title>How to identify a God Class using NDepend</title>
-		<link>./../../../how-to-identify-god-class-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-god-class-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-god-class-using-ndepend/</link>
+					<comments>/how-to-identify-god-class-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 22 Dec 2016 23:07:21 +0000</pubDate>
@@ -61,11 +61,11 @@
 		<category><![CDATA[god class]]></category>
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=592</guid>
+		<guid isPermaLink="false">/?p=592</guid>
 
-					<description><![CDATA[Most of the static analysis tool in the .Net world report isolated code metrics. While this is useful, I would <a class="more-link" href="./../../../how-to-identify-god-class-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Most of the static analysis tool in the .Net world report isolated code metrics. While this is useful, I would <a class="more-link" href="/how-to-identify-god-class-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-god-class-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-god-class-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>6</slash:comments>
 		
 		

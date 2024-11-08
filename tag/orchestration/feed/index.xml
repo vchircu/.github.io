@@ -12,8 +12,8 @@
 
 <channel>
 	<title>orchestration &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/orchestration/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:33:37 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Modelling Long Running Processes: Choreography versus Orchestration</title>
-		<link>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html</link>
+		<link>/modelling-long-running-processes-choreography-versus-orchestration/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Jun 2018 05:18:15 +0000</pubDate>
@@ -37,9 +37,9 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[orchestration]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=873</guid>
+		<guid isPermaLink="false">/?p=873</guid>
 
-					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="/modelling-long-running-processes-choreography-versus-orchestration/">Continue Reading</a>]]></description>
 		
 		
 		

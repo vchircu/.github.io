@@ -12,8 +12,8 @@
 
 <channel>
 	<title>VCS &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/vcs/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:35:59 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Your Code as a Crime Scene</title>
-		<link>./../../../book-review-your-code-as-a-crime-scene/index.html</link>
-					<comments>./../../../book-review-your-code-as-a-crime-scene/index.html#comments</comments>
+		<link>/book-review-your-code-as-a-crime-scene/</link>
+					<comments>/book-review-your-code-as-a-crime-scene/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 24 Jan 2017 16:29:16 +0000</pubDate>
@@ -38,11 +38,11 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[VCS]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=719</guid>
+		<guid isPermaLink="false">/?p=719</guid>
 
-					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="/book-review-your-code-as-a-crime-scene/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-your-code-as-a-crime-scene/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/book-review-your-code-as-a-crime-scene/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		

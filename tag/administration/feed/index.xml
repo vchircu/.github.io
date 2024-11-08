@@ -12,8 +12,8 @@
 
 <channel>
 	<title>administration &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/administration/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:12:24 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>MSMQ Administration</title>
-		<link>./../../../msmq-administration/index.html</link>
+		<link>/msmq-administration/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 12 Oct 2016 05:59:24 +0000</pubDate>
@@ -34,9 +34,9 @@
 		<category><![CDATA[dtc]]></category>
 		<category><![CDATA[monitoring]]></category>
 		<category><![CDATA[msmq]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=393</guid>
+		<guid isPermaLink="false">/?p=393</guid>
 
-					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="/msmq-administration/">Continue Reading</a>]]></description>
 		
 		
 		

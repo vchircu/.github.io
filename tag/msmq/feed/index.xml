@@ -12,8 +12,8 @@
 
 <channel>
 	<title>msmq &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/msmq/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:13:17 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Understanding the 8 fallacies of Distributed Systems</title>
-		<link>./../../../8-fallacies-of-distributed-systems/index.html</link>
+		<link>/8-fallacies-of-distributed-systems/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2018 19:27:39 +0000</pubDate>
@@ -35,16 +35,16 @@
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[msmq]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=797</guid>
+		<guid isPermaLink="false">/?p=797</guid>
 
-					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="/8-fallacies-of-distributed-systems/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">797</post-id>	</item>
 		<item>
 		<title>MSMQ Administration</title>
-		<link>./../../../msmq-administration/index.html</link>
+		<link>/msmq-administration/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 12 Oct 2016 05:59:24 +0000</pubDate>
@@ -54,27 +54,27 @@
 		<category><![CDATA[dtc]]></category>
 		<category><![CDATA[monitoring]]></category>
 		<category><![CDATA[msmq]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=393</guid>
+		<guid isPermaLink="false">/?p=393</guid>
 
-					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="/msmq-administration/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">393</post-id>	</item>
 		<item>
 		<title>MSMQ Basics: Queues, Messages, Transactions</title>
-		<link>./../../../msmq-basics/index.html</link>
-					<comments>./../../../msmq-basics/index.html#comments</comments>
+		<link>/msmq-basics/</link>
+					<comments>/msmq-basics/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 03 Oct 2016 14:51:46 +0000</pubDate>
 				<category><![CDATA[MSMQ]]></category>
 		<category><![CDATA[msmq]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=371</guid>
+		<guid isPermaLink="false">/?p=371</guid>
 
-					<description><![CDATA[Microsoft Message Queue Server (MSMQ) is a Message Oriented Middleware that allows applications to communicate among them using queues. In <a class="more-link" href="./../../../msmq-basics/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Microsoft Message Queue Server (MSMQ) is a Message Oriented Middleware that allows applications to communicate among them using queues. In <a class="more-link" href="/msmq-basics/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../msmq-basics/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/msmq-basics/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		

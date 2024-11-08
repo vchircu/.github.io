@@ -12,8 +12,8 @@
 
 <channel>
 	<title>OAuth &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/oauth/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:18:08 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Advanced API Security</title>
-		<link>./../../../book-review-advanced-api-security/index.html</link>
+		<link>/book-review-advanced-api-security/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
@@ -38,17 +38,17 @@
 		<category><![CDATA[OpenID]]></category>
 		<category><![CDATA[REST]]></category>
 		<category><![CDATA[security]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=120</guid>
+		<guid isPermaLink="false">/?p=120</guid>
 
-					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="/book-review-advanced-api-security/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>
 		<item>
 		<title>OAuth 2.0 in a nutshell</title>
-		<link>./../../../oauth-2-0-in-a-nutshell/index.html</link>
-					<comments>./../../../oauth-2-0-in-a-nutshell/index.html#comments</comments>
+		<link>/oauth-2-0-in-a-nutshell/</link>
+					<comments>/oauth-2-0-in-a-nutshell/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 26 Mar 2016 12:38:39 +0000</pubDate>
@@ -58,11 +58,11 @@
 		<category><![CDATA[OAuth]]></category>
 		<category><![CDATA[REST]]></category>
 		<category><![CDATA[security]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=30</guid>
+		<guid isPermaLink="false">/?p=30</guid>
 
-					<description><![CDATA[Let&#8217;s say you&#8217;re developing a SOA application. The user interface is a website that needs to be accessible from the public <a class="more-link" href="./../../../oauth-2-0-in-a-nutshell/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Let&#8217;s say you&#8217;re developing a SOA application. The user interface is a website that needs to be accessible from the public <a class="more-link" href="/oauth-2-0-in-a-nutshell/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../oauth-2-0-in-a-nutshell/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/oauth-2-0-in-a-nutshell/feed/</wfw:commentRss>
 			<slash:comments>3</slash:comments>
 		
 		

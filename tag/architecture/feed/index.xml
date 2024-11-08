@@ -12,8 +12,8 @@
 
 <channel>
 	<title>architecture &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/architecture/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:16:09 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Interviewing your architecture</title>
-		<link>./../../../interviewing-your-architecture/index.html</link>
+		<link>/interviewing-your-architecture/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 28 Feb 2020 09:49:27 +0000</pubDate>
@@ -36,16 +36,16 @@
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[neo4j]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1143</guid>
+		<guid isPermaLink="false">/?p=1143</guid>
 
-					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="/interviewing-your-architecture/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1143</post-id>	</item>
 		<item>
 		<title>Defining Test Boundaries &#8211; An example</title>
-		<link>./../../../defining-test-boundaries/index.html</link>
+		<link>/defining-test-boundaries/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 07 Jun 2019 07:58:11 +0000</pubDate>
@@ -60,16 +60,16 @@
 		<category><![CDATA[testing]]></category>
 		<category><![CDATA[unit test]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1076</guid>
+		<guid isPermaLink="false">/?p=1076</guid>
 
-					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="/defining-test-boundaries/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1076</post-id>	</item>
 		<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
-		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
+		<link>/protecting-the-design-and-architecture-of-your-application-using-ndepend/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -88,16 +88,16 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[versioning]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=974</guid>
+		<guid isPermaLink="false">/?p=974</guid>
 
-					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="/protecting-the-design-and-architecture-of-your-application-using-ndepend/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>
 		<item>
 		<title>What I&#8217;ve learned on the Crafted Code course</title>
-		<link>./../../../what-ive-learned-on-the-crafted-code-course/index.html</link>
+		<link>/what-ive-learned-on-the-crafted-code-course/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 31 Oct 2018 19:08:56 +0000</pubDate>
@@ -111,17 +111,17 @@
 		<category><![CDATA[refactoring]]></category>
 		<category><![CDATA[tdd]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=942</guid>
+		<guid isPermaLink="false">/?p=942</guid>
 
-					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="/what-ive-learned-on-the-crafted-code-course/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">942</post-id>	</item>
 		<item>
 		<title>Querying Your Code Base Using NDepend&#8217;s CQLinq</title>
-		<link>./../../../query-your-code-base-using-cqlinq/index.html</link>
-					<comments>./../../../query-your-code-base-using-cqlinq/index.html#comments</comments>
+		<link>/query-your-code-base-using-cqlinq/</link>
+					<comments>/query-your-code-base-using-cqlinq/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 16 Nov 2016 06:50:14 +0000</pubDate>
@@ -130,19 +130,19 @@
 		<category><![CDATA[CQLinq]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[static analysis]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=452</guid>
+		<guid isPermaLink="false">/?p=452</guid>
 
-					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="./../../../query-your-code-base-using-cqlinq/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Your code base has a lot to tell you. The question is: How can you listen to it? You can <a class="more-link" href="/query-your-code-base-using-cqlinq/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../query-your-code-base-using-cqlinq/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/query-your-code-base-using-cqlinq/feed/</wfw:commentRss>
 			<slash:comments>6</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">452</post-id>	</item>
 		<item>
 		<title>Visualize Dependencies with NDepend</title>
-		<link>./../../../visualize-dependencies-with-ndepend/index.html</link>
-					<comments>./../../../visualize-dependencies-with-ndepend/index.html#comments</comments>
+		<link>/visualize-dependencies-with-ndepend/</link>
+					<comments>/visualize-dependencies-with-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 30 Oct 2016 16:51:54 +0000</pubDate>
@@ -154,18 +154,18 @@
 		<category><![CDATA[dependnecy]]></category>
 		<category><![CDATA[DSM]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=403</guid>
+		<guid isPermaLink="false">/?p=403</guid>
 
-					<description><![CDATA[How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="./../../../visualize-dependencies-with-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="/visualize-dependencies-with-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../visualize-dependencies-with-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/visualize-dependencies-with-ndepend/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">403</post-id>	</item>
 		<item>
 		<title>Software Quality: Building the Product Right</title>
-		<link>./../../../software-quality-building-the-product-right/index.html</link>
+		<link>/software-quality-building-the-product-right/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 22 Jun 2016 17:39:40 +0000</pubDate>
@@ -178,9 +178,9 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=141</guid>
+		<guid isPermaLink="false">/?p=141</guid>
 
-					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="./../../../software-quality-building-the-product-right/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In a previous blog post we discussed why building the right product is hard and some tips on how to <a class="more-link" href="/software-quality-building-the-product-right/">Continue Reading</a>]]></description>
 		
 		
 		

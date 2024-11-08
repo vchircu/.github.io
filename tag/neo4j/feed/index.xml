@@ -12,8 +12,8 @@
 
 <channel>
 	<title>neo4j &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/neo4j/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:12:36 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Interviewing your architecture</title>
-		<link>./../../../interviewing-your-architecture/index.html</link>
+		<link>/interviewing-your-architecture/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 28 Feb 2020 09:49:27 +0000</pubDate>
@@ -36,9 +36,9 @@
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[microservices]]></category>
 		<category><![CDATA[neo4j]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1143</guid>
+		<guid isPermaLink="false">/?p=1143</guid>
 
-					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="./../../../interviewing-your-architecture/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In this microservices era, many teams are building messaging solutions. What starts as a simple solution with 5 deployment units <a class="more-link" href="/interviewing-your-architecture/">Continue Reading</a>]]></description>
 		
 		
 		

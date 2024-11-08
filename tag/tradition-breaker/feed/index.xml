@@ -12,8 +12,8 @@
 
 <channel>
 	<title>tradition breaker &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/tradition-breaker/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:07:46 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify a Tradition Breaker using NDepend</title>
-		<link>./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html#comments</comments>
+		<link>/how-to-identify-a-tradition-breaker-using-ndepend/</link>
+					<comments>/how-to-identify-a-tradition-breaker-using-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 11 Jan 2017 06:59:55 +0000</pubDate>
@@ -35,11 +35,11 @@
 		<category><![CDATA[metrics]]></category>
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[tradition breaker]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=670</guid>
+		<guid isPermaLink="false">/?p=670</guid>
 
-					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-a-tradition-breaker-using-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="/how-to-identify-a-tradition-breaker-using-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-a-tradition-breaker-using-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-identify-a-tradition-breaker-using-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

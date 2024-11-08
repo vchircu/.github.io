@@ -12,8 +12,8 @@
 
 <channel>
 	<title>refactoring &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/refactoring/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:32:52 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>What I&#8217;ve learned on the Crafted Code course</title>
-		<link>./../../../what-ive-learned-on-the-crafted-code-course/index.html</link>
+		<link>/what-ive-learned-on-the-crafted-code-course/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 31 Oct 2018 19:08:56 +0000</pubDate>
@@ -38,9 +38,9 @@
 		<category><![CDATA[refactoring]]></category>
 		<category><![CDATA[tdd]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=942</guid>
+		<guid isPermaLink="false">/?p=942</guid>
 
-					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="./../../../what-ive-learned-on-the-crafted-code-course/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Last week was a good week for the IT community in Iasi thanks to Codecamp &#8211; 2018 autumn edition. One <a class="more-link" href="/what-ive-learned-on-the-crafted-code-course/">Continue Reading</a>]]></description>
 		
 		
 		

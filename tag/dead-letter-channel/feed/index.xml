@@ -12,8 +12,8 @@
 
 <channel>
 	<title>dead letter channel &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/dead-letter-channel/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:30:04 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,7 +24,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Handling Failure in Long Running Processes</title>
-		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
+		<link>/handling-failure-in-long-running-processes/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -39,9 +39,9 @@
 		<category><![CDATA[retries]]></category>
 		<category><![CDATA[Saga]]></category>
 		<category><![CDATA[soa]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
+		<guid isPermaLink="false">/?p=1116</guid>
 
-					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="/handling-failure-in-long-running-processes/">Continue Reading</a>]]></description>
 		
 		
 		

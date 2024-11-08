@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: How to organize BDD Specifications	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/how-to-organize-bdd-specifications/feed/" rel="self" type="application/rss+xml" />
+	<link>/how-to-organize-bdd-specifications/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:15:47 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: Book Review: Fifty Quick Ideas to Improve your User Stories - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-19</link>
+		<link>/how-to-organize-bdd-specifications/#comment-19</link>
 
 		<dc:creator><![CDATA[Book Review: Fifty Quick Ideas to Improve your User Stories - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:08:00 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=228#comment-19</guid>
+		<guid isPermaLink="false">/?p=228#comment-19</guid>
 
 					<description><![CDATA[[&#8230;] Stories are a token for conversation. They shouldn&#8217;t be used as reference. After a story is delivered, the acceptance criteria should be restructured per business capabilities. This helps people understand the current behaviour, not the entire history of it. You can use tags to filter work in progress. (If you want to find out more about this, I&#8217;ve also blogged about how to organize specifications). [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] Stories are a token for conversation. They shouldn&#8217;t be used as reference. After a story is delivered, the acceptance criteria should be restructured per business capabilities. This helps people understand the current behaviour, not the entire history of it. You can use tags to filter work in progress. (If you want to find out more about this, I&#8217;ve also blogged about how to organize specifications). [&#8230;]</p>

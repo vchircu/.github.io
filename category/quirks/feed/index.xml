@@ -12,8 +12,8 @@
 
 <channel>
 	<title>Quirks &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/category/quirks/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:34:35 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,16 +24,16 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>OBJECT_DEFINITION and sp_rename</title>
-		<link>./../../../object_definition-and-sp_rename/index.html</link>
+		<link>/object_definition-and-sp_rename/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 13 Jun 2018 17:39:34 +0000</pubDate>
 				<category><![CDATA[Quirks]]></category>
 		<category><![CDATA[quirks]]></category>
 		<category><![CDATA[SQL]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=848</guid>
+		<guid isPermaLink="false">/?p=848</guid>
 
-					<description><![CDATA[Today I found an interesting quirk of sp_rename: renaming a view, stored procedure, function or trigger will not update the <a class="more-link" href="./../../../object_definition-and-sp_rename/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Today I found an interesting quirk of sp_rename: renaming a view, stored procedure, function or trigger will not update the <a class="more-link" href="/object_definition-and-sp_rename/">Continue Reading</a>]]></description>
 		
 		
 		

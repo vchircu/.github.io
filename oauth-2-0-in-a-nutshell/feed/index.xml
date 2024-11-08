@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: OAuth 2.0 in a nutshell	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/oauth-2-0-in-a-nutshell/feed/" rel="self" type="application/rss+xml" />
+	<link>/oauth-2-0-in-a-nutshell/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:18:08 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: Book Review: Advanced API Security &#8211; Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-9</link>
+		<link>/oauth-2-0-in-a-nutshell/#comment-9</link>
 
 		<dc:creator><![CDATA[Book Review: Advanced API Security &#8211; Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:43 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=30#comment-9</guid>
+		<guid isPermaLink="false">/?p=30#comment-9</guid>
 
 					<description><![CDATA[[&#8230;] initial goal for picking up this book was to get a more in depth understanding of OAuth 2.0 and OpenID Connect, and it did help me achieve this [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] initial goal for picking up this book was to get a more in depth understanding of OAuth 2.0 and OpenID Connect, and it did help me achieve this [&#8230;]</p>
@@ -37,11 +37,11 @@
 		<item>
 		<title>
 		By: Canadian Asshole		</title>
-		<link>./../index.html#comment-3</link>
+		<link>/oauth-2-0-in-a-nutshell/#comment-3</link>
 
 		<dc:creator><![CDATA[Canadian Asshole]]></dc:creator>
 		<pubDate>Mon, 04 Apr 2016 17:46:34 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=30#comment-3</guid>
+		<guid isPermaLink="false">/?p=30#comment-3</guid>
 
 					<description><![CDATA[Nice read. Really good job! Keep it up.]]></description>
 			<content:encoded><![CDATA[<p>Nice read. Really good job! Keep it up.</p>
@@ -51,11 +51,11 @@
 		<item>
 		<title>
 		By: OpenID Connect in a nutshell &#8211; Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-2</link>
+		<link>/oauth-2-0-in-a-nutshell/#comment-2</link>
 
 		<dc:creator><![CDATA[OpenID Connect in a nutshell &#8211; Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sat, 02 Apr 2016 10:21:16 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=30#comment-2</guid>
+		<guid isPermaLink="false">/?p=30#comment-2</guid>
 
 					<description><![CDATA[[&#8230;] the previous post we talked about delegated authorization with OAuth 2.0. After the success of OAuth 2.0, many [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] the previous post we talked about delegated authorization with OAuth 2.0. After the success of OAuth 2.0, many [&#8230;]</p>

@@ -11,8 +11,8 @@
 <channel>
 	<title>
 	Comments on: How to identify a God Class using NDepend	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/how-to-identify-god-class-using-ndepend/feed/" rel="self" type="application/rss+xml" />
+	<link>/how-to-identify-god-class-using-ndepend/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:10:20 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -23,11 +23,11 @@
 	<item>
 		<title>
 		By: How to identify a Tradition Breaker using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-42</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-42</link>
 
 		<dc:creator><![CDATA[How to identify a Tradition Breaker using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Wed, 11 Jan 2017 07:00:08 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-42</guid>
+		<guid isPermaLink="false">/?p=592#comment-42</guid>
 
 					<description><![CDATA[[&#8230;] How to identify a God Class [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify a God Class [&#8230;]</p>
@@ -37,11 +37,11 @@
 		<item>
 		<title>
 		By: How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-40</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-40</link>
 
 		<dc:creator><![CDATA[How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sun, 08 Jan 2017 19:06:24 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-40</guid>
+		<guid isPermaLink="false">/?p=592#comment-40</guid>
 
 					<description><![CDATA[[&#8230;] How to identify a God Class [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify a God Class [&#8230;]</p>
@@ -51,11 +51,11 @@
 		<item>
 		<title>
 		By: How to identify Shotgun Surgery using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-39</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-39</link>
 
 		<dc:creator><![CDATA[How to identify Shotgun Surgery using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Thu, 05 Jan 2017 06:13:34 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-39</guid>
+		<guid isPermaLink="false">/?p=592#comment-39</guid>
 
 					<description><![CDATA[[&#8230;] How to identify a God Class [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify a God Class [&#8230;]</p>
@@ -65,11 +65,11 @@
 		<item>
 		<title>
 		By: How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-38</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-38</link>
 
 		<dc:creator><![CDATA[How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Wed, 04 Jan 2017 06:02:24 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-38</guid>
+		<guid isPermaLink="false">/?p=592#comment-38</guid>
 
 					<description><![CDATA[[&#8230;] How to identify a God Class [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify a God Class [&#8230;]</p>
@@ -79,11 +79,11 @@
 		<item>
 		<title>
 		By: How to identify a Brain Method using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-35</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-35</link>
 
 		<dc:creator><![CDATA[How to identify a Brain Method using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Fri, 30 Dec 2016 19:59:57 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-35</guid>
+		<guid isPermaLink="false">/?p=592#comment-35</guid>
 
 					<description><![CDATA[[&#8230;] How to identify a God Class [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] How to identify a God Class [&#8230;]</p>
@@ -93,11 +93,11 @@
 		<item>
 		<title>
 		By: How to identify Feature Envy using NDepend - Simple Oriented Architecture		</title>
-		<link>./../index.html#comment-30</link>
+		<link>/how-to-identify-god-class-using-ndepend/#comment-30</link>
 
 		<dc:creator><![CDATA[How to identify Feature Envy using NDepend - Simple Oriented Architecture]]></dc:creator>
 		<pubDate>Sat, 24 Dec 2016 13:26:29 +0000</pubDate>
-		<guid isPermaLink="false">./../../index.html?p=592#comment-30</guid>
+		<guid isPermaLink="false">/?p=592#comment-30</guid>
 
 					<description><![CDATA[[&#8230;] the previous blog post we have seen how to detect potential God Classes with NDepend. In this article we&#8217;ll see how to detect methods that suffer from Feature [&#8230;]]]></description>
 			<content:encoded><![CDATA[<p>[&#8230;] the previous blog post we have seen how to detect potential God Classes with NDepend. In this article we&#8217;ll see how to detect methods that suffer from Feature [&#8230;]</p>

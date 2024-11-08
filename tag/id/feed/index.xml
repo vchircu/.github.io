@@ -12,8 +12,8 @@
 
 <channel>
 	<title>id &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/id/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 09:30:24 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,16 +24,16 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>7 Strategies for Assigning Ids</title>
-		<link>./../../../7-strategies-for-assigning-ids/index.html</link>
+		<link>/7-strategies-for-assigning-ids/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 21 Jun 2019 06:20:17 +0000</pubDate>
 				<category><![CDATA[Architecture]]></category>
 		<category><![CDATA[id]]></category>
 		<category><![CDATA[identity]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=1107</guid>
+		<guid isPermaLink="false">/?p=1107</guid>
 
-					<description><![CDATA[Identities are the defining characteristic of an entity in Domain-Driven Design. And as soon as the Id is public and <a class="more-link" href="./../../../7-strategies-for-assigning-ids/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Identities are the defining characteristic of an entity in Domain-Driven Design. And as soon as the Id is public and <a class="more-link" href="/7-strategies-for-assigning-ids/">Continue Reading</a>]]></description>
 		
 		
 		

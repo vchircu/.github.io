@@ -12,8 +12,8 @@
 
 <channel>
 	<title>books &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/books/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:17:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Your Code as a Crime Scene</title>
-		<link>./../../../book-review-your-code-as-a-crime-scene/index.html</link>
-					<comments>./../../../book-review-your-code-as-a-crime-scene/index.html#comments</comments>
+		<link>/book-review-your-code-as-a-crime-scene/</link>
+					<comments>/book-review-your-code-as-a-crime-scene/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 24 Jan 2017 16:29:16 +0000</pubDate>
@@ -38,19 +38,19 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[VCS]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=719</guid>
+		<guid isPermaLink="false">/?p=719</guid>
 
-					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="./../../../book-review-your-code-as-a-crime-scene/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written <a class="more-link" href="/book-review-your-code-as-a-crime-scene/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-your-code-as-a-crime-scene/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/book-review-your-code-as-a-crime-scene/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">719</post-id>	</item>
 		<item>
 		<title>Book Review: Object-Oriented Metrics in Practice</title>
-		<link>./../../../book-review-object-oriented-metrics-in-practice/index.html</link>
-					<comments>./../../../book-review-object-oriented-metrics-in-practice/index.html#comments</comments>
+		<link>/book-review-object-oriented-metrics-in-practice/</link>
+					<comments>/book-review-object-oriented-metrics-in-practice/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Dec 2016 13:30:46 +0000</pubDate>
@@ -66,18 +66,18 @@
 		<category><![CDATA[polymetric views]]></category>
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=503</guid>
+		<guid isPermaLink="false">/?p=503</guid>
 
-					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="./../../../book-review-object-oriented-metrics-in-practice/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I have been using static code analyzers for a while now. While these are useful, you need to spend a <a class="more-link" href="/book-review-object-oriented-metrics-in-practice/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-object-oriented-metrics-in-practice/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/book-review-object-oriented-metrics-in-practice/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">503</post-id>	</item>
 		<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-user-stories/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -87,16 +87,16 @@
 		<category><![CDATA[lean]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[user stories]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=325</guid>
+		<guid isPermaLink="false">/?p=325</guid>
 
-					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-user-stories/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">325</post-id>	</item>
 		<item>
 		<title>Book Review: Enterprise Integration Patterns</title>
-		<link>./../../../book-review-enterprise-integration-patterns/index.html</link>
+		<link>/book-review-enterprise-integration-patterns/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 02 May 2016 17:06:01 +0000</pubDate>
@@ -105,16 +105,16 @@
 		<category><![CDATA[integration]]></category>
 		<category><![CDATA[messaging]]></category>
 		<category><![CDATA[NServiceBus]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=15</guid>
+		<guid isPermaLink="false">/?p=15</guid>
 
-					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="/book-review-enterprise-integration-patterns/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">15</post-id>	</item>
 		<item>
 		<title>Book Review: Advanced API Security</title>
-		<link>./../../../book-review-advanced-api-security/index.html</link>
+		<link>/book-review-advanced-api-security/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
@@ -128,16 +128,16 @@
 		<category><![CDATA[OpenID]]></category>
 		<category><![CDATA[REST]]></category>
 		<category><![CDATA[security]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=120</guid>
+		<guid isPermaLink="false">/?p=120</guid>
 
-					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="/book-review-advanced-api-security/">Continue Reading</a>]]></description>
 		
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>
 		<item>
 		<title>Book Review:  Fifty Quick Ideas to Improve Your Tests</title>
-		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html</link>
+		<link>/book-review-fifty-quick-ideas-to-improve-your-tests/</link>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 10 Apr 2016 15:08:44 +0000</pubDate>
@@ -147,9 +147,9 @@
 		<category><![CDATA[quality]]></category>
 		<category><![CDATA[specifications]]></category>
 		<category><![CDATA[testing]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=68</guid>
+		<guid isPermaLink="false">/?p=68</guid>
 
-					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="/book-review-fifty-quick-ideas-to-improve-your-tests/">Continue Reading</a>]]></description>
 		
 		
 		

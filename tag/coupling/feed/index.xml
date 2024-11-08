@@ -12,8 +12,8 @@
 
 <channel>
 	<title>coupling &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/coupling/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:11:58 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Visualizing Code Metrics with NDepend</title>
-		<link>./../../../visualizing-code-metrics-with-ndepend/index.html</link>
-					<comments>./../../../visualizing-code-metrics-with-ndepend/index.html#comments</comments>
+		<link>/visualizing-code-metrics-with-ndepend/</link>
+					<comments>/visualizing-code-metrics-with-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 26 Nov 2016 10:42:57 +0000</pubDate>
@@ -35,19 +35,19 @@
 		<category><![CDATA[NDepend]]></category>
 		<category><![CDATA[treemap]]></category>
 		<category><![CDATA[visualization]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=501</guid>
+		<guid isPermaLink="false">/?p=501</guid>
 
-					<description><![CDATA[Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively <a class="more-link" href="./../../../visualizing-code-metrics-with-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively <a class="more-link" href="/visualizing-code-metrics-with-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../visualizing-code-metrics-with-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/visualizing-code-metrics-with-ndepend/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">501</post-id>	</item>
 		<item>
 		<title>Visualize Dependencies with NDepend</title>
-		<link>./../../../visualize-dependencies-with-ndepend/index.html</link>
-					<comments>./../../../visualize-dependencies-with-ndepend/index.html#comments</comments>
+		<link>/visualize-dependencies-with-ndepend/</link>
+					<comments>/visualize-dependencies-with-ndepend/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 30 Oct 2016 16:51:54 +0000</pubDate>
@@ -59,11 +59,11 @@
 		<category><![CDATA[dependnecy]]></category>
 		<category><![CDATA[DSM]]></category>
 		<category><![CDATA[NDepend]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=403</guid>
+		<guid isPermaLink="false">/?p=403</guid>
 
-					<description><![CDATA[How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="./../../../visualize-dependencies-with-ndepend/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan <a class="more-link" href="/visualize-dependencies-with-ndepend/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../visualize-dependencies-with-ndepend/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/visualize-dependencies-with-ndepend/feed/</wfw:commentRss>
 			<slash:comments>2</slash:comments>
 		
 		

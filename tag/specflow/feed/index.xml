@@ -12,8 +12,8 @@
 
 <channel>
 	<title>specflow &#8211; Simple Oriented Architecture</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/tag/specflow/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Fri, 08 Nov 2024 10:15:47 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -24,8 +24,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to organize BDD Specifications</title>
-		<link>./../../../how-to-organize-bdd-specifications/index.html</link>
-					<comments>./../../../how-to-organize-bdd-specifications/index.html#comments</comments>
+		<link>/how-to-organize-bdd-specifications/</link>
+					<comments>/how-to-organize-bdd-specifications/#comments</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 29 Jun 2016 18:53:20 +0000</pubDate>
@@ -35,11 +35,11 @@
 		<category><![CDATA[soa]]></category>
 		<category><![CDATA[specflow]]></category>
 		<category><![CDATA[specifications]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=228</guid>
+		<guid isPermaLink="false">/?p=228</guid>
 
-					<description><![CDATA[I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="./../../../how-to-organize-bdd-specifications/index.html">Continue Reading</a>]]></description>
+					<description><![CDATA[I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="/how-to-organize-bdd-specifications/">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-organize-bdd-specifications/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/how-to-organize-bdd-specifications/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
