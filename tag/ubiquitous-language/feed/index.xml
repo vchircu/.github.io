@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>ubiquitous language Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Sat, 30 Apr 2016 12:20:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>Software Quality: Building the Right Product</title>
+		<link>./../../../software-quality-building-the-right-product/index.html</link>
+					<comments>./../../../software-quality-building-the-right-product/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sun, 17 Apr 2016 18:21:12 +0000</pubDate>
+				<category><![CDATA[Quality]]></category>
+		<category><![CDATA[agile]]></category>
+		<category><![CDATA[bdd]]></category>
+		<category><![CDATA[bounded context]]></category>
+		<category><![CDATA[ddd]]></category>
+		<category><![CDATA[lean]]></category>
+		<category><![CDATA[perceived integrity]]></category>
+		<category><![CDATA[quality]]></category>
+		<category><![CDATA[ubiquitous language]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=133</guid>
+
+					<description><![CDATA[<p>If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../software-quality-building-the-right-product/index.html">Software Quality: Building the Right Product</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">133</post-id>	</item>
+	</channel>
+</rss>

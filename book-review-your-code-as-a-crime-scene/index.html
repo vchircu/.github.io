@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="./../xmlrpc.php">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Book Review: Your Code as a Crime Scene - Simple Oriented Architecture</title>
+	<meta name="description" content="Your Code as a Crime Scene describes how to use information extracted from VCS systems to detect hot spots and improve the quality of a codebase.">
+	<link rel="canonical" href="./index.html">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Book Review: Your Code as a Crime Scene - Simple Oriented Architecture">
+	<meta property="og:description" content="Your Code as a Crime Scene describes how to use information extracted from VCS systems to detect hot spots and improve the quality of a codebase.">
+	<meta property="og:url" content="./index.html">
+	<meta property="og:site_name" content="Simple Oriented Architecture">
+	<meta property="article:published_time" content="2017-01-24T16:29:16+00:00">
+	<meta property="article:modified_time" content="2017-01-25T19:16:09+00:00">
+	<meta property="og:image" content="./../wp-content/uploads/2017/01/cover.png">
+	<meta name="author" content="Victor Chircu">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/victorchircu/">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Victor Chircu">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="11 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":".//book-review-your-code-as-a-crime-scene/#article","isPartOf":{"@id":".//book-review-your-code-as-a-crime-scene/"},"author":{"name":"Victor Chircu","@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"headline":"Book Review: Your Code as a Crime Scene","datePublished":"2017-01-24T16:29:16+00:00","dateModified":"2017-01-25T19:16:09+00:00","mainEntityOfPage":{"@id":".//book-review-your-code-as-a-crime-scene/"},"wordCount":2299,"commentCount":2,"publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"image":{"@id":".//book-review-your-code-as-a-crime-scene/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2017/01/cover.png","keywords":["books","code smells","git","metrics","quality","VCS","visualization"],"articleSection":["Books","Quality"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":[".//book-review-your-code-as-a-crime-scene/#respond"]}]},{"@type":"WebPage","@id":".//book-review-your-code-as-a-crime-scene/","url":".//book-review-your-code-as-a-crime-scene/","name":"Book Review: Your Code as a Crime Scene - Simple Oriented Architecture","isPartOf":{"@id":".//#website"},"primaryImageOfPage":{"@id":".//book-review-your-code-as-a-crime-scene/#primaryimage"},"image":{"@id":".//book-review-your-code-as-a-crime-scene/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2017/01/cover.png","datePublished":"2017-01-24T16:29:16+00:00","dateModified":"2017-01-25T19:16:09+00:00","description":"Your Code as a Crime Scene describes how to use information extracted from VCS systems to detect hot spots and improve the quality of a codebase.","breadcrumb":{"@id":".//book-review-your-code-as-a-crime-scene/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":[".//book-review-your-code-as-a-crime-scene/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":".//book-review-your-code-as-a-crime-scene/#primaryimage","url":".//wp-content/uploads/2017/01/cover.png","contentUrl":".//wp-content/uploads/2017/01/cover.png"},{"@type":"BreadcrumbList","@id":".//book-review-your-code-as-a-crime-scene/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":".//"},{"@type":"ListItem","position":2,"name":"Book Review: Your Code as a Crime Scene"}]},{"@type":"WebSite","@id":".//#website","url":".//","name":"Simple Oriented Architecture","description":"","publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":".//?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e","name":"Victor Chircu","image":{"@type":"ImageObject","inLanguage":"en-US","@id":".//#/schema/person/image/","url":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","caption":"Victor Chircu"},"logo":{"@id":".//#/schema/person/image/"},"description":"I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.","sameAs":[".//","https://www.linkedin.com/in/victor-chircu-1519a331","https://x.com/https://twitter.com/victorchircu/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Book Review: Your Code as a Crime Scene Comments Feed" href="./feed/index.html">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="jetpack_related-posts-css" href="./../wp-content/plugins/jetpack/modules/related-posts/related-posts.css?ver=20240116" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./../wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./../wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="eu-cookie-law-style-css" href="./../wp-content/plugins/jetpack/modules/widgets/eu-cookie-law/style.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20240116" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript" src=".//wp-content/themes/bulan/assets/js/html5shiv.min.js" id="standard-html5-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/posts/719/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="shortlink" href="https://wp.me/p7kV6P-bB">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fbook-review-your-code-as-a-crime-scene%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fbook-review-your-code-as-a-crime-scene%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="post-template-default single single-post postid-719 single-format-standard no-custom-header no-featured-image layout-2c-l" itemscope itemtype="http://schema.org/Blog">
+
+<div id="page" class="site">
+
+	<div class="search-area">
+		<div class="wide-container">
+			<form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+		</div>
+	</div>
+
+	
+	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="site-branding">
+			<div class="wide-container">
+				<div id="logo">
+<h1 class="site-title" itemprop="headline"><a href="./../index.html" itemprop="url" rel="home"><span itemprop="headline">Simple Oriented Architecture</span></a></h1>
+</div>
+			</div>
+		</div>
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="wide-container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+				<article id="post-719" class="post-719 post type-post status-publish format-standard hentry category-books category-quality tag-books tag-code-smells tag-git tag-metrics tag-quality tag-vcs tag-visualization no-post-thumbnail no-sticky entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	<header class="entry-header">
+
+								<span class="cat-links" itemprop="articleSection">
+				<a href="./../category/books/index.html" rel="category tag">Books</a>, <a href="./../category/quality/index.html" rel="category tag">Quality</a>			</span>
+			<i class="fa fa-circle"></i>
+					
+					<time class="published" datetime="2017-01-24T16:29:16+00:00" itemprop="datePublished">January 24, 2017</time>
+		
+		<h1 class="entry-title" itemprop="headline">Book Review: Your Code as a Crime Scene</h1>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content" itemprop="articleBody">
+
+		<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some <a href="./../tag/ndepend/index.html" target="_blank">articles </a>on how to use <a href="http://www.ndepend.com/" target="_blank">NDepend</a> to extract a static view of the system&#8217;s quality. But this view is based only on the current state of the codebase. What about source code history? What can it tell us? How has the code changed? These are exactly the kind of questions that <a href="http://www.adamtornhill.com/" target="_blank">Adam Thornhill</a>&#8216;s book, <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank">Your Code as a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</a>, tries to answer.</p>
+<p><a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384"><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-747" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/cover.png?resize=417%2C501" alt="" width="417" height="501"></a></p>
+<p><span id="more-719"></span></p>
+<h2>Summary</h2>
+<p>The book contains three parts and it&#8217;s meant to be read from start to finish. In this section we&#8217;ll see a brief summary of each chapter.</p>
+<h3>Part I &#8211; Evolving Software</h3>
+<h4>Code as a Crime Scene</h4>
+<p>The central idea of the book is that you can&#8217;t understand a complex system just by looking at a snapshot of the code. By harnessing the historical information of a project we can make more informed decisions. This information is readily available in the Version Control Systems that we use.</p>
+<p>For large codebases it&#8217;s hard to identify what improvements would be the most valuable. To find what module should be our highest priority, we need to answer several questions: is this module complex?, is this module error prone?, will I work on this module in the future? Answering these questions is a hard job even for smaller teams. When you&#8217;re dealing with multiple teams, you cannot rely on a developers&#8217; opinion, since intuition doesn&#8217;t scale. This book presents how to answer these questions by using automated techniques inspired by criminal psychology.</p>
+<p>The author shows how geographical offender profiling can be applied to code. There are tools that help visualize software (e.g. CodeCity). But these tools usually work only for a limited set of programming languages. Exploring the geography of code should work on the polyglot solutions that we develop nowadays. VCS systems contain the required data and should be used when we explore the geography of code.</p>
+<h4>Creating an Offender Profile</h4>
+<p>This chapter shows <strong>how to detect hotspots by analyzing change frequency and complexity</strong>. The author uses <a href="https://github.com/adamtornhill/code-maat" target="_blank">Code Maat</a> to extract file change frequency from git. This is an open source tool that the author created as a companion to the book. The number of lines of code is used as a proxy metric for complexity. <a href="http://cloc.sourceforge.net/" target="_blank">Cloc</a> is one tool that can compute this simple metric.</p>
+<h4>Analyze Hotspots in Large-Scale Systems</h4>
+<p>To help make sense of a system&#8217;s complexity we need better tools. Raw metric data is hard to understand. This is where visualization techniques shine. They help us make sense of large volumes of data. Chapter 4 presents a visualization technique called an <strong>enclosure diagram</strong>. Enclosure diagrams are based on the <strong>zoomable circle parking algorithm</strong>. Here is an enclosure diagram for a Hibernate package:</p>
+<figure id="attachment_744" aria-describedby="caption-attachment-744" style="width: 920px" class="wp-caption aligncenter"><img data-recalc-dims="1" decoding="async" class="size-full wp-image-744" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=628%2C624" alt="Enclosure Diagram" width="628" height="624" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?w=920&amp;ssl=1 920w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=768%2C763&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"><figcaption id="caption-attachment-744" class="wp-caption-text">Enclosure Diagram</figcaption></figure>
+<p>Each circle represents a part of the system. This visualization technique maps two metrics: effort on color and complexity on area.</p>
+<p>To showcase how these are useful the author uses Hibernate as a case study. We get the raw data using Code Maat and cloc, transform it in the required format using a Python script, then visualize it using D3.js. This is how the image above was generated.</p>
+<h4>Judge Hotspots with the Power of Names</h4>
+<p>A tool cannot replace our own experience. After identifying the hotspots, we need to separate the real issue from the false positives. One quick way to do this is to just check the names. This can help us separate modules that contain complex logic from modules that contain only configurations for example.</p>
+<h4>Calculate Complexity Trends from Your Code’s Shape</h4>
+<p>Of course, the naming heuristic has its limitation, and sometimes we need to dig deeper. One approach of evaluating a hotspot is to use another simple metric as a proxy for complexity: indentation. <span class="hardreadability"><span data-offset-key="bs3ac-0-0">We can use a simple spreadsheet application to plot the complexity trend over time and see if our code is deteriorating</span></span><span data-offset-key="bs3ac-1-0">.</span></p>
+<h3>Part II &#8211; Dissect Your Architecture</h3>
+<h4>Treat Your Code As a Cooperative Witness</h4>
+<p>In this chapter the author discusses how to analyze the architecture of a system. He introduces the notion of <strong>temporal coupling</strong> (or change coupling). Two modules are temporally coupled if they change together. This can happen for multiple reasons: copy-paste, inadequate encapsulation or modules that are in a producer-consumer relationship. Temporal coupling is a good indicator of defect prone modules.</p>
+<h4>Detect Architectural Decay</h4>
+<p>Chapter 8 shows how to detect temporal coupling in practice. The <strong>Sum of Coupling</strong> is a metric that looks at how many times a module has been coupled to another module in a commit. After finding out what are the hotspots, we can see what modules change together frequently. Code Maat has support for this type of analysis.</p>
+<p>Since temporal coupling might vary over time, it&#8217;s good to split the analyzed periods and compare them (e.g. releases, sprints, etc.). This can help you get more focused results. You can even use story boards to track the evolution of temporal coupling over time.</p>
+<h4>Build a Safety Net for Your Architecture</h4>
+<p>In this chapter the author presents how to detect when automated tests get too coupled to production code. If the previous chapters focused on detecting coupled modules, this chapter centers around detecting temporal coupling at a system level. This is done by identifying different components in your code (e.g. code and test) through file paths or regular expressions and detecting coupling between these components.</p>
+<h4>Use Beauty as a Guiding Principle</h4>
+<p>Chapter 10 applies the same principles to architectural boundaries. We can identify the main components of our application by looking at the architectural boundaries. Then we can analyze the coupling between these components and identify expensive change patterns across architectural boundaries. One example would be two microservices that change together.</p>
+<h3>Part III &#8211; Master the Social Aspects of Code</h3>
+<h4>Norms, Groups, and False Serial Killers</h4>
+<p>Chapter 11 sets the stage for the last part of the book, which centers around the social aspects of coding. It introduces process loss and social biases. According to the process loss theory, groups cannot be 100% efficient. With bigger teams comes a bigger coordination cost. Some of the social biases mentioned are pluralistic ignorance and inferring the popularity of an opinion based on its familiarity.</p>
+<p>Commit messages can tell you something new about your team. By generating a word cloud from your commit message log, you can see the dominating terms. You would expect that the most common words to be domain concepts. But what if most of the concepts revolve around bugs, fixes, and tests?</p>
+<h4>Discover Organizational Metrics in Your Codebase</h4>
+<p>This chapter delves into how to extract organization metrics from the code. We can calculate author frequencies to discover which modules are shared among many developers. These are likely to contain defects. We can also evaluate the communication cost. If two tightly coupled modules have different main developers, we need to ensure that they can communicate easily.</p>
+<h4>Build a Knowledge Map of Your System</h4>
+<p>Different author patterns influence your system. Fractal figures is a visualization technique that can help us see the effort distribution per developer. Each rectangle is a module. Each author of the module has a different color and the area of its rectangle is proportional to the author&#8217;s commits. A large number of minor contributors can indicate error prone code.</p>
+<figure id="attachment_743" aria-describedby="caption-attachment-743" style="width: 1438px" class="wp-caption aligncenter"><img data-recalc-dims="1" decoding="async" class="size-full wp-image-743" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/FractalFigures.png?resize=628%2C62" alt="Fractal Figures" width="628" height="62" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/FractalFigures.png?w=1438&amp;ssl=1 1438w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/FractalFigures.png?resize=768%2C76&amp;ssl=1 768w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/FractalFigures.png?w=1256&amp;ssl=1 1256w" sizes="(max-width: 628px) 100vw, 628px"><figcaption id="caption-attachment-743" class="wp-caption-text">Fractal Figures</figcaption></figure>
+<p>A knowledge map outlines the knowledge distribution. Visualizing a knowledge map for developers that are no longer on the team can help us spot knowledge loss. Below you can see an example of a knowledge map. Each circle represents a module. Its size maps to complexity and its color indicates the main developer:</p>
+<figure id="attachment_745" aria-describedby="caption-attachment-745" style="width: 989px" class="wp-caption aligncenter"><img data-recalc-dims="1" loading="lazy" decoding="async" class="size-full wp-image-745" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/KnowledgeMap.png?resize=628%2C612" alt="Knowledge Map" width="628" height="612" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/KnowledgeMap.png?w=989&amp;ssl=1 989w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/KnowledgeMap.png?resize=768%2C749&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"><figcaption id="caption-attachment-745" class="wp-caption-text">Knowledge Map</figcaption></figure>
+<h4>Dive Deeper with Code Churn</h4>
+<p>In this chapter the author discusses how code churn can help us detect process loss. Also, by linking temporal coupling with code churn, we can get an idea of the change patterns of our code. This can help us prioritize which modules need refactoring first.</p>
+<h4>Toward the Future</h4>
+<p>The last chapter of the book is a great summary, showing how to use the presented analysis techniques together to get the most out of them. It also discusses future improvements that are not supported by today&#8217;s tooling.</p>
+<h2>Biggest Takeaways</h2>
+<h3>Sometimes simple metrics are good enough</h3>
+<p>This book relies on simple, yet surprisingly effective metrics. As an example, lines of code is used as a proxy metric for complexity. This metric is by no means perfect, but, on my project, it did flag most of the same classes as McCabe&#8217;s cyclomatic number. There is definitely a correlation between the size of a file and its complexity. This simplicity comes with a great advantage: it&#8217;s language agnostic, so you can use it on a polyglot codebase. Yet another example is using indentation as a metric for complexity.</p>
+<h3>Version Control Systems are a gold mine</h3>
+<p>I expected most of the hotspots that Code Maat detected on the codebase that I&#8217;m currently working on. But this is code that I&#8217;ve been working with for a while and I know pretty well. Running this kind of analysis on a new project can definitely help you ramp up and be productive in a shorter period of time. Also, it can help a team base its decision on facts and data, not only on intuition.</p>
+<p>Although powerful, Code Maat is a simple program. As more people are interested in code archaeology, I&#8217;m sure that future tools will support even more interesting analysis techniques. These techniques will help us dig even more in our project&#8217;s history. Couple that with the static view of the code and bug tracker information and you&#8217;ll have a lot more data to base your decisions on.</p>
+<h3>Temporal Coupling</h3>
+<p>I think the name temporal coupling is ambiguous, since this is already a <a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank">well-known type of coupling</a>. I prefer its synonym: change coupling. This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about <a href="./../identify-shotgun-surgery-using-ndepend/index.html" target="_blank">how to detect the shotgun surgery code smell</a> using NDepend. But that detection strategy relied on the static view of the code. Looking at the commit history and detecting change coupling is probably a better detection strategy for this code smell.</p>
+<p>I like the grouping feature of Code Maat. This enables us to detect temporal coupling not only at a file level, but at an architectural level too. If two architecturally significant components (e.g. two layers or two microservices) that should be decoupled are frequently changed together, you would want to know as soon as possible, in order to fix this design issue.</p>
+<h3>The social aspects of code</h3>
+<p>Seeing a knowledge map of your system is insightful. One such map can tell you if some of the team members are becoming polls of knowledge, or if too many people are working on the same piece of code.</p>
+<p>Another useful application of a knowledge distribution map is to anticipate knowledge loss. Visualizing the knowledge loss when a team member decides to leave the team can help you organize future knowledge transfer sessions. Seeing how team members collaborate can also provide insights onto how to better organize the team (think of Conway&#8217;s Law).</p>
+<h2>Improvements</h2>
+<p>The book is fairly short and the author emphasizes that the focus is on the techniques, not on the tools. This being said, Code Maat is used a lot in order to parse VCS logs and extract the required information. I think that a more thorough description of the different techniques and how to implement them would have enabled readers to better understand them. <span class="hardreadability"><span data-offset-key="bs3ac-0-0">Also, I would have liked to see even more practical examples of how these techniques can help improve larger codebases</span></span><span data-offset-key="bs3ac-1-0">.</span></p>
+<h2>Conclusion</h2>
+<p>Most of us use version control systems only as repositories for code. But they can be much more than that since they contain a lot of useful information about a project&#8217;s history. <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank">Your Code as a Crime Scene</a> describes how to mine them for new insights into our code and environment. It presents some novel techniques useful for detecting hot spots and error prone code. The book is accompanied by a tool, Code Maat, that you can use to apply the techniques on your own projects. Although the tool is a black box, having the ability to put theory into practice is a big win. The book takes a look at the source code of Code Maat, but also at more mature and larger projects like Craft.Net, Hibernate and Scala.</p>
+<p>Most of the techniques rely on simple metrics. I was surprised by how powerful they can be. This simplicity has its strengths and weaknesses. On one hand, they are language agnostic, so they can be applied on any codebase, regardless of language. On the other hand, simplicity means they are less precise than other more complete metrics. But the author cites studies that prove these simple metrics are as good at detecting error prone code as other, more complex metrics.</p>
+<p>The author also draws from his personal experience and describes how these techniques helped him (or would have helped him) in the past. I always find this useful and I think it helps emphasize the effectiveness of these techniques.</p>
+<p>At under 200 pages, this book is packed with information. I recommend reading it and then employing the analysis techniques on your own projects. This data can help you get a better knowledge of a project and make better decisions.</p>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>		
+	</div>
+
+	<footer class="entry-footer">
+
+					<span class="tag-links" itemprop="keywords">
+									<a href="./../tag/books/index.html"><span>#</span>books</a>
+									<a href="./../tag/code-smells/index.html"><span>#</span>code smells</a>
+									<a href="./../tag/git/index.html"><span>#</span>git</a>
+									<a href="./../tag/metrics/index.html"><span>#</span>metrics</a>
+									<a href="./../tag/quality/index.html"><span>#</span>quality</a>
+									<a href="./../tag/vcs/index.html"><span>#</span>VCS</a>
+									<a href="./../tag/visualization/index.html"><span>#</span>visualization</a>
+							</span>
+		
+	</footer>
+
+	<div class="jetpack-share-like">
+		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-719" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-719" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-719" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
+<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>			</div>
+
+</article><!-- #post-## -->
+
+				
+	<div class="author-bio" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+		<img alt="Victor Chircu" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=80&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=160&#038;d=mm&#038;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy" decoding="async" itemprop="image">		<div class="description">
+			<h3 class="author-title name">
+				<a class="author-name url fn n" href="./../author/victor-chircugmail-com/index.html" rel="author" itemprop="url"><span itemprop="name">Victor Chircu</span></a>
+			</h3>
+			<p class="bio" itemprop="description">I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.</p>
+			<ul class="author-social">
+									<li class="website">
+						<a href="./../index.html"><i class="fa fa-home"></i></a>
+					</li>
+													<li class="twitter">
+						<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a>
+					</li>
+																									<li class="linkedin">
+						<a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+					</li>
+							</ul>
+		</div>
+	</div>
+<!-- .author-bio -->
+
+
+				
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<ul>
+									<li>
+												<h2 class="entry-title"><a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html" rel="bookmark">How to identify common Code Smells using the NDepend API</a></h2>						<time class="published" datetime="2020-03-27T07:39:07+00:00">March 27, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../test-strategy-for-continuous-delivery/index.html" rel="bookmark">Defining a Test Strategy for Continuous Delivery</a></h2>						<time class="published" datetime="2019-06-14T05:26:55+00:00">June 14, 2019</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../defining-test-boundaries/index.html" rel="bookmark">Defining Test Boundaries &#8211; An example</a></h2>						<time class="published" datetime="2019-06-07T07:58:11+00:00">June 7, 2019</time>
+					</li>
+							</ul>
+		</div>
+
+	
+				
+<div id="comments" class="comments-area">
+
+	
+			<h3 class="comments-title">
+			2 Comments to &ldquo;Book Review: Your Code as a Crime Scene&rdquo;		</h3>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-49" itemprop="comment" itemscope="itemscope" itemtype="http://schema.org/Comment">
+		<article id="comment-49" class="comment-container">
+
+			<div class="comment-avatar">
+				<img alt="" src="https://secure.gravatar.com/avatar/843f82766a3615b5d234eb6f7e3d4285?s=125&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/843f82766a3615b5d234eb6f7e3d4285?s=250&#038;d=mm&#038;r=g 2x" class="avatar avatar-125 photo" height="125" width="125" loading="lazy" decoding="async" itemprop="image">				<span class="name" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://www.adamtornhill.com/" class="url" rel="ugc external nofollow">Adam Tornhill</a></span></span>
+							</div>
+
+			<div class="comment-body">
+				<div class="comment-wrapper">
+
+					<div class="comment-head">
+						<span class="date"><a href="./index.html#comment-49" itemprop="url"><time datetime="2017-01-26T08:47:00+00:00" itemprop="datePublished">January 26, 2017 at 8:47 am</time></a> <a title="Edit Comment">&middot; Edit</a></span>					</div>
+<!-- comment-head -->
+
+					<div class="comment-content comment-entry" itemprop="text">
+												<p>Thanks for the review &#8211; interesting to get your perspective on the book. The analyses have evolved since I wrote the book. I do have more examples on how the techniques help improve large codebases. For example this case study on Analyzing Patterns in the Evolution of Linux: <a href="http://www.empear.com/blog/software-revolution-part4/" rel="nofollow ugc">http://www.empear.com/blog/software-revolution-part4/</a></p>
+						<span class="reply">
+							<a rel="nofollow" class="comment-reply-link" href="#comment-49" data-commentid="49" data-postid="719" data-belowelement="comment-49" data-respondelement="respond" data-replyto="Reply to Adam Tornhill" aria-label="Reply to Adam Tornhill"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+					</div>
+<!-- .comment-content -->
+
+				</div>
+			</div>
+
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-50" itemprop="comment" itemscope="itemscope" itemtype="http://schema.org/Comment">
+		<article id="comment-50" class="comment-container">
+
+			<div class="comment-avatar">
+				<img alt="" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=125&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=250&#038;d=mm&#038;r=g 2x" class="avatar avatar-125 photo" height="125" width="125" loading="lazy" decoding="async" itemprop="image">				<span class="name" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../index.html" class="url" rel="ugc">Victor</a></span></span>
+							</div>
+
+			<div class="comment-body">
+				<div class="comment-wrapper">
+
+					<div class="comment-head">
+						<span class="date"><a href="./index.html#comment-50" itemprop="url"><time datetime="2017-01-28T06:50:00+00:00" itemprop="datePublished">January 28, 2017 at 6:50 am</time></a> <a title="Edit Comment">&middot; Edit</a></span>					</div>
+<!-- comment-head -->
+
+					<div class="comment-content comment-entry" itemprop="text">
+												<p>Thanks for sharing the link! Really interesting to see how you approached analyzing a code base of that scale. I&#8217;ve just finished reading the Software (r)Evolution article series and they are a great addition to the book!</p>
+						<span class="reply">
+							<a rel="nofollow" class="comment-reply-link" href="#comment-50" data-commentid="50" data-postid="719" data-belowelement="comment-50" data-respondelement="respond" data-replyto="Reply to Victor" aria-label="Reply to Victor"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+					</div>
+<!-- .comment-content -->
+
+				</div>
+			</div>
+
+		</article><!-- #comment-## -->
+	</li>
+<!-- #comment-## -->
+</ol>
+<!-- .children -->
+</li>
+<!-- #comment-## -->
+		</ol>
+<!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="719" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e9e2ad5521"></p>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="45"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+</form>	</div>
+<!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div>
+<!-- #comments -->
+
+				
+	<div class="loop-nav">
+		<div class="prev">Previous: <a href="./../how-to-identify-common-code-smells-using-ndepend/index.html" rel="prev">How to identify common Code Smells using NDepend</a>
+</div>		<div class="next">Next: <a href="./../how-to-improve-your-decision-making-process/index.html" rel="next">How to improve your decision making process</a>
+</div>	</div>
+<!-- .loop-nav -->
+
+
+			
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+</aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a>
+									</li>
+											<li>
+					<a href="./../interviewing-your-architecture/index.html">Interviewing your architecture</a>
+									</li>
+											<li>
+					<a href="./../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a>
+									</li>
+											<li>
+					<a href="./../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a>
+									</li>
+											<li>
+					<a href="./../7-strategies-for-assigning-ids/index.html">7 Strategies for Assigning Ids</a>
+									</li>
+					</ul>
+
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+<a href="./../tag/agile/index.html" class="tag-cloud-link tag-link-29 tag-link-position-1" style="font-size: 12px;">agile</a>
+<a href="./../tag/architecture/index.html" class="tag-cloud-link tag-link-33 tag-link-position-2" style="font-size: 12px;">architecture</a>
+<a href="./../tag/books/index.html" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12px;">books</a>
+<a href="./../tag/code-smells/index.html" class="tag-cloud-link tag-link-65 tag-link-position-4" style="font-size: 12px;">code smells</a>
+<a href="./../tag/ddd/index.html" class="tag-cloud-link tag-link-28 tag-link-position-5" style="font-size: 12px;">ddd</a>
+<a href="./../tag/detection-strategy/index.html" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 12px;">detection strategy</a>
+<a href="./../tag/integration/index.html" class="tag-cloud-link tag-link-9 tag-link-position-7" style="font-size: 12px;">integration</a>
+<a href="./../tag/long-running-process/index.html" class="tag-cloud-link tag-link-93 tag-link-position-8" style="font-size: 12px;">long running process</a>
+<a href="./../tag/messaging/index.html" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 12px;">messaging</a>
+<a href="./../tag/metrics/index.html" class="tag-cloud-link tag-link-60 tag-link-position-10" style="font-size: 12px;">metrics</a>
+<a href="./../tag/microservices/index.html" class="tag-cloud-link tag-link-87 tag-link-position-11" style="font-size: 12px;">microservices</a>
+<a href="./../tag/msmq/index.html" class="tag-cloud-link tag-link-48 tag-link-position-12" style="font-size: 12px;">msmq</a>
+<a href="./../tag/ndepend/index.html" class="tag-cloud-link tag-link-51 tag-link-position-13" style="font-size: 12px;">NDepend</a>
+<a href="./../tag/nservicebus/index.html" class="tag-cloud-link tag-link-8 tag-link-position-14" style="font-size: 12px;">NServiceBus</a>
+<a href="./../tag/quality/index.html" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 12px;">quality</a>
+<a href="./../tag/security/index.html" class="tag-cloud-link tag-link-4 tag-link-position-16" style="font-size: 12px;">security</a>
+<a href="./../tag/soa/index.html" class="tag-cloud-link tag-link-37 tag-link-position-17" style="font-size: 12px;">soa</a>
+<a href="./../tag/specifications/index.html" class="tag-cloud-link tag-link-19 tag-link-position-18" style="font-size: 12px;">specifications</a>
+<a href="./../tag/testing/index.html" class="tag-cloud-link tag-link-12 tag-link-position-19" style="font-size: 12px;">testing</a>
+<a href="./../tag/visualization/index.html" class="tag-cloud-link tag-link-63 tag-link-position-20" style="font-size: 12px;">visualization</a>
+</div>
+</aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="./../2020/03/index.html">March 2020</a></li>
+	<li><a href="./../2020/02/index.html">February 2020</a></li>
+	<li><a href="./../2019/08/index.html">August 2019</a></li>
+	<li><a href="./../2019/07/index.html">July 2019</a></li>
+	<li><a href="./../2019/06/index.html">June 2019</a></li>
+	<li><a href="./../2019/04/index.html">April 2019</a></li>
+	<li><a href="./../2019/03/index.html">March 2019</a></li>
+	<li><a href="./../2019/02/index.html">February 2019</a></li>
+	<li><a href="./../2019/01/index.html">January 2019</a></li>
+	<li><a href="./../2018/10/index.html">October 2018</a></li>
+	<li><a href="./../2018/07/index.html">July 2018</a></li>
+	<li><a href="./../2018/06/index.html">June 2018</a></li>
+	<li><a href="./../2018/02/index.html">February 2018</a></li>
+	<li><a href="./../2017/01/index.html">January 2017</a></li>
+	<li><a href="./../2016/12/index.html">December 2016</a></li>
+	<li><a href="./../2016/11/index.html">November 2016</a></li>
+	<li><a href="./../2016/10/index.html">October 2016</a></li>
+	<li><a href="./../2016/09/index.html">September 2016</a></li>
+	<li><a href="./../2016/08/index.html">August 2016</a></li>
+	<li><a href="./../2016/07/index.html">July 2016</a></li>
+	<li><a href="./../2016/06/index.html">June 2016</a></li>
+	<li><a href="./../2016/05/index.html">May 2016</a></li>
+	<li><a href="./../2016/04/index.html">April 2016</a></li>
+	<li><a href="./../2016/03/index.html">March 2016</a></li>
+			</ul>
+
+			</aside><aside id="rss_links-3" class="widget widget_rss_links"><ul><li><a target="_self" href="./../feed/index.html" title="Subscribe to posts">RSS - Posts</a></li></ul>
+</aside><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post" id="jetpack-eu-cookie-law-form">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+		<a href="./../privacy-policy/index.html" rel="">
+		Cookie Policy	</a>
+</div>
+</aside>
+</div>
+<!-- #secondary -->
+		</div>
+<!-- .wide-container -->
+	</div>
+<!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="wide-container">
+
+			<div class="site-info">
+				<p class="copyright">&copy; Copyright 2024 <a href="./../index.html">Simple Oriented Architecture</a> &middot; Designed by <a href="http://www.theme-junkie.com/">Theme Junkie</a></p>			</div>
+<!-- .site-info -->
+
+			<div class="social-links">
+<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+</div>
+		</div>
+	</footer><!-- #colophon -->
+
+</div>
+<!-- #page -->
+
+	<div style="display:none">
+			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
+		</div>
+		<div class="grofile-hash-map-843f82766a3615b5d234eb6f7e3d4285">
+		</div>
+		</div>
+		
+	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/book-review-your-code-as-a-crime-scene\/":719};</script>
+				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=202445" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.0" id="wpgroho-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js?ver=20180522" id="eu-cookie-law-script-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"719\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
+_stq.push([ "clickTrackerInit", "108420443", "719" ]);
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Book Review: Object-Oriented Metrics in Practice	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Sun, 02 Jul 2017 14:07:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Victor		</title>
+		<link>./../index.html#comment-55</link>
+
+		<dc:creator><![CDATA[Victor]]></dc:creator>
+		<pubDate>Sun, 02 Jul 2017 14:07:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=503#comment-55</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;./../index.html#comment-54&quot;&gt;pschwarz&lt;/a&gt;.
+
+Hi! Unfortunately not - I was lucky enough to find this book in my company&#039;s library.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="./../index.html#comment-54">pschwarz</a>.</p>
+<p>Hi! Unfortunately not &#8211; I was lucky enough to find this book in my company&#8217;s library.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: pschwarz		</title>
+		<link>./../index.html#comment-54</link>
+
+		<dc:creator><![CDATA[pschwarz]]></dc:creator>
+		<pubDate>Sun, 02 Jul 2017 10:31:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=503#comment-54</guid>
+
+					<description><![CDATA[Hello, any tips on where to find the book at a good price?]]></description>
+			<content:encoded><![CDATA[<p>Hello, any tips on where to find the book at a good price?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify common Code Smells using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-45</link>
+
+		<dc:creator><![CDATA[How to identify common Code Smells using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Thu, 12 Jan 2017 05:08:35 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=503#comment-45</guid>
+
+					<description><![CDATA[[&#8230;] This article recaps how to identify some of the most common code smells using NDepend. The basis of this series is Object-Oriented Metrics in Practice, by Michele Lanza and Radu Marinescu. This book describes (among other things) how you can use several targeted metrics to implement detection strategies for identifying design disaharmonies (code smells). You can read a summary of the book and my review in this article. [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] This article recaps how to identify some of the most common code smells using NDepend. The basis of this series is Object-Oriented Metrics in Practice, by Michele Lanza and Radu Marinescu. This book describes (among other things) how you can use several targeted metrics to implement detection strategies for identifying design disaharmonies (code smells). You can read a summary of the book and my review in this article. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-26</link>
+
+		<dc:creator><![CDATA[Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Sun, 11 Dec 2016 11:54:56 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=503#comment-26</guid>
+
+					<description><![CDATA[[&#8230;] The Overview Pyramid can help you get a first impression of the most important measurement of a software system. Object-Oriented Metrics in Practice describes how to interpret the pyramid by using statistical information. It defines statistical thresholds for each of the eight computed metrics. Doing this we can define low, medium and high values. If you want a quick summary of Object-Oriented Metrics in Practice, you can read my review of the book. [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] The Overview Pyramid can help you get a first impression of the most important measurement of a software system. Object-Oriented Metrics in Practice describes how to interpret the pyramid by using statistical information. It defines statistical thresholds for each of the eight computed metrics. Doing this we can define low, medium and high values. If you want a quick summary of Object-Oriented Metrics in Practice, you can read my review of the book. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

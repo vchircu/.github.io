@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Why I started blogging	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Wed, 23 Oct 2019 03:10:35 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Booligoosh		</title>
+		<link>./../index.html#comment-58</link>
+
+		<dc:creator><![CDATA[Booligoosh]]></dc:creator>
+		<pubDate>Sun, 26 Nov 2017 07:51:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=5#comment-58</guid>
+
+					<description><![CDATA[Hey,
+I&#039;m a fellow SP blogging course graduate (my blog is https://codetheweb.blog/ ) and couldn&#039;t agree more!
+Especially the bit about learning, that is something that I didn&#039;t really think about when I started, but by teaching what I know to other people I have been able to fill gaps in my knowledge and the small details of languages.
+
+Anyway, I&#039;ve been going for a few months now and I got kind of annoyed, because there&#039;s not really a centralized place for us tech bloggers to talk, share ideas, organize guest-posts or give feedback to each other.
+
+So, a few days back I created a Slack room for us to all hang out and give advice etc.
+https://programmingbloggers.herokuapp.com/
+
+So far there are 13 of us and we want to make it a fun, active and vibrant community so it would be really cool if you joined and came and hung out with us!]]></description>
+			<content:encoded><![CDATA[<p>Hey,<br />
+I&#8217;m a fellow SP blogging course graduate (my blog is <a href="https://codetheweb.blog/" rel="nofollow ugc">https://codetheweb.blog/</a> ) and couldn&#8217;t agree more!<br />
+Especially the bit about learning, that is something that I didn&#8217;t really think about when I started, but by teaching what I know to other people I have been able to fill gaps in my knowledge and the small details of languages.</p>
+<p>Anyway, I&#8217;ve been going for a few months now and I got kind of annoyed, because there&#8217;s not really a centralized place for us tech bloggers to talk, share ideas, organize guest-posts or give feedback to each other.</p>
+<p>So, a few days back I created a Slack room for us to all hang out and give advice etc.<br />
+<a href="https://programmingbloggers.herokuapp.com/" rel="nofollow ugc">https://programmingbloggers.herokuapp.com/</a></p>
+<p>So far there are 13 of us and we want to make it a fun, active and vibrant community so it would be really cool if you joined and came and hung out with us!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Victor		</title>
+		<link>./../index.html#comment-7</link>
+
+		<dc:creator><![CDATA[Victor]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 10:59:17 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=5#comment-7</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;./../index.html#comment-6&quot;&gt;Pavneet Singh Saund&lt;/a&gt;.
+
+Thanks a lot!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="./../index.html#comment-6">Pavneet Singh Saund</a>.</p>
+<p>Thanks a lot!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pavneet Singh Saund		</title>
+		<link>./../index.html#comment-6</link>
+
+		<dc:creator><![CDATA[Pavneet Singh Saund]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 10:02:56 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=5#comment-6</guid>
+
+					<description><![CDATA[Really good to see you&#039;re getting along with your blogging. I like how you&#039;re focusing on learning and logging discoveries in public through your blog.
+
+I also loved the assignment of coming up with 50 blogpost ideas. It was slow at first, but then things just started to click.
+
+Best of luck to you with your blogventures!]]></description>
+			<content:encoded><![CDATA[<p>Really good to see you&#8217;re getting along with your blogging. I like how you&#8217;re focusing on learning and logging discoveries in public through your blog.</p>
+<p>I also loved the assignment of coming up with 50 blogpost ideas. It was slow at first, but then things just started to click.</p>
+<p>Best of luck to you with your blogventures!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>dead letter channel Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Sat, 13 Jul 2019 09:41:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>Handling Failure in Long Running Processes</title>
+		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
+					<comments>./../../../handling-failure-in-long-running-processes/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
+				<category><![CDATA[Architecture]]></category>
+		<category><![CDATA[NServiceBus]]></category>
+		<category><![CDATA[dead letter channel]]></category>
+		<category><![CDATA[idempotent receiver]]></category>
+		<category><![CDATA[integration]]></category>
+		<category><![CDATA[long running process]]></category>
+		<category><![CDATA[messaging]]></category>
+		<category><![CDATA[microservices]]></category>
+		<category><![CDATA[retries]]></category>
+		<category><![CDATA[Saga]]></category>
+		<category><![CDATA[soa]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=1116</guid>
+
+					<description><![CDATA[<p>In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
+	</channel>
+</rss>

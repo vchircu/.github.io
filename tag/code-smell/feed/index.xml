@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>code smell Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Thu, 05 Jan 2017 06:13:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>How to identify Shotgun Surgery using NDepend</title>
+		<link>./../../../identify-shotgun-surgery-using-ndepend/index.html</link>
+					<comments>./../../../identify-shotgun-surgery-using-ndepend/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Thu, 05 Jan 2017 06:13:24 +0000</pubDate>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[code smell]]></category>
+		<category><![CDATA[detection strategy]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NDepend]]></category>
+		<category><![CDATA[shotgun surgery]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=660</guid>
+
+					<description><![CDATA[<p>In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../identify-shotgun-surgery-using-ndepend/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../identify-shotgun-surgery-using-ndepend/index.html">How to identify Shotgun Surgery using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../identify-shotgun-surgery-using-ndepend/feed/index.html</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">660</post-id>	</item>
+	</channel>
+</rss>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>book Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Fri, 29 Mar 2019 14:54:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>Book Review: No Estimates</title>
+		<link>./../../../book-review-no-estimates/index.html</link>
+					<comments>./../../../book-review-no-estimates/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Fri, 29 Mar 2019 14:54:39 +0000</pubDate>
+				<category><![CDATA[Books]]></category>
+		<category><![CDATA[Process]]></category>
+		<category><![CDATA[agile]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=960</guid>
+
+					<description><![CDATA[<p>As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../book-review-no-estimates/index.html">Book Review: No Estimates</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../book-review-no-estimates/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">960</post-id>	</item>
+		<item>
+		<title>Book Review: Domain-Driven Design</title>
+		<link>./../../../book-review-domain-driven-design/index.html</link>
+					<comments>./../../../book-review-domain-driven-design/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sun, 25 Sep 2016 14:50:13 +0000</pubDate>
+				<category><![CDATA[Books]]></category>
+		<category><![CDATA[agile]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[ddd]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=345</guid>
+
+					<description><![CDATA[<p>When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical <a class="more-link" href="./../../../book-review-domain-driven-design/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../book-review-domain-driven-design/index.html">Book Review: Domain-Driven Design</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../book-review-domain-driven-design/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">345</post-id>	</item>
+	</channel>
+</rss>

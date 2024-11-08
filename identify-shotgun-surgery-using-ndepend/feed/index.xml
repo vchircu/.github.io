@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to identify Shotgun Surgery using NDepend	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Tue, 24 Jan 2017 16:29:38 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Book Review: Your Code as a Crime Scene - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-48</link>
+
+		<dc:creator><![CDATA[Book Review: Your Code as a Crime Scene - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Tue, 24 Jan 2017 16:29:38 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=660#comment-48</guid>
+
+					<description><![CDATA[[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about how to detect the shotgun surgery code smell using NDepend. But that detection strategy relied on the static view of the code. Looking at the [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-41</link>
+
+		<dc:creator><![CDATA[How to identify Refused Parent Bequest using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Sun, 08 Jan 2017 19:06:42 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=660#comment-41</guid>
+
+					<description><![CDATA[[&#8230;] How to identify Shotgun Surgery [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] How to identify Shotgun Surgery [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

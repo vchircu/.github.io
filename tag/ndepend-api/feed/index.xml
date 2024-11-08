@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>NDepend.API Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Fri, 27 Mar 2020 07:39:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>How to identify common Code Smells using the NDepend API</title>
+		<link>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html</link>
+					<comments>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Fri, 27 Mar 2020 07:39:07 +0000</pubDate>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[Quality]]></category>
+		<category><![CDATA[code smells]]></category>
+		<category><![CDATA[detection strategy]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NDepend]]></category>
+		<category><![CDATA[NDepend.API]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=1183</guid>
+
+					<description><![CDATA[<p>Using CQLinq In a previous blog post we saw how we can detect common code smells using NDepend. In that <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../how-to-identify-common-code-smells-using-the-ndepend-api/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1183</post-id>	</item>
+	</channel>
+</rss>

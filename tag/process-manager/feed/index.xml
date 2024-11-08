@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>process manager Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Thu, 01 Nov 2018 15:00:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>Storing the state of a Long Running Process</title>
+		<link>./../../../storing-the-state-of-a-long-running-process/index.html</link>
+					<comments>./../../../storing-the-state-of-a-long-running-process/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Wed, 04 Jul 2018 04:20:18 +0000</pubDate>
+				<category><![CDATA[Architecture]]></category>
+		<category><![CDATA[NServiceBus]]></category>
+		<category><![CDATA[integration]]></category>
+		<category><![CDATA[long running process]]></category>
+		<category><![CDATA[messaging]]></category>
+		<category><![CDATA[microservices]]></category>
+		<category><![CDATA[process manager]]></category>
+		<category><![CDATA[routing slip]]></category>
+		<category><![CDATA[soa]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=907</guid>
+
+					<description><![CDATA[<p>In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../storing-the-state-of-a-long-running-process/index.html">Storing the state of a Long Running Process</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">907</post-id>	</item>
+	</channel>
+</rss>

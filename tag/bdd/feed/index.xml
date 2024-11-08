@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>bdd Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Thu, 09 Mar 2017 19:12:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>How to organize BDD Specifications</title>
+		<link>./../../../how-to-organize-bdd-specifications/index.html</link>
+					<comments>./../../../how-to-organize-bdd-specifications/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Wed, 29 Jun 2016 18:53:20 +0000</pubDate>
+				<category><![CDATA[Quality]]></category>
+		<category><![CDATA[Specification by Example]]></category>
+		<category><![CDATA[bdd]]></category>
+		<category><![CDATA[soa]]></category>
+		<category><![CDATA[specflow]]></category>
+		<category><![CDATA[specifications]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=228</guid>
+
+					<description><![CDATA[<p>I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge <a class="more-link" href="./../../../how-to-organize-bdd-specifications/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../how-to-organize-bdd-specifications/index.html">How to organize BDD Specifications</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../how-to-organize-bdd-specifications/feed/index.html</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">228</post-id>	</item>
+		<item>
+		<title>Software Quality: Building the Right Product</title>
+		<link>./../../../software-quality-building-the-right-product/index.html</link>
+					<comments>./../../../software-quality-building-the-right-product/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sun, 17 Apr 2016 18:21:12 +0000</pubDate>
+				<category><![CDATA[Quality]]></category>
+		<category><![CDATA[agile]]></category>
+		<category><![CDATA[bdd]]></category>
+		<category><![CDATA[bounded context]]></category>
+		<category><![CDATA[ddd]]></category>
+		<category><![CDATA[lean]]></category>
+		<category><![CDATA[perceived integrity]]></category>
+		<category><![CDATA[quality]]></category>
+		<category><![CDATA[ubiquitous language]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=133</guid>
+
+					<description><![CDATA[<p>If you ask a hundred developers to define software quality, you&#8217;ll probably get a hundred different answers. There are a lot of <a class="more-link" href="./../../../software-quality-building-the-right-product/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../software-quality-building-the-right-product/index.html">Software Quality: Building the Right Product</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../software-quality-building-the-right-product/feed/index.html</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">133</post-id>	</item>
+		<item>
+		<title>Book Review:  Fifty Quick Ideas to Improve Your Tests</title>
+		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html</link>
+					<comments>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sun, 10 Apr 2016 15:08:44 +0000</pubDate>
+				<category><![CDATA[Books]]></category>
+		<category><![CDATA[bdd]]></category>
+		<category><![CDATA[books]]></category>
+		<category><![CDATA[quality]]></category>
+		<category><![CDATA[specifications]]></category>
+		<category><![CDATA[testing]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=68</guid>
+
+					<description><![CDATA[<p>Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Book Review:  Fifty Quick Ideas to Improve Your Tests</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">68</post-id>	</item>
+	</channel>
+</rss>

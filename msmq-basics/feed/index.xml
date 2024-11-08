@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: MSMQ Basics: Queues, Messages, Transactions	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Wed, 14 Dec 2016 21:04:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: MSMQ Administration -		</title>
+		<link>./../index.html#comment-22</link>
+
+		<dc:creator><![CDATA[MSMQ Administration -]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2016 09:08:18 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=371#comment-22</guid>
+
+					<description><![CDATA[[&#8230;] the previous post, we went over some of the MSMQ basics. In this post, we&#8217;ll touch on how to monitor, troubleshoot, and back up [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] the previous post, we went over some of the MSMQ basics. In this post, we&#8217;ll touch on how to monitor, troubleshoot, and back up [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: MSMQ Administration - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-21</link>
+
+		<dc:creator><![CDATA[MSMQ Administration - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Wed, 12 Oct 2016 05:59:35 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=371#comment-21</guid>
+
+					<description><![CDATA[[&#8230;] the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

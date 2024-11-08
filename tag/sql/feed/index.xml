@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>SQL Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Wed, 13 Jun 2018 17:39:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>OBJECT_DEFINITION and sp_rename</title>
+		<link>./../../../object_definition-and-sp_rename/index.html</link>
+					<comments>./../../../object_definition-and-sp_rename/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Wed, 13 Jun 2018 17:39:34 +0000</pubDate>
+				<category><![CDATA[Quirks]]></category>
+		<category><![CDATA[quirks]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=848</guid>
+
+					<description><![CDATA[<p>Today I found an interesting quirk of sp_rename: renaming a view, stored procedure, function or trigger will not update the <a class="more-link" href="./../../../object_definition-and-sp_rename/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../object_definition-and-sp_rename/index.html">OBJECT_DEFINITION and sp_rename</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../object_definition-and-sp_rename/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">848</post-id>	</item>
+	</channel>
+</rss>

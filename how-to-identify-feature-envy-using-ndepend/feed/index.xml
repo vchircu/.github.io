@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to identify Feature Envy using NDepend	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Tue, 03 Jan 2017 05:34:16 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-36</link>
+
+		<dc:creator><![CDATA[How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Tue, 03 Jan 2017 05:34:16 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=627#comment-36</guid>
+
+					<description><![CDATA[[&#8230;] How to identify Feature Envy [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] How to identify Feature Envy [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify a Data Class using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-34</link>
+
+		<dc:creator><![CDATA[How to identify a Data Class using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Wed, 28 Dec 2016 08:56:18 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=627#comment-34</guid>
+
+					<description><![CDATA[[&#8230;] How to identify Feature Envy [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] How to identify Feature Envy [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Victor		</title>
+		<link>./../index.html#comment-32</link>
+
+		<dc:creator><![CDATA[Victor]]></dc:creator>
+		<pubDate>Mon, 26 Dec 2016 13:42:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=627#comment-32</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;./../index.html#comment-31&quot;&gt;PatrickSmacchia&lt;/a&gt;.
+
+Thanks!
+
+I did have a (shallow) look at the NDepend Power Tools and they look great. By using the NDepend API, we can remove the code duplication and probably compute all metrics only once. But I would prefer something that&#039;s integrated in Visual Studio (like the queries and rules editor).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="./../index.html#comment-31">PatrickSmacchia</a>.</p>
+<p>Thanks!</p>
+<p>I did have a (shallow) look at the NDepend Power Tools and they look great. By using the NDepend API, we can remove the code duplication and probably compute all metrics only once. But I would prefer something that&#8217;s integrated in Visual Studio (like the queries and rules editor).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: PatrickSmacchia		</title>
+		<link>./../index.html#comment-31</link>
+
+		<dc:creator><![CDATA[PatrickSmacchia]]></dc:creator>
+		<pubDate>Mon, 26 Dec 2016 10:43:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=627#comment-31</guid>
+
+					<description><![CDATA[Awesome work!!
+
+&#062; The only thing that is bothering me is code duplication
+
+Have you look at the OSS NDepend Power Tool relative to code cloning by analyzing who is using what?]]></description>
+			<content:encoded><![CDATA[<p>Awesome work!!</p>
+<p>&gt; The only thing that is bothering me is code duplication</p>
+<p>Have you look at the OSS NDepend Power Tool relative to code cloning by analyzing who is using what?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Security Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Wed, 08 Nov 2017 06:30:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>Book Review: Advanced API Security</title>
+		<link>./../../../book-review-advanced-api-security/index.html</link>
+					<comments>./../../../book-review-advanced-api-security/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
+				<category><![CDATA[Books]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[authorization]]></category>
+		<category><![CDATA[books]]></category>
+		<category><![CDATA[OAuth]]></category>
+		<category><![CDATA[OpenID]]></category>
+		<category><![CDATA[REST]]></category>
+		<category><![CDATA[security]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=120</guid>
+
+					<description><![CDATA[<p>On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../book-review-advanced-api-security/index.html">Book Review: Advanced API Security</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../book-review-advanced-api-security/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>
+		<item>
+		<title>OpenID Connect in a nutshell</title>
+		<link>./../../../openid-connect-in-a-nutshell/index.html</link>
+					<comments>./../../../openid-connect-in-a-nutshell/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sat, 02 Apr 2016 10:15:53 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[OpenID]]></category>
+		<category><![CDATA[REST]]></category>
+		<category><![CDATA[security]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=75</guid>
+
+					<description><![CDATA[<p>In the previous post we talked about delegated authorization with OAuth 2.0. After the success of OAuth 2.0, many companies <a class="more-link" href="./../../../openid-connect-in-a-nutshell/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../openid-connect-in-a-nutshell/index.html">OpenID Connect in a nutshell</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../openid-connect-in-a-nutshell/feed/index.html</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">75</post-id>	</item>
+		<item>
+		<title>OAuth 2.0 in a nutshell</title>
+		<link>./../../../oauth-2-0-in-a-nutshell/index.html</link>
+					<comments>./../../../oauth-2-0-in-a-nutshell/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Sat, 26 Mar 2016 12:38:39 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[authorization]]></category>
+		<category><![CDATA[OAuth]]></category>
+		<category><![CDATA[REST]]></category>
+		<category><![CDATA[security]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=30</guid>
+
+					<description><![CDATA[<p>Let&#8217;s say you&#8217;re developing a SOA application. The user interface is a website that needs to be accessible from the public <a class="more-link" href="./../../../oauth-2-0-in-a-nutshell/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../oauth-2-0-in-a-nutshell/index.html">OAuth 2.0 in a nutshell</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../oauth-2-0-in-a-nutshell/feed/index.html</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">30</post-id>	</item>
+	</channel>
+</rss>

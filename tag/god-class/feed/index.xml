@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>god class Archives - Simple Oriented Architecture</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Fri, 18 Oct 2024 07:36:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
+		<title>How to identify common Code Smells using NDepend</title>
+		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
+					<comments>./../../../how-to-identify-common-code-smells-using-ndepend/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[brain method]]></category>
+		<category><![CDATA[code smells]]></category>
+		<category><![CDATA[data class]]></category>
+		<category><![CDATA[detection strategy]]></category>
+		<category><![CDATA[dispersed coupling]]></category>
+		<category><![CDATA[feature envy]]></category>
+		<category><![CDATA[god class]]></category>
+		<category><![CDATA[intensive coupling]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NDepend]]></category>
+		<category><![CDATA[refused parent bequest]]></category>
+		<category><![CDATA[shotgun surgery]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=687</guid>
+
+					<description><![CDATA[<p>This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">How to identify common Code Smells using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../how-to-identify-common-code-smells-using-ndepend/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>
+		<item>
+		<title>How to identify a God Class using NDepend</title>
+		<link>./../../../how-to-identify-god-class-using-ndepend/index.html</link>
+					<comments>./../../../how-to-identify-god-class-using-ndepend/index.html#comments</comments>
+		
+		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2016 23:07:21 +0000</pubDate>
+				<category><![CDATA[Clean Code]]></category>
+		<category><![CDATA[code smells]]></category>
+		<category><![CDATA[detection strategy]]></category>
+		<category><![CDATA[god class]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NDepend]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=592</guid>
+
+					<description><![CDATA[<p>Most of the static analysis tool in the .Net world report isolated code metrics. While this is useful, I would <a class="more-link" href="./../../../how-to-identify-god-class-using-ndepend/index.html">Continue Reading</a></p>
+<p>The post <a href="./../../../how-to-identify-god-class-using-ndepend/index.html">How to identify a God Class using NDepend</a> appeared first on <a href="./../../../index.html">Simple Oriented Architecture</a>.</p>
+]]></description>
+		
+					<wfw:commentRss>./../../../how-to-identify-god-class-using-ndepend/feed/index.html</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">592</post-id>	</item>
+	</channel>
+</rss>

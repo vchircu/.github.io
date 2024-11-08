@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="./../xmlrpc.php">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Protecting the Design and Architecture of your application using NDepend - Simple Oriented Architecture</title>
+	<meta name="description" content="This blog post describes how to protect the design and architecture of your app against design smells and architectural decay by using NDepend.">
+	<link rel="canonical" href="./index.html">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Protecting the Design and Architecture of your application using NDepend - Simple Oriented Architecture">
+	<meta property="og:description" content="This blog post describes how to protect the design and architecture of your app against design smells and architectural decay by using NDepend.">
+	<meta property="og:url" content="./index.html">
+	<meta property="og:site_name" content="Simple Oriented Architecture">
+	<meta property="article:published_time" content="2019-02-26T04:21:20+00:00">
+	<meta property="article:modified_time" content="2019-02-28T17:30:03+00:00">
+	<meta property="og:image" content="./../wp-content/uploads/2019/02/DDD-1.png">
+	<meta name="author" content="Victor Chircu">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/victorchircu/">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Victor Chircu">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="15 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#article","isPartOf":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/"},"author":{"name":"Victor Chircu","@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"headline":"Protecting the Design and Architecture of your application using NDepend","datePublished":"2019-02-26T04:21:20+00:00","dateModified":"2019-02-28T17:30:03+00:00","mainEntityOfPage":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/"},"wordCount":2754,"commentCount":0,"publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"image":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2019/02/DDD-1.png","keywords":["architecture","clean architecture","code smells","dependnecy","design","design disharmonies","detection strategy","fitness function","layered architecture","NDepend","quality","soa","versioning"],"articleSection":["Architecture","Quality"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":[".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#respond"]}]},{"@type":"WebPage","@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/","url":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/","name":"Protecting the Design and Architecture of your application using NDepend - Simple Oriented Architecture","isPartOf":{"@id":".//#website"},"primaryImageOfPage":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#primaryimage"},"image":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2019/02/DDD-1.png","datePublished":"2019-02-26T04:21:20+00:00","dateModified":"2019-02-28T17:30:03+00:00","description":"This blog post describes how to protect the design and architecture of your app against design smells and architectural decay by using NDepend.","breadcrumb":{"@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":[".//protecting-the-design-and-architecture-of-your-application-using-ndepend/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#primaryimage","url":"https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/DDD-1.png?fit=746%2C434&ssl=1","contentUrl":"https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/DDD-1.png?fit=746%2C434&ssl=1","width":746,"height":434},{"@type":"BreadcrumbList","@id":".//protecting-the-design-and-architecture-of-your-application-using-ndepend/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":".//"},{"@type":"ListItem","position":2,"name":"Protecting the Design and Architecture of your application using NDepend"}]},{"@type":"WebSite","@id":".//#website","url":".//","name":"Simple Oriented Architecture","description":"","publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":".//?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e","name":"Victor Chircu","image":{"@type":"ImageObject","inLanguage":"en-US","@id":".//#/schema/person/image/","url":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","caption":"Victor Chircu"},"logo":{"@id":".//#/schema/person/image/"},"description":"I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.","sameAs":[".//","https://www.linkedin.com/in/victor-chircu-1519a331","https://x.com/https://twitter.com/victorchircu/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Protecting the Design and Architecture of your application using NDepend Comments Feed" href="./feed/index.html">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="jetpack_related-posts-css" href="./../wp-content/plugins/jetpack/modules/related-posts/related-posts.css?ver=20240116" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./../wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./../wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="eu-cookie-law-style-css" href="./../wp-content/plugins/jetpack/modules/widgets/eu-cookie-law/style.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20240116" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript" src=".//wp-content/themes/bulan/assets/js/html5shiv.min.js" id="standard-html5-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/posts/974/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="shortlink" href="https://wp.me/p7kV6P-fI">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fprotecting-the-design-and-architecture-of-your-application-using-ndepend%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fprotecting-the-design-and-architecture-of-your-application-using-ndepend%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="post-template-default single single-post postid-974 single-format-standard no-custom-header no-featured-image layout-2c-l" itemscope itemtype="http://schema.org/Blog">
+
+<div id="page" class="site">
+
+	<div class="search-area">
+		<div class="wide-container">
+			<form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+		</div>
+	</div>
+
+	
+	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="site-branding">
+			<div class="wide-container">
+				<div id="logo">
+<h1 class="site-title" itemprop="headline"><a href="./../index.html" itemprop="url" rel="home"><span itemprop="headline">Simple Oriented Architecture</span></a></h1>
+</div>
+			</div>
+		</div>
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="wide-container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+				<article id="post-974" class="post-974 post type-post status-publish format-standard hentry category-architecture category-quality tag-architecture tag-clean-architecture tag-code-smells tag-dependnecy tag-design tag-design-disharmonies tag-detection-strategy tag-fitness-function tag-layered-architecture tag-ndepend tag-quality tag-soa tag-versioning no-post-thumbnail no-sticky entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	<header class="entry-header">
+
+								<span class="cat-links" itemprop="articleSection">
+				<a href="./../category/architecture/index.html" rel="category tag">Architecture</a>, <a href="./../category/quality/index.html" rel="category tag">Quality</a>			</span>
+			<i class="fa fa-circle"></i>
+					
+					<time class="published" datetime="2019-02-26T04:21:20+00:00" itemprop="datePublished">February 26, 2019</time>
+		
+		<h1 class="entry-title" itemprop="headline">Protecting the Design and Architecture of your application using NDepend</h1>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content" itemprop="articleBody">
+
+		
+<p>We have all used code analysis tools on our projects and these are useful for identifying some code smells. The issue is that most of them treat metrics in isolation and isolated metrics can&#8217;t tell you if the design is good or bad. You need more context.</p>
+
+
+
+<p>In this blog post we&#8217;ll see how to go beyond code smells. We&#8217;ll see how to identify design smells and inappropriate coupling in the technical architecture. We&#8217;ll define detection strategies for common design smells (like God Class and Feature Envy) and implement them using NDepend. Last but not least, we&#8217;ll see how we can define fitness functions that detect dependency violations in our application&#8217;s architecture. </p>
+
+
+
+<span id="more-974"></span>
+
+
+
+<h2 class="wp-block-heading">Brief overview of the most common tools</h2>
+
+
+
+<p>First, let&#8217;s briefly have a look at the most common code quality analyzers in the .Net world and the problems they are supposed to solve.</p>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="StyleCop (opens in a new tab)" href="https://github.com/DotNetAnalyzers/StyleCopAnalyzers" target="_blank">StyleCop</a>&#8216;s purpose is to enforce a set of style and consistency rules. It looks at the C# source code. Here is a StyleCop rule: <a href="https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md">Using Directives Must Be Placed Correctly</a></p>
+
+
+
+<p><a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-managed-code-overview">Visual Studio Code Analysis</a> (the old <a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/fxcop-analyzers-faq">FxCop</a>) helps you adhere to<br> the <a rel="noreferrer noopener" aria-label=".NET Framework Design Guidelines (opens in a new tab)" href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/" target="_blank">.NET Framework Design Guidelines</a>. It looks at the .Net assemblies. <a rel="noreferrer noopener" aria-label="Roslyn Analyzers (opens in a new tab)" href="https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview" target="_blank">Roslyn Analyzers</a> are gradually replacing FxCop rules. For example, this is very useful a rule enforced by FxCop: <a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2200-rethrow-to-preserve-stack-details">Rethrow to preserve stack details</a>.</p>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="ReSharper  (opens in a new tab)" href="https://www.jetbrains.com/resharper/" target="_blank">ReSharper </a>is a hell of a tool, but its main purpose is to help developers refactor and navigate code. Yes, it does highlight some code quality issues, but that is just the cherry on top of a great tool. <a href="https://twitter.com/daedtech" target="_blank" rel="noreferrer noopener" aria-label="Erik Dietrich (opens in a new tab)">Erik Dietrich</a> has blogged about the <a rel="noreferrer noopener" aria-label="NDepend vs. ReSharper comparison (opens in a new tab)" href="https://blog.ndepend.com/ndepend-vs-resharper/" target="_blank">NDepend vs. ReSharper comparison</a>.</p>
+
+
+
+<p><a href="https://www.sonarqube.org/" target="_blank" rel="noreferrer noopener" aria-label="SonarQube  (opens in a new tab)">SonarQube </a>is a platform designed for continuous inspection. So this is more in line with what I&#8217;m looking after. But, the problem is that SonarQube is more of a pluggable platform. It doesn&#8217;t come with many rules out of the box. You actually plugin other code analyzers (like StyleCop, FxCop, Roslyn Analyzers, NDepend) to gather the metrics. </p>
+
+
+
+<h2 class="wp-block-heading">Issues with most code quality analyzers</h2>
+
+
+
+<p>These are all good tools and they are good at what they do. But they can&#8217;t really help protect the design and architecture.</p>
+
+
+
+<h3 class="wp-block-heading">Isolated Metrics</h3>
+
+
+
+<p>All these tools treat metrics in isolation. This means that they might tell you that your class is too complex and it&#8217;s not cohesive. But it doesn&#8217;t put 2 and 2 together and tell you: hey, this is a God Class. This means that the developer looking at the data needs to make this decision. But it doesn&#8217;t have to be that way. You can automate this detection.</p>
+
+
+
+<p>Another downside is that, since they treat metrics in isolation, it doesn&#8217;t give you a hint of where to start refactoring and how. It&#8217;s like the tool is telling you that you have a sore throat, a runny nose and a cough, instead of telling you you might have a cold. It can make you feel overwhelmed. I remember running Sonar on a legacy code base and looking at the dashboard, not knowing where to start. It felt like searching for a needle in a haystack.</p>
+
+
+
+<h3 class="wp-block-heading">Focused at the Code level</h3>
+
+
+
+<p>The second disadvantage (and it&#8217;s tightly related to the first one) is that these tools focus on the code. But, I would like more &#8211; I would like some hints that my design is wrong. If the symptoms are grouped into well known design smells you&#8217;ll have less information to look at and a strategy on how to deal with them.</p>
+
+
+
+<h3 class="wp-block-heading">Hard to extend</h3>
+
+
+
+<p>And last but not least, these tools are not that easy to extend. I&#8217;ve implemented (many years ago) some StyleCop and FxCop rules. It wasn&#8217;t rocket science, but it did need a fair amount of code. I also used the FxCop and StyleCop plugins for SonarQube. But, as an example, SonarQube didn&#8217;t integrate all of FxCop&#8217;s extensiblity points (like adding a <a rel="noreferrer noopener" aria-label=" Custom Dictionary (opens in a new tab)" href="https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-customize-the-code-analysis-dictionary?view=vs-2017" target="_blank">Custom Dictionary</a>) . This meant we needed to mark a lot of issues as false positives.</p>
+
+
+
+<h2 class="wp-block-heading">Enter NDepend</h2>
+
+
+
+<p>So what&#8217;s the alternative? We can use a tool that is specifically designed for the job. This is NDepend&#8217;s description on the <a rel="noreferrer noopener" aria-label="NDpened site (opens in a new tab)" href="https://www.ndepend.com/" target="_blank">NDepend site</a>:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>NDepend is a &#8220;Swiss Army Knife&#8221; for .NET and .NET Core project teams. With its wide range of features, it gives deep insight into code bases and empowers developers, architects and executives to make intelligent decisions on projects.</p>
+<cite>NDepend Web Site</cite>
+</blockquote>
+
+
+
+<p>So, I like what I&#8217;m seeing. I want insight, not just information. And I want to know what to do with that information &#8211; so I want to feel empowered. </p>
+
+
+
+<p>I remember seeing another good description of NDepend in an online presentation (can&#8217;t remember the title or the presenter, sorry!). The presenter defined NDepend as <strong><em>The Rolls Royce of static code analyzers</em></strong>. And I think it&#8217;s that, and then some. It&#8217;s a Rolls Royce that can transform into a plane or a submarine, depending on your needs. It just gives you so much power. I&#8217;ve blogged before about how NDepend can help you <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="./../visualize-dependencies-with-ndepend/index.html" target="_blank">Visualize Dependencies</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="./../query-your-code-base-using-cqlinq/index.html" target="_blank">Query your Code Base</a>, and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="./../visualizing-code-metrics-with-ndepend/index.html" target="_blank">Visualize Code Metrics</a>. But let&#8217;s see specifically how it can help you protect the design and architecture of your system.</p>
+
+
+
+<h2 class="wp-block-heading">A word on Architecture and Design</h2>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="Grady Booch (opens in a new tab)" href="https://twitter.com/Grady_Booch" target="_blank">Grady Booch</a> makes the following <a href="https://en.wikiquote.org/wiki/Grady_Booch" target="_blank" rel="noreferrer noopener" aria-label="distinction between Architecture and Design in his &quot;On Design&quot; paper (opens in a new tab)">distinction between Architecture and Design in his &#8220;On Design&#8221; paper</a>:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>All architecture is design but not all design is architecture. Architecture represents the significant design decisions that shape a system, where significant is measured by cost of change. </p>
+<cite>Grady Booch</cite>
+</blockquote>
+
+
+
+<p>There isn&#8217;t a hard line between design and architecture and this line might be moving, as some things get easier to change over time. I consider the architectural style (Clean Architecture, Layered Monolith, SOA, etc.) of an application an architectural decision.</p>
+
+
+
+<h2 class="wp-block-heading">Protecting the Design</h2>
+
+
+
+<p>So how can we protect the design? First, we need to know what is good design and what is bad design. After that, we need to automate as much as possible. To do this, we need to formally define what&#8217;s good and what&#8217;s bad. How? In terms of correlated metrics, of course. Let&#8217;s see some examples.</p>
+
+
+
+<h3 class="wp-block-heading">Good Design</h3>
+
+
+
+<p>Good design adheres to design principles. SOLID, DRY, KISS and <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank" rel="noreferrer noopener" aria-label="Uncle Bob's component coupling principles (opens in a new tab)">Uncle Bob&#8217;s component coupling principles</a> are a few examples. But, to automatically detect code that does not adhere to these principles, we need to be able to express them through metrics. This can be hard to do for some of them. Let&#8217;s take the easy route and look at some principles that are already defined using metrics.</p>
+
+
+
+<h4 class="wp-block-heading">Component Coupling Principles</h4>
+
+
+
+<p>In <a rel="noreferrer noopener" aria-label="Clean Architecture (opens in a new tab)" href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164" target="_blank">Clean Architecture</a>, <a rel="noreferrer noopener" aria-label="Uncle Bob (opens in a new tab)" href="https://twitter.com/unclebobmartin" target="_blank">Uncle Bob</a> defines three principles related to the coupling of components in a system. These are the <strong>Acyclic Dependencies Principle</strong>, the<strong> Stable Dependencies Principle</strong> and the <strong>Stable Abstractions Principle</strong>. I&#8217;ve already documented how to implement these with NDepend in a <a rel="noreferrer noopener" aria-label="another blog post (opens in a new tab)" href="./../query-your-code-base-using-cqlinq/index.html" target="_blank">previous blog post</a>. </p>
+
+
+
+<h3 class="wp-block-heading">Bad Design</h3>
+
+
+
+<h4 class="wp-block-heading">Design Smells</h4>
+
+
+
+<p>Bad design smells! There are many books written about how to identify design smells. I read three:</p>
+
+
+
+<ul class="wp-block-list">
+<li>
+<a rel="noreferrer noopener" aria-label="Refactoring  (opens in a new tab)" href="https://martinfowler.com/books/refactoring.html" target="_blank">Refactoring </a>by <a href="https://twitter.com/martinfowler">Martin Fowler</a> briefly describes common code smells and how to refactor to get rid of them. </li>
+<li>
+<a rel="noreferrer noopener" aria-label="Refactoring for Software Design Smells: Managing Technical Debt (opens in a new tab)" href="https://www.amazon.com/Refactoring-Software-Design-Smells-Technical/dp/0128013974" target="_blank">Refactoring for Software Design Smells: Managing Technical Debt</a> by <a rel="noreferrer noopener" aria-label="Girish Suryanarayana (opens in a new tab)" href="https://twitter.com/girish_sur" target="_blank">Girish Suryanarayana</a>, <a rel="noreferrer noopener" aria-label="Tushar Sharma (opens in a new tab)" href="https://twitter.com/Sharma__Tushar" target="_blank">Tushar Sharma</a>, and <a rel="noreferrer noopener" aria-label="Ganesh Samarthyam (opens in a new tab)" href="https://twitter.com/GSamarthyam" target="_blank">Ganesh Samarthyam</a> goes deeper into the subject. It contains a catalog of 25 structural design smells and refactoring options, with clear examples. </li>
+<li>
+<a rel="noreferrer noopener" aria-label="Object-Oriented Metrics in Practice (opens in a new tab)" href="./../book-review-object-oriented-metrics-in-practice/index.html" target="_blank">Object-Oriented Metrics in Practice</a> by <a rel="noreferrer noopener" aria-label="Michele Lanza (opens in a new tab)" href="https://twitter.com/lanzamichele" target="_blank">Michele Lanza</a> and <a rel="noreferrer noopener" aria-label="Radu Marinescu (opens in a new tab)" href="http://staff.cs.upt.ro/~radum/" target="_blank">Radu Marinescu.</a>We&#8217;ll focus on this book in this blog post for a simple reason: while the other two describe how to identify code smells, they do it informally. This means that a person needs to analyze and interpret the data. In <strong>Object-Oriented Metrics in Practice</strong>, the authors present an automated way of identifying suspects of common design smells by using <strong>Detection Strategies</strong>. </li>
+</ul>
+
+
+
+<p>A&nbsp;<strong>Detection Strategy</strong> is a <strong>composed </strong>logical condition, based on a set of metrics for <strong>filtering</strong>. Basically, a detection strategy uses metrics to identify design disarhomonies. Most of the design smells are defined only informally, without the use of metrics. This is why the authors propose this process for defining a detection strategy: </p>
+
+
+
+<ul class="wp-block-list">
+<li>
+<strong>Select&nbsp;informal design rules</strong> that describe the design flaw</li>
+<li>
+<strong>Identify Symptoms</strong> &#8211; break down the informal design rule into symptoms that can be captured by a single metric</li>
+<li>
+<strong>Select Metrics</strong> that can quantify each symptom</li>
+<li>
+<strong>Select Filters</strong> &#8211; for each metric, define a filter for capturing the&nbsp;symptom</li>
+<li><strong>Compose the Detection Strategy</strong></li>
+</ul>
+
+
+
+<p>You can see <a rel="noreferrer noopener" aria-label="detection strategies from common design smells implemented with NDepend here (opens in a new tab)" href="./../how-to-identify-common-code-smells-using-ndepend/index.html" target="_blank">detection strategies from common design smells implemented with NDepend here</a>. Have a look if you ever wondered how you could automatically identify a God Class in your code.</p>
+
+
+
+<p>But good design is, to some extent, subjective. Different teams might value different design principles. The beauty of tools like NDepend is that if you can measure it, you can implement it. So it&#8217;s up to you.</p>
+
+
+
+<h4 class="wp-block-heading">Antipatterns</h4>
+
+
+
+<p>Antipatterns are practices that were once a good idea, but are now considered harmful. An example is the <a rel="noreferrer noopener" aria-label="Service Locator antipattern (opens in a new tab)" href="https://en.wikipedia.org/wiki/Service_locator_pattern" target="_blank">Service Locator antipattern</a>. Good use of Dependency Injection means that only one location in the application knows about DI &#8211; <a rel="noreferrer noopener" aria-label="the composition root (opens in a new tab)" href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/" target="_blank">the composition root</a>. So let&#8217;s see how we can detect wrong usages of an IoC container.</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: csharp; title: ; notranslate" title="">
+// &lt;Name&gt;Autofac references outside of Composition Root&lt;/Name&gt;
+warnif count &gt; 0 
+
+let autofacModule = ThirdParty.Types.SingleOrDefault(t =&gt; t.FullName == &quot;Autofac.Module&quot;)
+let autofacAssemblies = ThirdParty.Assemblies.Where(a =&gt; a.NameLike(&quot;Autofac.*&quot;))
+from autofacAssembly in autofacAssemblies 
+from type in JustMyCode.Types
+where 
+    type.IsUsingAssembly(autofacAssembly) &amp;&amp;  
+    (autofacModule == null || !type.DeriveFrom(autofacModule)) &amp;&amp;
+    type.Name != &quot;Program&quot;
+
+select new { type, autofacAssembly }
+</pre></div>
+
+
+<p>In this case we&#8217;re using <a rel="noreferrer noopener" aria-label="Autofac  (opens in a new tab)" href="https://autofac.org/" target="_blank">Autofac </a>and the composition root is the <strong>Program </strong>class. We are also excluding classes that derive from <a href="https://autofaccn.readthedocs.io/en/latest/configuration/modules.html" target="_blank" rel="noreferrer noopener" aria-label="AutoFac Module (opens in a new tab)">AutoFac Module</a>, since this is a common way of grouping dependencies. Of course, the composition root might be different, depending on the type of application. You can extend the rule above to match the composition root for the type of application you are implementing and the IoC container you are using. </p>
+
+
+
+<h2 class="wp-block-heading">Protecting the Architecture</h2>
+
+
+
+<p>Why would we need to do this? Here is a tweet that explains it quite nicely:</p>
+
+
+
+<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+<p lang="en" dir="ltr">Most architecture rules that are not enforced in an automated way will be broken sooner or later. That is the main reason why so many system end up as a big ball of mud. <a href="https://twitter.com/hashtag/SoftwareArchitecture?src=hash&amp;ref_src=twsrc%5Etfw">#SoftwareArchitecture</a></p>&mdash; AvZ hello2morrow 🇺🇦 (@AZ_hello2morrow) <a href="https://twitter.com/AZ_hello2morrow/status/1097992821158674438?ref_src=twsrc%5Etfw">February 19, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="Building Evolutionary Architectures (opens in a new tab)" href="https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant/dp/1491986360" target="_blank">Building Evolutionary Architectures</a> introduces the concept of a <a href="https://www.infoq.com/news/2019/02/fitness-functions-architecture" target="_blank" rel="noreferrer noopener" aria-label="fitness function (opens in a new tab)">fitness function</a>: </p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>An architectural fitness function provides an objective integrity assessment of some architectural characteristic(s). </p>
+<cite>Building Evolutionary Architectures</cite>
+</blockquote>
+
+
+
+<p>So fitness functions are ideal candidates for protecting the architecture of a software system. They provide the right balance between top-down rules and bottom-up emergence. Almost all architectural styles and patterns have some strict dependencies rules. This makes NDepend a good candidate for implementing them. Let&#8217;s see some examples:</p>
+
+
+
+<h3 class="wp-block-heading">Clean Architecture</h3>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="628" height="365" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/DDD-1.png?resize=628%2C365&#038;ssl=1" alt="" class="wp-image-995"></figure>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="Uncle Bob (opens in a new tab)" href="https://twitter.com/unclebobmartin" target="_blank">Uncle Bob</a> describes this architectural style in <a rel="noreferrer noopener" aria-label="this blog post (opens in a new tab)" href="http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank">this blog post</a> and in <a rel="noreferrer noopener" aria-label="his book (opens in a new tab)" href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164" target="_blank">his book</a>. A clean architecture is defined by the<strong> Dependency Rule</strong>: software dependencies can only point inward. Let&#8217;s implement this rule for an architecture that emphasizes the Domain Model. Each layer (domain, application, infrastructure) is represented by a namespace. For example, in the <strong>MyShop.Finance</strong> application, the domain code will be in the <strong>MyShop.Finance.Domain</strong> namespace.</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: csharp; title: ; notranslate" title="">
+// &lt;Name&gt;Clean Architecture - Domain should not reference Application&lt;/Name&gt;
+warnif count &gt; 0 
+
+from domainComponent in Namespaces
+where domainComponent.Name.Contains(&quot;.Domain&quot;)
+from domainType in domainComponent.ChildTypes
+from applicationComponent in Namespaces
+where applicationComponent.Name.Contains(&quot;.Application&quot;)
+from applicatinType in applicationComponent.ChildTypes
+where domainType.IsUsing(applicatinType) 
+
+select new { 
+   domainType,
+   applicatinType,
+   Severity = Severity.Blocker
+}
+</pre></div>
+
+
+<p>The rule above will identify all domain types that reference application types. You can easily create similar rules for matching domain types that reference infrastructure types and application types that reference infrastructure types. </p>
+
+
+
+<h3 class="wp-block-heading">Layered Architecture</h3>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" decoding="async" width="464" height="444" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/Layers1.png?resize=464%2C444&#038;ssl=1" alt="" class="wp-image-996"></figure>
+
+
+
+<p>In a layered architecture, a layer can only talk with layers below it. In strict layered architecture, a layer can only talk with the layer below it. The rules are very similar to the one above. The only difference is the naming convention.</p>
+
+
+
+<h3 class="wp-block-heading">Service-Oriented Architecture</h3>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="1882" height="1442" src="https://i1.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/SOA.png?fit=628%2C399&amp;ssl=1" alt="" class="wp-image-997" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/SOA.png?w=1882&amp;ssl=1 1882w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/SOA.png?resize=768%2C588&amp;ssl=1 768w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/SOA.png?w=1256&amp;ssl=1 1256w" sizes="(max-width: 628px) 100vw, 628px"></figure>
+
+
+
+<p>In a service-oriented architecture, services should be decoupled and only communicate through messages. The messages assembly is the contract of a service. This is what Martin Fowler calls a <a rel="noreferrer noopener" aria-label="Published Interface (opens in a new tab)" href="https://martinfowler.com/bliki/PublishedInterface.html" target="_blank">Published Interface</a>.</p>
+
+
+
+<p>So let&#8217;s see how would we implement this rule. We&#8217;ll assume that all assemblies follow the <strong>[CompanyName].[ServiceName].[Component]</strong> naming convention. We&#8217;ll also allow reusable code in library projects that follow the <strong>[CompanyName].Library.[Component]</strong> naming convention. </p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: csharp; title: ; notranslate" title="">
+// &lt;Name&gt;SOA - Service References&lt;/Name&gt;
+warnif count &gt; 0 
+
+let serviceForAssembly = new Func&lt;IAssembly, string&gt;(a =&gt; a.Name.Split(&#039;.&#039;)&#x5B;1])
+let serviceForType = new Func&lt;IType, string&gt;(t =&gt; serviceForAssembly(t.ParentAssembly))
+let isPartOfServiceContract = new Func&lt;IType, bool&gt;(t =&gt; t.ParentAssembly.Name.EndsWith(&quot;Messages&quot;))
+let isLibrary = new Func&lt;IType, bool&gt;(t =&gt; t.ParentAssembly.Name.Contains(&quot;MyShop.Library&quot;))
+
+from type in JustMyCode.Types
+let service = serviceForType(type)
+from usedType in type.TypesUsed.ExceptThirdParty()
+let serviceForUsedType = serviceForType(usedType)
+where service != serviceForUsedType
+ &amp;&amp; (!isPartOfServiceContract(usedType) &amp;&amp; !isLibrary(usedType))
+
+select new {
+ type, service, usedType, serviceForUsedType
+}
+</pre></div>
+
+
+<h3 class="wp-block-heading">Anti-corruption Layer</h3>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" loading="lazy" decoding="async" width="628" height="388" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/02/ACL1.png?resize=628%2C388&#038;ssl=1" alt="" class="wp-image-998"></figure>
+
+
+
+<p>An <a rel="noreferrer noopener" aria-label="anti-corruption layer (opens in a new tab)" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer" target="_blank">anti-corruption layer</a> (ACL) is a concept from Domain-Driven Design. Its purpose is to protect a bounded context from the influences of other contexts. Let&#8217;s say that you need to integrate with a shipping provider (FanCourier) in your application, but the model that you use doesn&#8217;t map to the model used by the shipping provider. To protect your domain, you put an ACL in front of it. All communication with FanCourier should go through the ACL. From this definition you can extract a dependency rule: only the ACL should depend on FanCourier.</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; highlight: [4,8]; title: ; notranslate" title="">
+// &lt;Name&gt;ACL - Fan Courier&lt;/Name&gt;
+warnif count &gt; 0 
+
+let thirdPartyAssembly = Assemblies.WithName(&quot;FanCourier&quot;).Single()
+
+from thirdPartyType in thirdPartyAssembly.ChildTypes
+from typeUsingThirdPartyType in thirdPartyType.TypesUsingMe
+where typeUsingThirdPartyType.ParentAssembly.Name != &quot;MyShop.ItOps.FanCourier.Gateway&quot;
+
+select new { 
+   typeUsingThirdPartyType,
+   thirdPartyType,
+   Severity = Severity.Blocker
+}
+</pre></div>
+
+
+<p>At line 4 we identify the third party component and at line 8 we match the ACL &#8211; MyShop.ItOps.FanCourier.Gateway.</p>
+
+
+
+<h3 class="wp-block-heading">Versioning</h3>
+
+
+
+<p>Versioning is another important architectural decision. Many teams decide that changes that are not backwards compatible should cause a change in the major version number. NDepend already implements rules for detecting <a rel="noreferrer noopener" aria-label="API breaking changes (opens in a new tab)" href="https://www.ndepend.com/default-rules/NDepend-Rules-Explorer.html?ruleid=ND1501#!" target="_blank">API breaking changes</a>. We can easily customize them to only match changes when the major version was not increased. For example:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: csharp; highlight: [5]; title: ; notranslate" title="">
+// &lt;Name&gt;Semver API Breaking Changes: Methods&lt;/Name&gt;
+
+warnif count &gt; 0 from m in codeBase.OlderVersion().Application.Methods
+where m.IsPubliclyVisible &amp;&amp;
+(m.ParentAssembly.Version.Major == m.ParentAssembly.NewerVersion().Version.Major) &amp;&amp;
+// The rest of the rule here
+</pre></div>
+
+
+<p>At line 5 we check that the major version has changed between two versions of the code base.</p>
+
+
+
+<h2 class="wp-block-heading">Things to consider</h2>
+
+
+
+<p>Although NDepend makes it easier to protect the design and architecture of your system, there are things you need to watch out for. </p>
+
+
+
+<h3 class="wp-block-heading">Exceptions, exceptions, exceptions </h3>
+
+
+
+<p>If you implement these rules, you have a good chance of needing to add exceptions. One example is the rule that matches Data Classes. If you use DTOs, you&#8217;ll have lots of false positives. So you&#8217;ll need to filter out these types, which will make the queries more complicated.</p>
+
+
+
+<h3 class="wp-block-heading">Updating the fitness functions</h3>
+
+
+
+<p>If you have fitness functions, you should have a process for updating them. You don&#8217;t want everyone updating the rules and adding exceptions without proper thought. But, you also don&#8217;t want these rules to become a bottleneck. The deployment pipeline should fail the build if it doesn&#8217;t comply to the rules. But, if this is a proper exception, it shouldn&#8217;t take days to update the rule. The process needs to balance the top-down enforcement with bottom-up emergence.</p>
+
+
+
+<h3 class="wp-block-heading">Conventions make your life easier </h3>
+
+
+
+<p>Following strict conventions makes implementing these rules much easier. You could use a naming convention, like in the examples in this blog post. Or, you could add marker attributes to code elements. That&#8217;s all well and good on greenfield projects, but it&#8217;s trickier on brownfield products. On this type of projects, you first need to add conventions and change your code to comply to them.</p>
+
+
+
+<h3 class="wp-block-heading">Managing edited rules </h3>
+
+
+
+<p>As we saw in the versioning example, we can edit the default NDepend rules, which is great. But, the rules are updated, so with new releases you&#8217;ll need to check if there were any updates and update your own rules. So you&#8217;d be basically branching the default ruleset (let&#8217;s call this main) and on every new NDepend release you&#8217;d need to merge the changes from main to your own branch.</p>
+
+
+
+<h3 class="wp-block-heading">Duplication </h3>
+
+
+
+<p>If you implement the rules in CQLinq, like I did in this post, there&#8217;s a fair chance you&#8217;ll duplicate some queries. One example is the definition for the new metrics used for detecting design smells. You could implement these with the <a rel="noreferrer noopener" aria-label="NDepend API (opens in a new tab)" href="https://www.ndepend.com/features/api-and-tools#API" target="_blank">NDepend API.</a> You&#8217;ll lose some of the interactivness of CQLinq, but you&#8217;ll remove duplication and your queries will be faster, since you can compute the metrics only once. Also, there&#8217;s already a <a rel="noreferrer noopener" aria-label="User Voice item (opens in a new tab)" href="https://ndepend.uservoice.com/forums/226344-ndepend-user-voice/suggestions/9752604-let-queries-pull-data-from-other-queries" target="_blank">User Voice item</a> for this feature, so it&#8217;s likely we&#8217;ll get this in a future version of NDepend.</p>
+
+
+
+<h2 class="wp-block-heading">Running the rules in your Deployment Pipeline</h2>
+
+
+
+<p>We&#8217;ve defined a set of rules that can run automatically. The next step is to integrate them into your deployment pipeline. You can do this in two ways. The first and most obvious is to <a rel="noreferrer noopener" aria-label="run NDpend as part of your build step (opens in a new tab)" href="https://www.ndepend.com/features/integration-report#BuildProcess" target="_blank">run NDpend as part of your build step</a>. There are plugins for some of the CI/CD tools out there, like Azure DevOps and Team City. The second option is to implement the checks using NDepend API as a set of unit tests. </p>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p>In this post we&#8217;ve seen how you can leverage NDepend to protect the design and architecture of your system. So, what should you do now? First, discuss with your team and see what are your system&#8217;s most important structural characteristics. Then try to implement fitness functions for them. I&#8217;ve shown how to do this with NDepend. You can use <a rel="noreferrer noopener" aria-label="JArchitect  (opens in a new tab)" href="https://www.jarchitect.com/" target="_blank">JArchitect </a>if you&#8217;re working with Java. There are other alternatives, although they might be less extensible. For example, I know two other options for enforcing simple dependency rules in .Net. <a href="https://www.ben-morris.com/writing-archunit-style-tests-for-net-and-c-for-self-testing-architectures/">NetArchTest </a>allows writing unit tests that enforce architecture dependency rules. <a rel="noreferrer noopener" aria-label="Visual Studio Enterprise also has a Dependency Validation check (opens in a new tab)" href="https://docs.microsoft.com/en-us/visualstudio/modeling/validate-code-with-layer-diagrams?view=vs-2017" target="_blank">Visual Studio Enterprise also has a Dependency Validation check</a>.</p>
+
+
+
+<p>Good luck and may your system be protected against architectural decay! </p>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>		
+	</div>
+
+	<footer class="entry-footer">
+
+					<span class="tag-links" itemprop="keywords">
+									<a href="./../tag/architecture/index.html"><span>#</span>architecture</a>
+									<a href="./../tag/clean-architecture/index.html"><span>#</span>clean architecture</a>
+									<a href="./../tag/code-smells/index.html"><span>#</span>code smells</a>
+									<a href="./../tag/dependnecy/index.html"><span>#</span>dependnecy</a>
+									<a href="./../tag/design/index.html"><span>#</span>design</a>
+									<a href="./../tag/design-disharmonies/index.html"><span>#</span>design disharmonies</a>
+									<a href="./../tag/detection-strategy/index.html"><span>#</span>detection strategy</a>
+									<a href="./../tag/fitness-function/index.html"><span>#</span>fitness function</a>
+									<a href="./../tag/layered-architecture/index.html"><span>#</span>layered architecture</a>
+									<a href="./../tag/ndepend/index.html"><span>#</span>NDepend</a>
+									<a href="./../tag/quality/index.html"><span>#</span>quality</a>
+									<a href="./../tag/soa/index.html"><span>#</span>soa</a>
+									<a href="./../tag/versioning/index.html"><span>#</span>versioning</a>
+							</span>
+		
+	</footer>
+
+	<div class="jetpack-share-like">
+		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-974" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-974" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-974" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
+<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>			</div>
+
+</article><!-- #post-## -->
+
+				
+	<div class="author-bio" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+		<img alt="Victor Chircu" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=80&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=160&#038;d=mm&#038;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy" decoding="async" itemprop="image">		<div class="description">
+			<h3 class="author-title name">
+				<a class="author-name url fn n" href="./../author/victor-chircugmail-com/index.html" rel="author" itemprop="url"><span itemprop="name">Victor Chircu</span></a>
+			</h3>
+			<p class="bio" itemprop="description">I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.</p>
+			<ul class="author-social">
+									<li class="website">
+						<a href="./../index.html"><i class="fa fa-home"></i></a>
+					</li>
+													<li class="twitter">
+						<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a>
+					</li>
+																									<li class="linkedin">
+						<a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+					</li>
+							</ul>
+		</div>
+	</div>
+<!-- .author-bio -->
+
+
+				
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<ul>
+									<li>
+												<h2 class="entry-title"><a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html" rel="bookmark">How to identify common Code Smells using the NDepend API</a></h2>						<time class="published" datetime="2020-03-27T07:39:07+00:00">March 27, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../interviewing-your-architecture/index.html" rel="bookmark">Interviewing your architecture</a></h2>						<time class="published" datetime="2020-02-28T09:49:27+00:00">February 28, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../handling-failure-in-long-running-processes/index.html" rel="bookmark">Handling Failure in Long Running Processes</a></h2>						<time class="published" datetime="2019-07-13T09:41:39+00:00">July 13, 2019</time>
+					</li>
+							</ul>
+		</div>
+
+	
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="974" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8ea04d18e2"></p>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="146"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+</form>	</div>
+<!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div>
+<!-- #comments -->
+
+				
+	<div class="loop-nav">
+		<div class="prev">Previous: <a href="./../why-i-dont-like-estimating/index.html" rel="prev">Why I don&#8217;t like estimating</a>
+</div>		<div class="next">Next: <a href="./../book-review-no-estimates/index.html" rel="next">Book Review: No Estimates</a>
+</div>	</div>
+<!-- .loop-nav -->
+
+
+			
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+</aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a>
+									</li>
+											<li>
+					<a href="./../interviewing-your-architecture/index.html">Interviewing your architecture</a>
+									</li>
+											<li>
+					<a href="./../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a>
+									</li>
+											<li>
+					<a href="./../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a>
+									</li>
+											<li>
+					<a href="./../7-strategies-for-assigning-ids/index.html">7 Strategies for Assigning Ids</a>
+									</li>
+					</ul>
+
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+<a href="./../tag/agile/index.html" class="tag-cloud-link tag-link-29 tag-link-position-1" style="font-size: 12px;">agile</a>
+<a href="./../tag/architecture/index.html" class="tag-cloud-link tag-link-33 tag-link-position-2" style="font-size: 12px;">architecture</a>
+<a href="./../tag/books/index.html" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12px;">books</a>
+<a href="./../tag/code-smells/index.html" class="tag-cloud-link tag-link-65 tag-link-position-4" style="font-size: 12px;">code smells</a>
+<a href="./../tag/ddd/index.html" class="tag-cloud-link tag-link-28 tag-link-position-5" style="font-size: 12px;">ddd</a>
+<a href="./../tag/detection-strategy/index.html" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 12px;">detection strategy</a>
+<a href="./../tag/integration/index.html" class="tag-cloud-link tag-link-9 tag-link-position-7" style="font-size: 12px;">integration</a>
+<a href="./../tag/long-running-process/index.html" class="tag-cloud-link tag-link-93 tag-link-position-8" style="font-size: 12px;">long running process</a>
+<a href="./../tag/messaging/index.html" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 12px;">messaging</a>
+<a href="./../tag/metrics/index.html" class="tag-cloud-link tag-link-60 tag-link-position-10" style="font-size: 12px;">metrics</a>
+<a href="./../tag/microservices/index.html" class="tag-cloud-link tag-link-87 tag-link-position-11" style="font-size: 12px;">microservices</a>
+<a href="./../tag/msmq/index.html" class="tag-cloud-link tag-link-48 tag-link-position-12" style="font-size: 12px;">msmq</a>
+<a href="./../tag/ndepend/index.html" class="tag-cloud-link tag-link-51 tag-link-position-13" style="font-size: 12px;">NDepend</a>
+<a href="./../tag/nservicebus/index.html" class="tag-cloud-link tag-link-8 tag-link-position-14" style="font-size: 12px;">NServiceBus</a>
+<a href="./../tag/quality/index.html" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 12px;">quality</a>
+<a href="./../tag/security/index.html" class="tag-cloud-link tag-link-4 tag-link-position-16" style="font-size: 12px;">security</a>
+<a href="./../tag/soa/index.html" class="tag-cloud-link tag-link-37 tag-link-position-17" style="font-size: 12px;">soa</a>
+<a href="./../tag/specifications/index.html" class="tag-cloud-link tag-link-19 tag-link-position-18" style="font-size: 12px;">specifications</a>
+<a href="./../tag/testing/index.html" class="tag-cloud-link tag-link-12 tag-link-position-19" style="font-size: 12px;">testing</a>
+<a href="./../tag/visualization/index.html" class="tag-cloud-link tag-link-63 tag-link-position-20" style="font-size: 12px;">visualization</a>
+</div>
+</aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="./../2020/03/index.html">March 2020</a></li>
+	<li><a href="./../2020/02/index.html">February 2020</a></li>
+	<li><a href="./../2019/08/index.html">August 2019</a></li>
+	<li><a href="./../2019/07/index.html">July 2019</a></li>
+	<li><a href="./../2019/06/index.html">June 2019</a></li>
+	<li><a href="./../2019/04/index.html">April 2019</a></li>
+	<li><a href="./../2019/03/index.html">March 2019</a></li>
+	<li><a href="./../2019/02/index.html">February 2019</a></li>
+	<li><a href="./../2019/01/index.html">January 2019</a></li>
+	<li><a href="./../2018/10/index.html">October 2018</a></li>
+	<li><a href="./../2018/07/index.html">July 2018</a></li>
+	<li><a href="./../2018/06/index.html">June 2018</a></li>
+	<li><a href="./../2018/02/index.html">February 2018</a></li>
+	<li><a href="./../2017/01/index.html">January 2017</a></li>
+	<li><a href="./../2016/12/index.html">December 2016</a></li>
+	<li><a href="./../2016/11/index.html">November 2016</a></li>
+	<li><a href="./../2016/10/index.html">October 2016</a></li>
+	<li><a href="./../2016/09/index.html">September 2016</a></li>
+	<li><a href="./../2016/08/index.html">August 2016</a></li>
+	<li><a href="./../2016/07/index.html">July 2016</a></li>
+	<li><a href="./../2016/06/index.html">June 2016</a></li>
+	<li><a href="./../2016/05/index.html">May 2016</a></li>
+	<li><a href="./../2016/04/index.html">April 2016</a></li>
+	<li><a href="./../2016/03/index.html">March 2016</a></li>
+			</ul>
+
+			</aside><aside id="rss_links-3" class="widget widget_rss_links"><ul><li><a target="_self" href="./../feed/index.html" title="Subscribe to posts">RSS - Posts</a></li></ul>
+</aside><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post" id="jetpack-eu-cookie-law-form">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+		<a href="./../privacy-policy/index.html" rel="">
+		Cookie Policy	</a>
+</div>
+</aside>
+</div>
+<!-- #secondary -->
+		</div>
+<!-- .wide-container -->
+	</div>
+<!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="wide-container">
+
+			<div class="site-info">
+				<p class="copyright">&copy; Copyright 2024 <a href="./../index.html">Simple Oriented Architecture</a> &middot; Designed by <a href="http://www.theme-junkie.com/">Theme Junkie</a></p>			</div>
+<!-- .site-info -->
+
+			<div class="social-links">
+<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+</div>
+		</div>
+	</footer><!-- #colophon -->
+
+</div>
+<!-- #page -->
+
+	<div style="display:none">
+			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
+		</div>
+		</div>
+		
+	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/protecting-the-design-and-architecture-of-your-application-using-ndepend\/":974};</script>
+				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b" id="syntaxhighlighter-brush-plain-js"></script>
+<script type="text/javascript">(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = ".//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = ".//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}</script>
+<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=202445" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.0" id="wpgroho-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js?ver=20180522" id="eu-cookie-law-script-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"974\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
+_stq.push([ "clickTrackerInit", "108420443", "974" ]);
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

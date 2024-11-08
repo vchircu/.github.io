@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to organize BDD Specifications	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Thu, 09 Mar 2017 19:12:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Book Review: Fifty Quick Ideas to Improve your User Stories - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-19</link>
+
+		<dc:creator><![CDATA[Book Review: Fifty Quick Ideas to Improve your User Stories - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Sun, 04 Sep 2016 16:08:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=228#comment-19</guid>
+
+					<description><![CDATA[[&#8230;] Stories are a token for conversation. They shouldn&#8217;t be used as reference. After a story is delivered, the acceptance criteria should be restructured per business capabilities. This helps people understand the current behaviour, not the entire history of it. You can use tags to filter work in progress. (If you want to find out more about this, I&#8217;ve also blogged about how to organize specifications). [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Stories are a token for conversation. They shouldn&#8217;t be used as reference. After a story is delivered, the acceptance criteria should be restructured per business capabilities. This helps people understand the current behaviour, not the entire history of it. You can use tags to filter work in progress. (If you want to find out more about this, I&#8217;ve also blogged about how to organize specifications). [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

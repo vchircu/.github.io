@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="./../xmlrpc.php">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Managing Units of Work in NServiceBus - Simple Oriented Architecture</title>
+	<meta name="description" content="If you need to manage units of work in NServiceBus, you have a couple of options: using IManageUnitsOfWork or extending the processing pipelien.">
+	<link rel="canonical" href="./index.html">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Managing Units of Work in NServiceBus - Simple Oriented Architecture">
+	<meta property="og:description" content="If you need to manage units of work in NServiceBus, you have a couple of options: using IManageUnitsOfWork or extending the processing pipelien.">
+	<meta property="og:url" content="./index.html">
+	<meta property="og:site_name" content="Simple Oriented Architecture">
+	<meta property="article:published_time" content="2016-07-10T15:54:17+00:00">
+	<meta property="article:modified_time" content="2016-07-10T15:56:32+00:00">
+	<meta name="author" content="Victor Chircu">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/victorchircu/">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Victor Chircu">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="5 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":".//managing-units-of-work-in-nservicebus/#article","isPartOf":{"@id":".//managing-units-of-work-in-nservicebus/"},"author":{"name":"Victor Chircu","@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"headline":"Managing Units of Work in NServiceBus","datePublished":"2016-07-10T15:54:17+00:00","dateModified":"2016-07-10T15:56:32+00:00","mainEntityOfPage":{"@id":".//managing-units-of-work-in-nservicebus/"},"wordCount":1027,"commentCount":0,"publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"keywords":["NServiceBus","unit of work"],"articleSection":["NServiceBus"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":[".//managing-units-of-work-in-nservicebus/#respond"]}]},{"@type":"WebPage","@id":".//managing-units-of-work-in-nservicebus/","url":".//managing-units-of-work-in-nservicebus/","name":"Managing Units of Work in NServiceBus - Simple Oriented Architecture","isPartOf":{"@id":".//#website"},"datePublished":"2016-07-10T15:54:17+00:00","dateModified":"2016-07-10T15:56:32+00:00","description":"If you need to manage units of work in NServiceBus, you have a couple of options: using IManageUnitsOfWork or extending the processing pipelien.","breadcrumb":{"@id":".//managing-units-of-work-in-nservicebus/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":[".//managing-units-of-work-in-nservicebus/"]}]},{"@type":"BreadcrumbList","@id":".//managing-units-of-work-in-nservicebus/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":".//"},{"@type":"ListItem","position":2,"name":"Managing Units of Work in NServiceBus"}]},{"@type":"WebSite","@id":".//#website","url":".//","name":"Simple Oriented Architecture","description":"","publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":".//?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e","name":"Victor Chircu","image":{"@type":"ImageObject","inLanguage":"en-US","@id":".//#/schema/person/image/","url":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","caption":"Victor Chircu"},"logo":{"@id":".//#/schema/person/image/"},"description":"I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.","sameAs":[".//","https://www.linkedin.com/in/victor-chircu-1519a331","https://x.com/https://twitter.com/victorchircu/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Managing Units of Work in NServiceBus Comments Feed" href="./feed/index.html">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="jetpack_related-posts-css" href="./../wp-content/plugins/jetpack/modules/related-posts/related-posts.css?ver=20240116" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./../wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./../wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="eu-cookie-law-style-css" href="./../wp-content/plugins/jetpack/modules/widgets/eu-cookie-law/style.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20240116" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript" src=".//wp-content/themes/bulan/assets/js/html5shiv.min.js" id="standard-html5-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/posts/240/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="shortlink" href="https://wp.me/p7kV6P-3S">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fmanaging-units-of-work-in-nservicebus%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fmanaging-units-of-work-in-nservicebus%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="post-template-default single single-post postid-240 single-format-standard no-custom-header no-featured-image layout-2c-l" itemscope itemtype="http://schema.org/Blog">
+
+<div id="page" class="site">
+
+	<div class="search-area">
+		<div class="wide-container">
+			<form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+		</div>
+	</div>
+
+	
+	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="site-branding">
+			<div class="wide-container">
+				<div id="logo">
+<h1 class="site-title" itemprop="headline"><a href="./../index.html" itemprop="url" rel="home"><span itemprop="headline">Simple Oriented Architecture</span></a></h1>
+</div>
+			</div>
+		</div>
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="wide-container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+				<article id="post-240" class="post-240 post type-post status-publish format-standard hentry category-nservicebus tag-nservicebus tag-unit-of-work no-post-thumbnail no-sticky entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	<header class="entry-header">
+
+								<span class="cat-links" itemprop="articleSection">
+				<a href="./../category/nservicebus/index.html" rel="category tag">NServiceBus</a>			</span>
+			<i class="fa fa-circle"></i>
+					
+					<time class="published" datetime="2016-07-10T15:54:17+00:00" itemprop="datePublished">July 10, 2016</time>
+		
+		<h1 class="entry-title" itemprop="headline">Managing Units of Work in NServiceBus</h1>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content" itemprop="articleBody">
+
+		<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in the form of hooks that you can use you to inject custom code. The benefit is twofold: you don&#8217;t have duplicated code and you don&#8217;t break the <a href="http://c2.com/cgi/wiki?SingleResponsibilityPrinciple" target="_blank">Single Responsibility Principle</a>. If you&#8217;re using ASP.NET Core/MVC/WebApi, then you have <strong>ActionFilters</strong>. NServiceBus has its own mechanisms that you can use. In this blog post we&#8217;ll discuss two ways of hooking into the message processing pipeline that are useful for managing units of work in NServiceBus : IManageUnitsOfWork and the NServiceBus pipeline. There are many use cases where these prove useful. Here are some examples:</p>
+<ul>
+<li>Manage the unit of work (i.e. the session in NHibernate and RavenDB)</li>
+<li>Logging &amp; Monitoring</li>
+<li>Error Handling</li>
+<li>Authorization</li>
+</ul>
+<p>You definitely don&#8217;t want to add these concerns to your handlers. Here are two approaches that can help you to keep the handlers clean of infrastructural concerns.</p>
+<p><span id="more-240"></span></p>
+<p><em>Note: I&#8217;ll be using NServiceBus version 5 for the code samples.</em></p>
+<h2>IManageUnitsOfWork</h2>
+<p>The first method is to implement the <a href="http://docs.particular.net/nservicebus/pipeline/unit-of-work#implementing-custom-units-of-work" target="_blank">IManageUnitsOfWork</a> interface. This behavior was introduced in NServiceBus 3.0 and allows you to wrap all the handlers in a piece of code. As the names says, managing the unit of work for data stores that support it is a good use case for this interface. For example, you can use this to <strong><em>commit the NHibernate transaction</em></strong> or call <strong><em>SaveChanges on a RavenDB session</em></strong>. If you want to find out more about how to do this, Andreas Öhlund blogged about <a href="http://andreasohlund.net/2011/11/22/a-nservicebus-unit-of-work-implementation-for-ravendb/" target="_blank">how to implement a RavenDB Unit of Work for NServiceBus</a>.</p>
+<p>The interface is quite simple, with just two methods, Begin and End:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37412532" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-imanageunitsofwork-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="IManageUnitsOfWork.cs">
+<tr>
+<td id="file-imanageunitsofwork-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-imanageunitsofwork-cs-LC1" class="blob-code blob-code-inner js-file-line">
+</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-imanageunitsofwork-cs-LC2" class="blob-code blob-code-inner js-file-line">  /// Interface used by NServiceBus to manage units of work as a part of the</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-imanageunitsofwork-cs-LC3" class="blob-code blob-code-inner js-file-line">  ///             message processing pipeline.</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-imanageunitsofwork-cs-LC4" class="blob-code blob-code-inner js-file-line">  /// &lt;/summary&gt;</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-imanageunitsofwork-cs-LC5" class="blob-code blob-code-inner js-file-line">  public interface IManageUnitsOfWork</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-imanageunitsofwork-cs-LC6" class="blob-code blob-code-inner js-file-line">  {</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-imanageunitsofwork-cs-LC7" class="blob-code blob-code-inner js-file-line">    /// &lt;summary&gt;</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+<td id="file-imanageunitsofwork-cs-LC8" class="blob-code blob-code-inner js-file-line">    /// Called before all message handlers and modules</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+<td id="file-imanageunitsofwork-cs-LC9" class="blob-code blob-code-inner js-file-line">    /// &lt;/summary&gt;</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+<td id="file-imanageunitsofwork-cs-LC10" class="blob-code blob-code-inner js-file-line">    void Begin();</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+<td id="file-imanageunitsofwork-cs-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+<td id="file-imanageunitsofwork-cs-LC12" class="blob-code blob-code-inner js-file-line">    /// &lt;summary&gt;</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+<td id="file-imanageunitsofwork-cs-LC13" class="blob-code blob-code-inner js-file-line">    /// Called after all message handlers and modules, if an error has occurred the exception will be passed</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+<td id="file-imanageunitsofwork-cs-LC14" class="blob-code blob-code-inner js-file-line">    /// &lt;/summary&gt;</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+<td id="file-imanageunitsofwork-cs-LC15" class="blob-code blob-code-inner js-file-line">    void End(Exception ex = null);</td>
+</tr>
+<tr>
+<td id="file-imanageunitsofwork-cs-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+<td id="file-imanageunitsofwork-cs-LC16" class="blob-code blob-code-inner js-file-line">  }</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/ba517f9b1e826552c0589e0a1901bc4a/raw/b3a1b4017fa4bf1d2c74e1b04d582cc29178d9a9/IManageUnitsOfWork.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/ba517f9b1e826552c0589e0a1901bc4a#file-imanageunitsofwork-cs" class="Link--inTextBlock"><br>
+          IManageUnitsOfWork.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>The Begin method is called before the first handler. The End method is called after the last handler, passing the exception if one was thrown while processing the message. Here is a basic example that just logs some information:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37413024" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-loggerunitofwork-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="LoggerUnitOfWork.cs">
+<tr>
+<td id="file-loggerunitofwork-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-loggerunitofwork-cs-LC1" class="blob-code blob-code-inner js-file-line">public class LoggerUnitOfWork : IManageUnitsOfWork</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-loggerunitofwork-cs-LC2" class="blob-code blob-code-inner js-file-line">{</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-loggerunitofwork-cs-LC3" class="blob-code blob-code-inner js-file-line">    private static readonly ILog logger = LogManager.GetLogger(typeof(LoggerUnitOfWork));</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-loggerunitofwork-cs-LC4" class="blob-code blob-code-inner js-file-line">    </td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-loggerunitofwork-cs-LC5" class="blob-code blob-code-inner js-file-line">    public void Begin()</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-loggerunitofwork-cs-LC6" class="blob-code blob-code-inner js-file-line">    {</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-loggerunitofwork-cs-LC7" class="blob-code blob-code-inner js-file-line">        logger.Info(&quot;Started processing a message.&quot;);</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+<td id="file-loggerunitofwork-cs-LC8" class="blob-code blob-code-inner js-file-line">    }</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+<td id="file-loggerunitofwork-cs-LC9" class="blob-code blob-code-inner js-file-line">
+</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+<td id="file-loggerunitofwork-cs-LC10" class="blob-code blob-code-inner js-file-line">    public void End(Exception ex = null)</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+<td id="file-loggerunitofwork-cs-LC11" class="blob-code blob-code-inner js-file-line">    {</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+<td id="file-loggerunitofwork-cs-LC12" class="blob-code blob-code-inner js-file-line">        if (ex != null)</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+<td id="file-loggerunitofwork-cs-LC13" class="blob-code blob-code-inner js-file-line">        {</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+<td id="file-loggerunitofwork-cs-LC14" class="blob-code blob-code-inner js-file-line">            logger.Error(&quot;Finished processing with errors.&quot;, ex);</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+<td id="file-loggerunitofwork-cs-LC15" class="blob-code blob-code-inner js-file-line">        }</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+<td id="file-loggerunitofwork-cs-LC16" class="blob-code blob-code-inner js-file-line">        else</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+<td id="file-loggerunitofwork-cs-LC17" class="blob-code blob-code-inner js-file-line">        {</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+<td id="file-loggerunitofwork-cs-LC18" class="blob-code blob-code-inner js-file-line">            logger.Info(&quot;Successfully processed the message.&quot;);</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+<td id="file-loggerunitofwork-cs-LC19" class="blob-code blob-code-inner js-file-line">        }</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+<td id="file-loggerunitofwork-cs-LC20" class="blob-code blob-code-inner js-file-line">    }</td>
+</tr>
+<tr>
+<td id="file-loggerunitofwork-cs-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+<td id="file-loggerunitofwork-cs-LC21" class="blob-code blob-code-inner js-file-line">}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/4df14a1a33a0dc3aa201a62f6193db96/raw/af1432ba602f5e4e3bfda33996d188457cd86c16/LoggerUnitOfWork.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/4df14a1a33a0dc3aa201a62f6193db96#file-loggerunitofwork-cs" class="Link--inTextBlock"><br>
+          LoggerUnitOfWork.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>The only thing left to do is to register the implementation into the dependency injection container:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37413507" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-endpointconfig-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="EndpointConfig.cs">
+<tr>
+<td id="file-endpointconfig-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-endpointconfig-cs-LC1" class="blob-code blob-code-inner js-file-line">configuration.RegisterComponents(c =&gt; c.ConfigureComponent&lt;LoggerUnitOfWork&gt;(DependencyLifecycle.InstancePerCall));</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/22239fc22323ff4099811b6bd9babd44/raw/f7a38dec594a99673d57bbd4a44624bae8fae291/EndpointConfig.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/22239fc22323ff4099811b6bd9babd44#file-endpointconfig-cs" class="Link--inTextBlock"><br>
+          EndpointConfig.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>This is an easy way to run code before the first handler and after the last handler in the message processing pipeline. As a small note, although you can define multiple implementations of  IManageUnitsOfWork, you cannot order them.  If you need ordering, then you can opt for the second option, described in the next section.</p>
+<h2>NServiceBus Processing Pipeline</h2>
+<p>NServiceBus 5.0 introduced a new feature that allows you to <a href="http://docs.particular.net/nservicebus/pipeline/" target="_blank">customize the processing pipeline</a>.  This is a better and more powerful abstraction that you can use to hook into the pipeline and add/replace processing steps. As the name says, this is an implementation of the pipeline pattern (which is similar to <a href="http://www.dofactory.com/net/chain-of-responsibility-design-pattern" target="_blank">Chain of Responsibility</a>). This means that you have behaviors wrapping other behaviors, with each behavior doing just one thing. There are two pipelines, one for incoming messages and one for outgoing messages. Several NServiceBus features are built using behaviors (e.g. <a href="http://docs.particular.net/nservicebus/messaging/databus" target="_blank">DataBus </a>and <a href="http://docs.particular.net/nservicebus/errors/automatic-retries" target="_blank">Second Level Retries</a>). As you might guess, the main building block is the <strong>IBehavior</strong> inteface:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37427229" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-ibehavior-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="IBehavior.cs">
+<tr>
+<td id="file-ibehavior-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-ibehavior-cs-LC1" class="blob-code blob-code-inner js-file-line">/// &lt;summary&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-ibehavior-cs-LC2" class="blob-code blob-code-inner js-file-line">/// This is the base interface to implement to create a behavior that can be registered in a pipeline.</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-ibehavior-cs-LC3" class="blob-code blob-code-inner js-file-line">/// &lt;/summary&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-ibehavior-cs-LC4" class="blob-code blob-code-inner js-file-line">/// &lt;typeparam name=&quot;TContext&quot;&gt;The context that this behavior should receive.&lt;/typeparam&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-ibehavior-cs-LC5" class="blob-code blob-code-inner js-file-line">public interface IBehavior&lt;in TContext&gt; where TContext : BehaviorContext</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-ibehavior-cs-LC6" class="blob-code blob-code-inner js-file-line">{</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-ibehavior-cs-LC7" class="blob-code blob-code-inner js-file-line">  /// &lt;summary&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+<td id="file-ibehavior-cs-LC8" class="blob-code blob-code-inner js-file-line">  /// Called when the behavior is executed.</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+<td id="file-ibehavior-cs-LC9" class="blob-code blob-code-inner js-file-line">  /// &lt;/summary&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+<td id="file-ibehavior-cs-LC10" class="blob-code blob-code-inner js-file-line">  /// &lt;param name=&quot;context&quot;&gt;The current context.&lt;/param&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+<td id="file-ibehavior-cs-LC11" class="blob-code blob-code-inner js-file-line">  /// &lt;param name=&quot;next&quot;&gt;The next &lt;see cref=&quot;T:NServiceBus.Pipeline.IBehavior`1&quot;/&gt; in the chain to execute.&lt;/param&gt;</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+<td id="file-ibehavior-cs-LC12" class="blob-code blob-code-inner js-file-line">  void Invoke(TContext context, Action next);</td>
+</tr>
+<tr>
+<td id="file-ibehavior-cs-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+<td id="file-ibehavior-cs-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/3e88ff435b92acf931b46ed4ae401e21/raw/0f448688aa7a22d3318660cee11958e40da51f9e/IBehavior.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/3e88ff435b92acf931b46ed4ae401e21#file-ibehavior-cs" class="Link--inTextBlock"><br>
+          IBehavior.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>The Invoke method has two parameters:</p>
+<ul>
+<li>
+<strong>Context</strong>, used for passing data from parent behaviors to child behaviors and for registering dependencies in the IoC container. The  context parameter is generic and must inherit from <em><strong>BehaviorContext</strong></em>. There are two subtypes that you can use, depending on the type of the pipeline: <em><strong>IncomingContext</strong> </em>and <em><strong>OutgoingContext</strong></em>.</li>
+<li>
+<strong>Next</strong>, which is the next action in the pipeline.</li>
+</ul>
+<h3>Creating a behavior</h3>
+<p>So let&#8217;s go over a simple example of a logging behavior.</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37644836" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-loggerbehavior-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="LoggerBehavior.cs">
+<tr>
+<td id="file-loggerbehavior-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-loggerbehavior-cs-LC1" class="blob-code blob-code-inner js-file-line">public class LoggerBehavior : IBehavior&lt;IncomingContext&gt;</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-loggerbehavior-cs-LC2" class="blob-code blob-code-inner js-file-line">{</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-loggerbehavior-cs-LC3" class="blob-code blob-code-inner js-file-line">    private static readonly ILog logger = LogManager.GetLogger(typeof(LoggerBehavior));</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-loggerbehavior-cs-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-loggerbehavior-cs-LC5" class="blob-code blob-code-inner js-file-line">    public void Invoke(IncomingContext context, Action next)</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-loggerbehavior-cs-LC6" class="blob-code blob-code-inner js-file-line">    {</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-loggerbehavior-cs-LC7" class="blob-code blob-code-inner js-file-line">        try</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+<td id="file-loggerbehavior-cs-LC8" class="blob-code blob-code-inner js-file-line">        {</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+<td id="file-loggerbehavior-cs-LC9" class="blob-code blob-code-inner js-file-line">            logger.Info(&quot;Entered the behavior.&quot;);</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+<td id="file-loggerbehavior-cs-LC10" class="blob-code blob-code-inner js-file-line">            next();</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+<td id="file-loggerbehavior-cs-LC11" class="blob-code blob-code-inner js-file-line">            logger.Info(&quot;Exited the behavior.&quot;);</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+<td id="file-loggerbehavior-cs-LC12" class="blob-code blob-code-inner js-file-line">        }</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+<td id="file-loggerbehavior-cs-LC13" class="blob-code blob-code-inner js-file-line">        catch (Exception ex)</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+<td id="file-loggerbehavior-cs-LC14" class="blob-code blob-code-inner js-file-line">        {</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+<td id="file-loggerbehavior-cs-LC15" class="blob-code blob-code-inner js-file-line">            logger.Error(&quot;Finished processing with errors.&quot;, ex);</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+<td id="file-loggerbehavior-cs-LC16" class="blob-code blob-code-inner js-file-line">        }</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+<td id="file-loggerbehavior-cs-LC17" class="blob-code blob-code-inner js-file-line">    }</td>
+</tr>
+<tr>
+<td id="file-loggerbehavior-cs-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+<td id="file-loggerbehavior-cs-LC18" class="blob-code blob-code-inner js-file-line">}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/13105165d37d7090e6b4bdb849328054/raw/aa36a2c67df474403e1c32c7295c38bf590481a7/LoggerBehavior.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/13105165d37d7090e6b4bdb849328054#file-loggerbehavior-cs" class="Link--inTextBlock"><br>
+          LoggerBehavior.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>The behavior implements the  <strong><span class="pl-k">IBehavior</span>&lt;<span class="pl-k">IncomingContext</span>&gt;</strong><em> </em>interface, which means this is a behavior for the incoming message pipeline.  What&#8217;s important here is the call to <strong>next()</strong>, which triggers the next behavior in the pipeline. We can insert code before, after, or around it (which means you can use <em>using</em> statements). We also have the option of  not calling next, which means we&#8217;ll stop the execution of the next behaviors in the pipeline.</p>
+<h3>Registering the behavior</h3>
+<p>The next step is to register the behavior in the pipeline. First, we need to create a step for the new behavior, so we can define its execution order in the pipeline:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37644962" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-loggerstepregistration-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="LoggerStepRegistration.cs">
+<tr>
+<td id="file-loggerstepregistration-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-loggerstepregistration-cs-LC1" class="blob-code blob-code-inner js-file-line">public class LoggerStepRegistration : RegisterStep</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-loggerstepregistration-cs-LC2" class="blob-code blob-code-inner js-file-line">{</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-loggerstepregistration-cs-LC3" class="blob-code blob-code-inner js-file-line">    public LoggerStepRegistration()</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-loggerstepregistration-cs-LC4" class="blob-code blob-code-inner js-file-line">        : base(&quot;LoggerStep&quot;, typeof(LoggerBehavior), &quot;Logger Step describes how you can register a new step&quot;)</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-loggerstepregistration-cs-LC5" class="blob-code blob-code-inner js-file-line">    {</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-loggerstepregistration-cs-LC6" class="blob-code blob-code-inner js-file-line">        InsertBefore(WellKnownStep.LoadHandlers);</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-loggerstepregistration-cs-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+<td id="file-loggerstepregistration-cs-LC8" class="blob-code blob-code-inner js-file-line">        // InsertBeforeIfExists(WellKnownStep.InvokeSaga);</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+<td id="file-loggerstepregistration-cs-LC9" class="blob-code blob-code-inner js-file-line">        // InsertAfter(WellKnownStep.ExecuteUnitOfWork);</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+<td id="file-loggerstepregistration-cs-LC10" class="blob-code blob-code-inner js-file-line">        // InsertAfterIfExists(WellKnownStep.InvokeSaga);</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+<td id="file-loggerstepregistration-cs-LC11" class="blob-code blob-code-inner js-file-line">    }</td>
+</tr>
+<tr>
+<td id="file-loggerstepregistration-cs-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+<td id="file-loggerstepregistration-cs-LC12" class="blob-code blob-code-inner js-file-line">}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/7f9da6cdc53364a9233f32e83ecae336/raw/5138a28e61e5c3933645579d0853f0489fa3e6e2/LoggerStepRegistration.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/7f9da6cdc53364a9233f32e83ecae336#file-loggerstepregistration-cs" class="Link--inTextBlock"><br>
+          LoggerStepRegistration.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>We call the base constructor the <strong>RegisterStep</strong> class, passing in the step Id, behavior type and a short description for the step. We also have the option of specifying the execution order for the step by inserting it before or after a well known step. It&#8217;s good to know that not all steps are necessarily part of the pipeline. For example, if we don&#8217;t use Sagas, then the <strong>InvokeSaga</strong> step won&#8217;t exist. For these cases, you can use <strong>InsertAfterIfExists </strong>or <strong>InsertBeforeIfExists</strong>. Also, if you&#8217;d like your behavior to register a dependency in the IoC container, then you should insert your step before <strong>LoadHandlers</strong>, as in the example above. This will ensure that dependency will get injected in the handlers.</p>
+<p>Now that you have defined the step, you need to register it in the pipeline:</p>
+<style>.gist table { margin-bottom: 0; }</style>
+<div style="tab-size: 8" id="gist37645239" class="gist">
+<div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container">
+<div id="file-loggerstepinitialization-cs" class="file my-2">
+<div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+<p>  <template class="js-file-alert-template"></template></p>
+<div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+    <span><br>
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br>
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br>
+    </span>
+<div data-view-component="true" class="flash-action">        <a href="./{{ revealButtonHref }}/index.html" data-view-component="true" class="btn-sm btn">    Show hidden characters<br>
+</a>
+</div>
+</div>
+<p><br>
+<template class="js-line-alert-template"><br>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e"><br>
+    <svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg><br>
+</span></template></p>
+<table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C#" data-tagsearch-path="LoggerStepInitialization.cs">
+<tr>
+<td id="file-loggerstepinitialization-cs-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+<td id="file-loggerstepinitialization-cs-LC1" class="blob-code blob-code-inner js-file-line">public class LoggerStepInitialization : INeedInitialization</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+<td id="file-loggerstepinitialization-cs-LC2" class="blob-code blob-code-inner js-file-line">{</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+<td id="file-loggerstepinitialization-cs-LC3" class="blob-code blob-code-inner js-file-line">    public void Customize(BusConfiguration cfg)</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+<td id="file-loggerstepinitialization-cs-LC4" class="blob-code blob-code-inner js-file-line">    {</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+<td id="file-loggerstepinitialization-cs-LC5" class="blob-code blob-code-inner js-file-line">        cfg.Pipeline.Register&lt;LoggerStepRegistration&gt;();</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+<td id="file-loggerstepinitialization-cs-LC6" class="blob-code blob-code-inner js-file-line">    }</td>
+</tr>
+<tr>
+<td id="file-loggerstepinitialization-cs-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+<td id="file-loggerstepinitialization-cs-LC7" class="blob-code blob-code-inner js-file-line">}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gist-meta">
+        <a href="https://gist.github.com/vchircu/c011c827c1a728f8fb3ad8efa6928f9e/raw/aa7d7b7e90f95136578ca89afa1b38a7f03545e3/LoggerStepInitialization.cs" style="float:right" class="Link--inTextBlock">view raw</a><br>
+        <a href="https://gist.github.com/vchircu/c011c827c1a728f8fb3ad8efa6928f9e#file-loggerstepinitialization-cs" class="Link--inTextBlock"><br>
+          LoggerStepInitialization.cs<br>
+        </a><br>
+        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com/">GitHub</a>
+      </div>
+</div>
+</div>
+<p>And that&#8217;s it! Your new behavior will run in the incoming message execution pipeline, before the LoadHandlers step.</p>
+<h2>Conclusion</h2>
+<p>As you can see, creating and registering a new behavior is more involved and requires a bit more code than implementing IManageUnitsOfWork. But this is a small price to pay if you require more flexibility. Although both options have their use cases, anything you can do with IManageUnitsOfWork can also be done with a custom behavior.</p>
+<p>If you&#8217;d like to find out more about these topics, you can checkout the <a href="http://docs.particular.net/nservicebus/pipeline/" target="_blank">official documentation</a> or David Boike&#8217;s great book <a href="https://www.amazon.com/Learning-NServiceBus-Second-David-Boike/dp/1784392928/ref=pd_sim_14_1?ie=UTF8&amp;dpID=51iO1VoVv5L&amp;dpSrc=sims&amp;preST=_AC_UL160_SR130%2C160_&amp;psc=1&amp;refRID=9ZM3NGHTDFMM9GVVAKF1" target="_blank">Learning NServiceBus</a>.</p>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>		
+	</div>
+
+	<footer class="entry-footer">
+
+					<span class="tag-links" itemprop="keywords">
+									<a href="./../tag/nservicebus/index.html"><span>#</span>NServiceBus</a>
+									<a href="./../tag/unit-of-work/index.html"><span>#</span>unit of work</a>
+							</span>
+		
+	</footer>
+
+	<div class="jetpack-share-like">
+		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-240" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-240" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-240" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
+<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>			</div>
+
+</article><!-- #post-## -->
+
+				
+	<div class="author-bio" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+		<img alt="Victor Chircu" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=80&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=160&#038;d=mm&#038;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" decoding="async" itemprop="image">		<div class="description">
+			<h3 class="author-title name">
+				<a class="author-name url fn n" href="./../author/victor-chircugmail-com/index.html" rel="author" itemprop="url"><span itemprop="name">Victor Chircu</span></a>
+			</h3>
+			<p class="bio" itemprop="description">I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.</p>
+			<ul class="author-social">
+									<li class="website">
+						<a href="./../index.html"><i class="fa fa-home"></i></a>
+					</li>
+													<li class="twitter">
+						<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a>
+					</li>
+																									<li class="linkedin">
+						<a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+					</li>
+							</ul>
+		</div>
+	</div>
+<!-- .author-bio -->
+
+
+				
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<ul>
+									<li>
+												<h2 class="entry-title"><a href="./../interviewing-your-architecture/index.html" rel="bookmark">Interviewing your architecture</a></h2>						<time class="published" datetime="2020-02-28T09:49:27+00:00">February 28, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../nservicebus-an-experience-report/index.html" rel="bookmark">NServiceBus: An Experience Report</a></h2>						<time class="published" datetime="2019-08-30T14:56:30+00:00">August 30, 2019</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../handling-failure-in-long-running-processes/index.html" rel="bookmark">Handling Failure in Long Running Processes</a></h2>						<time class="published" datetime="2019-07-13T09:41:39+00:00">July 13, 2019</time>
+					</li>
+							</ul>
+		</div>
+
+	
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="240" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b51ea55e21"></p>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="27"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+</form>	</div>
+<!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div>
+<!-- #comments -->
+
+				
+	<div class="loop-nav">
+		<div class="prev">Previous: <a href="./../how-to-organize-bdd-specifications/index.html" rel="prev">How to organize BDD Specifications</a>
+</div>		<div class="next">Next: <a href="./../book-review-soft-skills/index.html" rel="next">Book Review: Soft Skills</a>
+</div>	</div>
+<!-- .loop-nav -->
+
+
+			
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+</aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a>
+									</li>
+											<li>
+					<a href="./../interviewing-your-architecture/index.html">Interviewing your architecture</a>
+									</li>
+											<li>
+					<a href="./../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a>
+									</li>
+											<li>
+					<a href="./../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a>
+									</li>
+											<li>
+					<a href="./../7-strategies-for-assigning-ids/index.html">7 Strategies for Assigning Ids</a>
+									</li>
+					</ul>
+
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+<a href="./../tag/agile/index.html" class="tag-cloud-link tag-link-29 tag-link-position-1" style="font-size: 12px;">agile</a>
+<a href="./../tag/architecture/index.html" class="tag-cloud-link tag-link-33 tag-link-position-2" style="font-size: 12px;">architecture</a>
+<a href="./../tag/books/index.html" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12px;">books</a>
+<a href="./../tag/code-smells/index.html" class="tag-cloud-link tag-link-65 tag-link-position-4" style="font-size: 12px;">code smells</a>
+<a href="./../tag/ddd/index.html" class="tag-cloud-link tag-link-28 tag-link-position-5" style="font-size: 12px;">ddd</a>
+<a href="./../tag/detection-strategy/index.html" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 12px;">detection strategy</a>
+<a href="./../tag/integration/index.html" class="tag-cloud-link tag-link-9 tag-link-position-7" style="font-size: 12px;">integration</a>
+<a href="./../tag/long-running-process/index.html" class="tag-cloud-link tag-link-93 tag-link-position-8" style="font-size: 12px;">long running process</a>
+<a href="./../tag/messaging/index.html" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 12px;">messaging</a>
+<a href="./../tag/metrics/index.html" class="tag-cloud-link tag-link-60 tag-link-position-10" style="font-size: 12px;">metrics</a>
+<a href="./../tag/microservices/index.html" class="tag-cloud-link tag-link-87 tag-link-position-11" style="font-size: 12px;">microservices</a>
+<a href="./../tag/msmq/index.html" class="tag-cloud-link tag-link-48 tag-link-position-12" style="font-size: 12px;">msmq</a>
+<a href="./../tag/ndepend/index.html" class="tag-cloud-link tag-link-51 tag-link-position-13" style="font-size: 12px;">NDepend</a>
+<a href="./../tag/nservicebus/index.html" class="tag-cloud-link tag-link-8 tag-link-position-14" style="font-size: 12px;">NServiceBus</a>
+<a href="./../tag/quality/index.html" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 12px;">quality</a>
+<a href="./../tag/security/index.html" class="tag-cloud-link tag-link-4 tag-link-position-16" style="font-size: 12px;">security</a>
+<a href="./../tag/soa/index.html" class="tag-cloud-link tag-link-37 tag-link-position-17" style="font-size: 12px;">soa</a>
+<a href="./../tag/specifications/index.html" class="tag-cloud-link tag-link-19 tag-link-position-18" style="font-size: 12px;">specifications</a>
+<a href="./../tag/testing/index.html" class="tag-cloud-link tag-link-12 tag-link-position-19" style="font-size: 12px;">testing</a>
+<a href="./../tag/visualization/index.html" class="tag-cloud-link tag-link-63 tag-link-position-20" style="font-size: 12px;">visualization</a>
+</div>
+</aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="./../2020/03/index.html">March 2020</a></li>
+	<li><a href="./../2020/02/index.html">February 2020</a></li>
+	<li><a href="./../2019/08/index.html">August 2019</a></li>
+	<li><a href="./../2019/07/index.html">July 2019</a></li>
+	<li><a href="./../2019/06/index.html">June 2019</a></li>
+	<li><a href="./../2019/04/index.html">April 2019</a></li>
+	<li><a href="./../2019/03/index.html">March 2019</a></li>
+	<li><a href="./../2019/02/index.html">February 2019</a></li>
+	<li><a href="./../2019/01/index.html">January 2019</a></li>
+	<li><a href="./../2018/10/index.html">October 2018</a></li>
+	<li><a href="./../2018/07/index.html">July 2018</a></li>
+	<li><a href="./../2018/06/index.html">June 2018</a></li>
+	<li><a href="./../2018/02/index.html">February 2018</a></li>
+	<li><a href="./../2017/01/index.html">January 2017</a></li>
+	<li><a href="./../2016/12/index.html">December 2016</a></li>
+	<li><a href="./../2016/11/index.html">November 2016</a></li>
+	<li><a href="./../2016/10/index.html">October 2016</a></li>
+	<li><a href="./../2016/09/index.html">September 2016</a></li>
+	<li><a href="./../2016/08/index.html">August 2016</a></li>
+	<li><a href="./../2016/07/index.html">July 2016</a></li>
+	<li><a href="./../2016/06/index.html">June 2016</a></li>
+	<li><a href="./../2016/05/index.html">May 2016</a></li>
+	<li><a href="./../2016/04/index.html">April 2016</a></li>
+	<li><a href="./../2016/03/index.html">March 2016</a></li>
+			</ul>
+
+			</aside><aside id="rss_links-3" class="widget widget_rss_links"><ul><li><a target="_self" href="./../feed/index.html" title="Subscribe to posts">RSS - Posts</a></li></ul>
+</aside><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post" id="jetpack-eu-cookie-law-form">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+		<a href="./../privacy-policy/index.html" rel="">
+		Cookie Policy	</a>
+</div>
+</aside>
+</div>
+<!-- #secondary -->
+		</div>
+<!-- .wide-container -->
+	</div>
+<!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="wide-container">
+
+			<div class="site-info">
+				<p class="copyright">&copy; Copyright 2024 <a href="./../index.html">Simple Oriented Architecture</a> &middot; Designed by <a href="http://www.theme-junkie.com/">Theme Junkie</a></p>			</div>
+<!-- .site-info -->
+
+			<div class="social-links">
+<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+</div>
+		</div>
+	</footer><!-- #colophon -->
+
+</div>
+<!-- #page -->
+
+	<div style="display:none">
+			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
+		</div>
+		</div>
+		
+	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/managing-units-of-work-in-nservicebus\/":240};</script>
+				<link rel="stylesheet" id="jetpack-gist-styling-css" href="https://github.githubassets.com/assets/gist-embed-9e2da6c6eb2a.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=202445" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.0" id="wpgroho-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js?ver=20180522" id="eu-cookie-law-script-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"240\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
+_stq.push([ "clickTrackerInit", "108420443", "240" ]);
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

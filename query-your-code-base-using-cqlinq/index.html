@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="./../xmlrpc.php">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Querying Your Code Base Using NDepend&#039;s CQLinq - Simple Oriented Architecture</title>
+	<meta name="description" content="Your code base has a lot to tell you. The question is: How can you listen to it? In this blog post we&#039;ll discuss how to query your code base using CQLinq.">
+	<link rel="canonical" href="./index.html">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Querying Your Code Base Using NDepend&#039;s CQLinq - Simple Oriented Architecture">
+	<meta property="og:description" content="Your code base has a lot to tell you. The question is: How can you listen to it? In this blog post we&#039;ll discuss how to query your code base using CQLinq.">
+	<meta property="og:url" content="./index.html">
+	<meta property="og:site_name" content="Simple Oriented Architecture">
+	<meta property="article:published_time" content="2016-11-16T06:50:14+00:00">
+	<meta property="article:modified_time" content="2016-12-07T06:31:39+00:00">
+	<meta property="og:image" content="./../wp-content/uploads/2016/11/domains.png">
+	<meta name="author" content="Victor Chircu">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/victorchircu/">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Victor Chircu">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="11 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":".//query-your-code-base-using-cqlinq/#article","isPartOf":{"@id":".//query-your-code-base-using-cqlinq/"},"author":{"name":"Victor Chircu","@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"headline":"Querying Your Code Base Using NDepend’s CQLinq","datePublished":"2016-11-16T06:50:14+00:00","dateModified":"2016-12-07T06:31:39+00:00","mainEntityOfPage":{"@id":".//query-your-code-base-using-cqlinq/"},"wordCount":2204,"commentCount":6,"publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"image":{"@id":".//query-your-code-base-using-cqlinq/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2016/11/domains.png","keywords":["architecture","CQLinq","NDepend","static analysis"],"articleSection":["Quality"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":[".//query-your-code-base-using-cqlinq/#respond"]}]},{"@type":"WebPage","@id":".//query-your-code-base-using-cqlinq/","url":".//query-your-code-base-using-cqlinq/","name":"Querying Your Code Base Using NDepend's CQLinq - Simple Oriented Architecture","isPartOf":{"@id":".//#website"},"primaryImageOfPage":{"@id":".//query-your-code-base-using-cqlinq/#primaryimage"},"image":{"@id":".//query-your-code-base-using-cqlinq/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2016/11/domains.png","datePublished":"2016-11-16T06:50:14+00:00","dateModified":"2016-12-07T06:31:39+00:00","description":"Your code base has a lot to tell you. The question is: How can you listen to it? In this blog post we'll discuss how to query your code base using CQLinq.","breadcrumb":{"@id":".//query-your-code-base-using-cqlinq/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":[".//query-your-code-base-using-cqlinq/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":".//query-your-code-base-using-cqlinq/#primaryimage","url":".//wp-content/uploads/2016/11/domains.png","contentUrl":".//wp-content/uploads/2016/11/domains.png"},{"@type":"BreadcrumbList","@id":".//query-your-code-base-using-cqlinq/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":".//"},{"@type":"ListItem","position":2,"name":"Querying Your Code Base Using NDepend’s CQLinq"}]},{"@type":"WebSite","@id":".//#website","url":".//","name":"Simple Oriented Architecture","description":"","publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":".//?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e","name":"Victor Chircu","image":{"@type":"ImageObject","inLanguage":"en-US","@id":".//#/schema/person/image/","url":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","caption":"Victor Chircu"},"logo":{"@id":".//#/schema/person/image/"},"description":"I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.","sameAs":[".//","https://www.linkedin.com/in/victor-chircu-1519a331","https://x.com/https://twitter.com/victorchircu/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Querying Your Code Base Using NDepend&#8217;s CQLinq Comments Feed" href="./feed/index.html">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="jetpack_related-posts-css" href="./../wp-content/plugins/jetpack/modules/related-posts/related-posts.css?ver=20240116" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./../wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./../wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="eu-cookie-law-style-css" href="./../wp-content/plugins/jetpack/modules/widgets/eu-cookie-law/style.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20240116" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript" src=".//wp-content/themes/bulan/assets/js/html5shiv.min.js" id="standard-html5-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/posts/452/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="shortlink" href="https://wp.me/p7kV6P-7i">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fquery-your-code-base-using-cqlinq%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Fquery-your-code-base-using-cqlinq%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="post-template-default single single-post postid-452 single-format-standard no-custom-header no-featured-image layout-2c-l" itemscope itemtype="http://schema.org/Blog">
+
+<div id="page" class="site">
+
+	<div class="search-area">
+		<div class="wide-container">
+			<form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+		</div>
+	</div>
+
+	
+	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="site-branding">
+			<div class="wide-container">
+				<div id="logo">
+<h1 class="site-title" itemprop="headline"><a href="./../index.html" itemprop="url" rel="home"><span itemprop="headline">Simple Oriented Architecture</span></a></h1>
+</div>
+			</div>
+		</div>
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="wide-container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+				<article id="post-452" class="post-452 post type-post status-publish format-standard hentry category-quality tag-architecture tag-cqlinq tag-ndepend tag-static-analysis no-post-thumbnail no-sticky entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	<header class="entry-header">
+
+								<span class="cat-links" itemprop="articleSection">
+				<a href="./../category/quality/index.html" rel="category tag">Quality</a>			</span>
+			<i class="fa fa-circle"></i>
+					
+					<time class="published" datetime="2016-11-16T06:50:14+00:00" itemprop="datePublished">November 16, 2016</time>
+		
+		<h1 class="entry-title" itemprop="headline">Querying Your Code Base Using NDepend&#8217;s CQLinq</h1>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content" itemprop="articleBody">
+
+		<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can identify code smells when you&#8217;re reading code or extending it, but this doesn&#8217;t give you an overview. After you have been working for a while in a project, you can name some of its strengths and weaknesses. But this approach takes a long time, relies on experience and is subjective. It would be nice if you could query a code base in a structured way. Basic search functionality from an IDE like Visual Studio isn&#8217;t powerful enough. NDepend allows you to query .Net code using LINQ syntax through CQLinq &#8211; Code Query LINQ. In this blog post we&#8217;ll discuss how to query your code base using CQLinq.</p>
+<h2 id="example">An Example</h2>
+<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank">default CQLinq rules</a>.</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from t in JustMyCode.Types where
+  t.IsClass &amp;&amp;
+ !t.IsGeneratedByCompiler &amp;&amp;
+ !t.IsStatic &amp;&amp;
+  t.SizeOfInst &gt; 0 &amp;&amp;
+
+  // Structure instance must not be too big,
+  // else it degrades performance.
+  t.SizeOfInst &lt;= 16 &amp;&amp;
+  // Must not have children
+  t.NbChildren == 0 &amp;&amp;
+
+  // Must not implement interfaces to avoid boxing mismatch
+  // when structures implements interfaces.
+  t.InterfacesImplemented.Count() == 0 &amp;&amp;
+
+  // Must derive directly from System.Object
+  t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1 &amp;&amp;
+
+  // Structures should be immutable type.
+  t.IsImmutable
+select new { t, t.SizeOfInst, t.InstanceFields }
+</pre>
+<p>As you can see, the query is quite readable. Even if you don&#8217;t know the CQLinq syntax, you understand what it does. And since it&#8217;s based on Linq, it already seems familiar.</p>
+<p><span id="more-452"></span></p>
+<h2>Anatomy of a CQLinq Query</h2>
+<p>Let&#8217;s look at the basic elements of a <a href="http://www.ndepend.com/docs/cqlinq-syntax" target="_blank">CQLinq query</a>.</p>
+<h3>Domain</h3>
+<p>The domain is what you are querying on:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from t in JustMyCode.Types
+</pre>
+<p>CQLinq allows you to query on a set of <a href="http://www.ndepend.com/docs/cqlinq-syntax#PredefinedDomains" target="_blank">predefined domains</a>: <strong>assemblies</strong>, <strong>namespaces</strong>, <strong>types</strong>, <strong>methods</strong> and <strong>fields</strong>. The root domain, <strong>context.CodeBase</strong>, is an entry point to all other domains. You can use the built in intellisense support from the <strong>Query and Rules Editor</strong> to explore it:</p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-481 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/domains.png?resize=510%2C289" alt="CQLinq Query Editor" width="510" height="289"></p>
+<p>But, since you&#8217;ll mainly use the subdomains, there are a set of shortcuts defined for these. For example, <strong>Types</strong> is just a shortcut for <strong>context.CodeBase.Types</strong>.</p>
+<p>Since many times you&#8217;re not interested in querying third party code, there are two disjoint predefined domains:</p>
+<ul>
+<li>
+<strong>Application </strong>&#8211; contains only application code</li>
+<li>
+<strong>ThirdParty </strong>&#8211; contains only 3rd party code, like <em>System.*, mscorblib, NHibernate</em>
+</li>
+</ul>
+<p>Apart from these two, there&#8217;s also the <a href="http://www.ndepend.com/docs/cqlinq-syntax#NotMyCode" target="_blank">JustMyCode </a>view, which excludes generated code. You can define code to exclude by adding the <strong>notmycode</strong> keyword in front of a query. Here is a simple query that excludes Specflow generated files:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+notmycode from t in Types where
+  t.SourceFileDeclAvailable &amp;&amp; 
+  t.SourceDecls.First().SourceFile
+   .FileName.ToLower().EndsWith(&quot;.feature.cs&quot;)
+select t
+</pre>
+<p><em><strong>Note</strong></em>: This is not required, since Specflow adds the <em>System.CodeDom.Compiler.GeneratedCodeAttribute</em> on generated types. NDepend already excludes these from <strong>JustMyCode</strong>. You can see all predefined <strong>notmycode</strong> queries in the <strong>Defining JustMyCode</strong> queries and rules group:</p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-486" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/justMyCodeResized.png?resize=600%2C240" alt="Just My Code definition" width="600" height="240"></p>
+<p>You can also refine the domain by using the query operator syntax to filter and narrow down your search:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from t in JustMyCode.Namespaces.WithNameLike(&quot;Library&quot;)
+</pre>
+<h3>Properties to Query On</h3>
+<p>NDepend&#8217;s API has a <a href="http://www.ndepend.com/docs/cqlinq-features" target="_blank">feature rich object model</a>, that you can see in our <a href="#example">Classes that are candidates to be turned into structures example</a>. You can query on the following properties of a code element:</p>
+<ul>
+<li>Name and file location</li>
+<li>Interfaces and class hierarchy</li>
+<li>Visibility</li>
+<li>Mutability</li>
+<li>Attributes</li>
+<li>Code Dependencies</li>
+<li>A set of <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">predefined code metrics </a>like <em>lines of code, cyclomatic complexity, code coverage, coupling, cohesion</em>.</li>
+</ul>
+<h3>Results</h3>
+<p>The <a href="http://www.ndepend.com/docs/cqlinq-syntax#Format" target="_blank">result of a CQLinq</a> query can either be a scalar value (e.g. a count) or an anonymous object. In the later case, the first property of the object must be an assembly, namespace, type, method or field:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from t in JustMyCode.Types
+select new { t, t.SizeOfInst, t.InstanceFields }
+</pre>
+<h3>Query Targets</h3>
+<p>There are many situations in which you would want to query the dependencies between code elements. For example, in our query, we want to see the inheritance depth from<em> System.Object</em>.</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1
+</pre>
+<p>To make these queries simpler, NDepend allows you to query for the element and then for its usage in one go. This functionality is exposed through a set of <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqDependency.html" target="_blank">extension methods</a>. You can query if a code element is <strong>using</strong>, <strong>creating</strong>, <strong>assigning</strong>, <strong>returning</strong> or <strong>deriving</strong> from another code element.</p>
+<p>Also, in order to be able to write generic queries that don&#8217;t break when you can&#8217;t find an element, you can use the <strong>AllowNoMatch()</strong> extension method. Without this, if the element is not found in the code base, the query will not compile. This makes sure that the query will always compile, even when it can&#8217;t match a code element.</p>
+<h3>Transforming a Query into a Rule</h3>
+<p>Transforming a query into a rule is straightforward. You just need to prefix the query with <strong>warnif count</strong>:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+warnif count &gt; 0 from t in JustMyCode.Types where
+</pre>
+<p>This will trigger a warning when you break the rule. If you want to <strong>break the build</strong> (i.e. return exit code 1 after running NDepend) you can mark the rule as <strong>Critical</strong> by clicking the Critical button in the <em>Queries and Rules Editor</em>.</p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-482 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/criticalRule.png?resize=600%2C375" alt="CQLinq critical rule" width="600" height="375"></p>
+<p>In the <strong>Queries and Rules Explorer </strong>window, you can <strong>export rules to a rule file</strong>. This is useful when you want to share the same set of rules across the company:</p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-483 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/RuleFile.png?resize=600%2C307" alt="CQLinq Rules file" width="600" height="307"></p>
+<h2>Code Diff</h2>
+<p>NDepend allows you to query the code differences between two different versions of the code base. The <strong>OlderVersion()</strong> and <strong>NewerVersion()</strong> extension methods allow getting the older or newer version of a code element. For a full list of methods, check out the <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqCompare.html" target="_blank">NDepend documentation</a>.</p>
+<p>This is useful when adopting NDepend on a legacy project. Usually, when you first run static code analysis (like FxCop/CodeAnalysis or StyleCop) on an existing code base, you are going to see two problem:</p>
+<ul>
+<li>The first problem is that there is a lot of noise. Deciding what should be fixed now will require a thorough analysis. The team should agree on a set of rules and their severity.</li>
+<li>The second, bigger problem, is that it doesn&#8217;t factor parts of the code that you don&#8217;t touch anymore. By analyzing just the the current version of the code, you lose a lot of historical information. <a href="http://www.sonarqube.org/" target="_blank">SonarQube </a>does store previous analysis results. This allows you to define delta metrics and track trends over time, but it&#8217;s still somewhat limited since I would like more granular control.</li>
+</ul>
+<p>These two problems make it harder to decide on what to focus. NDepend goes one step further and allows you to define evolutionary rules. This makes it easy to apply the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule" target="_blank">boy scout rule</a> and only fix what you touch. Here is the default <strong>Avoid making large methods even larger</strong> NDepend rule:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+warnif count &gt; 0 
+from m in JustMyCode.Methods where
+ !m.IsAbstract &amp;&amp;
+  m.IsPresentInBothBuilds() &amp;&amp;
+  m.CodeWasChanged() &amp;&amp;
+  // Eliminate constructors from match, since they get larger
+  // as soons as some fields initialization are added.
+ !m.IsConstructor &amp;&amp;
+ !m.IsClassConstructor
+
+let oldLoc = m.OlderVersion().NbLinesOfCode
+where oldLoc &gt; 15 &amp;&amp; m.NbLinesOfCode &gt; oldLoc
+
+select new { m,
+    oldLoc,
+    newLoc = m.NbLinesOfCode
+}
+</pre>
+<h2>Examples</h2>
+<p>This section will contain a few practical examples of how to use CQLinq to query your code base.</p>
+<h3>Stability Metrics</h3>
+<p>Uncle Bob defined a <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">set of principles and metrics</a> that evaluate the <a href="https://drive.google.com/file/d/0BwhCYaYDn8EgZjI3OTU4ZTAtYmM4Mi00MWMyLTgxN2YtMzk5YTY1NTViNTBh/view" target="_blank">package structure of an application</a>. In a <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank">previous post</a> we have already mentioned NDepend&#8217;s <a href="./../visualize-dependencies-with-ndepend/index.html#avi" target="_blank">Abstractness vs Instability Graph</a>. Now we&#8217;ll see how to check what assemblies in our code base don&#8217;t adhere to the stability principles. If you&#8217;re not familiar with the definition of stability, I would advise you to read Uncle Bob&#8217;s paper.</p>
+<h4>The Acyclic Dependencies Principle (ADP)</h4>
+<blockquote><p>The dependency structure between packages must be a Directed Acylcic Graph (DAG). That is, there must be no cycles in the dependency structure.</p></blockquote>
+<p>Visual Studio doesn&#8217;t allow dependency cycles between projects. But, if you&#8217;re using namespaces as logical components, you can introduce circular dependencies between namespaces. NDepend has a default rule for <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Avoid_namespaces_dependency_cycles.html" target="_blank">avoiding namespace dependency cycles</a>. As discussed in the <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank">previous post</a>, you can also use the Dependency Structure Matrix to highlight these.</p>
+<h4>The Stable Dependencies Principle (SDP)</h4>
+<blockquote><p>The dependencies between packages in a design should be in the direction of the stability of the packages. A package should only depend upon packages that are more stable that it is.</p></blockquote>
+<p>NDepend doesn&#8217;t have a default rule for SDP, but it&#8217;s easy to implement one since it already calculates the <em>Instability</em> metric for a given assembly.</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from me in JustMyCode.Assemblies
+  let deps = me.AssembliesUsed.Where(d =&gt; me.Instability &lt; d.Instability)
+  where deps.Any()
+select new {me, deps}
+</pre>
+<h4>The Stable Abstractions Principle (SAP)</h4>
+<blockquote><p>Packages that are maximmally stable should be maximmaly abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.</p></blockquote>
+<p>NDepend has a default rule for checking <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Assemblies_that_don%27t_satisfy_the_Abstractness_Instability_principle.html">Assemblies that don&#8217;t satisfy the Abstractness/Instability principle</a>. You can see how simple the query is, since NDepend already computes the<a href="http://www.ndepend.com/docs/code-metrics#DitFromMainSeq" target="_blank"> Distance from main sequence (D) metric</a>.</p>
+<h3>Detecting tests with complex setup</h3>
+<p>I&#8217;m not a fan of having long test setups. <a href="http://blog.jayfields.com/2007/06/testing-inline-setup.html">Some people say that you should not use test setups at all</a>. With CQLinq it&#8217;s quite easy to write a query that detects long setups:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from m in JustMyCode.Methods.Where(method =&gt;
+  method.HasAttribute(&quot;NUnit.Framework.*SetUpAttribute&quot;) &amp;&amp;
+  method.NbLinesOfCode &gt; 6)
+select m.ParentType
+</pre>
+<h3>Ensuring temporally coupled methods are used together</h3>
+<p><a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank">Temporal coupling</a> is a design smell. But you sometimes have to live with it, because of legacy code or the API of some framework. So how could you ensure you&#8217;re calling both methods?</p>
+<p>Let&#8217;s say you have the following classes:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+namespace App
+{
+    public class TemporallyCoupled
+    {
+        public void Init(string value) { }
+
+        public void DoSomething() { }
+    }
+
+    public class Caller
+    {
+        public void Test()
+        {
+            var temp = new TemporallyCoupled();
+            temp.DoSomething();
+        }
+    }
+}
+</pre>
+<p>If you need to call <strong>Init</strong> before calling <strong>DoSomething</strong>, this call will fail at runtime. With CQLinq, you can define a rule to check methods that call <strong>DoSomething</strong>, but don&#8217;t call <strong>Init</strong>:</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from m in JustMyCode.Methods.Where(caller =&gt;
+  caller.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;) &amp;&amp;
+ !caller.IsUsingMethod(&quot;App.TemporallyCoupled.Init*&quot;))
+select m
+</pre>
+<p>This query doesn&#8217;t catch all the issues. It doesn&#8217;t cater for calling <strong>Init</strong> <em>after</em> <strong>DoSomething</strong> or for calling <strong>Init</strong> from a different method. For the second case, you could switch the query to search for types that have a field of type <strong>TemporallyCoupled</strong> and call <strong>DoSomething</strong> without calling <strong>Init</strong>.</p>
+<pre class="brush: csharp; title: ; notranslate" title="">
+from t in JustMyCode.Types.Where(caller =&gt;
+  caller.Fields.Where(f =&gt; f.FieldTypeIs(&quot;App.TemporallyCoupled&quot;)).Any() &amp;&amp;
+  caller.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;) &amp;&amp;
+ !caller.IsUsingMethod(&quot;App.TemporallyCoupled.Init*&quot;))
+  let methods = t.Methods.Where(m =&gt; m.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;))
+select new {t, methods }
+</pre>
+<p>This query doesn&#8217;t pickup other false negatives. But the idea is that you can write this type of queries. Depending on your application and code, you can tailor the rule to pickup most of the issues.</p>
+<h3>Detecting API Breaking Changes</h3>
+<p>NDepend can also detect <a href="http://www.ndepend.com/default-rules/webframe.html?Q_API_Breaking_Changes__Types.html" target="_blank">API Breaking Changes</a>. In the next version you will also be able to get the Version of an Assembly. This will allow you to create a rule that breaks the build when you <em><strong>introduce API breaking changes</strong></em>, but you <em><strong>don&#8217;t increment the Major Version</strong></em>. This will ensure that you won&#8217;t make breaking changes by mistake.</p>
+<h2>Conclusion</h2>
+<p>CQLinq is a powerful tool. Although it might take some time to learn it well, you can benefit from it right from the start. There are over <a href="http://www.ndepend.com/default-rules/webframe.html">250 default rules</a> that you can read and learn from. You can tweak them and get instant feedback in the <a href="http://www.ndepend.com/docs/cqlinq-syntax#Edition">Queries and Rules Editor</a>. You can use NDepend&#8217;s <a href="http://www.ndepend.com/docs/code-search" target="_blank">code search</a> functionality which generates CQLinq queries on the fly.</p>
+<p>After you start getting the hang of it, you should start tailoring rules for your own code base. The one size fits all rule set approach of many static code analyzers is both an advantage and a disadvantage. On one hand, when you want to compare different code bases in an objective way, you need a standardized rule set. On the other hand, every code base is unique. As Erik Dietrich says, <a href="http://www.daedtech.com/4-ways-custom-code-metrics-make-a-difference/">custom code metrics allow you to define targeted goals</a>. You can ensure that types in a certain namespace are immutable, namespace A doesn&#8217;t depend on namespace B, or that certain classes are at least 90% covered by unit tests. Being able to define custom metrics can help you improve the quality of your code base.</p>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>		
+	</div>
+
+	<footer class="entry-footer">
+
+					<span class="tag-links" itemprop="keywords">
+									<a href="./../tag/architecture/index.html"><span>#</span>architecture</a>
+									<a href="./../tag/cqlinq/index.html"><span>#</span>CQLinq</a>
+									<a href="./../tag/ndepend/index.html"><span>#</span>NDepend</a>
+									<a href="./../tag/static-analysis/index.html"><span>#</span>static analysis</a>
+							</span>
+		
+	</footer>
+
+	<div class="jetpack-share-like">
+		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-452" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-452" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-452" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
+<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>			</div>
+
+</article><!-- #post-## -->
+
+				
+	<div class="author-bio" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+		<img alt="Victor Chircu" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=80&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=160&#038;d=mm&#038;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy" decoding="async" itemprop="image">		<div class="description">
+			<h3 class="author-title name">
+				<a class="author-name url fn n" href="./../author/victor-chircugmail-com/index.html" rel="author" itemprop="url"><span itemprop="name">Victor Chircu</span></a>
+			</h3>
+			<p class="bio" itemprop="description">I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.</p>
+			<ul class="author-social">
+									<li class="website">
+						<a href="./../index.html"><i class="fa fa-home"></i></a>
+					</li>
+													<li class="twitter">
+						<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a>
+					</li>
+																									<li class="linkedin">
+						<a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+					</li>
+							</ul>
+		</div>
+	</div>
+<!-- .author-bio -->
+
+
+				
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<ul>
+									<li>
+												<h2 class="entry-title"><a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html" rel="bookmark">How to identify common Code Smells using the NDepend API</a></h2>						<time class="published" datetime="2020-03-27T07:39:07+00:00">March 27, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../test-strategy-for-continuous-delivery/index.html" rel="bookmark">Defining a Test Strategy for Continuous Delivery</a></h2>						<time class="published" datetime="2019-06-14T05:26:55+00:00">June 14, 2019</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../defining-test-boundaries/index.html" rel="bookmark">Defining Test Boundaries &#8211; An example</a></h2>						<time class="published" datetime="2019-06-07T07:58:11+00:00">June 7, 2019</time>
+					</li>
+							</ul>
+		</div>
+
+	
+				
+<div id="comments" class="comments-area">
+
+	
+			<h3 class="comments-title">
+			6 Comments to &ldquo;Querying Your Code Base Using NDepend&#8217;s CQLinq&rdquo;		</h3>
+
+		
+		<ol class="commentlist">
+				<li class="pingback even thread-even depth-1" id="comment-25">
+		<article id="comment-25" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../visualizing-code-metrics-with-ndepend/index.html" class="url" rel="ugc">Visualizing Code Metrics with NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-27">
+		<article id="comment-27" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../overview-pyramid-metrics-ndepend/index.html" class="url" rel="ugc">Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+	<li class="pingback even thread-even depth-1" id="comment-29">
+		<article id="comment-29" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../how-to-identify-god-class-using-ndepend/index.html" class="url" rel="ugc">How to identify a God Class using NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-33">
+		<article id="comment-33" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" class="url" rel="ugc">How to identify Feature Envy using NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+	<li class="pingback even thread-even depth-1" id="comment-37">
+		<article id="comment-37" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../identify-efferent-coupling-code-smells-using-ndepend/index.html" class="url" rel="ugc">How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-44">
+		<article id="comment-44" class="comment-container">
+			<p itemprop="text">Pingback: <span itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name"><a href="./../how-to-identify-a-tradition-breaker-using-ndepend/index.html" class="url" rel="ugc">How to identify a Tradition Breaker using NDepend - Simple Oriented Architecture</a></span></span> </p>
+		</article>
+	</li>
+<!-- #comment-## -->
+		</ol>
+<!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="452" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3f74c3419f"></p>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="105"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+</form>	</div>
+<!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div>
+<!-- #comments -->
+
+				
+	<div class="loop-nav">
+		<div class="prev">Previous: <a href="./../visualize-dependencies-with-ndepend/index.html" rel="prev">Visualize Dependencies with NDepend</a>
+</div>		<div class="next">Next: <a href="./../visualizing-code-metrics-with-ndepend/index.html" rel="next">Visualizing Code Metrics with NDepend</a>
+</div>	</div>
+<!-- .loop-nav -->
+
+
+			
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+</aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a>
+									</li>
+											<li>
+					<a href="./../interviewing-your-architecture/index.html">Interviewing your architecture</a>
+									</li>
+											<li>
+					<a href="./../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a>
+									</li>
+											<li>
+					<a href="./../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a>
+									</li>
+											<li>
+					<a href="./../7-strategies-for-assigning-ids/index.html">7 Strategies for Assigning Ids</a>
+									</li>
+					</ul>
+
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+<a href="./../tag/agile/index.html" class="tag-cloud-link tag-link-29 tag-link-position-1" style="font-size: 12px;">agile</a>
+<a href="./../tag/architecture/index.html" class="tag-cloud-link tag-link-33 tag-link-position-2" style="font-size: 12px;">architecture</a>
+<a href="./../tag/books/index.html" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12px;">books</a>
+<a href="./../tag/code-smells/index.html" class="tag-cloud-link tag-link-65 tag-link-position-4" style="font-size: 12px;">code smells</a>
+<a href="./../tag/ddd/index.html" class="tag-cloud-link tag-link-28 tag-link-position-5" style="font-size: 12px;">ddd</a>
+<a href="./../tag/detection-strategy/index.html" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 12px;">detection strategy</a>
+<a href="./../tag/integration/index.html" class="tag-cloud-link tag-link-9 tag-link-position-7" style="font-size: 12px;">integration</a>
+<a href="./../tag/long-running-process/index.html" class="tag-cloud-link tag-link-93 tag-link-position-8" style="font-size: 12px;">long running process</a>
+<a href="./../tag/messaging/index.html" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 12px;">messaging</a>
+<a href="./../tag/metrics/index.html" class="tag-cloud-link tag-link-60 tag-link-position-10" style="font-size: 12px;">metrics</a>
+<a href="./../tag/microservices/index.html" class="tag-cloud-link tag-link-87 tag-link-position-11" style="font-size: 12px;">microservices</a>
+<a href="./../tag/msmq/index.html" class="tag-cloud-link tag-link-48 tag-link-position-12" style="font-size: 12px;">msmq</a>
+<a href="./../tag/ndepend/index.html" class="tag-cloud-link tag-link-51 tag-link-position-13" style="font-size: 12px;">NDepend</a>
+<a href="./../tag/nservicebus/index.html" class="tag-cloud-link tag-link-8 tag-link-position-14" style="font-size: 12px;">NServiceBus</a>
+<a href="./../tag/quality/index.html" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 12px;">quality</a>
+<a href="./../tag/security/index.html" class="tag-cloud-link tag-link-4 tag-link-position-16" style="font-size: 12px;">security</a>
+<a href="./../tag/soa/index.html" class="tag-cloud-link tag-link-37 tag-link-position-17" style="font-size: 12px;">soa</a>
+<a href="./../tag/specifications/index.html" class="tag-cloud-link tag-link-19 tag-link-position-18" style="font-size: 12px;">specifications</a>
+<a href="./../tag/testing/index.html" class="tag-cloud-link tag-link-12 tag-link-position-19" style="font-size: 12px;">testing</a>
+<a href="./../tag/visualization/index.html" class="tag-cloud-link tag-link-63 tag-link-position-20" style="font-size: 12px;">visualization</a>
+</div>
+</aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="./../2020/03/index.html">March 2020</a></li>
+	<li><a href="./../2020/02/index.html">February 2020</a></li>
+	<li><a href="./../2019/08/index.html">August 2019</a></li>
+	<li><a href="./../2019/07/index.html">July 2019</a></li>
+	<li><a href="./../2019/06/index.html">June 2019</a></li>
+	<li><a href="./../2019/04/index.html">April 2019</a></li>
+	<li><a href="./../2019/03/index.html">March 2019</a></li>
+	<li><a href="./../2019/02/index.html">February 2019</a></li>
+	<li><a href="./../2019/01/index.html">January 2019</a></li>
+	<li><a href="./../2018/10/index.html">October 2018</a></li>
+	<li><a href="./../2018/07/index.html">July 2018</a></li>
+	<li><a href="./../2018/06/index.html">June 2018</a></li>
+	<li><a href="./../2018/02/index.html">February 2018</a></li>
+	<li><a href="./../2017/01/index.html">January 2017</a></li>
+	<li><a href="./../2016/12/index.html">December 2016</a></li>
+	<li><a href="./../2016/11/index.html">November 2016</a></li>
+	<li><a href="./../2016/10/index.html">October 2016</a></li>
+	<li><a href="./../2016/09/index.html">September 2016</a></li>
+	<li><a href="./../2016/08/index.html">August 2016</a></li>
+	<li><a href="./../2016/07/index.html">July 2016</a></li>
+	<li><a href="./../2016/06/index.html">June 2016</a></li>
+	<li><a href="./../2016/05/index.html">May 2016</a></li>
+	<li><a href="./../2016/04/index.html">April 2016</a></li>
+	<li><a href="./../2016/03/index.html">March 2016</a></li>
+			</ul>
+
+			</aside><aside id="rss_links-3" class="widget widget_rss_links"><ul><li><a target="_self" href="./../feed/index.html" title="Subscribe to posts">RSS - Posts</a></li></ul>
+</aside><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post" id="jetpack-eu-cookie-law-form">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+		<a href="./../privacy-policy/index.html" rel="">
+		Cookie Policy	</a>
+</div>
+</aside>
+</div>
+<!-- #secondary -->
+		</div>
+<!-- .wide-container -->
+	</div>
+<!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="wide-container">
+
+			<div class="site-info">
+				<p class="copyright">&copy; Copyright 2024 <a href="./../index.html">Simple Oriented Architecture</a> &middot; Designed by <a href="http://www.theme-junkie.com/">Theme Junkie</a></p>			</div>
+<!-- .site-info -->
+
+			<div class="social-links">
+<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+</div>
+		</div>
+	</footer><!-- #colophon -->
+
+</div>
+<!-- #page -->
+
+	<div style="display:none">
+			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
+		</div>
+		</div>
+		
+	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/query-your-code-base-using-cqlinq\/":452};</script>
+				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
+<script type="text/javascript">(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = ".//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = ".//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}</script>
+<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=202445" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.0" id="wpgroho-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js?ver=20180522" id="eu-cookie-law-script-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"452\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
+_stq.push([ "clickTrackerInit", "108420443", "452" ]);
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="./../xmlrpc.php">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Defining a Test Strategy for Continuous Delivery - Simple Oriented Architecture</title>
+	<meta name="description" content="In this blog post we&#039;ll see how asking basic questions like Why, What, How and Where can help you define a test strategy in a Continuous Delivery context.">
+	<link rel="canonical" href="./index.html">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Defining a Test Strategy for Continuous Delivery - Simple Oriented Architecture">
+	<meta property="og:description" content="In this blog post we&#039;ll see how asking basic questions like Why, What, How and Where can help you define a test strategy in a Continuous Delivery context.">
+	<meta property="og:url" content="./index.html">
+	<meta property="og:site_name" content="Simple Oriented Architecture">
+	<meta property="article:published_time" content="2019-06-14T05:26:55+00:00">
+	<meta property="article:modified_time" content="2020-01-17T13:51:03+00:00">
+	<meta property="og:image" content="./../wp-content/uploads/2019/05/CD.png">
+	<meta name="author" content="Victor Chircu">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/victorchircu/">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Victor Chircu">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="18 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":".//test-strategy-for-continuous-delivery/#article","isPartOf":{"@id":".//test-strategy-for-continuous-delivery/"},"author":{"name":"Victor Chircu","@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"headline":"Defining a Test Strategy for Continuous Delivery","datePublished":"2019-06-14T05:26:55+00:00","dateModified":"2020-01-17T13:51:03+00:00","mainEntityOfPage":{"@id":".//test-strategy-for-continuous-delivery/"},"wordCount":3681,"commentCount":0,"publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"image":{"@id":".//test-strategy-for-continuous-delivery/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2019/05/CD.png","keywords":["continuous delivery","microservices","quality","test strategy","testing","testing pyramid"],"articleSection":["Quality"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":[".//test-strategy-for-continuous-delivery/#respond"]}]},{"@type":"WebPage","@id":".//test-strategy-for-continuous-delivery/","url":".//test-strategy-for-continuous-delivery/","name":"Defining a Test Strategy for Continuous Delivery - Simple Oriented Architecture","isPartOf":{"@id":".//#website"},"primaryImageOfPage":{"@id":".//test-strategy-for-continuous-delivery/#primaryimage"},"image":{"@id":".//test-strategy-for-continuous-delivery/#primaryimage"},"thumbnailUrl":".//wp-content/uploads/2019/05/CD.png","datePublished":"2019-06-14T05:26:55+00:00","dateModified":"2020-01-17T13:51:03+00:00","description":"In this blog post we'll see how asking basic questions like Why, What, How and Where can help you define a test strategy in a Continuous Delivery context.","breadcrumb":{"@id":".//test-strategy-for-continuous-delivery/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":[".//test-strategy-for-continuous-delivery/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":".//test-strategy-for-continuous-delivery/#primaryimage","url":"https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/CD.png?fit=933%2C469&ssl=1","contentUrl":"https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/CD.png?fit=933%2C469&ssl=1","width":933,"height":469},{"@type":"BreadcrumbList","@id":".//test-strategy-for-continuous-delivery/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":".//"},{"@type":"ListItem","position":2,"name":"Defining a Test Strategy for Continuous Delivery"}]},{"@type":"WebSite","@id":".//#website","url":".//","name":"Simple Oriented Architecture","description":"","publisher":{"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":".//?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":".//#/schema/person/14f18e400f12db819869e684790bbf7e","name":"Victor Chircu","image":{"@type":"ImageObject","inLanguage":"en-US","@id":".//#/schema/person/image/","url":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=96&d=mm&r=g","caption":"Victor Chircu"},"logo":{"@id":".//#/schema/person/image/"},"description":"I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.","sameAs":[".//","https://www.linkedin.com/in/victor-chircu-1519a331","https://x.com/https://twitter.com/victorchircu/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Defining a Test Strategy for Continuous Delivery Comments Feed" href="./feed/index.html">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="jetpack_related-posts-css" href="./../wp-content/plugins/jetpack/modules/related-posts/related-posts.css?ver=20240116" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./../wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./../wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
+<link rel="stylesheet" id="eu-cookie-law-style-css" href="./../wp-content/plugins/jetpack/modules/widgets/eu-cookie-law/style.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20240116" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript" src=".//wp-content/themes/bulan/assets/js/html5shiv.min.js" id="standard-html5-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/posts/1060/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="shortlink" href="https://wp.me/p7kV6P-h6">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Ftest-strategy-for-continuous-delivery%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Ftest-strategy-for-continuous-delivery%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="post-template-default single single-post postid-1060 single-format-standard no-custom-header no-featured-image layout-2c-l" itemscope itemtype="http://schema.org/Blog">
+
+<div id="page" class="site">
+
+	<div class="search-area">
+		<div class="wide-container">
+			<form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+		</div>
+	</div>
+
+	
+	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="site-branding">
+			<div class="wide-container">
+				<div id="logo">
+<h1 class="site-title" itemprop="headline"><a href="./../index.html" itemprop="url" rel="home"><span itemprop="headline">Simple Oriented Architecture</span></a></h1>
+</div>
+			</div>
+		</div>
+
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="wide-container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+				<article id="post-1060" class="post-1060 post type-post status-publish format-standard hentry category-quality tag-continuous-delivery tag-microservices tag-quality tag-test-strategy tag-testing tag-testing-pyramid no-post-thumbnail no-sticky entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	<header class="entry-header">
+
+								<span class="cat-links" itemprop="articleSection">
+				<a href="./../category/quality/index.html" rel="category tag">Quality</a>			</span>
+			<i class="fa fa-circle"></i>
+					
+					<time class="published" datetime="2019-06-14T05:26:55+00:00" itemprop="datePublished">June 14, 2019</time>
+		
+		<h1 class="entry-title" itemprop="headline">Defining a Test Strategy for Continuous Delivery</h1>
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content" itemprop="articleBody">
+
+		
+<p>Testing is an important part of <a rel="noreferrer noopener" aria-label="building a product right (opens in a new tab)" href="./../software-quality-building-the-product-right/index.html" target="_blank">building a product right</a>. Continuous Delivery makes that more explicit by building quality in. In this blog post we&#8217;ll see how you can start off testing on the wrong foot. Then we&#8217;ll see how asking basic questions like <strong>Why, What, How and Where </strong>can help you define a sound test strategy in a Continuous Delivery context.</p>
+
+
+
+<h2 class="wp-block-heading">The Deployment Pipeline</h2>
+
+
+
+<p>Most of the teams nowadays think about <a href="https://continuousdelivery.com/" target="_blank" rel="noreferrer noopener" aria-label="Continuous Delivery (opens in a new tab)">Continuous Delivery</a>. Continuous Delivery means automating the release process, from code merge to production release. How do you do that? By using the <a rel="noreferrer noopener" aria-label="deployment pipeline pattern (opens in a new tab)" href="https://continuousdelivery.com/implementing/patterns/" target="_blank">deployment pipeline pattern</a>. The deployment pipeline models and automates the release process. Here is an example:</p>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="628" height="316" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/CD.png?resize=628%2C316&#038;ssl=1" alt="A deployment pipeline example" class="wp-image-1063" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/CD.png?w=933&amp;ssl=1 933w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/CD.png?resize=768%2C386&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"><figcaption>A deployment pipeline example</figcaption></figure>
+
+
+
+<span id="more-1060"></span>
+
+
+
+<p>As a release candidate progresses through the pipeline, your confidence in it increases. But, on the other hand, you get feedback later. Here is a simple example:</p>
+
+
+
+<ul class="wp-block-list">
+<li>In the CI step you build the solution and run unit tests. You get the results back (feedback) in 3 minutes. You&#8217;re 60% confident that you haven&#8217;t broken anything.</li>
+<li>You then automatically deploy to a test environment where you run a set of automated tests. This step takes 5 minutes and your confidence level increases to 70%.</li>
+<li>You run the automated regression test suite. This takes 20 minutes and you confidence goes up to 80%. </li>
+<li>The team can then pull the release in an Exploratory environment and do some exploratory testing (if deemed necessary). This might take a couple of hours. Your confidence level increases to 90%.</li>
+<li>The users can then pull the release in the UAT environment and run User Acceptance Testing. This usually takes a couple of days but at the end of a successful UAT you&#8217;re 95% certain that you haven&#8217;t broken anything.</li>
+</ul>
+
+
+
+<p>As you can see, testing is a big part of any deployment pipeline. So how should you define a test strategy in a Continuous Delivery context?</p>
+
+
+
+<p>Let&#8217;s first see an example of how not to do it.</p>
+
+
+
+<h2 class="wp-block-heading">Don&#8217;t try this at home</h2>
+
+
+
+<h3 class="wp-block-heading">Meet the Pharaohs </h3>
+
+
+
+<p>They&#8217;re an Agile team working on the next big eCommerce product. They&#8217;re in the process of adopting Continuous Delivery practices on their project. </p>
+
+
+
+<p>Let&#8217;s give some context:</p>
+
+
+
+<ul class="wp-block-list">
+<li>The product they&#8217;re building uses the Microservices architectural style.</li>
+<li>During refinements, the team discuss mostly happy path scenarios. Because of time pressure, they don&#8217;t spend too much time discussing complex scenarios.</li>
+<li>Although the team uses BDD, <a href="https://theitriskmanager.com/2019/04/06/the-tragedy-of-given-when-then/">it mostly uses the BDD tooling</a>. The acceptance criteria are very UI oriented, like in the following example.  As you can see, this scenario contains more UI terms (navigate,  page, click, button, icon) than terms from the business domain (product, add to  cart).</li>
+</ul>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" decoding="async" width="628" height="139" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/feature.png?resize=628%2C139&#038;ssl=1" alt="How not to write specifications" class="wp-image-1064"><figcaption>How not to write specifications</figcaption></figure>
+
+
+
+<ul class="wp-block-list">
+<li>After defining the acceptance criteria, the story gets to the development team. The managers have <a rel="noreferrer noopener" aria-label="imposed a unit test coverage target of 90% (opens in a new tab)" href="https://www.jamesshore.com/Blog/Dont-Measure-Unit-Test-Code-Coverage.html" target="_blank">imposed a unit test coverage target of 90%</a> on the team. No problem: they get there by testing the simplest test cases and making sure that all getters and setters are covered (since this is the complex code that spawns most bugs, right?)</li>
+<li>After finishing the implementation, the devs throw the work over the wall to the testing team.</li>
+<li>There&#8217;s a pressure to automate all acceptance criteria. The testing team is spending most of their time on improving their coding skills in order to automate the happy path scenarios. Since the acceptance criteria are defined at the UI level, all tests exercise the entire application through the UI (using a tool like Selenium).</li>
+<li>
+<a rel="noreferrer noopener" aria-label="Because it takes time to automate, the team doesn't have enough time to think about more complex scenarios or run Exploratory testing (opens in a new tab)" href="https://www.testingexcellence.com/problems-test-automation-modern-qa/" target="_blank">Because it takes time to automate, the team doesn&#8217;t have enough time to think about more complex scenarios or run Exploratory testing</a>.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Outcome</h3>
+
+
+
+<p>As you can see, the Pharaohs are not in a good place:</p>
+
+
+
+<ul class="wp-block-list">
+<li>They have a lot of unit tests that test really simple logic. These tests will never fail. This means <a rel="noreferrer noopener" aria-label="they're useless (opens in a new tab)" href="https://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf" target="_blank">they&#8217;re useless</a>.</li>
+<li>Of course, not all logic is simple. There is a <a rel="noreferrer noopener" aria-label="god class (opens in a new tab)" href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank">god class</a> that attracts most of the complex behavior in the system. But, since god classes are notoriously hard to test, it&#8217;s not tested. So the most complex piece of code falls in the 10% of code that&#8217;s not covered by tests.</li>
+<li>Because the devs and testers don&#8217;t collaborate, they are duplicating test cases.</li>
+<li>The UI test suite takes a long time to run and it&#8217;s <a href="https://samsaffron.com/archive/2019/05/15/tests-that-sometimes-fail" target="_blank" rel="noreferrer noopener" aria-label="flaky (opens in a new tab)">flaky</a>. This means that it might pass or fail randomly, without any change to the code or the infrastructure.</li>
+<li>Since the team spends most of their testing budget on learning how to automate, they don&#8217;t spend enough time on exploratory. So most bugs are found in UAT or, even worse, in Production.</li>
+</ul>
+
+
+
+<p>As you can see, this team suffers from the <a href="https://www.testingexcellence.com/7-deadly-sins-of-test-automation/" target="_blank" rel="noreferrer noopener" aria-label="7 deadly sins of test automation (opens in a new tab)">7 deadly sins of test automation</a>. They don&#8217;t reap the benefits of Continuous Delivery. Most of the valuable feedback comes late in the process, from UAT and Production. So what can the Pharaohs do?</p>
+
+
+
+<h2 class="wp-block-heading">Enter the Pyramid</h2>
+
+
+
+<p>They ask for advice and someone tells them they&#8217;re doing it all wrong. They are not following the test pyramid:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img data-recalc-dims="1" decoding="async" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/testpyramid.png?resize=400%2C295&#038;ssl=1" alt="The Test Pyramid" class="wp-image-1066" width="400" height="295" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/testpyramid.png?w=800&amp;ssl=1 800w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/testpyramid.png?resize=768%2C565&amp;ssl=1 768w" sizes="(max-width: 400px) 100vw, 400px"><figcaption>The Test Pyramid</figcaption></figure></div>
+
+
+
+<p>The <a rel="noreferrer noopener" aria-label=" Test Pyramid (opens in a new tab)" href="https://martinfowler.com/bliki/TestPyramid.html" target="_blank">Test Pyramid</a> is a model that tells you how many tests to write at each layer. Since unit tests are the fastest, you should have a lot of them. At the next layer you should have a smaller number of Integration/Service tests that check how different components interact. UI tests sit at the top of the pyramid. These tests are flaky and take a long time to run, so you should have fewer test cases implemented at this level.</p>
+
+
+
+<p>So the Pharaohs now see that they have too many UI tests. The devs and testers start to collaborate and move most of the UI tests at the Integration layer (and maybe some at unit level). This helps them get rid of the long and flaky UI test suite and it removes most of the duplicated test cases. Unfortunately, they still have useless unit tests, untested god class and bugs are still found in UAT and production.</p>
+
+
+
+<p>So the pyramid didn&#8217;t fix all the problems. Why? </p>
+
+
+
+<h3 class="wp-block-heading">Context is King</h3>
+
+
+
+<p>The problem is that the test pyramid doesn&#8217;t care about the context. <a rel="noreferrer noopener" aria-label="John Ferguson Smart (opens in a new tab)" href="https://twitter.com/wakaleo" target="_blank">John Ferguson Smart</a> reminds us that <a href="https://johnfergusonsmart.com/test-pyramid-heresy/">the Test Pyramid is a model</a>. And, <a href="https://en.wikipedia.org/wiki/All_models_are_wrong" target="_blank" rel="noreferrer noopener" aria-label="as George Box (opens in a new tab)">as George Box</a> reminds us:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p><em>All models are wrong; some models are useful .</em></p>
+<cite>George Box</cite>
+</blockquote>
+
+
+
+<p>The test pyramid is wrong, but it is useful is some contexts. </p>
+
+
+
+<h4 class="wp-block-heading">Monolithic Architecture</h4>
+
+
+
+<p>The concept <a rel="noreferrer noopener" aria-label="first appeared in 2003 (opens in a new tab)" href="https://martinfowler.com/bliki/TestPyramid.html" target="_blank">first appeared in 2003</a>. At that time most systems used a monolithic architecture. For this type of architecture, the Test Pyramid might be the correct starting point. But computing resources have become faster and more accessible and the tools have gotten better. So is the Test Pyramid the right approach in all cases? Of course not.</p>
+
+
+
+<h4 class="wp-block-heading">CRUD Applications </h4>
+
+
+
+<p>As <a href="https://joecolantonio.com/testtalks/79-todd-gardner-terrible-testing/">Todd Gardner</a> says, if you&#8217;re working on a CRUD application that relies on a framework to load and store data in the Database, <a rel="noreferrer noopener" aria-label="the Testing Pyramid won't help you (opens in a new tab)" href="https://www.joecolantonio.com/testing-pyramid/" target="_blank">the Testing Pyramid won&#8217;t help you</a>. You don&#8217;t have complex logic to unit test. But you do integrate with a database and you might want to check that your SQL queries are correct. So, in this case, maybe the Inverted Test Pyramid is the right approach.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="https://i2.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingInCD-Crud.png?fit=628%2C399&amp;ssl=1" alt="Inverted Test Pyramid" class="wp-image-1067" width="448" height="299" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingInCD-Crud.png?w=1086&amp;ssl=1 1086w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingInCD-Crud.png?resize=768%2C513&amp;ssl=1 768w" sizes="(max-width: 448px) 100vw, 448px"><figcaption>Inverted Test Pyramid</figcaption></figure></div>
+
+
+
+<h4 class="wp-block-heading">Service-based Architecture </h4>
+
+
+
+<p>What if you use a <a rel="noreferrer noopener" aria-label="service-based architecture (opens in a new tab)" href="https://www.infoq.com/news/2016/10/service-based-architecture/" target="_blank">service-based architecture</a>. You have 5 big services. In this case, some of the complexity has moved from inside the services to the interaction between them.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-recalc-dims="1" loading="lazy" decoding="async" width="401" height="351" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/Microservices.png?resize=401%2C351&#038;ssl=1" alt="Service-based architecture" class="wp-image-1068"><figcaption>Service-based architecture</figcaption></figure></div>
+
+
+
+<p>This means that some of the risk has moved from inside the units to the interaction between them. In this case maybe it makes sense to have the same number of unit and service tests. You&#8217;re building a test house:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-recalc-dims="1" loading="lazy" decoding="async" width="218" height="314" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingInCD-Service-based-architecures-s.png?resize=218%2C314&#038;ssl=1" alt="Test House" class="wp-image-1070"><figcaption>Test House</figcaption></figure></div>
+
+
+
+<h4 class="wp-block-heading">Serverless Architecture</h4>
+
+
+
+<p>In a <a rel="noreferrer noopener" aria-label="Serverless architecture (opens in a new tab)" href="https://martinfowler.com/articles/serverless.html" target="_blank">Serverless architecture</a> you might have tens or hundreds of functions. Each function is quite simple, but the complexity has moved at the integration level. Is the function trigger configured correctly? Does it have permission to read from the Database? For these reason, people are recommending the <a href="https://labs.spotify.com/2018/01/11/testing-of-microservices/">Test Honeycomb</a> approach for <a href="https://epsagon.com/blog/how-to-test-serverless-apps/" target="_blank" rel="noreferrer noopener" aria-label="testing serverless architectures (opens in a new tab)">testing serverless architectures</a>.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-recalc-dims="1" loading="lazy" decoding="async" width="218" height="314" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingInCD-Serveless-s.png?resize=218%2C314&#038;ssl=1" alt="Test Honeycomb" class="wp-image-1071"><figcaption>Test Honeycomb</figcaption></figure></div>
+
+
+
+<p>So if the test pyramid is not the answer, where do you start? Well, the test pyramid only answers the How question. You should aim to answer Why, What and Where too.</p>
+
+
+
+<h2 class="wp-block-heading">Why</h2>
+
+
+
+<h3 class="wp-block-heading">Identifying Risk</h3>
+
+
+
+<p>It&#8217;s only normal that you should start with why. Why do I test? And I think it has a lot to do with managing risk. As <a href="https://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf">James Coplien puts it</a>:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p><strong><em>Good testing</em></strong><em>, again, is based on careful thought and on </em><strong><em>basic principles of risk management</em></strong><em>.; (…) without rudimentary skills in this area, then you are likely to do a lot of</em><strong><em> useless tests</em></strong><em>. </em></p>
+<cite> James O Coplien</cite>
+</blockquote>
+
+
+
+<p>So the first thing you need to do is to identify the risk profile of the product you are building. Here are some of the risk types that you should consider:</p>
+
+
+
+<ul class="wp-block-list">
+<li>
+<strong>Functional </strong>risk &#8211; if you&#8217;re dealing with complex business behavior or complicated algorithms. This is the kind of behavior that you should spend time unit testing.</li>
+<li>
+<strong>Integration </strong>risk &#8211; if you&#8217;re integrating with a lot of services and 3rd party applications. This is the type of risk that can be managed by integration tests. Also, if there&#8217;s a partnership relationship between the service producer and consumer, then maybe the consumer can write some <a href="https://martinfowler.com/bliki/ContractTest.html">contract tests</a> that run in the producer&#8217;s pipeline for faster feedback.</li>
+<li>
+<strong>Configuration </strong>risk. Maybe you&#8217;ve bought a 3rd party application and you&#8217;ve configured it to suite your needs. In this case you need to reduce the risk that it&#8217;s not configured properly. </li>
+<li>
+<strong>Orchestration </strong>risk &#8211; if you have a component that orchestrates other components/services. This type of component should be unit/component tested.</li>
+<li>
+<strong>API Design</strong> risk. You&#8217;re working on an open source library or an open API. In this case, you need to make sure that the API is usable, so you could drive the design with tests.</li>
+<li>You&#8217;re dealing with some hard to achieve <strong>Quality Attributes</strong> (e.g. Scalability, Performance, Availability). In this case spend time testing for these quality attributes.</li>
+<li>
+<strong>Refactoring </strong>risk &#8211; you need to perform a large refactoring on the app and you are not covered. In this case you could implement some <a href="https://michaelfeathers.silvrback.com/characterization-testing">characterization tests</a> or <a href="https://blog.thecodewhisperer.com/permalink/surviving-legacy-code-with-golden-master-and-sampling">Golden Master tests</a>.</li>
+<li>
+<strong>Market </strong>risk &#8211; let&#8217;s not forget about this one. There is no point in <a rel="noreferrer noopener" aria-label="building the product right (opens in a new tab)" href="./../software-quality-building-the-product-right/index.html" target="_blank">building the product right</a> if it&#8217;s not the <a rel="noreferrer noopener" aria-label="right product (opens in a new tab)" href="./../software-quality-building-the-right-product/index.html" target="_blank">right product</a>. So in this case maybe you should invest in <a href="https://medium.com/@copyconstruct/testing-in-production-the-safe-way-18ca102d0ef1">A/B testing, canary releasing and real user monitoring</a>.</li>
+<li>
+<strong>Miscommunication </strong>risk &#8211; if the business/client is in one organization and the development team is in another (for example service companies), there&#8217;s a risk that there will be miscommunication between these two sides. In this case maybe it makes sense to invest in <a href="https://johnfergusonsmart.com/living-documentation-not-just-test-reports/">living documentation</a>. This can help build a shared understanding. If we&#8217;re talking about business documentation, then invest in BDD and automate your scenarios with tools like <a href="https://cucumber.io/">Cucumber </a>and <a href="https://specflow.org/">SpecFlow</a>.  If you&#8217;re working on an API, invest in technical documentation. This can take the form of a test suite, a sample application and/or a wiki.</li>
+</ul>
+
+
+
+<p>So, as <a href="https://www.joecolantonio.com/testing-pyramid/" target="_blank" rel="noreferrer noopener" aria-label="Todd Gardner puts it (opens in a new tab)">Todd Gardner puts it</a>:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p><em>We should </em><strong><em>think scales instead of pyramids</em></strong><em> when it comes to software development testing. </em></p>
+<cite>Todd Gardner</cite>
+</blockquote>
+
+
+
+<p>By thinking scales, you can make better decisions. For example, the team has decided that the highest risk is that there isn&#8217;t a product/market fit. So they focus on removing that risk by trying to get the product in the hands of the users as soon as possible. If there&#8217;s market demand, then the risk moves elsewhere. Let&#8217;s say that the highest risk is now functional. The team then decides to spend more time unit testing. This is what <a rel="noreferrer noopener" aria-label="Liz Keogh (opens in a new tab)" href="https://twitter.com/lunivore" target="_blank">Liz Keogh</a> and <a href="https://twitter.com/tastapod">Dan North</a> call <a rel="noreferrer noopener" aria-label="Spike &amp; Stabilize (opens in a new tab)" href="https://lizkeogh.com/2012/06/24/beyond-test-driven-development/" target="_blank">Spike &amp; Stabilize</a>.  </p>
+
+
+
+<h3 class="wp-block-heading">Using Historical Data</h3>
+
+
+
+<p>The best way to make a decision is to base it on facts. This is why it&#8217;s a good idea to look at the areas of code that generate most bugs when identifying risk. Because, <strong>if that code generated bugs in the past, it&#8217;s likely that it will generate bugs in the future</strong>. </p>
+
+
+
+<p>The good news is that there are practices and tools that can help you with that by looking at the source code history. It can be quite simple: if you use <a rel="noreferrer noopener" aria-label="Smart Commits (opens in a new tab)" href="https://confluence.atlassian.com/fisheye/using-smart-commits-960155400.html" target="_blank">Smart Commits</a> and add the issue tracker Id in the commit message, then you can use this information to pinpoint bug magnets. If in almost all commits to a file you reference bug IDs, then that file is very likely to generate bugs. <a href="https://twitter.com/AdamTornhill">Adam Tornhill</a>&#8216;s books,  <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="./../book-review-your-code-as-a-crime-scene/index.html" target="_blank">Your Code as a Crime Scene</a> and <a href="https://pragprog.com/book/atevol/software-design-x-rays" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Software Design X-Rays</a> describe the techniques, so have a look if you&#8217;re interested in finding out how you can extract new knowledge and insight from your source code&#8217;s history. </p>
+
+
+
+<h3 class="wp-block-heading">Acceptance vs. Regression</h3>
+
+
+
+<p>Another question to ask is: are you trying to prove to someone (e.g. the Product Owner) that the software works as discussed? If so, then this is an Acceptance Test. If you&#8217;re trying to ensure that this doesn&#8217;t break in the future, it&#8217;s a Regression Test. </p>
+
+
+
+<h2 class="wp-block-heading">What</h2>
+
+
+
+<p>Now that you&#8217;ve identified the risk that you&#8217;re trying to mitigate, you can move to What. You can now look at the system and ask What should I test?</p>
+
+
+
+<p>Let&#8217;s take an example of a system &#8211; an eCommerce product &#8211; that uses SOA as a top-level architecture. So a System is made up of Services. Services are made up of Components. Components are made up of Classes. A Class can have many methods. And of course it connects to Databases, Queues and 3rd party web APIs.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img data-recalc-dims="1" loading="lazy" decoding="async" width="392" height="382" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/05/TestingScope.png?resize=392%2C382&#038;ssl=1" alt="Test Boundaries" class="wp-image-1074"><figcaption>Test Boundaries</figcaption></figure></div>
+
+
+
+<ul class="wp-block-list">
+<li>
+<strong>System </strong>&#8211; If you want to make sure that everything is setup and a user of the product can do the most important actions: e.g. see a product, select it, buy something, then <strong>test at the system level</strong>.</li>
+<li>
+<strong>Service </strong>&#8211; If you want to make sure the shipping business capability works, then <strong>test the shipping service</strong>.</li>
+<li>
+<strong>Component </strong>&#8211; If you want to make sure that the discount is computed correctly &#8211; then <strong>test the Discount component.</strong>
+</li>
+<li>
+<strong>Class </strong>&#8211; If you want to make sure that the invoice lines are correctly displayed &#8211; then <strong>test the InvoiceLinePrinter class</strong>.</li>
+<li>
+<strong>Method </strong>&#8211; If you want to make sure that the amount is formatted correctly with different parameters and that is in a static method, then <strong>test that method</strong>.</li>
+<li>
+<strong>Integration </strong>&#8211; If you want to make sure that you can connect to the Oracle database and the SQL query is correct, <strong>test the repository class with the database</strong>.</li>
+</ul>
+
+
+
+<p>The purpose of this step is to pinpoint the risk to the smallest <em>What</em>. Of course you could only test at the system level, but then you&#8217;ll have very slow feedback.</p>
+
+
+
+<h2 class="wp-block-heading">How</h2>
+
+
+
+<p>You&#8217;ve answered Why and What and you&#8217;ve identified a particular scenario that you should test. The next question is How should I test it? After answering this question, you should know what type of tests to implement (e.g. unit tests, integration tests, etc.). Here are some questions that might point you in the right direction:</p>
+
+
+
+<ul class="wp-block-list">
+<li>First, check again if you need to automate this scenario. If it&#8217;s not a risky area and you want to get the feature quickly to production, maybe it makes sense not to automate it now.</li>
+<li>If you do need to automate it, can it be fast and reliable? Can it run in process without sacrificing confidence? At this point you can think again if you can move it to a level below. For example, instead of implementing an HTTP API test, maybe you can implement a component and an integration test.</li>
+<li>Do you need to keep the test around? The cost of a test is not fully paid after implementing it. Many times the cost of running and maintaining the test is larger. Some tests should be thrown away after running them. For example, you might implement some coarse grained scaffolding tests before a big refactoring effort. After the refactoring is done and you&#8217;ve implemented more focused tests, you can throw away the scaffolding tests. </li>
+</ul>
+
+
+
+<p>So, after some careful thought you can decide how to test: unit, integration, integrated, HTTP API, End-to-end, manual, test in production. </p>
+
+
+
+<p>Make sure that <strong>everyone on the team has the same definitions for the different test types</strong>. Different people mean different things when they say unit test or integration test. This is why it&#8217;s important to <a rel="noreferrer noopener" aria-label="have a common understanding of the different test types inside the team (opens in a new tab)" href="./../defining-test-boundaries/index.html" target="_blank">have a common understanding of the different test types inside the team</a>.</p>
+
+
+
+<p>Another tip is to always <strong>look at the bigger picture when you decide on how to test</strong>. For example, you could define a <a rel="noreferrer noopener" aria-label="test recipe (opens in a new tab)" href="https://pipelinedriven.org/article/a-pipeline-friendly-layered-testing-strategy-amp-recipe-for-dev-and-qa" target="_blank">test recipe</a> for each story/feature. The idea is pretty simple: before starting to work on a feature, some members of the team (developers, testers, architects) get together and decide at what level should they test the different acceptance criteria. On a previous team we did this during the planning session. It was quite effective in increasing collaboration between devs and testers, building a shared understanding and keeping the test pack lean.  </p>
+
+
+
+<h2 class="wp-block-heading">Where</h2>
+
+
+
+<p>Now we&#8217;re down to where: Where should I run my test? Here are a few tips:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Typically, each test type (identified in the How step) has its own step in the pipeline. </li>
+<li>As the tests get slower, they are ran later in the pipeline.</li>
+<li>Many times it&#8217;s useful to move a subset of slower tests earlier in the pipeline for faster feedback. For example, if there are a couple of tests that always seem to find bugs, it makes sense to move them earlier. Another good example are tests for quality attributes, like performance tests. These tests can take a long time to run, so they run later in the pipeline. But, if performance of the checkout process is very important and it degrades easily, it makes sense to run just that performance test earlier in the pipeline.</li>
+</ul>
+
+
+
+<p>Here is an example of mapping test types to steps in the Deployment Pipeline:</p>
+
+
+
+<figure class="wp-block-image"><img data-recalc-dims="1" loading="lazy" decoding="async" width="628" height="262" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/06/Where.png?resize=628%2C262&#038;ssl=1" alt="Where to run tests" class="wp-image-1091" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/06/Where.png?w=938&amp;ssl=1 938w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/06/Where.png?resize=768%2C321&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"><figcaption>Where to run tests</figcaption></figure>
+
+
+
+<p>A couple of notes on the setup above:</p>
+
+
+
+<ul class="wp-block-list">
+<li>The Test step runs only the Integrated and HTTP API tests that are also used for Acceptance. These are tests for functionality that the team is implementing (or changing) in the current iteration. These have a higher likelihood of failing, as the production code is updated. This is why we want to run them earlier in the pipeline: to get feedback early.</li>
+<li>We run Smoke tests in the Exploratory, UAT, Staging and Production stages. This is a relatively fast test suite that makes sure that the main flows through the application are still working.</li>
+</ul>
+
+
+
+<p>The key point at this step is to <strong>balance feedback and confidence</strong> when choosing where to run the test. A tip that can help you in achieving this balance is to <strong>define a run time budget per test stage</strong>. For example, the Smoke Test pack should run in under 5 minutes. If it takes more then that, the step fails and the pipeline stops. This way, you avoid slowly but steadily increasing the run time of a test pack to the point that it becomes a bottleneck for the team. </p>
+
+
+
+<p>I&#8217;ve been there myself and have seen a 10 minutes test pack growing to 60 minutes. It&#8217;s like in the <a rel="noreferrer noopener" aria-label="boiling frog fable (opens in a new tab)" href="https://en.wikipedia.org/wiki/Boiling_frog" target="_blank">boiling frog fable</a> &#8211; you only notice it when it&#8217;s already late and much harder to fix the problem. You can avoid this situation by setting a budget. And, if when you&#8217;ve exceeded the budget, you decide to extend it, at least you&#8217;ve weighted the pros and cons and made a conscious decision.  </p>
+
+
+
+<h2 class="wp-block-heading">Who</h2>
+
+
+
+<p>You might be wondering why I skipped the Who question: Who should define, implement and manage the test code? The answer is pretty simple: <strong>quality is everyone&#8217;s responsibility.</strong> Test code should be treated as a first class citizen and should be held to the same quality standards as production code. </p>
+
+
+
+<p>Defining the test cases requires a different mindset than implementing the code. It&#8217;s better that the test cases are not defined by the same person that implemented the feature. </p>
+
+
+
+<p>Implementing good automated tests requires serious development skills. This is why, if there are people on the team that are just learning to code (for example testers that are new to test automation), it&#8217;s a good idea to make sure that the team is giving them the right amount of support to skill up. This should be done through pairing, code review, knowledge sharing sessions. Remember that the entire team owns the codebase. Don&#8217;t fall into the split ownership trap, in which production code is owned by the devs and test code is owned by the testers. This hinders knowledge sharing, introduces test case duplication and can lead to a drop in test code quality. </p>
+
+
+
+<p>Developers and testers are not the only ones that care about the quality. Ideally, the Product Owner should define most of the acceptance criteria. She is the one that has the best understanding of the problem domain and its essential complexity. So she should be a major contributor when writing acceptance criteria. The <a href="https://johnfergusonsmart.com/three-amigos-requirements-discovery/" target="_blank" rel="noreferrer noopener" aria-label="Three Amigos (opens in a new tab)">Three Amigos</a> can play an important role in making sure that you see a feature from all perspectives: business, development and testing. </p>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p>To sum this up:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Don&#8217;t trust the pyramid. The Test Pyramid is a model. This means that it&#8217;s useful only in some contexts. This is, in part, because it&#8217;s only considering how you test. This is not enough. Always consider the context you&#8217;re in.</li>
+<li>Think about Why: what&#8217;s the risk profile of the product? The testing that you do should mitigate that risk.</li>
+<li>Think about What: what&#8217;s the smallest part of the application that contains the risk?</li>
+<li>Think about How: how should you test it? At what level? </li>
+<li>Think about Where: where in the deployment pipeline should you run the test for the best balance of feedback and confidence?</li>
+</ul>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>		
+	</div>
+
+	<footer class="entry-footer">
+
+					<span class="tag-links" itemprop="keywords">
+									<a href="./../tag/continuous-delivery/index.html"><span>#</span>continuous delivery</a>
+									<a href="./../tag/microservices/index.html"><span>#</span>microservices</a>
+									<a href="./../tag/quality/index.html"><span>#</span>quality</a>
+									<a href="./../tag/test-strategy/index.html"><span>#</span>test strategy</a>
+									<a href="./../tag/testing/index.html"><span>#</span>testing</a>
+									<a href="./../tag/testing-pyramid/index.html"><span>#</span>testing pyramid</a>
+							</span>
+		
+	</footer>
+
+	<div class="jetpack-share-like">
+		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1060" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1060" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1060" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
+<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>			</div>
+
+</article><!-- #post-## -->
+
+				
+	<div class="author-bio" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+		<img alt="Victor Chircu" src="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=80&#038;d=mm&#038;r=g" srcset="https://secure.gravatar.com/avatar/331148ee28fef6336a73beb488fc0bdc?s=160&#038;d=mm&#038;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy" decoding="async" itemprop="image">		<div class="description">
+			<h3 class="author-title name">
+				<a class="author-name url fn n" href="./../author/victor-chircugmail-com/index.html" rel="author" itemprop="url"><span itemprop="name">Victor Chircu</span></a>
+			</h3>
+			<p class="bio" itemprop="description">I'm a software architect and continuous learner. I like solving real, challenging problems and sharing experiences with other people.</p>
+			<ul class="author-social">
+									<li class="website">
+						<a href="./../index.html"><i class="fa fa-home"></i></a>
+					</li>
+													<li class="twitter">
+						<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a>
+					</li>
+																									<li class="linkedin">
+						<a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+					</li>
+							</ul>
+		</div>
+	</div>
+<!-- .author-bio -->
+
+
+				
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<ul>
+									<li>
+												<h2 class="entry-title"><a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html" rel="bookmark">How to identify common Code Smells using the NDepend API</a></h2>						<time class="published" datetime="2020-03-27T07:39:07+00:00">March 27, 2020</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../defining-test-boundaries/index.html" rel="bookmark">Defining Test Boundaries &#8211; An example</a></h2>						<time class="published" datetime="2019-06-07T07:58:11+00:00">June 7, 2019</time>
+					</li>
+									<li>
+												<h2 class="entry-title"><a href="./../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html" rel="bookmark">Protecting the Design and Architecture of your application using NDepend</a></h2>						<time class="published" datetime="2019-02-26T04:21:20+00:00">February 26, 2019</time>
+					</li>
+							</ul>
+		</div>
+
+	
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1060" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0363e0007c"></p>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="3"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+</form>	</div>
+<!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div>
+<!-- #comments -->
+
+				
+	<div class="loop-nav">
+		<div class="prev">Previous: <a href="./../defining-test-boundaries/index.html" rel="prev">Defining Test Boundaries &#8211; An example</a>
+</div>		<div class="next">Next: <a href="./../7-strategies-for-assigning-ids/index.html" rel="next">7 Strategies for Assigning Ids</a>
+</div>	</div>
+<!-- .loop-nav -->
+
+
+			
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="searchform" action=".//">
+	<div>
+		<input type="search" class="search-field field" placeholder="Press enter to search &hellip;" value="" name="s" title="Search for:">
+	</div>
+</form>
+</aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="./../how-to-identify-common-code-smells-using-the-ndepend-api/index.html">How to identify common Code Smells using the NDepend API</a>
+									</li>
+											<li>
+					<a href="./../interviewing-your-architecture/index.html">Interviewing your architecture</a>
+									</li>
+											<li>
+					<a href="./../nservicebus-an-experience-report/index.html">NServiceBus: An Experience Report</a>
+									</li>
+											<li>
+					<a href="./../handling-failure-in-long-running-processes/index.html">Handling Failure in Long Running Processes</a>
+									</li>
+											<li>
+					<a href="./../7-strategies-for-assigning-ids/index.html">7 Strategies for Assigning Ids</a>
+									</li>
+					</ul>
+
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+<a href="./../tag/agile/index.html" class="tag-cloud-link tag-link-29 tag-link-position-1" style="font-size: 12px;">agile</a>
+<a href="./../tag/architecture/index.html" class="tag-cloud-link tag-link-33 tag-link-position-2" style="font-size: 12px;">architecture</a>
+<a href="./../tag/books/index.html" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12px;">books</a>
+<a href="./../tag/code-smells/index.html" class="tag-cloud-link tag-link-65 tag-link-position-4" style="font-size: 12px;">code smells</a>
+<a href="./../tag/ddd/index.html" class="tag-cloud-link tag-link-28 tag-link-position-5" style="font-size: 12px;">ddd</a>
+<a href="./../tag/detection-strategy/index.html" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 12px;">detection strategy</a>
+<a href="./../tag/integration/index.html" class="tag-cloud-link tag-link-9 tag-link-position-7" style="font-size: 12px;">integration</a>
+<a href="./../tag/long-running-process/index.html" class="tag-cloud-link tag-link-93 tag-link-position-8" style="font-size: 12px;">long running process</a>
+<a href="./../tag/messaging/index.html" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 12px;">messaging</a>
+<a href="./../tag/metrics/index.html" class="tag-cloud-link tag-link-60 tag-link-position-10" style="font-size: 12px;">metrics</a>
+<a href="./../tag/microservices/index.html" class="tag-cloud-link tag-link-87 tag-link-position-11" style="font-size: 12px;">microservices</a>
+<a href="./../tag/msmq/index.html" class="tag-cloud-link tag-link-48 tag-link-position-12" style="font-size: 12px;">msmq</a>
+<a href="./../tag/ndepend/index.html" class="tag-cloud-link tag-link-51 tag-link-position-13" style="font-size: 12px;">NDepend</a>
+<a href="./../tag/nservicebus/index.html" class="tag-cloud-link tag-link-8 tag-link-position-14" style="font-size: 12px;">NServiceBus</a>
+<a href="./../tag/quality/index.html" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 12px;">quality</a>
+<a href="./../tag/security/index.html" class="tag-cloud-link tag-link-4 tag-link-position-16" style="font-size: 12px;">security</a>
+<a href="./../tag/soa/index.html" class="tag-cloud-link tag-link-37 tag-link-position-17" style="font-size: 12px;">soa</a>
+<a href="./../tag/specifications/index.html" class="tag-cloud-link tag-link-19 tag-link-position-18" style="font-size: 12px;">specifications</a>
+<a href="./../tag/testing/index.html" class="tag-cloud-link tag-link-12 tag-link-position-19" style="font-size: 12px;">testing</a>
+<a href="./../tag/visualization/index.html" class="tag-cloud-link tag-link-63 tag-link-position-20" style="font-size: 12px;">visualization</a>
+</div>
+</aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="./../2020/03/index.html">March 2020</a></li>
+	<li><a href="./../2020/02/index.html">February 2020</a></li>
+	<li><a href="./../2019/08/index.html">August 2019</a></li>
+	<li><a href="./../2019/07/index.html">July 2019</a></li>
+	<li><a href="./../2019/06/index.html">June 2019</a></li>
+	<li><a href="./../2019/04/index.html">April 2019</a></li>
+	<li><a href="./../2019/03/index.html">March 2019</a></li>
+	<li><a href="./../2019/02/index.html">February 2019</a></li>
+	<li><a href="./../2019/01/index.html">January 2019</a></li>
+	<li><a href="./../2018/10/index.html">October 2018</a></li>
+	<li><a href="./../2018/07/index.html">July 2018</a></li>
+	<li><a href="./../2018/06/index.html">June 2018</a></li>
+	<li><a href="./../2018/02/index.html">February 2018</a></li>
+	<li><a href="./../2017/01/index.html">January 2017</a></li>
+	<li><a href="./../2016/12/index.html">December 2016</a></li>
+	<li><a href="./../2016/11/index.html">November 2016</a></li>
+	<li><a href="./../2016/10/index.html">October 2016</a></li>
+	<li><a href="./../2016/09/index.html">September 2016</a></li>
+	<li><a href="./../2016/08/index.html">August 2016</a></li>
+	<li><a href="./../2016/07/index.html">July 2016</a></li>
+	<li><a href="./../2016/06/index.html">June 2016</a></li>
+	<li><a href="./../2016/05/index.html">May 2016</a></li>
+	<li><a href="./../2016/04/index.html">April 2016</a></li>
+	<li><a href="./../2016/03/index.html">March 2016</a></li>
+			</ul>
+
+			</aside><aside id="rss_links-3" class="widget widget_rss_links"><ul><li><a target="_self" href="./../feed/index.html" title="Subscribe to posts">RSS - Posts</a></li></ul>
+</aside><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post" id="jetpack-eu-cookie-law-form">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+		<a href="./../privacy-policy/index.html" rel="">
+		Cookie Policy	</a>
+</div>
+</aside>
+</div>
+<!-- #secondary -->
+		</div>
+<!-- .wide-container -->
+	</div>
+<!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="wide-container">
+
+			<div class="site-info">
+				<p class="copyright">&copy; Copyright 2024 <a href="./../index.html">Simple Oriented Architecture</a> &middot; Designed by <a href="http://www.theme-junkie.com/">Theme Junkie</a></p>			</div>
+<!-- .site-info -->
+
+			<div class="social-links">
+<a href="https://twitter.com/victorchircu/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/victor-chircu-1519a331"><i class="fa fa-linkedin"></i></a>
+</div>
+		</div>
+	</footer><!-- #colophon -->
+
+</div>
+<!-- #page -->
+
+	<div style="display:none">
+			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
+		</div>
+		</div>
+		
+	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/test-strategy-for-continuous-delivery\/":1060};</script>
+				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
+<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=202445" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.0" id="wpgroho-js"></script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js?ver=20180522" id="eu-cookie-law-script-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"1060\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
+_stq.push([ "clickTrackerInit", "108420443", "1060" ]);
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

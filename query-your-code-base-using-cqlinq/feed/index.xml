@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Querying Your Code Base Using NDepend&#8217;s CQLinq	</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Wed, 11 Jan 2017 07:00:42 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: How to identify a Tradition Breaker using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-44</link>
+
+		<dc:creator><![CDATA[How to identify a Tradition Breaker using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2017 07:00:42 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-44</guid>
+
+					<description><![CDATA[[&#8230;] Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-37</link>
+
+		<dc:creator><![CDATA[How to identify efferent coupling code smells using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Tue, 03 Jan 2017 05:34:31 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-37</guid>
+
+					<description><![CDATA[[&#8230;] Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify Feature Envy using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-33</link>
+
+		<dc:creator><![CDATA[How to identify Feature Envy using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Mon, 26 Dec 2016 17:24:26 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-33</guid>
+
+					<description><![CDATA[[&#8230;] you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. ATFD has also been defined in my previous blog post. I&#8217;ve made some changes in the meantime, [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] you’re not familiar with CQLinq, check out the NDepend documentation or my blog post on how to query your code base. ATFD has also been defined in my previous blog post. I&#8217;ve made some changes in the meantime, [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: How to identify a God Class using NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-29</link>
+
+		<dc:creator><![CDATA[How to identify a God Class using NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2016 23:07:32 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-29</guid>
+
+					<description><![CDATA[[&#8230;] Let&#8217;s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you&#8217;re not familiar with CQLinq, checkout the NDepend documentation or my blog post on how to query your code base. [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Let&#8217;s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of Object-Oriented Metrics in Practice. If you&#8217;re not familiar with CQLinq, checkout the NDepend documentation or my blog post on how to query your code base. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-27</link>
+
+		<dc:creator><![CDATA[Computing the Overview Pyramid metrics with NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Sun, 11 Dec 2016 11:57:13 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-27</guid>
+
+					<description><![CDATA[[&#8230;] the Overview Pyramid for .Net projects. The good news is that it can be done with NDepend. Querying the code base and defining custom code metrics are two powerful features of NDepend. With these tools at your [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] the Overview Pyramid for .Net projects. The good news is that it can be done with NDepend. Querying the code base and defining custom code metrics are two powerful features of NDepend. With these tools at your [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Visualizing Code Metrics with NDepend - Simple Oriented Architecture		</title>
+		<link>./../index.html#comment-25</link>
+
+		<dc:creator><![CDATA[Visualizing Code Metrics with NDepend - Simple Oriented Architecture]]></dc:creator>
+		<pubDate>Sat, 26 Nov 2016 10:44:00 +0000</pubDate>
+		<guid isPermaLink="false">./../../index.html?p=452#comment-25</guid>
+
+					<description><![CDATA[[&#8230;] metrics, tailored for your context. By monitoring metrics and trends, visualizing dependencies and querying your code base, you can get an overview of the quality of your code base and where to start improving [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] metrics, tailored for your context. By monitoring metrics and trends, visualizing dependencies and querying your code base, you can get an overview of the quality of your code base and where to start improving [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
