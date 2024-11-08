@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="The Overview Pyramid describes and characterizes the structure of an object oriented system by looking at three main areas: size and complexity, coupling and inheritance. This visualization techniq…">
 <meta property="article:published_time" content="2016-12-11T11:54:43+00:00">
-<meta property="article:modified_time" content="2016-12-11T16:16:28+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:10:39+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/11/Overview_pyramid.jpg">
 <meta property="og:image:width" content="698">
@@ -181,22 +179,22 @@ var related_posts_js_options = {"post_heading":"h4"};
 </ul>
 <h4>CQLinq Query</h4>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// ** Size &amp; Complexity ** 
+// ** Size &amp;amp; Complexity ** 
 // * Direct Metrics *
 let NOP = JustMyCode.Assemblies.Count()
 // If you use namespaces as logical components, you can count the number of namespaces:
 // let NOP = JustMyCode.Namespaces.Count()
 let NOC = JustMyCode.Types
- .Where(t =&gt; t.IsClass)
+ .Where(t =&amp;gt; t.IsClass)
  .Count()
 let NOM = JustMyCode.Methods
- .Where(m =&gt; m.NbLinesOfCode.HasValue)
+ .Where(m =&amp;gt; m.NbLinesOfCode.HasValue)
  .Count()
 let LOC = JustMyCode.Methods
- .Select(m =&gt; (int)m.NbLinesOfCode.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.NbLinesOfCode.GetValueOrDefault())
  .Sum()
 let Cyclo = JustMyCode.Methods
- .Select(m =&gt; (int)m.CyclomaticComplexity.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.CyclomaticComplexity.GetValueOrDefault())
  .Sum()
 
 // * Computed Proportions *
@@ -226,11 +224,11 @@ let OperationComplexity = (double)Cyclo/LOC
 // ** Coupling ** 
 // * Direct Metrics *
 let Calls = JustMyCode.Methods
- .Select(m =&gt; (int)m.NbMethodsCalled.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.NbMethodsCalled.GetValueOrDefault())
  .Sum()
 let Fanout = JustMyCode.Methods
- .Select(m =&gt; m.MethodsCalled
-               .Select(called =&gt; called.ParentType)
+ .Select(m =&amp;gt; m.MethodsCalled
+               .Select(called =&amp;gt; called.ParentType)
                .ToHashSet()
                .Count())
  .Sum()
@@ -254,38 +252,38 @@ let FanoutPerCall = (double)Fanout/Calls
 // * Computed Proportions *
 // ANDC
 let ANDC = JustMyCode.Types
- .Where(t =&gt; !t.IsInterface)
- .Average(t =&gt; t.DirectDerivedTypes.Count())
+ .Where(t =&amp;gt; !t.IsInterface)
+ .Average(t =&amp;gt; t.DirectDerivedTypes.Count())
 
 // AHH
 let justMyTypes = JustMyCode.Types.ToHashSet()
-let rootClasses = JustMyCode.Types.Where(t =&gt;
- !t.IsInterface &amp;&amp;
+let rootClasses = JustMyCode.Types.Where(t =&amp;gt;
+ !t.IsInterface &amp;amp;&amp;amp;
  // a root class cannot have its base class in the system
  t.BaseClasses.Intersect(justMyTypes).Count() == 0)
-let hitSum = rootClasses.Sum(c =&gt;
+let hitSum = rootClasses.Sum(c =&amp;gt;
  // the maximum path from the root to its deepest subclass
- c.DerivedTypes.Max(d =&gt; d.DepthOfDeriveFrom(c)))
+ c.DerivedTypes.Max(d =&amp;gt; d.DepthOfDeriveFrom(c)))
 let rootCount = rootClasses.Count()
 let AHH = (double?) hitSum/rootCount
 </pre>
 <h2>Putting it all together</h2>
 <p>Here is a CQLinq query that computes all the required metrics:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// ** Size &amp; Complexity ** 
+// ** Size &amp;amp; Complexity ** 
 // * Direct Metrics *
 let NOP = JustMyCode.Assemblies.Count()
 let NOC = JustMyCode.Types
- .Where(t =&gt; t.IsClass)
+ .Where(t =&amp;gt; t.IsClass)
  .Count()
 let NOM = JustMyCode.Methods
- .Where(m =&gt; m.NbLinesOfCode.HasValue)
+ .Where(m =&amp;gt; m.NbLinesOfCode.HasValue)
  .Count()
 let LOC = JustMyCode.Methods
- .Select(m =&gt; (int)m.NbLinesOfCode.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.NbLinesOfCode.GetValueOrDefault())
  .Sum()
 let Cyclo = JustMyCode.Methods
- .Select(m =&gt; (int)m.CyclomaticComplexity.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.CyclomaticComplexity.GetValueOrDefault())
  .Sum()
 
 // * Computed Proportions *
@@ -297,11 +295,11 @@ let OperationComplexity = (double)Cyclo/LOC
 // ** Coupling ** 
 // * Direct Metrics *
 let Calls = JustMyCode.Methods
- .Select(m =&gt; (int)m.NbMethodsCalled.GetValueOrDefault())
+ .Select(m =&amp;gt; (int)m.NbMethodsCalled.GetValueOrDefault())
  .Sum()
 let Fanout = JustMyCode.Methods
- .Select(m =&gt; m.MethodsCalled
-               .Select(called =&gt; called.ParentType)
+ .Select(m =&amp;gt; m.MethodsCalled
+               .Select(called =&amp;gt; called.ParentType)
                .ToHashSet()
                .Count())
  .Sum()
@@ -314,18 +312,18 @@ let FanoutPerCall = (double)Fanout/Calls
 // * Computed Proportions *
 // ANDC
 let ANDC = JustMyCode.Types
- .Where(t =&gt; !t.IsInterface)
- .Average(t =&gt; t.DirectDerivedTypes.Count())
+ .Where(t =&amp;gt; !t.IsInterface)
+ .Average(t =&amp;gt; t.DirectDerivedTypes.Count())
 
 // AHH
 let justMyTypes = JustMyCode.Types.ToHashSet()
-let rootClasses = JustMyCode.Types.Where(t =&gt;
- !t.IsInterface &amp;&amp;
+let rootClasses = JustMyCode.Types.Where(t =&amp;gt;
+ !t.IsInterface &amp;amp;&amp;amp;
  // a root class cannot have its base class in the system
  t.BaseClasses.Intersect(justMyTypes).Count() == 0)
-let hitSum = rootClasses.Sum(c =&gt;
+let hitSum = rootClasses.Sum(c =&amp;gt;
  // the maximum path from the root to its deepest subclass
- c.DerivedTypes.Max(d =&gt; d.DepthOfDeriveFrom(c)))
+ c.DerivedTypes.Max(d =&amp;gt; d.DepthOfDeriveFrom(c)))
 let rootCount = rootClasses.Count()
 let AHH = (double?) hitSum/rootCount
 
@@ -341,8 +339,8 @@ select new { ignoreMe,
 }
 </pre>
 <h2>Conclusion</h2>
-<p>The Overview Pyramid can help you get a first impression of the most important measurements of a software system. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank">Object-Oriented Metrics in Practice</a> describes how to interpret the pyramid by using statistical information. It defines statistical thresholds (<em>low, medium, high</em>) for each of the eight computed metrics that you can use as reference points. If you want a quick summary of Object-Oriented Metrics in Practice, you can read <a href="./../book-review-object-oriented-metrics-in-practice/index.html" target="_blank">my review of the book</a>.</p>
-<p>I didn&#8217;t find a tool that generates the Overview Pyramid for .Net projects. The good news is that it can be done with NDepend. <a href="./../query-your-code-base-using-cqlinq/index.html" target="_blank">Querying the code base</a> and <a href="./../visualizing-code-metrics-with-ndepend/index.html" target="_blank">defining custom code metrics</a> are two powerful features of NDepend. With these tools at your disposal, writing CQLinq queries to compute the required metrics is a simple task.</p>
+<p>The Overview Pyramid can help you get a first impression of the most important measurements of a software system. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" rel="noopener">Object-Oriented Metrics in Practice</a> describes how to interpret the pyramid by using statistical information. It defines statistical thresholds (<em>low, medium, high</em>) for each of the eight computed metrics that you can use as reference points. If you want a quick summary of Object-Oriented Metrics in Practice, you can read <a href="./../book-review-object-oriented-metrics-in-practice/index.html" target="_blank" rel="noopener">my review of the book</a>.</p>
+<p>I didn&#8217;t find a tool that generates the Overview Pyramid for .Net projects. The good news is that it can be done with NDepend. <a href="./../query-your-code-base-using-cqlinq/index.html" target="_blank" rel="noopener">Querying the code base</a> and <a href="./../visualizing-code-metrics-with-ndepend/index.html" target="_blank" rel="noopener">defining custom code metrics</a> are two powerful features of NDepend. With these tools at your disposal, writing CQLinq queries to compute the required metrics is a simple task.</p>
 
 <div id="jp-relatedposts" class="jp-relatedposts">
 	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
@@ -360,16 +358,7 @@ select new { ignoreMe,
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-566" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-566" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-566" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -440,7 +429,7 @@ select new { ignoreMe,
 												<p>Thanks for the post &#8211; I&#8217;m currently researching this exact topic myself. Out of interest, are you using the same thresholds for C# as those described in the book for Java?</p>
 <p>Your CQLinq approach looks like much less work than mine &#8211; I augmented the VS metrics report using Mono.Cecil</p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=52#respond" data-commentid="52" data-postid="566" data-belowelement="comment-52" data-respondelement="respond" data-replyto="Reply to Geoffrey" aria-label="Reply to Geoffrey"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -466,7 +455,7 @@ select new { ignoreMe,
 					<div class="comment-content comment-entry" itemprop="text">
 												<p>Hi, Geoffrey! Yes, I&#8217;m using the thresholds described in the book.</p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=53#respond" data-commentid="53" data-postid="566" data-belowelement="comment-53" data-respondelement="respond" data-replyto="Reply to Victor" aria-label="Reply to Victor"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -492,7 +481,7 @@ select new { ignoreMe,
 					<div class="comment-content comment-entry" itemprop="text">
 												<p>Thanks for your reply 🙂 Have you actually applied the metrics to your work?</p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=56#respond" data-commentid="56" data-postid="566" data-belowelement="comment-56" data-respondelement="respond" data-replyto="Reply to Geoffrey" aria-label="Reply to Geoffrey"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -518,7 +507,7 @@ select new { ignoreMe,
 					<div class="comment-content comment-entry" itemprop="text">
 												<p>Yes. As the name says, these metrics are good for getting an overview of a code base. On my current project, we have multiple repositories, so I use them to have an overview over how big they are and also how do they compare with one another.</p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=57#respond" data-commentid="57" data-postid="566" data-belowelement="comment-57" data-respondelement="respond" data-replyto="Reply to Victor" aria-label="Reply to Victor"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -545,26 +534,9 @@ select new { ignoreMe,
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="566" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c4b77dc315"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="188"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -812,9 +784,7 @@ select new { ignoreMe,
 		<div class="grofile-hash-map-d4dcb533c1a33183f38965dd36521445">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/overview-pyramid-metrics-ndepend\/":566};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -858,156 +828,12 @@ select new { ignoreMe,
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"566\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "566" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

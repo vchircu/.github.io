@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Tue, 16 Apr 2019 04:23:01 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:31:34 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Never stop making Process Improvements</title>
 		<link>./../../../never-stop-making-process-improvements/index.html</link>
-					<comments>./../../../never-stop-making-process-improvements/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 16 Apr 2019 04:22:53 +0000</pubDate>
@@ -37,8 +36,6 @@
 
 					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../never-stop-making-process-improvements/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">875</post-id>	</item>

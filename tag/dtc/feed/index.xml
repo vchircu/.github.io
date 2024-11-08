@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Tue, 01 Nov 2016 19:30:25 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:12:24 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>MSMQ Administration</title>
 		<link>./../../../msmq-administration/index.html</link>
-					<comments>./../../../msmq-administration/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 12 Oct 2016 05:59:24 +0000</pubDate>
@@ -39,8 +38,6 @@
 
 					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../msmq-administration/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">393</post-id>	</item>

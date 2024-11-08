@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy How to identify a Data Class How to identify a Brain Method How to identify Intens…">
 <meta property="article:published_time" content="2017-01-05T06:13:24+00:00">
-<meta property="article:modified_time" content="2017-01-05T06:13:24+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:08:21+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -140,15 +138,15 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>In the previous articles in this series we&#8217;ve seen:</p>
 <ul>
-<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank">How to identify a God Class</a></li>
-<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank">How to identify Feature Envy</a></li>
-<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank">How to identify a Data Class</a></li>
-<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank">How to identify a Brain Method</a></li>
-<li><a href="./../identify-efferent-coupling-code-smells-using-ndepend/index.html" target="_blank">How to identify Intensive Coupling and Dispersed Coupling</a></li>
+<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a God Class</a></li>
+<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Feature Envy</a></li>
+<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Data Class</a></li>
+<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Brain Method</a></li>
+<li><a href="./../identify-efferent-coupling-code-smells-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Intensive Coupling and Dispersed Coupling</a></li>
 </ul>
 <p>In this article we&#8217;ll see how to identify an afferent (incoming) coupling code smell: Shotgun Surgery.</p>
 <h2>Shotgun Surgery Detection Strategy</h2>
-<p>A method suffers from Shotgun Surgery if it is called many times from many other classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Shotgun Surgery:</p>
+<p>A method suffers from Shotgun Surgery if it is called many times from many other classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" rel="noopener">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Shotgun Surgery:</p>
 <p><strong>(CM &gt; Short Memory Cap) AND (CC &gt; Many)</strong></p>
 <p><span id="more-660"></span></p>
 <p>This detection strategy uses two <strong>metrics</strong>:</p>
@@ -162,7 +160,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h3>CM &#8211; Changing Methods</h3>
 <p>This metric counts the number of distinct methods that call the measured method. We only care about our own code, for both caller methods and measured method. But, since framework code doesn&#8217;t call our code, we can rely on the <em>NbMethodsCallingMe</em> NDepend metric.</p>
 <pre class="brush: csharp; title: ; notranslate" title=""> 
-// &lt;Name&gt;CM&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;CM&amp;lt;/Name&amp;gt;
 from m in JustMyCode.Methods
 let cm = m.NbMethodsCallingMe
 orderby cm descending
@@ -171,9 +169,9 @@ select new { m, cm }
 <h3>CC &#8211; Changing Classes</h3>
 <p>This metric counts the the number of classes in which the changing methods are defined</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;CC&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;CC&amp;lt;/Name&amp;gt;
 from m in JustMyCode.Methods
-let changingClasses = m.MethodsCallingMe.Select(method =&gt; method.ParentType).ToHashSet()
+let changingClasses = m.MethodsCallingMe.Select(method =&amp;gt; method.ParentType).ToHashSet()
 let cc = changingClasses.Count()
 orderby cc descending
 select new { m, cc, changingClasses }
@@ -181,8 +179,8 @@ select new { m, cc, changingClasses }
 <h2>Putting it all together</h2>
 <p>Now that we know how to compute each of the required metrics, let’s see how the detection strategy looks like:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;Shotgun Surgery&lt;/Name&gt;
-warnif count &gt; 0
+// &amp;lt;Name&amp;gt;Shotgun Surgery&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0
 // ** Thresholds **
 let ShortMemoryCap = 7
 let Many = 10
@@ -190,15 +188,15 @@ let Many = 10
 // ** Detection Strategy **
 from m in JustMyCode.Methods
 let methodsCallingMe = m.MethodsCallingMe
-let changingClasses = methodsCallingMe.Select(method =&gt; method.ParentType).ToHashSet()
+let changingClasses = methodsCallingMe.Select(method =&amp;gt; method.ParentType).ToHashSet()
 let cm = m.NbMethodsCallingMe
 let cc = changingClasses.Count()
 
 where 
  // Operation is called by too many other methods
- cm &gt; ShortMemoryCap &amp;&amp; 
+ cm &amp;gt; ShortMemoryCap &amp;amp;&amp;amp; 
  // Incoming calls are from many classes
- cc &gt; Many
+ cc &amp;gt; Many
 select new { m, cm, cc, changingClasses, methodsCallingMe }
 </pre>
 <p>&nbsp;</p>
@@ -221,16 +219,7 @@ select new { m, cm, cc, changingClasses, methodsCallingMe }
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-660" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-660" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-660" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -300,26 +289,9 @@ select new { m, cm, cc, changingClasses, methodsCallingMe }
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="660" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6ad6e533f3"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="235"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -565,9 +537,7 @@ select new { m, cm, cc, changingClasses, methodsCallingMe }
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/identify-shotgun-surgery-using-ndepend\/":660};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -611,156 +581,12 @@ select new { m, cm, cc, changingClasses, methodsCallingMe }
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"660\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "660" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

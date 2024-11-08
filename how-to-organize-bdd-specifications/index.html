@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="I have been using Specification by Example (a.k.a BDD, ATDD) for the last couple of years. This has helped bridge the gap between technical people and business people. It has also helped ramp up ne…">
 <meta property="article:published_time" content="2016-06-29T18:53:20+00:00">
-<meta property="article:modified_time" content="2017-03-09T19:12:55+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:15:47+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -153,9 +151,9 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p><strong>A feature describes the behavior of the product</strong>. It is helpful for understanding what the system should do and verifying that it does it. A feature is valuable for the entire lifespan of a product.</p>
 <p><strong>A user story</strong> on the other hand <strong>is a planning tool</strong>. It can help you plan and track work, but that&#8217;s it. After you&#8217;ve implemented it, you can throw it away. As a side note, how many times did you go back to user stories in Jira? How many times was the information still up to date? My guess is that doesn&#8217;t happen too often. This is because the functionality described in one user story might be changed by the next user story. Trying to understand a feature just from user stories is a daunting task.</p>
 <p>Why is this important? Because some beginners start by adding a feature file for each user story. This might seem intuitive at first, as it is easy to track. But as you add more features, this structure becomes too complex to understand and maintain. A feature can be broken down into many user stories, but at the same time, a user story might touch many features. This structure doesn&#8217;t allow this flexibility.</p>
-<p><em>Note:  If you&#8217;d like to find out more about this, <a href="http://blog.mattwynne.net/2010/10/22/features-user-stories/comment-page-1/" target="_blank">Matt Wynne has a very good blog post on this subject</a>.</em></p>
+<p><em>Note:  If you&#8217;d like to find out more about this, <a href="http://blog.mattwynne.net/2010/10/22/features-user-stories/comment-page-1/" target="_blank" rel="noopener">Matt Wynne has a very good blog post on this subject</a>.</em></p>
 <h2>Group features by business capability</h2>
-<p>If someone looks inside the specifications folder, can he figure out what kind of product you are building? What would you rather see: Sprint1, Sprint2? US134, US456? Or Products, Payment, Shipment? Or maybe Patients, Doctors, Appointments, Treatments? Or Players, Games, Rooms? I think you get the point here &#8211; always structure the features around business capabilities. (<em>As a side note, <a href="https://www.youtube.com/watch?v=dYvSaajboEs" target="_blank">Sandro Mancuso gave a great talk</a> on how to structure your code base so that it answers two important questions: What is the application about? and What does the application do? He advocates that you should actually structure your codebase around business capabilities too. I recommend you watch this talk if you haven&#8217;t already</em>).</p>
+<p>If someone looks inside the specifications folder, can he figure out what kind of product you are building? What would you rather see: Sprint1, Sprint2? US134, US456? Or Products, Payment, Shipment? Or maybe Patients, Doctors, Appointments, Treatments? Or Players, Games, Rooms? I think you get the point here &#8211; always structure the features around business capabilities. (<em>As a side note, <a href="https://www.youtube.com/watch?v=dYvSaajboEs" target="_blank" rel="noopener">Sandro Mancuso gave a great talk</a> on how to structure your code base so that it answers two important questions: What is the application about? and What does the application do? He advocates that you should actually structure your codebase around business capabilities too. I recommend you watch this talk if you haven&#8217;t already</em>).</p>
 <p>By structuring your specification this way, it&#8217;s easy to have an overview of what are the main functional areas of the application. If you want to find out more about a given business capability, you can just browse the correct folder. This can go as many levels as necessary, with nodes being feature files. This gives you the ability to zoom in and out as required. Here is an example:</p>
 <pre>+---Payment
 +---Products
@@ -192,10 +190,10 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>I favor putting all my specification in a single project. There might be good reasons for splitting the specifications into multiple projects. One such reason could be to align the specifications with the test types. This way you would have all your specifications implemented at unit level in one project, the ones implemented at a service/integration level in another and the broad stack tests in yet another project. This makes sense, since the implementation looks very different, depending on the type of the test. But this structure is harder to read. <strong>And if we want the specifications to act as a living documentation, we should optimize for readability.</strong></p>
 <p>There are other more compelling reasons for splitting the specifications into multiple projects. But these should be functional, not technical. For example, if you&#8217;re following the Service Oriented Architectural style, it might be a good idea to have a specifications project for each service. This is because each service is focused on a specific business capability. Each service is autonomous and contains all the business rules. This makes it easy for a Marketing Expert to find all the features and business rules in Marketing. This does pose the question: <em>what if my specification actually targets multiple services</em>? I see this happening in practice less often then you may think. Most of the times it&#8217;s just a feature that wants to be split or a test case disguised as a feature.</p>
 <h2>Consider splitting command features from query features</h2>
-<p>When using <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank">CQRS</a>, features could be split in two types: <strong>commands</strong> and <strong>queries</strong>. The command features contain most of the logic and describe all the business rules within a service.  They describe the behavior of the system and help you learn what the system does. Query features are less interesting since they describe querying/reporting capabilities. One could argue there is no benefit in having specification files for queries. This is a valid point and you could have regular tests for these. But, considering that queries are used as part of business flows, I say there still is some value in having specification files for them. Since commands and queries have different purposes, it might make sense to split the features in two different folders (e.g. Use Cases and Queries). This way you can clearly differentiate the business use cases from the reporting capabilities of the system.</p>
+<p>When using <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank" rel="noopener">CQRS</a>, features could be split in two types: <strong>commands</strong> and <strong>queries</strong>. The command features contain most of the logic and describe all the business rules within a service.  They describe the behavior of the system and help you learn what the system does. Query features are less interesting since they describe querying/reporting capabilities. One could argue there is no benefit in having specification files for queries. This is a valid point and you could have regular tests for these. But, considering that queries are used as part of business flows, I say there still is some value in having specification files for them. Since commands and queries have different purposes, it might make sense to split the features in two different folders (e.g. Use Cases and Queries). This way you can clearly differentiate the business use cases from the reporting capabilities of the system.</p>
 <h2>Conclusion</h2>
 <p>These are some tips that might help you structure your BDD specification files. The main theme here is to think about the purpose of the specifications &#8211; to encourage collaboration and communication and their audience &#8211; everyone.  This should guide you in making the right decisions. And remember: when in doubt, favor readability.</p>
-<p>If you&#8217;re just starting out with BDD or would like to find out more, I highly recommend <a href="http://www.amazon.com/Specification-Example-Successful-Deliver-Software/dp/1617290084" target="_blank">Specification by Example: How Successful Teams Deliver the Right Software</a> by Gojko Adzic.</p>
+<p>If you&#8217;re just starting out with BDD or would like to find out more, I highly recommend <a href="http://www.amazon.com/Specification-Example-Successful-Deliver-Software/dp/1617290084" target="_blank" rel="noopener">Specification by Example: How Successful Teams Deliver the Right Software</a> by Gojko Adzic.</p>
 
 <div id="jp-relatedposts" class="jp-relatedposts">
 	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
@@ -214,16 +212,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-228" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-228" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-228" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -287,26 +276,9 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="228" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="057e938112"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="129"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -552,159 +524,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/how-to-organize-bdd-specifications\/":228};</script>
-				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+		<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"228\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "228" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan of visual management. Unfortunately, Visual Studio Professional doesn&#8217;t pr…">
 <meta property="article:published_time" content="2016-10-30T16:51:54+00:00">
-<meta property="article:modified_time" content="2016-11-17T20:00:07+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:11:58+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/10/ClassStructure.png">
 <meta property="og:image:width" content="650">
@@ -142,8 +140,8 @@ var related_posts_js_options = {"post_heading":"h4"};
 	
 	<div class="entry-content" itemprop="articleBody">
 
-		<p>How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan of visual management. Unfortunately, Visual Studio Professional doesn&#8217;t provide a way to do this. In the Premium and Enterprise editions you can <a href="https://msdn.microsoft.com/en-us/library/dd409453(v=vs.110).aspx" target="_blank">visualize code dependencies on dependency graphs</a>. But I don&#8217;t think this is enough. An architectural diagram with every assembly or namespace in my solution doesn&#8217;t tell me that much. It contains too much information.</p>
-<p>Fortunately, there is a tool that can help you manage dependencies in the .Net world: <a href="http://www.ndepend.com/" target="_blank">NDepend</a> (there is also a Java port &#8211; JArchitect). NDepend is a static analysis tool that, among other things, allows you to visualize dependencies. After I first ran NDepend on a project, I was overwhelmed with information. Then I took some time to play around and discover what can it tell me about my solution. NDepend integrates into Visual Studio quite nicely and points you in the right direction through tool tips and links. This is useful for people who prefer learning by doing. Aside from giving you information, it also tells you what to do with that information.</p>
+		<p>How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan of visual management. Unfortunately, Visual Studio Professional doesn&#8217;t provide a way to do this. In the Premium and Enterprise editions you can <a href="https://msdn.microsoft.com/en-us/library/dd409453(v=vs.110).aspx" target="_blank" rel="noopener">visualize code dependencies on dependency graphs</a>. But I don&#8217;t think this is enough. An architectural diagram with every assembly or namespace in my solution doesn&#8217;t tell me that much. It contains too much information.</p>
+<p>Fortunately, there is a tool that can help you manage dependencies in the .Net world: <a href="http://www.ndepend.com/" target="_blank" rel="noopener">NDepend</a> (there is also a Java port &#8211; JArchitect). NDepend is a static analysis tool that, among other things, allows you to visualize dependencies. After I first ran NDepend on a project, I was overwhelmed with information. Then I took some time to play around and discover what can it tell me about my solution. NDepend integrates into Visual Studio quite nicely and points you in the right direction through tool tips and links. This is useful for people who prefer learning by doing. Aside from giving you information, it also tells you what to do with that information.</p>
 <p>NDepend has two main views for managing dependencies: the <strong>Dependency Graph</strong> and the <strong>Dependency Structure Matrix</strong>. Apart from these, there is also an <strong>Abstractness vs Instability</strong> report that can be helpful. In this blog post, we&#8217;ll discuss some of the things that these views can tell you about your solution.</p>
 <p><span id="more-403"></span></p>
 <h2>Dependency Graph</h2>
@@ -174,7 +172,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <strong>Efferent Coupling (Ce)</strong>. Also known as <strong>Outgoing Coupling</strong> &#8211; on who do you depend</li>
 </ul>
 <p>This metrics are <strong>useful at multiple levels: assembly, namespace, class and even method</strong>. If you look on a row in the DSM, the blue cells are a measure of Ca and the green cells are a measure of Ce. For columns, it&#8217;s the opposite: the green cells are a measure of Ca and the blue cells are a measure of Ce.</p>
-<p>Now that we have defined what Afferent and Efferent Coupling is, how do you calculate it? For a software package (namespace or assembly), <a href="https://en.wikipedia.org/wiki/Software_package_metrics" target="_blank">Wikipedia says that you should count the number of types</a>. But what about types? If type A uses 4 methods from type B, what should be the values of Ca and Ce?</p>
+<p>Now that we have defined what Afferent and Efferent Coupling is, how do you calculate it? For a software package (namespace or assembly), <a href="https://en.wikipedia.org/wiki/Software_package_metrics" target="_blank" rel="noopener">Wikipedia says that you should count the number of types</a>. But what about types? If type A uses 4 methods from type B, what should be the values of Ca and Ce?</p>
 <ul>
 <li>Ca=1, Ce=1</li>
 <li>Ca=4, Ce=4</li>
@@ -198,14 +196,14 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-437" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/highCa.png?resize=628%2C182" alt="highca" width="628" height="182" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/highCa.png?w=898&amp;ssl=1 898w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/highCa.png?resize=768%2C222&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>Is this a bad thing? As usual, it depends. If this is framework type code, then you would expect it to be used in many places. This is because framework code should be stable. If you don&#8217;t change it, then you don&#8217;t have to worry about breaking its clients. In fact, it might be a warning sign if this type of code isn&#8217;t used that often.</p>
 <p>For example, you would expect that a substitute framework (like NSubstitute or FakeItEasy) to be used in many of your unit test projects. If it isn&#8217;t, then some questions come to mind: Are people using other substitute frameworks? Are they hand coding their own stubs and mocks? Or maybe they aren&#8217;t using fakes at all (or testing will real collaborators). Again, this isn&#8217;t necessarily a problem. But when a certain type doesn&#8217;t fit the pattern, you should dig deeper.</p>
-<p>What if a Dependency Injection framework has high Incoming Coupling? This is big warning sign. Only the <a href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/" target="_blank">composition root</a> should reference it. If you have references to a DI framework scattered across the code base, you&#8217;re using it wrong. The DSM makes this problem visible.</p>
+<p>What if a Dependency Injection framework has high Incoming Coupling? This is big warning sign. Only the <a href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/" target="_blank" rel="noopener">composition root</a> should reference it. If you have references to a DI framework scattered across the code base, you&#8217;re using it wrong. The DSM makes this problem visible.</p>
 <p>Even if it&#8217;s not framework type code, the principle is the same: code with high incoming coupling should be stable. So another warning sign are concrete types with high Ca (we&#8217;ll also touch on this in the <a href="#avi">Abstractness vs. Instability</a> section). The solution is simple: extract an interface so you depend on abstractions. But extracting an interface is just the first step. You should take the time to design the contract and think if the abstraction adheres to the Single Responsibility Principle. If it doesn&#8217;t, it&#8217;s better to split it into multiple interfaces. Applying the Interface Segregation Principle helps you keep the interfaces small and focused.</p>
 <h4>High Efferent Coupling</h4>
 <p>What if you see this column with many blue cells (for a given column, blue cells indicate the elements that it depends on)? Is this a bad thing?</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-438" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/highCe.png?resize=393%2C550" alt="highce" width="393" height="550"></p>
 <p>It depends. Most probably, it is a problem. Code with high Outgoing Coupling usually doesn&#8217;t do only one thing. But there are exceptions.</p>
 <ul>
-<li>The <a href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/" target="_blank">composition root</a> knows about many types. That is its job: to construct the object graph.</li>
+<li>The <a href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/" target="_blank" rel="noopener">composition root</a> knows about many types. That is its job: to construct the object graph.</li>
 <li>The presentation layer (or top layer) code might also fit in here. Usually, nobody depends on Controllers (as in the C in MVC), but they depend on many types (DTOs, View Models, Services, Mappers etc.)</li>
 </ul>
 <h4>Visualizing Layered Code</h4>
@@ -213,11 +211,11 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-440" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/layeredCode.png?resize=628%2C485" alt="layeredcode" width="628" height="485"></p>
 <p>These are just a few examples of patterns that you can observe using the DSM. Every project is unique so you should think about the context when analyzing your own project. After I first ran NDepend on my project, I started looking for clusters of elements and elements that don&#8217;t fit in their surroundings. The DSM gives you a good overview of the main components if you&#8217;re looking at an assembly or namespace level. But you also have the option to zoom in and see dependencies for types and even members. It&#8217;s interesting how many things a matrix can tell you about your code base.</p>
 <h3>Detecting Dependency Cycles</h3>
-<p>In most of my projects I have used an assembly as a logical component. This led to a large number of projects and slower builds. Visual Studio works better with fewer larger assemblies than with many smaller ones. And, if you think about it, it makes sense, since an assembly is a physical unit. A better approach could be to <a href="https://www.simple-talk.com/dotnet/net-framework/defining-net-components-with-namespaces/" target="_blank">use namespaces as logical components</a>. This will reduce the number of assemblies. The problem is that, although Visual Studio can prevent introducing dependency cycles between projects, it can&#8217;t detect dependency cycles between namespaces. This makes it easy to introduce unwanted dependencies. Fortunately, these cycles are visible in NDepend&#8217;s DSM:</p>
+<p>In most of my projects I have used an assembly as a logical component. This led to a large number of projects and slower builds. Visual Studio works better with fewer larger assemblies than with many smaller ones. And, if you think about it, it makes sense, since an assembly is a physical unit. A better approach could be to <a href="https://www.simple-talk.com/dotnet/net-framework/defining-net-components-with-namespaces/" target="_blank" rel="noopener">use namespaces as logical components</a>. This will reduce the number of assemblies. The problem is that, although Visual Studio can prevent introducing dependency cycles between projects, it can&#8217;t detect dependency cycles between namespaces. This makes it easy to introduce unwanted dependencies. Fortunately, these cycles are visible in NDepend&#8217;s DSM:</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-415" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/nunitDependencyCycles-e1477287124777.png?resize=628%2C429" alt="nunitdependencycycles" width="628" height="429"></p>
 <p>The <strong>black cells indicate namespaces that are mutually dependent</strong>. The red rectangles show all the elements that are part of a dependency cycle. So, <strong>if you treat namespaces as logical components</strong>, this matrix shows that you have a problem. Usually, even though two namespaces depend on each other, there is a parent-child relationship. This means that there are more dependencies in one direction than in the other. To remove the dependency, you can:</p>
 <ul>
-<li>apply the <a href="http://docs.google.com/a/cleancoder.com/viewer?a=v&amp;pid=explorer&amp;chrome=true&amp;srcid=0BwhCYaYDn8EgMjdlMWIzNGUtZTQ0NC00ZjQ5LTkwYzQtZjRhMDRlNTQ3ZGMz&amp;hl=en" target="_blank">Dependency Inversion Principle</a>. If type A (namespace NA) depends on type B (namespace NB) you can define an interface IB in namespace NA. A will now depend on IB and B will implement IB, so the dependency is from NB to NA.</li>
+<li>apply the <a href="http://docs.google.com/a/cleancoder.com/viewer?a=v&amp;pid=explorer&amp;chrome=true&amp;srcid=0BwhCYaYDn8EgMjdlMWIzNGUtZTQ0NC00ZjQ5LTkwYzQtZjRhMDRlNTQ3ZGMz&amp;hl=en" target="_blank" rel="noopener">Dependency Inversion Principle</a>. If type A (namespace NA) depends on type B (namespace NB) you can define an interface IB in namespace NA. A will now depend on IB and B will implement IB, so the dependency is from NB to NA.</li>
 <li>extract the common code in a separate assembly &#8211; C. Assemblies A and B should both depend on C.</li>
 </ul>
 <p>If there is a large number of dependencies both ways, maybe the code is telling you that these two namespaces are one component. In this case, you could merge them.</p>
@@ -228,7 +226,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h2 id="avi">Abstractness vs. Instability</h2>
 <p>Another interesting view is Abstractness vs. Instability.</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-447" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/10/AbstractnessVSInstability.png?resize=592%2C585" alt="abstractnessvsinstability" width="592" height="585"></p>
-<p>Uncle Bob defined these metrics in <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">The Principles of OOD</a> article series:</p>
+<p>Uncle Bob defined these metrics in <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank" rel="noopener">The Principles of OOD</a> article series:</p>
 <ul>
 <li>I : <strong>Instability</strong> : (Ce ÷ (Ca+Ce)) : This metric has the range [0,1]. I=0 indicates a maximally stable package. I=1 indicates a maximally instable package. (As described above, Ce is Outgoing Coupling and Ca is Incoming Coupling)</li>
 <li>A : <strong>Abstractness</strong> : abstractClasses ÷ totalClasses</li>
@@ -247,11 +245,11 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>Although it might seem daunting at first, learning to read the data that NDepend gives you can help improve the quality of your product. Architects will find the high level view useful for detecting architectural inconsistencies. Developers will find it useful to understand code and get all the information needed to refactor it. I&#8217;ve just started using NDepend, but I already feel it&#8217;s helping me make more informed decisions.</p>
 <p>If you want to find out more about NDepend and managing dependencies, check out these resources:</p>
 <ul>
-<li><a href="http://www.ndepend.com/docs/dependency-structure-matrix-dsm" target="_blank">NDepend documentation</a></li>
+<li><a href="http://www.ndepend.com/docs/dependency-structure-matrix-dsm" target="_blank" rel="noopener">NDepend documentation</a></li>
 <li>
-<a href="https://www.pluralsight.com/courses/practical-ndepend" target="_blank">Practical NDepend</a> Pluralsight course by <a href="http://www.daedtech.com/">Erik Dietrich</a> (be sure to also check <a href="http://www.daedtech.com/" target="_blank">his blog</a>)</li>
-<li><a href="http://www.hanselman.com/blog/HanselminutesPodcast163SoftwareMetricsWithPatrickSmacchia.aspx" target="_blank">Hanselminutes Podcast 163 &#8211; Software Metrics with Patrick Smacchia</a></li>
-<li><a href="http://hanselminutes.com/51/static-code-analysis-with-ndepend" target="_blank">Hanselminutes Podcast 51 &#8211; Static Code Analysis with NDepend</a></li>
+<a href="https://www.pluralsight.com/courses/practical-ndepend" target="_blank" rel="noopener">Practical NDepend</a> Pluralsight course by <a href="http://www.daedtech.com/">Erik Dietrich</a> (be sure to also check <a href="http://www.daedtech.com/" target="_blank" rel="noopener">his blog</a>)</li>
+<li><a href="http://www.hanselman.com/blog/HanselminutesPodcast163SoftwareMetricsWithPatrickSmacchia.aspx" target="_blank" rel="noopener">Hanselminutes Podcast 163 &#8211; Software Metrics with Patrick Smacchia</a></li>
+<li><a href="http://hanselminutes.com/51/static-code-analysis-with-ndepend" target="_blank" rel="noopener">Hanselminutes Podcast 51 &#8211; Static Code Analysis with NDepend</a></li>
 </ul>
 
 <div id="jp-relatedposts" class="jp-relatedposts">
@@ -273,16 +271,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-403" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-403" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-403" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -352,26 +341,9 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="403" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c667346869"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -617,159 +589,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/visualize-dependencies-with-ndepend\/":403};</script>
-				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+		<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"403\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "403" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

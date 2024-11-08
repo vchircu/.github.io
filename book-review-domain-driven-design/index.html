@@ -14,7 +14,6 @@
 <link rel="dns-prefetch" href="//i0.wp.com">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
-<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Book Review: Domain-Driven Design Comments Feed" href="./feed/index.html">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
@@ -47,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +73,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical patterns. I kind of got the idea behind repositories, entities, val…">
 <meta property="article:published_time" content="2016-09-25T14:50:13+00:00">
-<meta property="article:modified_time" content="2017-03-09T19:06:54+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:13:39+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/09/dddCover.jpg">
 <meta property="og:image:width" content="300">
@@ -142,8 +139,8 @@ var related_posts_js_options = {"post_heading":"h4"};
 	
 	<div class="entry-content" itemprop="articleBody">
 
-		<p>When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical patterns. I kind of got the idea behind repositories, entities, value objects, etc.. Six years later and I still see people paying more attention to the tactical patterns. Even Eric Evans <a href="https://www.youtube.com/watch?v=lE6Hxz4yomA" target="_blank">says that he has overemphasized the building blocks</a>. So, in order to get a better understanding about what is Domain-Driven Design, I decided to read the book that introduced it. The main purpose was to gain more knowledge about the strategic patterns of DDD.</p>
-<p><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank"><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-359" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/09/dddCover.jpg?resize=300%2C398" alt="DDD Book Cover" width="300" height="398"></a></p>
+		<p>When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical patterns. I kind of got the idea behind repositories, entities, value objects, etc.. Six years later and I still see people paying more attention to the tactical patterns. Even Eric Evans <a href="https://www.youtube.com/watch?v=lE6Hxz4yomA" target="_blank" rel="noopener">says that he has overemphasized the building blocks</a>. So, in order to get a better understanding about what is Domain-Driven Design, I decided to read the book that introduced it. The main purpose was to gain more knowledge about the strategic patterns of DDD.</p>
+<p><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank" rel="noopener"><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-359" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/09/dddCover.jpg?resize=300%2C398" alt="DDD Book Cover" width="300" height="398"></a></p>
 <p><span id="more-345"></span></p>
 <h2>Structure</h2>
 <p>The book has four parts: Putting the Domain Model to Work, The Building Blocks of a Model-Driven Design, Refactoring Toward Deeper Insight and Strategic Design.</p>
@@ -162,7 +159,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h3>Refactoring Toward Deeper Insight</h3>
 <p>This part covers the process of experimenting with the model and continuously refactoring it. It shows us how the knowledge gained through small refactorings can lead to a design breakthrough. There is a lot of focus on conversation and experimentation. Many times the model contains implicit concepts. Business experts might hint at them without actually naming them. Making implicit concepts explicit requires hard work and quite a bit of domain knowledge.</p>
 <p>Chapter 10 presents some patterns that can help you get to a supple design. Some of the are well known (<strong>intention revealing interfaces</strong>, <strong>side-effect free function</strong>, <strong>assertions</strong>, <strong>standalone classe</strong>s). Others were new to me (e.g.:<strong>conceptual contours</strong> and <strong>closure of operations</strong>). This chapter is full of code samples that make the patterns easy to understand. The last section in the chapter is an extended example of how all these patterns fit together and how applying one leads to another.</p>
-<p>I think chapters 11 and 12 contain the most interesting examples in this section. They show how to use the knowledge of others and apply analysis patterns in order to get to a good model. It uses a couple of patterns from Martin Fowler&#8217;s <a href="https://www.amazon.co.uk/Analysis-Patterns-Reusable-Object-Models/dp/0201895420/" target="_blank">Analysis Patterns</a>. It uses an interesting scenario which demonstrates that these patterns are guides, not out of the box solution. You should take what you need, modify them to cater for your domain and only then apply them. Design Patterns could be another source of inspiration. Some of them can be rethought and applied to the problem domain. Chapter 12 contains a couple of examples of applying Strategy (or Policy) and Composite to a domain model.</p>
+<p>I think chapters 11 and 12 contain the most interesting examples in this section. They show how to use the knowledge of others and apply analysis patterns in order to get to a good model. It uses a couple of patterns from Martin Fowler&#8217;s <a href="https://www.amazon.co.uk/Analysis-Patterns-Reusable-Object-Models/dp/0201895420/" target="_blank" rel="noopener">Analysis Patterns</a>. It uses an interesting scenario which demonstrates that these patterns are guides, not out of the box solution. You should take what you need, modify them to cater for your domain and only then apply them. Design Patterns could be another source of inspiration. Some of them can be rethought and applied to the problem domain. Chapter 12 contains a couple of examples of applying Strategy (or Policy) and Composite to a domain model.</p>
 <h3>Strategic Design</h3>
 <h4>Maintaining Model Integrity</h4>
 <p>The first chapter of this section discusses <strong>Bounded Contexts</strong>. In my opinion, this is one of the most important patterns in DDD. This chapter discusses the different relationships between bounded contexts and how to draw a <strong>context map</strong>. There is a section that discusses <strong>how to fit external systems into your design</strong> and the trade offs between approaches. Also, as the product evolves, you might want to change some of the relationships between bounded contexts. This chapter ends with a discussion of how to go from Separate Ways to a Shared Kernel and from a Shared Kernel to Continuous Integration. There is also a small example of how to phase out a legacy system.</p>
@@ -206,16 +203,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-345" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-345" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-345" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -260,33 +248,6 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 	
 				
-<div id="comments" class="comments-area">
-
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="345" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c0da8804ca"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="79"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
-</div>
-<!-- #comments -->
-
 				
 	<div class="loop-nav">
 		<div class="prev">Previous: <a href="./../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html" rel="prev">Book Review: Fifty Quick Ideas to Improve your User Stories</a>
@@ -529,159 +490,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/book-review-domain-driven-design\/":345};</script>
-				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+		<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"345\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "345" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

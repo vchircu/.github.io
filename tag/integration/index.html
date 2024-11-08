@@ -46,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -424,7 +422,7 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 	Data.OrderId = message.OrderId;
 	Data.TotalValue = message.TotalValue;
 
-	Log.Info($&quot;Placing Order with Id {message.OrderId}&quot;);
+	Log.Info($&amp;quot;Placing Order with Id {message.OrderId}&amp;quot;);
 
 	RequestTimeout(context, TimeSpan.FromSeconds(1), new BuyersRemorseTimeout());
 
@@ -440,7 +438,7 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 		Data.OrderId = message.OrderId;
 		Data.TotalValue = message.TotalValue;
 
-		Log.Info($&quot;Placing Order with Id {message.OrderId}&quot;);
+		Log.Info($&amp;quot;Placing Order with Id {message.OrderId}&amp;quot;);
 
 		RequestTimeout(context, TimeSpan.FromSeconds(1), new BuyersRemorseTimeout());
 
@@ -449,8 +447,8 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 
 	public Task Timeout(BuyersRemorseTimeout state, IMessageHandlerContext context)
 	{
-		context.Publish&lt;IOrderPlaced&gt;(
-			o =&gt;
+		context.Publish&amp;lt;IOrderPlaced&amp;gt;(
+			o =&amp;gt;
 				{
 					o.OrderId = Data.OrderId;
 					o.TotalValue = Data.TotalValue;
@@ -482,7 +480,7 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p><a href="http://www.amazon.com/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683/" target="_blank">Enterprise Integration Patterns</a> by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions should read it. Even though it&#8217;s more than 10 years old, the content is still relevant. This is because the book focuses on patterns and principles and it&#8217;s technology agnostic. The authors do a good job on describing how you can combine the patterns together and present the trade-offs of different approaches.</p>
+			<p><a href="http://www.amazon.com/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683/" target="_blank" rel="noopener">Enterprise Integration Patterns</a> by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions should read it. Even though it&#8217;s more than 10 years old, the content is still relevant. This is because the book focuses on patterns and principles and it&#8217;s technology agnostic. The authors do a good job on describing how you can combine the patterns together and present the trade-offs of different approaches.</p>
 <p><a href="http://www.amazon.co.uk/Enterprise-Integration-Patterns-Designing-Addison-Wesley/dp/0321200683" rel="attachment wp-att-71"><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-71 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/eip-e1458866902699.gif?resize=300%2C394" alt="Enterprise Integration Patterns" width="300" height="394"></a></p>
 <p> <a href="./../../book-review-enterprise-integration-patterns/index.html#more-15" class="more-link">Continue Reading</a></p>
 		</div>

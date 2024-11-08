@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 18 Oct 2024 07:34:10 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:35:29 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to improve your decision making process</title>
 		<link>./../../../how-to-improve-your-decision-making-process/index.html</link>
-					<comments>./../../../how-to-improve-your-decision-making-process/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 30 Jan 2017 20:37:05 +0000</pubDate>
@@ -36,8 +35,6 @@
 
 					<description><![CDATA[Software development is all about trade-offs. I was watching Dan North&#8216;s fantastic presentation, Decisions, decisions, in which he talks about the <a class="more-link" href="./../../../how-to-improve-your-decision-making-process/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-improve-your-decision-making-process/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">757</post-id>	</item>

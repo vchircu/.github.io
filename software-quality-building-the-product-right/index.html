@@ -14,7 +14,6 @@
 <link rel="dns-prefetch" href="//i0.wp.com">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
-<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Software Quality: Building the Product Right Comments Feed" href="./feed/index.html">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
@@ -47,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +73,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In a previous blog post we discussed why building the right product is hard and some tips on how to achieve a high perceived integrity. But if you&#8217;re building a strategic solution that should…">
 <meta property="article:published_time" content="2016-06-22T17:39:40+00:00">
-<meta property="article:modified_time" content="2016-07-09T05:17:34+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:16:09+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/06/testingPyramid-1.png">
 <meta property="og:image:width" content="421">
@@ -172,7 +169,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>All these tools should be integrated into your deployment pipeline.We use <a href="http://www.sonarqube.org/">SonarQube </a>for aggregating quality information and surfacing it into some developer friendly dashboards. SonarQube also has its own rules and metrics, like code duplication and technical debt. Be warned though: don&#8217;t treat Sonar issues in isolation. You should investigate each one in its context and correlate it with <em>neighbor  </em>issues. It would be useful to have tools which signal code smells, not issues in isolation. Unfortunately, I don&#8217;t know one in the .Net world. If you do, please leave a comment.</p>
 <h3>Code Inspection</h3>
 <p>But you can&#8217;t automate all checks. A tool can&#8217;t tell you if you&#8217;ve implemented the wrong algorithm or detect all the code smells. Someone else should inspect your code.</p>
-<p><a href="https://dzone.com/articles/the-secret-to-code-quality-in-2016-infographic" target="_blank">Reports </a>show that code review is the number one way to improve code quality. And obviously, code reviews help you detect possible bugs or issues. But I don&#8217;t think this is their greatest benefit. Code reviews encourages knowledge sharing within the team, so you don&#8217;t have polls of knowledge. Code reviews encourage learning. From my experience, pair programming and code reviews are one of the most efficient ways for a team to learn and grow. You should get your code reviewed and you should review other peoples code. A LOT.</p>
+<p><a href="https://dzone.com/articles/the-secret-to-code-quality-in-2016-infographic" target="_blank" rel="noopener">Reports </a>show that code review is the number one way to improve code quality. And obviously, code reviews help you detect possible bugs or issues. But I don&#8217;t think this is their greatest benefit. Code reviews encourages knowledge sharing within the team, so you don&#8217;t have polls of knowledge. Code reviews encourage learning. From my experience, pair programming and code reviews are one of the most efficient ways for a team to learn and grow. You should get your code reviewed and you should review other peoples code. A LOT.</p>
 <h3>Successful Code Reviews</h3>
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
 <p lang="en" dir="ltr">10 lines of code = 10 issues.</p>
@@ -182,7 +179,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 </blockquote>
 <p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 <p>For a code review to be successful, you should do it in small batches. Reviewing tens of files takes hours and you&#8217;ll likely miss many issues (if it&#8217;s not taking hours, you&#8217;re probably rushing). Since it requires a deep level of concentration and focus, a code review should not take more than one hour. In most of the cases I review code before check in. If you&#8217;re using git, a pull request is a good way to review code before you merge it into trunk. If you follow the discipline of checking in at least once a day (but preferably more often), you should be all set. As a side note, I also favor developing on mainline. This ensures that work is integrated often and integration days or code freezes are not needed.</p>
-<p>You should also consider <strong>shared code review session</strong> if you&#8217;re working in a multi-team project. These sessions focus more on knowledge share and less on detecting quality issues. This helps teams align and gain knowledge on the entire code base. It also improves consistency and helps avoid <a href="http://blog.codinghorror.com/code-smells/" target="_blank">oddball solutions</a>. Sometimes, these sessions reveal design issues. It is important to add these improvements to your backlog and figure out how and when to work on them. I always favor the boy scout rule over dedicated refactoring stories, but sometimes I can&#8217;t see a better way of paying the debt. You should always keep an eye out for technical debt, and SonarQube metrics are not enough.</p>
+<p>You should also consider <strong>shared code review session</strong> if you&#8217;re working in a multi-team project. These sessions focus more on knowledge share and less on detecting quality issues. This helps teams align and gain knowledge on the entire code base. It also improves consistency and helps avoid <a href="http://blog.codinghorror.com/code-smells/" target="_blank" rel="noopener">oddball solutions</a>. Sometimes, these sessions reveal design issues. It is important to add these improvements to your backlog and figure out how and when to work on them. I always favor the boy scout rule over dedicated refactoring stories, but sometimes I can&#8217;t see a better way of paying the debt. You should always keep an eye out for technical debt, and SonarQube metrics are not enough.</p>
 <h2>Testing Strategy</h2>
 <p>To achieve a high conceptual integrity you need to clearly define the testing strategy. This should provide a guideline of when to test, what to test, and how to test. There are way too many <em>agile</em> projects that require a huge effort of manual regression tests before each release. In order keep the cost of adding a feature low, you need to have a safety net to protect you against regressions.</p>
 <p>Although the testing strategy depends on the type of product that you are building, there are some overarching themes. One of the most simple to understand but harder to follow concepts is the<a href="http://martinfowler.com/bliki/TestPyramid.html"> Test Pyramid</a>, pictured below:</p>
@@ -193,13 +190,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>Maintaining a high conceptual integrity is hard. In this blog post we&#8217;ve just scratched the surface on some of the things you can do in order to ensure you&#8217;re building the product right. Luckily, there are many books that touch on this topic in one way or another. Here are some books that I highly recommend:</p>
 <ul>
 <li>
-<a href="http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783" target="_blank">Lean Software Development: An Agile Toolkit</a> by Mary Poppendieck and Tom Poppendieck</li>
+<a href="http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783" target="_blank" rel="noopener">Lean Software Development: An Agile Toolkit</a> by Mary Poppendieck and Tom Poppendieck</li>
 <li>
 <a href="https://leanpub.com/software-architecture-for-developers">Software Architecture for Developers</a> by Simon Brown</li>
 <li>
-<a href="http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank">Domain-Driven Design: Tackling Complexity in the Heart of Software </a>by Eric Evans</li>
+<a href="http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank" rel="noopener">Domain-Driven Design: Tackling Complexity in the Heart of Software </a>by Eric Evans</li>
 <li>
-<a href="http://www.amazon.com/Patterns-Principles-Practices-Domain-Driven-Design/dp/1118714709" target="_blank">Patterns, Principles, and Practices of Domain-Driven Design</a> by Scott Millett</li>
+<a href="http://www.amazon.com/Patterns-Principles-Practices-Domain-Driven-Design/dp/1118714709" target="_blank" rel="noopener">Patterns, Principles, and Practices of Domain-Driven Design</a> by Scott Millett</li>
 </ul>
 <p>If you&#8217;d like to find out more on any of these topics or share your experience, please leave a comment below.</p>
 
@@ -224,16 +221,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-141" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-141" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-141" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -278,33 +266,6 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 	
 				
-<div id="comments" class="comments-area">
-
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="141" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fb2a5fa36c"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="46"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
-</div>
-<!-- #comments -->
-
 				
 	<div class="loop-nav">
 		<div class="prev">Previous: <a href="./../book-review-enterprise-integration-patterns/index.html" rel="prev">Book Review: Enterprise Integration Patterns</a>
@@ -547,159 +508,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/software-quality-building-the-product-right\/":141};</script>
-				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+		<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"141\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "141" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

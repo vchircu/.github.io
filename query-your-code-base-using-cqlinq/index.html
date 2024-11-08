@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="Your code base has a lot to tell you. The question is: How can you listen to it? You can identify code smells when you&#8217;re reading code or extending it, but this doesn&#8217;t give you an over…">
 <meta property="article:published_time" content="2016-11-16T06:50:14+00:00">
-<meta property="article:modified_time" content="2016-12-07T06:31:39+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:11:36+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/11/domains.png">
 <meta property="og:image:width" content="510">
@@ -144,26 +142,26 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can identify code smells when you&#8217;re reading code or extending it, but this doesn&#8217;t give you an overview. After you have been working for a while in a project, you can name some of its strengths and weaknesses. But this approach takes a long time, relies on experience and is subjective. It would be nice if you could query a code base in a structured way. Basic search functionality from an IDE like Visual Studio isn&#8217;t powerful enough. NDepend allows you to query .Net code using LINQ syntax through CQLinq &#8211; Code Query LINQ. In this blog post we&#8217;ll discuss how to query your code base using CQLinq.</p>
 <h2 id="example">An Example</h2>
-<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank">default CQLinq rules</a>.</p>
+<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank" rel="noopener">default CQLinq rules</a>.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Types where
-  t.IsClass &amp;&amp;
- !t.IsGeneratedByCompiler &amp;&amp;
- !t.IsStatic &amp;&amp;
-  t.SizeOfInst &gt; 0 &amp;&amp;
+  t.IsClass &amp;amp;&amp;amp;
+ !t.IsGeneratedByCompiler &amp;amp;&amp;amp;
+ !t.IsStatic &amp;amp;&amp;amp;
+  t.SizeOfInst &amp;gt; 0 &amp;amp;&amp;amp;
 
   // Structure instance must not be too big,
   // else it degrades performance.
-  t.SizeOfInst &lt;= 16 &amp;&amp;
+  t.SizeOfInst &amp;lt;= 16 &amp;amp;&amp;amp;
   // Must not have children
-  t.NbChildren == 0 &amp;&amp;
+  t.NbChildren == 0 &amp;amp;&amp;amp;
 
   // Must not implement interfaces to avoid boxing mismatch
   // when structures implements interfaces.
-  t.InterfacesImplemented.Count() == 0 &amp;&amp;
+  t.InterfacesImplemented.Count() == 0 &amp;amp;&amp;amp;
 
   // Must derive directly from System.Object
-  t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1 &amp;&amp;
+  t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;.AllowNoMatch()) == 1 &amp;amp;&amp;amp;
 
   // Structures should be immutable type.
   t.IsImmutable
@@ -172,13 +170,13 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 <p>As you can see, the query is quite readable. Even if you don&#8217;t know the CQLinq syntax, you understand what it does. And since it&#8217;s based on Linq, it already seems familiar.</p>
 <p><span id="more-452"></span></p>
 <h2>Anatomy of a CQLinq Query</h2>
-<p>Let&#8217;s look at the basic elements of a <a href="http://www.ndepend.com/docs/cqlinq-syntax" target="_blank">CQLinq query</a>.</p>
+<p>Let&#8217;s look at the basic elements of a <a href="http://www.ndepend.com/docs/cqlinq-syntax" target="_blank" rel="noopener">CQLinq query</a>.</p>
 <h3>Domain</h3>
 <p>The domain is what you are querying on:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Types
 </pre>
-<p>CQLinq allows you to query on a set of <a href="http://www.ndepend.com/docs/cqlinq-syntax#PredefinedDomains" target="_blank">predefined domains</a>: <strong>assemblies</strong>, <strong>namespaces</strong>, <strong>types</strong>, <strong>methods</strong> and <strong>fields</strong>. The root domain, <strong>context.CodeBase</strong>, is an entry point to all other domains. You can use the built in intellisense support from the <strong>Query and Rules Editor</strong> to explore it:</p>
+<p>CQLinq allows you to query on a set of <a href="http://www.ndepend.com/docs/cqlinq-syntax#PredefinedDomains" target="_blank" rel="noopener">predefined domains</a>: <strong>assemblies</strong>, <strong>namespaces</strong>, <strong>types</strong>, <strong>methods</strong> and <strong>fields</strong>. The root domain, <strong>context.CodeBase</strong>, is an entry point to all other domains. You can use the built in intellisense support from the <strong>Query and Rules Editor</strong> to explore it:</p>
 <p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-481 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/domains.png?resize=510%2C289" alt="CQLinq Query Editor" width="510" height="289"></p>
 <p>But, since you&#8217;ll mainly use the subdomains, there are a set of shortcuts defined for these. For example, <strong>Types</strong> is just a shortcut for <strong>context.CodeBase.Types</strong>.</p>
 <p>Since many times you&#8217;re not interested in querying third party code, there are two disjoint predefined domains:</p>
@@ -189,22 +187,22 @@ from t in JustMyCode.Types
 <strong>ThirdParty </strong>&#8211; contains only 3rd party code, like <em>System.*, mscorblib, NHibernate</em>
 </li>
 </ul>
-<p>Apart from these two, there&#8217;s also the <a href="http://www.ndepend.com/docs/cqlinq-syntax#NotMyCode" target="_blank">JustMyCode </a>view, which excludes generated code. You can define code to exclude by adding the <strong>notmycode</strong> keyword in front of a query. Here is a simple query that excludes Specflow generated files:</p>
+<p>Apart from these two, there&#8217;s also the <a href="http://www.ndepend.com/docs/cqlinq-syntax#NotMyCode" target="_blank" rel="noopener">JustMyCode </a>view, which excludes generated code. You can define code to exclude by adding the <strong>notmycode</strong> keyword in front of a query. Here is a simple query that excludes Specflow generated files:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 notmycode from t in Types where
-  t.SourceFileDeclAvailable &amp;&amp; 
+  t.SourceFileDeclAvailable &amp;amp;&amp;amp; 
   t.SourceDecls.First().SourceFile
-   .FileName.ToLower().EndsWith(&quot;.feature.cs&quot;)
+   .FileName.ToLower().EndsWith(&amp;quot;.feature.cs&amp;quot;)
 select t
 </pre>
 <p><em><strong>Note</strong></em>: This is not required, since Specflow adds the <em>System.CodeDom.Compiler.GeneratedCodeAttribute</em> on generated types. NDepend already excludes these from <strong>JustMyCode</strong>. You can see all predefined <strong>notmycode</strong> queries in the <strong>Defining JustMyCode</strong> queries and rules group:</p>
 <p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-486" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/justMyCodeResized.png?resize=600%2C240" alt="Just My Code definition" width="600" height="240"></p>
 <p>You can also refine the domain by using the query operator syntax to filter and narrow down your search:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-from t in JustMyCode.Namespaces.WithNameLike(&quot;Library&quot;)
+from t in JustMyCode.Namespaces.WithNameLike(&amp;quot;Library&amp;quot;)
 </pre>
 <h3>Properties to Query On</h3>
-<p>NDepend&#8217;s API has a <a href="http://www.ndepend.com/docs/cqlinq-features" target="_blank">feature rich object model</a>, that you can see in our <a href="#example">Classes that are candidates to be turned into structures example</a>. You can query on the following properties of a code element:</p>
+<p>NDepend&#8217;s API has a <a href="http://www.ndepend.com/docs/cqlinq-features" target="_blank" rel="noopener">feature rich object model</a>, that you can see in our <a href="#example">Classes that are candidates to be turned into structures example</a>. You can query on the following properties of a code element:</p>
 <ul>
 <li>Name and file location</li>
 <li>Interfaces and class hierarchy</li>
@@ -212,10 +210,10 @@ from t in JustMyCode.Namespaces.WithNameLike(&quot;Library&quot;)
 <li>Mutability</li>
 <li>Attributes</li>
 <li>Code Dependencies</li>
-<li>A set of <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">predefined code metrics </a>like <em>lines of code, cyclomatic complexity, code coverage, coupling, cohesion</em>.</li>
+<li>A set of <a href="http://www.ndepend.com/docs/code-metrics" target="_blank" rel="noopener">predefined code metrics </a>like <em>lines of code, cyclomatic complexity, code coverage, coupling, cohesion</em>.</li>
 </ul>
 <h3>Results</h3>
-<p>The <a href="http://www.ndepend.com/docs/cqlinq-syntax#Format" target="_blank">result of a CQLinq</a> query can either be a scalar value (e.g. a count) or an anonymous object. In the later case, the first property of the object must be an assembly, namespace, type, method or field:</p>
+<p>The <a href="http://www.ndepend.com/docs/cqlinq-syntax#Format" target="_blank" rel="noopener">result of a CQLinq</a> query can either be a scalar value (e.g. a count) or an anonymous object. In the later case, the first property of the object must be an assembly, namespace, type, method or field:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Types
 select new { t, t.SizeOfInst, t.InstanceFields }
@@ -223,40 +221,40 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 <h3>Query Targets</h3>
 <p>There are many situations in which you would want to query the dependencies between code elements. For example, in our query, we want to see the inheritance depth from<em> System.Object</em>.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1
+t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;.AllowNoMatch()) == 1
 </pre>
-<p>To make these queries simpler, NDepend allows you to query for the element and then for its usage in one go. This functionality is exposed through a set of <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqDependency.html" target="_blank">extension methods</a>. You can query if a code element is <strong>using</strong>, <strong>creating</strong>, <strong>assigning</strong>, <strong>returning</strong> or <strong>deriving</strong> from another code element.</p>
+<p>To make these queries simpler, NDepend allows you to query for the element and then for its usage in one go. This functionality is exposed through a set of <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqDependency.html" target="_blank" rel="noopener">extension methods</a>. You can query if a code element is <strong>using</strong>, <strong>creating</strong>, <strong>assigning</strong>, <strong>returning</strong> or <strong>deriving</strong> from another code element.</p>
 <p>Also, in order to be able to write generic queries that don&#8217;t break when you can&#8217;t find an element, you can use the <strong>AllowNoMatch()</strong> extension method. Without this, if the element is not found in the code base, the query will not compile. This makes sure that the query will always compile, even when it can&#8217;t match a code element.</p>
 <h3>Transforming a Query into a Rule</h3>
 <p>Transforming a query into a rule is straightforward. You just need to prefix the query with <strong>warnif count</strong>:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-warnif count &gt; 0 from t in JustMyCode.Types where
+warnif count &amp;gt; 0 from t in JustMyCode.Types where
 </pre>
 <p>This will trigger a warning when you break the rule. If you want to <strong>break the build</strong> (i.e. return exit code 1 after running NDepend) you can mark the rule as <strong>Critical</strong> by clicking the Critical button in the <em>Queries and Rules Editor</em>.</p>
 <p><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-482 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/criticalRule.png?resize=600%2C375" alt="CQLinq critical rule" width="600" height="375"></p>
 <p>In the <strong>Queries and Rules Explorer </strong>window, you can <strong>export rules to a rule file</strong>. This is useful when you want to share the same set of rules across the company:</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-483 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/RuleFile.png?resize=600%2C307" alt="CQLinq Rules file" width="600" height="307"></p>
 <h2>Code Diff</h2>
-<p>NDepend allows you to query the code differences between two different versions of the code base. The <strong>OlderVersion()</strong> and <strong>NewerVersion()</strong> extension methods allow getting the older or newer version of a code element. For a full list of methods, check out the <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqCompare.html" target="_blank">NDepend documentation</a>.</p>
+<p>NDepend allows you to query the code differences between two different versions of the code base. The <strong>OlderVersion()</strong> and <strong>NewerVersion()</strong> extension methods allow getting the older or newer version of a code element. For a full list of methods, check out the <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqCompare.html" target="_blank" rel="noopener">NDepend documentation</a>.</p>
 <p>This is useful when adopting NDepend on a legacy project. Usually, when you first run static code analysis (like FxCop/CodeAnalysis or StyleCop) on an existing code base, you are going to see two problem:</p>
 <ul>
 <li>The first problem is that there is a lot of noise. Deciding what should be fixed now will require a thorough analysis. The team should agree on a set of rules and their severity.</li>
-<li>The second, bigger problem, is that it doesn&#8217;t factor parts of the code that you don&#8217;t touch anymore. By analyzing just the the current version of the code, you lose a lot of historical information. <a href="http://www.sonarqube.org/" target="_blank">SonarQube </a>does store previous analysis results. This allows you to define delta metrics and track trends over time, but it&#8217;s still somewhat limited since I would like more granular control.</li>
+<li>The second, bigger problem, is that it doesn&#8217;t factor parts of the code that you don&#8217;t touch anymore. By analyzing just the the current version of the code, you lose a lot of historical information. <a href="http://www.sonarqube.org/" target="_blank" rel="noopener">SonarQube </a>does store previous analysis results. This allows you to define delta metrics and track trends over time, but it&#8217;s still somewhat limited since I would like more granular control.</li>
 </ul>
-<p>These two problems make it harder to decide on what to focus. NDepend goes one step further and allows you to define evolutionary rules. This makes it easy to apply the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule" target="_blank">boy scout rule</a> and only fix what you touch. Here is the default <strong>Avoid making large methods even larger</strong> NDepend rule:</p>
+<p>These two problems make it harder to decide on what to focus. NDepend goes one step further and allows you to define evolutionary rules. This makes it easy to apply the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule" target="_blank" rel="noopener">boy scout rule</a> and only fix what you touch. Here is the default <strong>Avoid making large methods even larger</strong> NDepend rule:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-warnif count &gt; 0 
+warnif count &amp;gt; 0 
 from m in JustMyCode.Methods where
- !m.IsAbstract &amp;&amp;
-  m.IsPresentInBothBuilds() &amp;&amp;
-  m.CodeWasChanged() &amp;&amp;
+ !m.IsAbstract &amp;amp;&amp;amp;
+  m.IsPresentInBothBuilds() &amp;amp;&amp;amp;
+  m.CodeWasChanged() &amp;amp;&amp;amp;
   // Eliminate constructors from match, since they get larger
   // as soons as some fields initialization are added.
- !m.IsConstructor &amp;&amp;
+ !m.IsConstructor &amp;amp;&amp;amp;
  !m.IsClassConstructor
 
 let oldLoc = m.OlderVersion().NbLinesOfCode
-where oldLoc &gt; 15 &amp;&amp; m.NbLinesOfCode &gt; oldLoc
+where oldLoc &amp;gt; 15 &amp;amp;&amp;amp; m.NbLinesOfCode &amp;gt; oldLoc
 
 select new { m,
     oldLoc,
@@ -266,32 +264,32 @@ select new { m,
 <h2>Examples</h2>
 <p>This section will contain a few practical examples of how to use CQLinq to query your code base.</p>
 <h3>Stability Metrics</h3>
-<p>Uncle Bob defined a <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">set of principles and metrics</a> that evaluate the <a href="https://drive.google.com/file/d/0BwhCYaYDn8EgZjI3OTU4ZTAtYmM4Mi00MWMyLTgxN2YtMzk5YTY1NTViNTBh/view" target="_blank">package structure of an application</a>. In a <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank">previous post</a> we have already mentioned NDepend&#8217;s <a href="./../visualize-dependencies-with-ndepend/index.html#avi" target="_blank">Abstractness vs Instability Graph</a>. Now we&#8217;ll see how to check what assemblies in our code base don&#8217;t adhere to the stability principles. If you&#8217;re not familiar with the definition of stability, I would advise you to read Uncle Bob&#8217;s paper.</p>
+<p>Uncle Bob defined a <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank" rel="noopener">set of principles and metrics</a> that evaluate the <a href="https://drive.google.com/file/d/0BwhCYaYDn8EgZjI3OTU4ZTAtYmM4Mi00MWMyLTgxN2YtMzk5YTY1NTViNTBh/view" target="_blank" rel="noopener">package structure of an application</a>. In a <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank" rel="noopener">previous post</a> we have already mentioned NDepend&#8217;s <a href="./../visualize-dependencies-with-ndepend/index.html#avi" target="_blank" rel="noopener">Abstractness vs Instability Graph</a>. Now we&#8217;ll see how to check what assemblies in our code base don&#8217;t adhere to the stability principles. If you&#8217;re not familiar with the definition of stability, I would advise you to read Uncle Bob&#8217;s paper.</p>
 <h4>The Acyclic Dependencies Principle (ADP)</h4>
 <blockquote><p>The dependency structure between packages must be a Directed Acylcic Graph (DAG). That is, there must be no cycles in the dependency structure.</p></blockquote>
-<p>Visual Studio doesn&#8217;t allow dependency cycles between projects. But, if you&#8217;re using namespaces as logical components, you can introduce circular dependencies between namespaces. NDepend has a default rule for <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Avoid_namespaces_dependency_cycles.html" target="_blank">avoiding namespace dependency cycles</a>. As discussed in the <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank">previous post</a>, you can also use the Dependency Structure Matrix to highlight these.</p>
+<p>Visual Studio doesn&#8217;t allow dependency cycles between projects. But, if you&#8217;re using namespaces as logical components, you can introduce circular dependencies between namespaces. NDepend has a default rule for <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Avoid_namespaces_dependency_cycles.html" target="_blank" rel="noopener">avoiding namespace dependency cycles</a>. As discussed in the <a href="./../visualize-dependencies-with-ndepend/index.html" target="_blank" rel="noopener">previous post</a>, you can also use the Dependency Structure Matrix to highlight these.</p>
 <h4>The Stable Dependencies Principle (SDP)</h4>
 <blockquote><p>The dependencies between packages in a design should be in the direction of the stability of the packages. A package should only depend upon packages that are more stable that it is.</p></blockquote>
 <p>NDepend doesn&#8217;t have a default rule for SDP, but it&#8217;s easy to implement one since it already calculates the <em>Instability</em> metric for a given assembly.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from me in JustMyCode.Assemblies
-  let deps = me.AssembliesUsed.Where(d =&gt; me.Instability &lt; d.Instability)
+  let deps = me.AssembliesUsed.Where(d =&amp;gt; me.Instability &amp;lt; d.Instability)
   where deps.Any()
 select new {me, deps}
 </pre>
 <h4>The Stable Abstractions Principle (SAP)</h4>
 <blockquote><p>Packages that are maximmally stable should be maximmaly abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.</p></blockquote>
-<p>NDepend has a default rule for checking <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Assemblies_that_don%27t_satisfy_the_Abstractness_Instability_principle.html">Assemblies that don&#8217;t satisfy the Abstractness/Instability principle</a>. You can see how simple the query is, since NDepend already computes the<a href="http://www.ndepend.com/docs/code-metrics#DitFromMainSeq" target="_blank"> Distance from main sequence (D) metric</a>.</p>
+<p>NDepend has a default rule for checking <a href="http://www.ndepend.com/default-rules/webframe.html?Q_Assemblies_that_don%27t_satisfy_the_Abstractness_Instability_principle.html">Assemblies that don&#8217;t satisfy the Abstractness/Instability principle</a>. You can see how simple the query is, since NDepend already computes the<a href="http://www.ndepend.com/docs/code-metrics#DitFromMainSeq" target="_blank" rel="noopener"> Distance from main sequence (D) metric</a>.</p>
 <h3>Detecting tests with complex setup</h3>
 <p>I&#8217;m not a fan of having long test setups. <a href="http://blog.jayfields.com/2007/06/testing-inline-setup.html">Some people say that you should not use test setups at all</a>. With CQLinq it&#8217;s quite easy to write a query that detects long setups:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-from m in JustMyCode.Methods.Where(method =&gt;
-  method.HasAttribute(&quot;NUnit.Framework.*SetUpAttribute&quot;) &amp;&amp;
-  method.NbLinesOfCode &gt; 6)
+from m in JustMyCode.Methods.Where(method =&amp;gt;
+  method.HasAttribute(&amp;quot;NUnit.Framework.*SetUpAttribute&amp;quot;) &amp;amp;&amp;amp;
+  method.NbLinesOfCode &amp;gt; 6)
 select m.ParentType
 </pre>
 <h3>Ensuring temporally coupled methods are used together</h3>
-<p><a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank">Temporal coupling</a> is a design smell. But you sometimes have to live with it, because of legacy code or the API of some framework. So how could you ensure you&#8217;re calling both methods?</p>
+<p><a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank" rel="noopener">Temporal coupling</a> is a design smell. But you sometimes have to live with it, because of legacy code or the API of some framework. So how could you ensure you&#8217;re calling both methods?</p>
 <p>Let&#8217;s say you have the following classes:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 namespace App
@@ -315,25 +313,25 @@ namespace App
 </pre>
 <p>If you need to call <strong>Init</strong> before calling <strong>DoSomething</strong>, this call will fail at runtime. With CQLinq, you can define a rule to check methods that call <strong>DoSomething</strong>, but don&#8217;t call <strong>Init</strong>:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-from m in JustMyCode.Methods.Where(caller =&gt;
-  caller.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;) &amp;&amp;
- !caller.IsUsingMethod(&quot;App.TemporallyCoupled.Init*&quot;))
+from m in JustMyCode.Methods.Where(caller =&amp;gt;
+  caller.IsUsingMethod(&amp;quot;App.TemporallyCoupled.DoSomething()&amp;quot;) &amp;amp;&amp;amp;
+ !caller.IsUsingMethod(&amp;quot;App.TemporallyCoupled.Init*&amp;quot;))
 select m
 </pre>
 <p>This query doesn&#8217;t catch all the issues. It doesn&#8217;t cater for calling <strong>Init</strong> <em>after</em> <strong>DoSomething</strong> or for calling <strong>Init</strong> from a different method. For the second case, you could switch the query to search for types that have a field of type <strong>TemporallyCoupled</strong> and call <strong>DoSomething</strong> without calling <strong>Init</strong>.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-from t in JustMyCode.Types.Where(caller =&gt;
-  caller.Fields.Where(f =&gt; f.FieldTypeIs(&quot;App.TemporallyCoupled&quot;)).Any() &amp;&amp;
-  caller.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;) &amp;&amp;
- !caller.IsUsingMethod(&quot;App.TemporallyCoupled.Init*&quot;))
-  let methods = t.Methods.Where(m =&gt; m.IsUsingMethod(&quot;App.TemporallyCoupled.DoSomething()&quot;))
+from t in JustMyCode.Types.Where(caller =&amp;gt;
+  caller.Fields.Where(f =&amp;gt; f.FieldTypeIs(&amp;quot;App.TemporallyCoupled&amp;quot;)).Any() &amp;amp;&amp;amp;
+  caller.IsUsingMethod(&amp;quot;App.TemporallyCoupled.DoSomething()&amp;quot;) &amp;amp;&amp;amp;
+ !caller.IsUsingMethod(&amp;quot;App.TemporallyCoupled.Init*&amp;quot;))
+  let methods = t.Methods.Where(m =&amp;gt; m.IsUsingMethod(&amp;quot;App.TemporallyCoupled.DoSomething()&amp;quot;))
 select new {t, methods }
 </pre>
 <p>This query doesn&#8217;t pickup other false negatives. But the idea is that you can write this type of queries. Depending on your application and code, you can tailor the rule to pickup most of the issues.</p>
 <h3>Detecting API Breaking Changes</h3>
-<p>NDepend can also detect <a href="http://www.ndepend.com/default-rules/webframe.html?Q_API_Breaking_Changes__Types.html" target="_blank">API Breaking Changes</a>. In the next version you will also be able to get the Version of an Assembly. This will allow you to create a rule that breaks the build when you <em><strong>introduce API breaking changes</strong></em>, but you <em><strong>don&#8217;t increment the Major Version</strong></em>. This will ensure that you won&#8217;t make breaking changes by mistake.</p>
+<p>NDepend can also detect <a href="http://www.ndepend.com/default-rules/webframe.html?Q_API_Breaking_Changes__Types.html" target="_blank" rel="noopener">API Breaking Changes</a>. In the next version you will also be able to get the Version of an Assembly. This will allow you to create a rule that breaks the build when you <em><strong>introduce API breaking changes</strong></em>, but you <em><strong>don&#8217;t increment the Major Version</strong></em>. This will ensure that you won&#8217;t make breaking changes by mistake.</p>
 <h2>Conclusion</h2>
-<p>CQLinq is a powerful tool. Although it might take some time to learn it well, you can benefit from it right from the start. There are over <a href="http://www.ndepend.com/default-rules/webframe.html">250 default rules</a> that you can read and learn from. You can tweak them and get instant feedback in the <a href="http://www.ndepend.com/docs/cqlinq-syntax#Edition">Queries and Rules Editor</a>. You can use NDepend&#8217;s <a href="http://www.ndepend.com/docs/code-search" target="_blank">code search</a> functionality which generates CQLinq queries on the fly.</p>
+<p>CQLinq is a powerful tool. Although it might take some time to learn it well, you can benefit from it right from the start. There are over <a href="http://www.ndepend.com/default-rules/webframe.html">250 default rules</a> that you can read and learn from. You can tweak them and get instant feedback in the <a href="http://www.ndepend.com/docs/cqlinq-syntax#Edition">Queries and Rules Editor</a>. You can use NDepend&#8217;s <a href="http://www.ndepend.com/docs/code-search" target="_blank" rel="noopener">code search</a> functionality which generates CQLinq queries on the fly.</p>
 <p>After you start getting the hang of it, you should start tailoring rules for your own code base. The one size fits all rule set approach of many static code analyzers is both an advantage and a disadvantage. On one hand, when you want to compare different code bases in an objective way, you need a standardized rule set. On the other hand, every code base is unique. As Erik Dietrich says, <a href="http://www.daedtech.com/4-ways-custom-code-metrics-make-a-difference/">custom code metrics allow you to define targeted goals</a>. You can ensure that types in a certain namespace are immutable, namespace A doesn&#8217;t depend on namespace B, or that certain classes are at least 90% covered by unit tests. Being able to define custom metrics can help you improve the quality of your code base.</p>
 
 <div id="jp-relatedposts" class="jp-relatedposts">
@@ -353,16 +351,7 @@ select new {t, methods }
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-452" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-452" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-452" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -456,26 +445,9 @@ select new {t, methods }
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="452" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3f74c3419f"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="158"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -721,9 +693,7 @@ select new {t, methods }
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/query-your-code-base-using-cqlinq\/":452};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -767,156 +737,12 @@ select new {t, methods }
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"452\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "452" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

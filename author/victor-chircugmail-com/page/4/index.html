@@ -46,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -144,7 +142,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			<div class="entry-content" itemprop="articleBody">
 			<p>Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively track them? Should you? <a href="https://msdn.microsoft.com/en-us/library/bb385914.aspx">Visual Studio computes some of these metrics</a> out of the box. But if you want to define a custom metric, you&#8217;re out of luck. Yet, there are a bunch of code metrics that you might find useful for your code base. More so, a composite metric might be more helpful than the sum of its parts. For example, the <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=215899">C.R.A.P. Metric</a> detects complex code that is not covered by unit tests. How can you track such a metric in Visual Studio? In this article we&#8217;ll see how to visualize code metrics, add custom metrics and how to monitor trends with NDepend.</p>
 <h2>Code Metrics</h2>
-<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
+<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank" rel="noopener">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
 <p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-522 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=628%2C244" alt="Computer Code Metrics" width="628" height="244" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?w=800&amp;ssl=1 800w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=768%2C299&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>But it would be hard to extract information from these metrics if all we got was a bunch of numbers. We need other techniques to help us break down the complexity of the data. Visualization techniques complement metrics, by making it easier to synthesize and digest this information.</p>
 <p> <a href="./../../../../visualizing-code-metrics-with-ndepend/index.html#more-501" class="more-link">Continue Reading</a></p>
@@ -167,26 +165,26 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			<div class="entry-content" itemprop="articleBody">
 			<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can identify code smells when you&#8217;re reading code or extending it, but this doesn&#8217;t give you an overview. After you have been working for a while in a project, you can name some of its strengths and weaknesses. But this approach takes a long time, relies on experience and is subjective. It would be nice if you could query a code base in a structured way. Basic search functionality from an IDE like Visual Studio isn&#8217;t powerful enough. NDepend allows you to query .Net code using LINQ syntax through CQLinq &#8211; Code Query LINQ. In this blog post we&#8217;ll discuss how to query your code base using CQLinq.</p>
 <h2 id="example">An Example</h2>
-<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank">default CQLinq rules</a>.</p>
+<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank" rel="noopener">default CQLinq rules</a>.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Types where
-  t.IsClass &amp;&amp;
- !t.IsGeneratedByCompiler &amp;&amp;
- !t.IsStatic &amp;&amp;
-  t.SizeOfInst &gt; 0 &amp;&amp;
+  t.IsClass &amp;amp;&amp;amp;
+ !t.IsGeneratedByCompiler &amp;amp;&amp;amp;
+ !t.IsStatic &amp;amp;&amp;amp;
+  t.SizeOfInst &amp;gt; 0 &amp;amp;&amp;amp;
 
   // Structure instance must not be too big,
   // else it degrades performance.
-  t.SizeOfInst &lt;= 16 &amp;&amp;
+  t.SizeOfInst &amp;lt;= 16 &amp;amp;&amp;amp;
   // Must not have children
-  t.NbChildren == 0 &amp;&amp;
+  t.NbChildren == 0 &amp;amp;&amp;amp;
 
   // Must not implement interfaces to avoid boxing mismatch
   // when structures implements interfaces.
-  t.InterfacesImplemented.Count() == 0 &amp;&amp;
+  t.InterfacesImplemented.Count() == 0 &amp;amp;&amp;amp;
 
   // Must derive directly from System.Object
-  t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1 &amp;&amp;
+  t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;.AllowNoMatch()) == 1 &amp;amp;&amp;amp;
 
   // Structures should be immutable type.
   t.IsImmutable
@@ -211,8 +209,8 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan of visual management. Unfortunately, Visual Studio Professional doesn&#8217;t provide a way to do this. In the Premium and Enterprise editions you can <a href="https://msdn.microsoft.com/en-us/library/dd409453(v=vs.110).aspx" target="_blank">visualize code dependencies on dependency graphs</a>. But I don&#8217;t think this is enough. An architectural diagram with every assembly or namespace in my solution doesn&#8217;t tell me that much. It contains too much information.</p>
-<p>Fortunately, there is a tool that can help you manage dependencies in the .Net world: <a href="http://www.ndepend.com/" target="_blank">NDepend</a> (there is also a Java port &#8211; JArchitect). NDepend is a static analysis tool that, among other things, allows you to visualize dependencies. After I first ran NDepend on a project, I was overwhelmed with information. Then I took some time to play around and discover what can it tell me about my solution. NDepend integrates into Visual Studio quite nicely and points you in the right direction through tool tips and links. This is useful for people who prefer learning by doing. Aside from giving you information, it also tells you what to do with that information.</p>
+			<p>How do you manage dependencies in your project? Since an image speaks a thousand words, I&#8217;ve always been a fan of visual management. Unfortunately, Visual Studio Professional doesn&#8217;t provide a way to do this. In the Premium and Enterprise editions you can <a href="https://msdn.microsoft.com/en-us/library/dd409453(v=vs.110).aspx" target="_blank" rel="noopener">visualize code dependencies on dependency graphs</a>. But I don&#8217;t think this is enough. An architectural diagram with every assembly or namespace in my solution doesn&#8217;t tell me that much. It contains too much information.</p>
+<p>Fortunately, there is a tool that can help you manage dependencies in the .Net world: <a href="http://www.ndepend.com/" target="_blank" rel="noopener">NDepend</a> (there is also a Java port &#8211; JArchitect). NDepend is a static analysis tool that, among other things, allows you to visualize dependencies. After I first ran NDepend on a project, I was overwhelmed with information. Then I took some time to play around and discover what can it tell me about my solution. NDepend integrates into Visual Studio quite nicely and points you in the right direction through tool tips and links. This is useful for people who prefer learning by doing. Aside from giving you information, it also tells you what to do with that information.</p>
 <p>NDepend has two main views for managing dependencies: the <strong>Dependency Graph</strong> and the <strong>Dependency Structure Matrix</strong>. Apart from these, there is also an <strong>Abstractness vs Instability</strong> report that can be helpful. In this blog post, we&#8217;ll discuss some of the things that these views can tell you about your solution.</p>
 <p> <a href="./../../../../visualize-dependencies-with-ndepend/index.html#more-403" class="more-link">Continue Reading</a></p>
 		</div>
@@ -232,18 +230,18 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>In the previous blog post we went over some of the <a href="./../../../../msmq-basics/index.html" target="_blank">MSMQ bascis</a>. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup MSMQ.</p>
+			<p>In the previous blog post we went over some of the <a href="./../../../../msmq-basics/index.html" target="_blank" rel="noopener">MSMQ bascis</a>. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup MSMQ.</p>
 <p>I&#8217;ve been using NServiceBus with the MSMQ transport for a while now and have faced some issues. Unfortunately, information about MSMQ is pretty scarce and sometimes outdated. This blog post contains links to resources that I&#8217;ve found useful for understanding some of the best practices around MSMQ administration.</p>
 <h2>Monitoring</h2>
 <h3>Events</h3>
 <p>MSMQ logs informational, warning and error events under the <strong>Application Log</strong>. When accessing an object fails or succeeds, it also adds an audit entry in the<strong> Security Log</strong>. All message queuing events contain the &#8220;<em>MSMQ</em>&#8221; text in the <strong>Source</strong> column.</p>
-<p>If you have enabled <a href="https://technet.microsoft.com/en-us/library/cc730882(v=ws.11).aspx" target="_blank">End-to-End tracing</a>, you can find the trace events in <strong>Application and Services Logs/Microsoft/Windows/MSMQ/End2End</strong>.</p>
+<p>If you have enabled <a href="https://technet.microsoft.com/en-us/library/cc730882(v=ws.11).aspx" target="_blank" rel="noopener">End-to-End tracing</a>, you can find the trace events in <strong>Application and Services Logs/Microsoft/Windows/MSMQ/End2End</strong>.</p>
 <h3>Dead-Letter Queues</h3>
-<p>When a message expires, the queue manager puts it in one of the dead letter queues. This ensures that messages are not lost. A message expires when one of its timers (<strong>Time-To-Reach-Queue</strong> or <strong>Time-To-Be-Received</strong>) expire. There are two dead-letter queues, one for non-transactional messages and one for transactional messages. In order to keep track of expired messages, you should <a href="http://andreasohlund.net/2012/10/25/monitoring-your-dead-letter-queues/" target="_blank">monitor the dead-letter queues</a>.</p>
+<p>When a message expires, the queue manager puts it in one of the dead letter queues. This ensures that messages are not lost. A message expires when one of its timers (<strong>Time-To-Reach-Queue</strong> or <strong>Time-To-Be-Received</strong>) expire. There are two dead-letter queues, one for non-transactional messages and one for transactional messages. In order to keep track of expired messages, you should <a href="http://andreasohlund.net/2012/10/25/monitoring-your-dead-letter-queues/" target="_blank" rel="noopener">monitor the dead-letter queues</a>.</p>
 <h3>External Transactions</h3>
-<p>MSMQ can take part in external transactions. You can <a href="https://technet.microsoft.com/en-us/library/cc732032(v=ws.10).aspx" target="_blank">monitor these transactions</a> by using the Distributed Transaction Coordinator Transaction Statistics and Transaction List views. Since internal transactions don&#8217;t go through MSDTC, these can&#8217;t be monitored using this approach.</p>
+<p>MSMQ can take part in external transactions. You can <a href="https://technet.microsoft.com/en-us/library/cc732032(v=ws.10).aspx" target="_blank" rel="noopener">monitor these transactions</a> by using the Distributed Transaction Coordinator Transaction Statistics and Transaction List views. Since internal transactions don&#8217;t go through MSDTC, these can&#8217;t be monitored using this approach.</p>
 <h3>Performance Counters</h3>
-<p>MSMQ provides <a href="https://technet.microsoft.com/en-us/library/cc771098(v=ws.10).aspx" target="_blank">performance counters</a> that are helpful for monitoring its performance.</p>
+<p>MSMQ provides <a href="https://technet.microsoft.com/en-us/library/cc771098(v=ws.10).aspx" target="_blank" rel="noopener">performance counters</a> that are helpful for monitoring its performance.</p>
 <p>The <strong>MSMQ Service</strong> performance object contains global information about the Message Queuing Service:</p>
 <ul>
 <li>Total bytes in all queues &#8211; This is very important, since you don&#8217;t want to run out of disk space</li>
@@ -264,17 +262,17 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 <p>Since MSMQ is disk intensive, it is recommended to spread out MSMQ&#8217;s storage files over multiple disks.</p>
 <h2>Troubleshooting</h2>
 <p>The good news is that, usually, MSMQ just works. Most of the problems that you encounter are caused by either DTC or not having enough disk space.</p>
-<p>For investigating DTC issues, you should use DTCPing. Here is a blog post documenting <a href="https://blogs.msdn.microsoft.com/puneetgupta/2008/11/12/troubleshooting-msdtc-issues-with-the-dtcping-tool/" target="_blank">how to troubleshoot DTC issues</a>.</p>
-<p>Disk space depends on the throughput of messages that flow through your system, their size, and the amount of time it takes to recover from a failure (and start processing messages again). You don&#8217;t want to start losing messages because you can&#8217;t store them on disk. You should monitor disk space using performance counters. If there is not enough disk space, you can either <a href="https://support.microsoft.com/en-us/kb/899612" target="_blank">increase the MSMQ computer quota</a> and maybe <a href="https://blogs.msdn.microsoft.com/johnbreakwell/2009/02/09/changing-the-msmq-storage-location/" target="_blank">change the MSMQ storage location</a>.</p>
+<p>For investigating DTC issues, you should use DTCPing. Here is a blog post documenting <a href="https://blogs.msdn.microsoft.com/puneetgupta/2008/11/12/troubleshooting-msdtc-issues-with-the-dtcping-tool/" target="_blank" rel="noopener">how to troubleshoot DTC issues</a>.</p>
+<p>Disk space depends on the throughput of messages that flow through your system, their size, and the amount of time it takes to recover from a failure (and start processing messages again). You don&#8217;t want to start losing messages because you can&#8217;t store them on disk. You should monitor disk space using performance counters. If there is not enough disk space, you can either <a href="https://support.microsoft.com/en-us/kb/899612" target="_blank" rel="noopener">increase the MSMQ computer quota</a> and maybe <a href="https://blogs.msdn.microsoft.com/johnbreakwell/2009/02/09/changing-the-msmq-storage-location/" target="_blank" rel="noopener">change the MSMQ storage location</a>.</p>
 <p>If you want to find out more about MSMQ troubleshooting, check out these links:</p>
 <ul>
-<li>As usual, <a href="https://particular.net/" target="_blank">Particular Software</a> provide top notch documentation. Even if you&#8217;re not using NServiceBus, their <a href="https://docs.particular.net/nservicebus/msmq/troubleshooting" target="_blank">MSMQ troubleshoot guide</a> is a must read when facing MSMQ related issues. Be sure to click on the <strong>Useful Links</strong> section for further reading.</li>
-<li><a href="http://www.planetgeek.ch/2014/09/02/administration-of-msmq/" target="_blank">Administration of MSMQ</a></li>
-<li><a href="https://blogs.msdn.microsoft.com/johnbreakwell/2008/05/07/technet-content-for-troubleshooting-msmq-on-windows-2008-and-vista/" target="_blank">Technet content for troubleshooting MSMQ</a></li>
-<li><a href="https://support.microsoft.com/kb/178517" target="_blank">TCP ports, UDP ports, and RPC ports that are used by Message Queuing</a></li>
+<li>As usual, <a href="https://particular.net/" target="_blank" rel="noopener">Particular Software</a> provide top notch documentation. Even if you&#8217;re not using NServiceBus, their <a href="https://docs.particular.net/nservicebus/msmq/troubleshooting" target="_blank" rel="noopener">MSMQ troubleshoot guide</a> is a must read when facing MSMQ related issues. Be sure to click on the <strong>Useful Links</strong> section for further reading.</li>
+<li><a href="http://www.planetgeek.ch/2014/09/02/administration-of-msmq/" target="_blank" rel="noopener">Administration of MSMQ</a></li>
+<li><a href="https://blogs.msdn.microsoft.com/johnbreakwell/2008/05/07/technet-content-for-troubleshooting-msmq-on-windows-2008-and-vista/" target="_blank" rel="noopener">Technet content for troubleshooting MSMQ</a></li>
+<li><a href="https://support.microsoft.com/kb/178517" target="_blank" rel="noopener">TCP ports, UDP ports, and RPC ports that are used by Message Queuing</a></li>
 </ul>
 <h2>Backup and Restore</h2>
-<p>MSMQ comes with a command line utility &#8211; <a href="https://technet.microsoft.com/en-us/library/cc771016(v=ws.10).aspx" target="_blank">mqbkup</a> &#8211; for backup and restore. Using this tool you can backup storage files, log files, transaction files, and Registry settings. I&#8217;ve also heard that <a href="http://www.cogin.com/mq/" target="_blank">QueueExplorer </a>is a good tool for managing MSMQ, although I haven&#8217;t tried it yet.</p>
+<p>MSMQ comes with a command line utility &#8211; <a href="https://technet.microsoft.com/en-us/library/cc771016(v=ws.10).aspx" target="_blank" rel="noopener">mqbkup</a> &#8211; for backup and restore. Using this tool you can backup storage files, log files, transaction files, and Registry settings. I&#8217;ve also heard that <a href="http://www.cogin.com/mq/" target="_blank" rel="noopener">QueueExplorer </a>is a good tool for managing MSMQ, although I haven&#8217;t tried it yet.</p>
 <h2>Conclusion</h2>
 <p>In my limited experience with MSMQ, I have ran into a couple of issues. Most of them were caused by the fact that I didn&#8217;t monitor it well enough or I didn&#8217;t understand how it works under the hood. In this blog post I&#8217;ve summarized some of the best practices around MSMQ monitoring and troubleshooting. I&#8217;ll probably update this post whenever I learn something new about MSMQ.</p>
 		</div>
@@ -298,7 +296,7 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 <h2>Queues</h2>
 <p>The queue is one of the basic concepts of MSMQ. It is just a container that stores messages, decoupling the sender from the receiver. MSMQ Queues are not necessarily FIFO (First In, First Out), because messages can be prioritized.</p>
 <p>Queues can be <strong>transactional</strong> or <strong>nontransactional</strong>. Transactional Queues can only receive  messages sent within a transactional context. Nontransactional queues can only receive messages sent outside of a transactional context. Messages sent in a transactional context are processed in the order in which they were sent.</p>
-<p>There are two categories of queues: <a href="https://technet.microsoft.com/en-us/library/cc771351(v=ws.10).aspx" target="_blank">Application Queues</a> and <a href="https://technet.microsoft.com/en-us/library/cc732033(v=ws.10).aspx" target="_blank">System Queues</a>.</p>
+<p>There are two categories of queues: <a href="https://technet.microsoft.com/en-us/library/cc771351(v=ws.10).aspx" target="_blank" rel="noopener">Application Queues</a> and <a href="https://technet.microsoft.com/en-us/library/cc732033(v=ws.10).aspx" target="_blank" rel="noopener">System Queues</a>.</p>
 <p> <a href="./../../../../msmq-basics/index.html#more-371" class="more-link">Continue Reading</a></p>
 		</div>
 	
@@ -317,8 +315,8 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical patterns. I kind of got the idea behind repositories, entities, value objects, etc.. Six years later and I still see people paying more attention to the tactical patterns. Even Eric Evans <a href="https://www.youtube.com/watch?v=lE6Hxz4yomA" target="_blank">says that he has overemphasized the building blocks</a>. So, in order to get a better understanding about what is Domain-Driven Design, I decided to read the book that introduced it. The main purpose was to gain more knowledge about the strategic patterns of DDD.</p>
-<p><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank"><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-359" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/09/dddCover.jpg?resize=300%2C398" alt="DDD Book Cover" width="300" height="398"></a></p>
+			<p>When I started programming, people were talking about Domain-Driven Design. Being a junior, I gave more attention to the tactical patterns. I kind of got the idea behind repositories, entities, value objects, etc.. Six years later and I still see people paying more attention to the tactical patterns. Even Eric Evans <a href="https://www.youtube.com/watch?v=lE6Hxz4yomA" target="_blank" rel="noopener">says that he has overemphasized the building blocks</a>. So, in order to get a better understanding about what is Domain-Driven Design, I decided to read the book that introduced it. The main purpose was to gain more knowledge about the strategic patterns of DDD.</p>
+<p><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank" rel="noopener"><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-359" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/09/dddCover.jpg?resize=300%2C398" alt="DDD Book Cover" width="300" height="398"></a></p>
 <p> <a href="./../../../../book-review-domain-driven-design/index.html#more-345" class="more-link">Continue Reading</a></p>
 		</div>
 	
@@ -337,7 +335,7 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone working in an agile project has battled with stories either too big or too small, too technical or without business value. <a href="https://leanpub.com/50quickideas" target="_blank">Fifty Quick Ideas to Improve your User Stories</a> by <a href="https://leanpub.com/u/gojko" data-cke-saved-href="https://leanpub.com/u/gojko">Gojko Adzic</a> and <a href="https://leanpub.com/u/davidevans_neuri" data-cke-saved-href="https://leanpub.com/u/davidevans_neuri">David Evans</a> provides solutions to many of these issues. This book helps readers to be more agile, instead of doing agile. It challenges ideas like using numbers for estimations and using velocity for capacity planning or for measuring value.</p>
+			<p>User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone working in an agile project has battled with stories either too big or too small, too technical or without business value. <a href="https://leanpub.com/50quickideas" target="_blank" rel="noopener">Fifty Quick Ideas to Improve your User Stories</a> by <a href="https://leanpub.com/u/gojko" data-cke-saved-href="https://leanpub.com/u/gojko">Gojko Adzic</a> and <a href="https://leanpub.com/u/davidevans_neuri" data-cke-saved-href="https://leanpub.com/u/davidevans_neuri">David Evans</a> provides solutions to many of these issues. This book helps readers to be more agile, instead of doing agile. It challenges ideas like using numbers for estimations and using velocity for capacity planning or for measuring value.</p>
 <p><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-331 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/08/50quickIdeasUS.jpg?resize=301%2C438" alt="Fifty Quick Ideas to Improve your User Stories" width="301" height="438"></p>
 <p> <a href="./../../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html#more-325" class="more-link">Continue Reading</a></p>
 		</div>
@@ -358,9 +356,9 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 	
 			<div class="entry-content" itemprop="articleBody">
 			<p>Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence.</p>
-<p>With NServiceBus, <a href="http://docs.particular.net/nservicebus/sagas/concurrency#concurrent-access-to-existing-saga-instances" target="_blank">concurrent access to an existing saga instance</a> works out of the box. This is because it relies on the underlying database system. With NHibernate, it relies on optimistic concurrency, by <a href="https://ayende.com/blog/3946/nhibernate-mapping-concurrency" target="_blank">adding a Version column</a> to your Saga Data. But there is a catch: NHibernate doesn&#8217;t support<a href="http://martinfowler.com/eaaCatalog/coarseGrainedLock.html" target="_blank"> Coarse-Grained Locks</a>. Let&#8217;s first explore this general problem and then we&#8217;ll get back to the NServiceBus Saga.</p>
+<p>With NServiceBus, <a href="http://docs.particular.net/nservicebus/sagas/concurrency#concurrent-access-to-existing-saga-instances" target="_blank" rel="noopener">concurrent access to an existing saga instance</a> works out of the box. This is because it relies on the underlying database system. With NHibernate, it relies on optimistic concurrency, by <a href="https://ayende.com/blog/3946/nhibernate-mapping-concurrency" target="_blank" rel="noopener">adding a Version column</a> to your Saga Data. But there is a catch: NHibernate doesn&#8217;t support<a href="http://martinfowler.com/eaaCatalog/coarseGrainedLock.html" target="_blank" rel="noopener"> Coarse-Grained Locks</a>. Let&#8217;s first explore this general problem and then we&#8217;ll get back to the NServiceBus Saga.</p>
 <h3>Coarse-Grained Locks</h3>
-<p>With a coarse-grained lock you basically lock a group of entities together. If you&#8217;re familiar with DDD, then you know that an aggregate should be a <a href="https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/" target="_blank">consistency boundary</a>. When I save an aggregate, I want to save the <strong><em>entire</em> </strong>aggregate, to ensure it&#8217;s consistent. Why would you need this? Here&#8217;s an example:</p>
+<p>With a coarse-grained lock you basically lock a group of entities together. If you&#8217;re familiar with DDD, then you know that an aggregate should be a <a href="https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/" target="_blank" rel="noopener">consistency boundary</a>. When I save an aggregate, I want to save the <strong><em>entire</em> </strong>aggregate, to ensure it&#8217;s consistent. Why would you need this? Here&#8217;s an example:</p>
 <p>Let&#8217;s take the already familiar example of an <strong>Order</strong> with <strong>OrderLines</strong>, Order being the aggregate root. We&#8217;re using optimistic concurrency control for each of our aggregate parts. In our domain there is an invariant that dictates that the <em>total number of items  in an order can&#8217;t be more than 10</em>. Two commands that would increase the quantity could be processed in parallel and break the invariant. This is because in each transaction, the invariant would hold and each transaction would commit, since they update different lines. Now you&#8217;re in an inconsistent state.</p>
 <p>If we could lock the entire aggregate (order and order lines), then the second transaction would fail and rollback, maintaining a consistent state. One way to achieve this when using optimistic concurrency is to update the root&#8217;s version whenever an aggregate part is updated.</p>
 <p> <a href="./../../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html#more-295" class="more-link">Continue Reading</a></p>
@@ -381,7 +379,7 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>Like many other people, I spend some of my time doing brainless activities like walking, running, commuting. To make this time more enjoyable, I decided to give <a href="http://www.audible.com/" target="_blank">audible </a>a try. While browsing the available audio books, I found<a href="https://www.amazon.com/Soft-Skills-Software-Developers-Manual/dp/B0158SJ3EM" target="_blank"> Soft Skills</a> by John Sonmez, which is great  since I&#8217;ve had this book on my to read list for a while. Since I usually prefer more technical books, I never got around to read it.</p>
+			<p>Like many other people, I spend some of my time doing brainless activities like walking, running, commuting. To make this time more enjoyable, I decided to give <a href="http://www.audible.com/" target="_blank" rel="noopener">audible </a>a try. While browsing the available audio books, I found<a href="https://www.amazon.com/Soft-Skills-Software-Developers-Manual/dp/B0158SJ3EM" target="_blank" rel="noopener"> Soft Skills</a> by John Sonmez, which is great  since I&#8217;ve had this book on my to read list for a while. Since I usually prefer more technical books, I never got around to read it.</p>
 <p>This book is about software development, without being about software development. It covers many aspects of a software developer&#8217;s life, from career and marketing to finance and fitness.</p>
 <p><a href="https://www.amazon.com/Soft-Skills-Software-Developers-Manual/dp/B0158SJ3EM"><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-272" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/07/softskills-1.jpg?resize=318%2C399" alt="soft skills cover" width="318" height="399"></a></p>
 <p> <a href="./../../../../book-review-soft-skills/index.html#more-255" class="more-link">Continue Reading</a></p>
@@ -402,7 +400,7 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in the form of hooks that you can use you to inject custom code. The benefit is twofold: you don&#8217;t have duplicated code and you don&#8217;t break the <a href="http://c2.com/cgi/wiki?SingleResponsibilityPrinciple" target="_blank">Single Responsibility Principle</a>. If you&#8217;re using ASP.NET Core/MVC/WebApi, then you have <strong>ActionFilters</strong>. NServiceBus has its own mechanisms that you can use. In this blog post we&#8217;ll discuss two ways of hooking into the message processing pipeline that are useful for managing units of work in NServiceBus : IManageUnitsOfWork and the NServiceBus pipeline. There are many use cases where these prove useful. Here are some examples:</p>
+			<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in the form of hooks that you can use you to inject custom code. The benefit is twofold: you don&#8217;t have duplicated code and you don&#8217;t break the <a href="http://c2.com/cgi/wiki?SingleResponsibilityPrinciple" target="_blank" rel="noopener">Single Responsibility Principle</a>. If you&#8217;re using ASP.NET Core/MVC/WebApi, then you have <strong>ActionFilters</strong>. NServiceBus has its own mechanisms that you can use. In this blog post we&#8217;ll discuss two ways of hooking into the message processing pipeline that are useful for managing units of work in NServiceBus : IManageUnitsOfWork and the NServiceBus pipeline. There are many use cases where these prove useful. Here are some examples:</p>
 <ul>
 <li>Manage the unit of work (i.e. the session in NHibernate and RavenDB)</li>
 <li>Logging &amp; Monitoring</li>

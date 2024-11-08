@@ -14,7 +14,6 @@
 <link rel="dns-prefetch" href="//i0.wp.com">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
-<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; How to identify a Data Class using NDepend Comments Feed" href="./feed/index.html">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
@@ -47,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +73,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy In this article we&#8217;ll see how to identify the Data Class code smell. Data Cl…">
 <meta property="article:published_time" content="2016-12-28T08:56:05+00:00">
-<meta property="article:modified_time" content="2016-12-28T08:56:05+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:09:43+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -140,12 +137,12 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>In the previous articles in this series we&#8217;ve seen:</p>
 <ul>
-<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank">How to identify a God Class</a></li>
-<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank">How to identify Feature Envy</a></li>
+<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a God Class</a></li>
+<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Feature Envy</a></li>
 </ul>
 <p>In this article we&#8217;ll see how to identify the Data Class code smell.</p>
 <h2>Data Class Detection Strategy</h2>
-<p>Data Classes are classes that expose their data directly and have few functional methods. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Data Classes:</p>
+<p>Data Classes are classes that expose their data directly and have few functional methods. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" rel="noopener">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Data Classes:</p>
 <p><strong>(WOC &lt; One Thrid) AND </strong><br>
 <strong>                  (((NOPA + NOAM &gt; Few) AND (WMC &lt; High)) OR</strong><br>
 <strong>                    ((NOPA + NOAM &gt; Many) AND (WMC &lt; Very High)))</strong></p>
@@ -161,33 +158,33 @@ var related_posts_js_options = {"post_heading":"h4"};
 <ul>
 <li>NOPA and NOAM use <strong>Generally-Accepted Meaning Thresholds</strong>. Few is defined between 2 and 5. Many is the short term memory capacity, so it&#8217;s 7 or 8.</li>
 <li>WOC uses a <strong>Common Fraction Threshold</strong>. One Third is 0.33.</li>
-<li>WMC uses a<strong> Statistics-Based Threshold</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The High threshold for WMC is 31 and Very High is 47.</li>
+<li>WMC uses a<strong> Statistics-Based Threshold</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" rel="noopener">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The High threshold for WMC is 31 and Very High is 47.</li>
 </ul>
 <h2>Metrics Definitions</h2>
 <p>Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>. If you’re not familiar with CQLinq, check out the <a href="http://www.ndepend.com/docs/cqlinq-syntax">NDepend documentation</a> or my blog post on <a href="./../query-your-code-base-using-cqlinq/index.html">how to query your code base</a>.</p>
 <h3>WOC &#8211; Weight Of a Class</h3>
 <p>This metric measure the relative number of functional members compared to all members of a class. It&#8217;s computed by dividing the number of public functional members by the total number of public members.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;WOC&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;WOC&amp;lt;/Name&amp;gt;
 // ** Helper Functions **
-let isProperty = new Func&lt;ICodeElement, bool&gt;(member =&gt; 
- member.IsMethod &amp;&amp; 
+let isProperty = new Func&amp;lt;ICodeElement, bool&amp;gt;(member =&amp;gt; 
+ member.IsMethod &amp;amp;&amp;amp; 
  (member.AsMethod.IsPropertyGetter || member.AsMethod.IsPropertySetter)) 
 
 // ** Metric Functions **
-let allPublicFunctionalMembersFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; m.IsPublic &amp;&amp; !isProperty(m) &amp;&amp; !m.IsAbstract))
+let allPublicFunctionalMembersFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; m.IsPublic &amp;amp;&amp;amp; !isProperty(m) &amp;amp;&amp;amp; !m.IsAbstract))
 
-let allPublicMembersFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Members.Where(m =&gt; 
-     m.IsPublic &amp;&amp; 
-     (!m.IsMethod || (!m.AsMethod.IsClassConstructor &amp;&amp; !m.AsMethod.IsConstructor))))
+let allPublicMembersFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Members.Where(m =&amp;gt; 
+     m.IsPublic &amp;amp;&amp;amp; 
+     (!m.IsMethod || (!m.AsMethod.IsClassConstructor &amp;amp;&amp;amp; !m.AsMethod.IsConstructor))))
 
-let wocFor = new Func&lt;IType, double&gt;(t =&gt;
+let wocFor = new Func&amp;lt;IType, double&amp;gt;(t =&amp;gt;
  (double) allPublicFunctionalMembersFor(t).Count() / allPublicMembersFor(t).Count())
 
 // ** Sample Usage **
-from t in JustMyCode.Types.Where(type =&gt; !type.IsEnumeration)
+from t in JustMyCode.Types.Where(type =&amp;gt; !type.IsEnumeration)
 let functionalPublicMembers = allPublicFunctionalMembersFor(t)
 let allPublicMembers = allPublicMembersFor(t)
 let woc = wocFor(t)
@@ -197,10 +194,10 @@ select new { t, woc, functionalPublicMembers , allPublicMembers }
 <h3>WMC &#8211; Weighted Method Count</h3>
 <p>This metric measures the complexity of a class. This is done by summing the complexity of all methods of a class. McCabe&#8217;s Cyclomatic Complexity is used to measure the complexity of a method.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;WMC&lt;/Name&gt;
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+// &amp;lt;Name&amp;gt;WMC&amp;lt;/Name&amp;gt;
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // ** Sample Usage **
@@ -212,20 +209,20 @@ select new { t, wmc }
 <h3>NOAM &#8211; Number of Accessor Methods</h3>
 <p>This metric counts the number of accessors (getters and setters) of a class.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;NOAM&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;NOAM&amp;lt;/Name&amp;gt;
 // ** Helper Functions **
-let isProperty = new Func&lt;ICodeElement, bool&gt;(member =&gt; 
- member.IsMethod &amp;&amp; 
+let isProperty = new Func&amp;lt;ICodeElement, bool&amp;gt;(member =&amp;gt; 
+ member.IsMethod &amp;amp;&amp;amp; 
  (member.AsMethod.IsPropertyGetter || member.AsMethod.IsPropertySetter)) 
 
 // ** Metric Functions **
-let accessorsFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; m.IsPublic &amp;&amp;
-                      isProperty(m) &amp;&amp; 
-                      !m.IsAbstract &amp;&amp; 
+let accessorsFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; m.IsPublic &amp;amp;&amp;amp;
+                      isProperty(m) &amp;amp;&amp;amp; 
+                      !m.IsAbstract &amp;amp;&amp;amp; 
                       !m.IsStatic))
 
-let noamFor = new Func&lt;IType, int&gt;(t =&gt; 
+let noamFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  accessorsFor(t).Count())
 
 // ** Sample Usage **
@@ -238,12 +235,12 @@ select new { t, noam, accessors }
 <h3>NOPA &#8211; Number of Public Attributes</h3>
 <p>This metric counts the number of public attributes of a class.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;NOPA&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;NOPA&amp;lt;/Name&amp;gt;
 // ** Metric Functions **
-let publicAttributesFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt; 
- t.Fields.Where(f =&gt; f.IsPublic &amp;&amp; !f.IsInitOnly &amp;&amp; !f.IsStatic))
+let publicAttributesFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt; 
+ t.Fields.Where(f =&amp;gt; f.IsPublic &amp;amp;&amp;amp; !f.IsInitOnly &amp;amp;&amp;amp; !f.IsStatic))
 
-let nopaFor = new Func&lt;IType, int&gt;(t =&gt; publicAttributesFor(t).Count())
+let nopaFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; publicAttributesFor(t).Count())
 
 // ** Sample Usage **
 from t in JustMyCode.Types
@@ -254,48 +251,48 @@ select new { t, nopa }
 <h2>Putting it all together</h2>
 <p>Now that we know how to compute each of the required metrics, let’s see how the detection strategy looks like:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;Data Class&lt;/Name&gt;
-warnif count &gt; 0
+// &amp;lt;Name&amp;gt;Data Class&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0
 // *** WOC ***
 // ** Helper Functions **
-let isProperty = new Func&lt;ICodeElement, bool&gt;(member =&gt; 
- member.IsMethod &amp;&amp; 
+let isProperty = new Func&amp;lt;ICodeElement, bool&amp;gt;(member =&amp;gt; 
+ member.IsMethod &amp;amp;&amp;amp; 
  (member.AsMethod.IsPropertyGetter || member.AsMethod.IsPropertySetter)) 
 
 // ** Metric Functions **
-let allPublicFunctionalMembersFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; m.IsPublic &amp;&amp; !isProperty(m) &amp;&amp; !m.IsAbstract))
+let allPublicFunctionalMembersFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; m.IsPublic &amp;amp;&amp;amp; !isProperty(m) &amp;amp;&amp;amp; !m.IsAbstract))
 
-let allPublicMembersFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Members.Where(m =&gt; 
-      m.IsPublic &amp;&amp; 
-      (!m.IsMethod || (!m.AsMethod.IsClassConstructor &amp;&amp; !m.AsMethod.IsConstructor))))
+let allPublicMembersFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Members.Where(m =&amp;gt; 
+      m.IsPublic &amp;amp;&amp;amp; 
+      (!m.IsMethod || (!m.AsMethod.IsClassConstructor &amp;amp;&amp;amp; !m.AsMethod.IsConstructor))))
 
-let wocFor = new Func&lt;IType, double&gt;(t =&gt;
+let wocFor = new Func&amp;lt;IType, double&amp;gt;(t =&amp;gt;
  (double) allPublicFunctionalMembersFor(t).Count() / allPublicMembersFor(t).Count())
 
 // *** WMC ***
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // *** NOAM ***
-let accessorsFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; m.IsPublic &amp;&amp; 
-                      isProperty(m) &amp;&amp; 
-                      !m.IsAbstract &amp;&amp; 
+let accessorsFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; m.IsPublic &amp;amp;&amp;amp; 
+                      isProperty(m) &amp;amp;&amp;amp; 
+                      !m.IsAbstract &amp;amp;&amp;amp; 
                       !m.IsStatic))
 
-let noamFor = new Func&lt;IType, int&gt;(t =&gt; 
+let noamFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  accessorsFor(t).Count())
 
 // *** NOPA ***
 // ** Metric Functions **
-let publicAttributesFor = new Func&lt;IType, IEnumerable&lt;IMember&gt;&gt;(t =&gt; 
- t.Fields.Where(f =&gt; f.IsPublic &amp;&amp; !f.IsInitOnly &amp;&amp; !f.IsStatic))
+let publicAttributesFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMember&amp;gt;&amp;gt;(t =&amp;gt; 
+ t.Fields.Where(f =&amp;gt; f.IsPublic &amp;amp;&amp;amp; !f.IsInitOnly &amp;amp;&amp;amp; !f.IsStatic))
 
-let nopaFor = new Func&lt;IType, int&gt;(t =&gt; publicAttributesFor(t).Count())
+let nopaFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; publicAttributesFor(t).Count())
 
 // ** Thresholds **
 let Few = 5
@@ -313,19 +310,19 @@ let noam = noamFor(t)
 
 where 
  // Interface of class reveals data rather than offering services
- (woc &lt; OneThird) &amp;&amp; 
+ (woc &amp;lt; OneThird) &amp;amp;&amp;amp; 
   (
    (
     // More than a few public data
-    (nopa + noam) &gt; Few &amp;&amp; 
+    (nopa + noam) &amp;gt; Few &amp;amp;&amp;amp; 
     // Complexity of the class is not high
-    (wmc &lt; wmcHigh)
+    (wmc &amp;lt; wmcHigh)
    ) ||
    (
     // Class has many public data
-    (nopa + noam) &gt; Many &amp;&amp;
+    (nopa + noam) &amp;gt; Many &amp;amp;&amp;amp;
     // Complexity of the class is not very high 
-    (wmc &lt; wmcVeryHigh)
+    (wmc &amp;lt; wmcVeryHigh)
    )
  )
 
@@ -352,16 +349,7 @@ select new { t, woc, wmc, nopa, noam }
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-639" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-639" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-639" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -406,33 +394,6 @@ select new { t, woc, wmc, nopa, noam }
 
 	
 				
-<div id="comments" class="comments-area">
-
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="639" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f81946503d"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="171"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
-</div>
-<!-- #comments -->
-
 				
 	<div class="loop-nav">
 		<div class="prev">Previous: <a href="./../how-to-identify-feature-envy-using-ndepend/index.html" rel="prev">How to identify Feature Envy using NDepend</a>
@@ -675,9 +636,7 @@ select new { t, woc, wmc, nopa, noam }
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/how-to-identify-data-class-using-ndepend\/":639};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -721,156 +680,12 @@ select new { t, woc, wmc, nopa, noam }
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"639\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "639" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

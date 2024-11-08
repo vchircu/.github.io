@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy How to identify a Data Class How to identify a Brain Method In this article we&amp;#82…">
 <meta property="article:published_time" content="2017-01-03T05:34:02+00:00">
-<meta property="article:modified_time" content="2017-01-04T06:02:19+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:09:02+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -140,15 +138,15 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>In the previous articles in this series we&#8217;ve seen:</p>
 <ul>
-<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank">How to identify a God Class</a></li>
-<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank">How to identify Feature Envy</a></li>
-<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank">How to identify a Data Class</a></li>
-<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank">How to identify a Brain Method</a></li>
+<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a God Class</a></li>
+<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Feature Envy</a></li>
+<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Data Class</a></li>
+<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Brain Method</a></li>
 </ul>
 <p>In this article we&#8217;ll see how to identify two types of efferent (outgoing) coupling code smells: Intensive Coupling and Dispersed Coupling.</p>
 <h2>Detection Strategies</h2>
 <h3>Intensive Coupling</h3>
-<p>A method suffers from Intensive Coupling when it calls many other methods from a few classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Intensive Coupling:</p>
+<p>A method suffers from Intensive Coupling when it calls many other methods from a few classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" rel="noopener">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Intensive Coupling:</p>
 <p><strong>(((CINT &gt; Short Memory Cap) AND (CDISP &lt; Half)) OR </strong><br>
 <strong>  ((CINT &gt; Few) AND (CDISP &lt; A Quarter))) AND</strong><br>
 <strong>  (MAXNESTING &gt; Shallow)</strong></p>
@@ -172,10 +170,10 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h3>CINT &#8211; Coupling Intensity</h3>
 <p>CINT measures the coupling intensity. This is computed by counting the number of distinct methods called by the measured method. NDepend computes the <em>NbMethodsCalled</em> metric that counts the total number of methods called. We can&#8217;t use this metric though, because we are interested only in methods defined by us. But, we can use the <em>ExceptThirdParty()</em> extension method to filter out third party methods:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;CINT&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;CINT&amp;lt;/Name&amp;gt;
 from m in JustMyCode.Methods
 let methods = m.MethodsCalled
- .Where(method =&gt; method.ParentType != m.ParentType)
+ .Where(method =&amp;gt; method.ParentType != m.ParentType)
  .ExceptThirdParty()
 let cint = methods.Count()
 orderby cint descending
@@ -184,12 +182,12 @@ select new { m, cint }
 <h3>CDISP &#8211; Coupling Dispersion</h3>
 <p>CDISP measures the coupling dispersion. This is the number of classes in which the called operations are defined , divided by CINT. This basically builds upon CINT:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;CDISP&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;CDISP&amp;lt;/Name&amp;gt;
 from m in JustMyCode.Methods
 let methods = m.MethodsCalled
- .Where(method =&gt; method.ParentType != m.ParentType)
+ .Where(method =&amp;gt; method.ParentType != m.ParentType)
  .ExceptThirdParty()
-let providers = methods.Select(method =&gt; method.ParentType).ToHashSet()
+let providers = methods.Select(method =&amp;gt; method.ParentType).ToHashSet()
 let cint = methods.Count()
 let cdisp = (double) providers.Count()/cint
 orderby cdisp descending
@@ -207,8 +205,8 @@ select new { m, maxnesting }
 <p>Now that we know how to compute each of the required metrics, let’s see how the detection strategies look like:</p>
 <h3>Intensive Coupling</h3>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;Intensive Coupling&lt;/Name&gt;
-warnif count &gt; 0
+// &amp;lt;Name&amp;gt;Intensive Coupling&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0
 // ** Thresholds **
 let Shallow = 1
 let Few = 3
@@ -219,11 +217,11 @@ let Half = 0.5
 // ** Detection Strategy **
 from m in JustMyCode.Methods
 let maxnesting = m.ILNestingDepth
-// CINT &amp; CDISP
+// CINT &amp;amp; CDISP
 let methods = m.MethodsCalled
- .Where(method =&gt; method.ParentType != m.ParentType)
+ .Where(method =&amp;gt; method.ParentType != m.ParentType)
  .ExceptThirdParty()
-let providers = methods.Select(method =&gt; method.ParentType).ToHashSet()
+let providers = methods.Select(method =&amp;gt; method.ParentType).ToHashSet()
 let cint = methods.Count()
 let cdisp = (double) providers.Count()/cint
 
@@ -231,25 +229,25 @@ where
  (
   (
    // Operation calls too many methods
-   cint &gt; ShortMemoryCap &amp;&amp; 
+   cint &amp;gt; ShortMemoryCap &amp;amp;&amp;amp; 
    // Calls are dispersed in few classes
-   cdisp &lt; Half
+   cdisp &amp;lt; Half
   ) ||
   (
    // Operation calls more than a few methods
-   cint &gt; Few &amp;&amp; 
+   cint &amp;gt; Few &amp;amp;&amp;amp; 
    // Calls are dispersed in very few classes
-   cdisp &lt; AQuarter
+   cdisp &amp;lt; AQuarter
   )
- ) &amp;&amp;
+ ) &amp;amp;&amp;amp;
  // Method has few nested conditionals
- (maxnesting &gt; Shallow)
+ (maxnesting &amp;gt; Shallow)
 select new { m, cint, cdisp, maxnesting, methods, providers }
 </pre>
 <h3>Dispersed Coupling</h3>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;Dispersed Coupling&lt;/Name&gt;
-warnif count &gt; 0
+// &amp;lt;Name&amp;gt;Dispersed Coupling&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0
 // ** Thresholds **
 let Shallow = 1
 let ShortMemoryCap = 7
@@ -258,21 +256,21 @@ let Half = 0.5
 // ** Detection Strategy **
 from m in JustMyCode.Methods
 let maxnesting = m.ILNestingDepth
-// CINT &amp; CDISP
+// CINT &amp;amp; CDISP
 let methods = m.MethodsCalled
- .Where(method =&gt; method.ParentType != m.ParentType)
+ .Where(method =&amp;gt; method.ParentType != m.ParentType)
  .ExceptThirdParty()
-let providers = methods.Select(method =&gt; method.ParentType).ToHashSet()
+let providers = methods.Select(method =&amp;gt; method.ParentType).ToHashSet()
 let cint = methods.Count()
 let cdisp = (double) providers.Count()/cint
 
 where 
  // Operation calls too many methods
- cint &gt; ShortMemoryCap &amp;&amp; 
+ cint &amp;gt; ShortMemoryCap &amp;amp;&amp;amp; 
  // Calls are dispersed in many classes
- cdisp &gt;= Half &amp;&amp;
+ cdisp &amp;gt;= Half &amp;amp;&amp;amp;
  // Operation has few nested conditionals
- maxnesting &gt; Shallow
+ maxnesting &amp;gt; Shallow
 select new { m, cint, cdisp, maxnesting, methods, providers }
 </pre>
 
@@ -295,16 +293,7 @@ select new { m, cint, cdisp, maxnesting, methods, providers }
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-650" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-650" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-650" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -368,26 +357,9 @@ select new { m, cint, cdisp, maxnesting, methods, providers }
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="650" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="658c4ab794"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="119"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -633,9 +605,7 @@ select new { m, cint, cdisp, maxnesting, methods, providers }
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/identify-efferent-coupling-code-smells-using-ndepend\/":650};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -679,156 +649,12 @@ select new { m, cint, cdisp, maxnesting, methods, providers }
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"650\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "650" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

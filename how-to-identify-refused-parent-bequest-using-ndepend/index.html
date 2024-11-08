@@ -14,7 +14,6 @@
 <link rel="dns-prefetch" href="//i0.wp.com">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
-<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; How to identify Refused Parent Bequest using NDepend Comments Feed" href="./feed/index.html">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
@@ -47,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +73,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy How to identify a Data Class How to identify a Brain Method How to identify Intens…">
 <meta property="article:published_time" content="2017-01-08T19:06:13+00:00">
-<meta property="article:modified_time" content="2017-01-08T19:06:13+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:08:02+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -140,16 +137,16 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>In the previous articles in this series we&#8217;ve seen:</p>
 <ul>
-<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank">How to identify a God Class</a></li>
-<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank">How to identify Feature Envy</a></li>
-<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank">How to identify a Data Class</a></li>
-<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank">How to identify a Brain Method</a></li>
-<li><a href="./../identify-efferent-coupling-code-smells-using-ndepend/index.html" target="_blank">How to identify Intensive Coupling and Dispersed Coupling</a></li>
-<li><a href="./../identify-shotgun-surgery-using-ndepend/index.html" target="_blank">How to identify Shotgun Surgery</a></li>
+<li><a href="./../how-to-identify-god-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a God Class</a></li>
+<li><a href="./../how-to-identify-feature-envy-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Feature Envy</a></li>
+<li><a href="./../how-to-identify-data-class-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Data Class</a></li>
+<li><a href="./../how-to-identify-brain-method-using-ndepend/index.html" target="_blank" rel="noopener">How to identify a Brain Method</a></li>
+<li><a href="./../identify-efferent-coupling-code-smells-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Intensive Coupling and Dispersed Coupling</a></li>
+<li><a href="./../identify-shotgun-surgery-using-ndepend/index.html" target="_blank" rel="noopener">How to identify Shotgun Surgery</a></li>
 </ul>
 <p>In this article we&#8217;ll see how to identify the Refused Parent Bequest code smell.</p>
 <h2>Refused Parent Bequest Detection Strategy</h2>
-<p>A class suffers from Refused Parent Bequest when it doesn&#8217;t use the protected members of its parent. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Refused Parent Bequest:</p>
+<p>A class suffers from Refused Parent Bequest when it doesn&#8217;t use the protected members of its parent. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" rel="noopener">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for Refused Parent Bequest:</p>
 <p><strong>(((NProtM &gt; Few) AND (BUR &lt; A Third)) OR (BOvR &lt; A Third)) AND</strong><br>
 <strong>(((AMW &gt; AVerage) OR (WMC &gt; Average)) AND (NOM &gt; Average))</strong></p>
 <p><span id="more-672"></span></p>
@@ -166,16 +163,16 @@ var related_posts_js_options = {"post_heading":"h4"};
 <ul>
 <li>NProtM uses a <strong>Generally-Accepted Meaning Threshold</strong>. Few is defined between 2 and 5.</li>
 <li>BUR and BOvR use <strong>Common Fraction Thresholds</strong>. One Third is 0.33.</li>
-<li>AMW, WMC and NOM use<strong> Statistics-Based Thresholds</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The Average threshold for AMW is 2, for WMC is 14 and for NOM is 7.</li>
+<li>AMW, WMC and NOM use<strong> Statistics-Based Thresholds</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" rel="noopener">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The Average threshold for AMW is 2, for WMC is 14 and for NOM is 7.</li>
 </ul>
 <h2>Metrics Definitions</h2>
 <p>Let’s go over the definitions for the used metrics and how to implement them with NDepend. For a more detailed definition, be sure to check Appendix A.2 of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>. If you’re not familiar with CQLinq, check out the <a href="http://www.ndepend.com/docs/cqlinq-syntax">NDepend documentation</a> or my blog post on <a href="./../query-your-code-base-using-cqlinq/index.html">how to query your code base</a>.</p>
 <h3>NProtM &#8211; Number of Protected Members</h3>
 <p>This metric counts the number of protected members of a class:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;NProtM&lt;/Name&gt;
-from c in JustMyCode.Types.Where(t =&gt; t.IsClass)
-let protectedMembers = c.Members.Where(m =&gt; m.IsProtected)
+// &amp;lt;Name&amp;gt;NProtM&amp;lt;/Name&amp;gt;
+from c in JustMyCode.Types.Where(t =&amp;gt; t.IsClass)
+let protectedMembers = c.Members.Where(m =&amp;gt; m.IsProtected)
 let nprotm = protectedMembers.Count()
 orderby nprotm descending
 select new { c, nprotm, protectedMembers }
@@ -183,10 +180,10 @@ select new { c, nprotm, protectedMembers }
 <h3>BUR &#8211; Base Class Usage Ratio</h3>
 <p>This metric measures how much is the child class using inherited members from the base class. It&#8217;s the number of inheritance specific members used by the measure class, divided by the total number of inheritance specific members defined in the base class.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;BUR&lt;/Name&gt;
-from c in JustMyCode.Types.Where(t =&gt; 
- t.IsClass &amp;&amp; t.DepthOfDeriveFrom(&quot;System.Object&quot;) &gt; 1)
-let protectedMembers = c.BaseClass.Members.Where(m =&gt; m.IsProtected).ToHashSet()
+// &amp;lt;Name&amp;gt;BUR&amp;lt;/Name&amp;gt;
+from c in JustMyCode.Types.Where(t =&amp;gt; 
+ t.IsClass &amp;amp;&amp;amp; t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;) &amp;gt; 1)
+let protectedMembers = c.BaseClass.Members.Where(m =&amp;gt; m.IsProtected).ToHashSet()
 let protectedMembersUsed = protectedMembers.UsedBy(c)
 let bur = (double) protectedMembersUsed.Count()/protectedMembers.Count()
 orderby bur
@@ -195,12 +192,12 @@ select new { c, bur, protectedMembers, protectedMembersUsed }
 <h3>BOvR &#8211; Base Class Overriding Ratio</h3>
 <p>This metric measures how much is the child class overriding members from the base class. It&#8217;s the number of methods from the measured class that override methods from its base class, divided by the total number of methods from the measured class.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;BOvR&lt;/Name&gt;
-let overidingMethodsFor = new Func&lt;IType, IEnumerable&lt;IMethod&gt;&gt;(c =&gt;
- c.Methods.Where(m =&gt; 
-  !m.IsClassConstructor &amp;&amp; 
-  !m.IsConstructor &amp;&amp; 
-  !m.IsStatic &amp;&amp; 
+// &amp;lt;Name&amp;gt;BOvR&amp;lt;/Name&amp;gt;
+let overidingMethodsFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMethod&amp;gt;&amp;gt;(c =&amp;gt;
+ c.Methods.Where(m =&amp;gt; 
+  !m.IsClassConstructor &amp;amp;&amp;amp; 
+  !m.IsConstructor &amp;amp;&amp;amp; 
+  !m.IsStatic &amp;amp;&amp;amp; 
   m.OverriddensBase.ParentTypes().Contains(c.BaseClass)))
 
 from c in JustMyCode.Types
@@ -212,8 +209,8 @@ select new { c, bovr, overidingMethods }
 <h3>AMW &#8211; Average Method Weight</h3>
 <p>This metrics measures the average complexity of all methods of a class. McCabe&#8217;s cyclomatic number is used to quantify a method&#8217;s complexity.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;AMW&lt;/Name&gt;
-let amwFor = new Func&lt;IType, double?&gt;(c =&gt;
+// &amp;lt;Name&amp;gt;AMW&amp;lt;/Name&amp;gt;
+let amwFor = new Func&amp;lt;IType, double?&amp;gt;(c =&amp;gt;
  (double?) c.CyclomaticComplexity / c.NbMethods)
 
 from c in JustMyCode.Types
@@ -224,10 +221,10 @@ select new { c, amw }
 <h3>WMC &#8211; Weighted Method Count</h3>
 <p>This metric measures the complexity of a class. This is done by summing the complexity of all methods of a class. McCabe&#8217;s Cyclomatic Complexity is used to measure the complexity of a method.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;WMC&lt;/Name&gt;
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+// &amp;lt;Name&amp;gt;WMC&amp;lt;/Name&amp;gt;
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // ** Sample Usage **
@@ -239,7 +236,7 @@ select new { t, wmc }
 <h3>NOM &#8211; Number of Methods</h3>
 <p>This metric counts the number of methods in a class. This metric is computed out of the box by NDepend:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;NOM&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;NOM&amp;lt;/Name&amp;gt;
 from c in JustMyCode.Types
 let nom = c.NbMethods
 orderby nom descending
@@ -248,25 +245,25 @@ select new { c, nom }
 <h2>Putting it all together</h2>
 <p>Now that we know how to compute each of the required metrics, let’s see how the detection strategy looks like:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;Refused Parent Bequest&lt;/Name&gt;
-warnif count &gt; 0 
+// &amp;lt;Name&amp;gt;Refused Parent Bequest&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0 
 // ** Helper Functions **
 // ** BOvR **
-let overidingMethodsFor = new Func&lt;IType, IEnumerable&lt;IMethod&gt;&gt;(c =&gt;
- c.Methods.Where(m =&gt; 
-   !m.IsClassConstructor &amp;&amp; 
-   !m.IsConstructor &amp;&amp; 
-   !m.IsStatic &amp;&amp; 
+let overidingMethodsFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMethod&amp;gt;&amp;gt;(c =&amp;gt;
+ c.Methods.Where(m =&amp;gt; 
+   !m.IsClassConstructor &amp;amp;&amp;amp; 
+   !m.IsConstructor &amp;amp;&amp;amp; 
+   !m.IsStatic &amp;amp;&amp;amp; 
    m.OverriddensBase.ParentTypes().Contains(c.BaseClass)))
 
 // ** WMC **
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // ** AMW **
-let amwFor = new Func&lt;IType, double?&gt;(c =&gt;
+let amwFor = new Func&amp;lt;IType, double?&amp;gt;(c =&amp;gt;
  (double?) c.CyclomaticComplexity / c.NbMethods)
 
 // ** Thresholds **
@@ -277,11 +274,11 @@ let wmcAverage = 14
 let nomAverage = 7
 
 // ** Detection Strategy **
-from c in JustMyCode.Types.Where(t =&gt; 
- t.IsClass &amp;&amp; t.DepthOfDeriveFrom(&quot;System.Object&quot;) &gt; 1)
+from c in JustMyCode.Types.Where(t =&amp;gt; 
+ t.IsClass &amp;amp;&amp;amp; t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;) &amp;gt; 1)
 
 // ** BUR ** 
-let protectedMembers = c.BaseClass.Members.Where(m =&gt; m.IsProtected).ToHashSet()
+let protectedMembers = c.BaseClass.Members.Where(m =&amp;gt; m.IsProtected).ToHashSet()
 let protectedMembersUsed = protectedMembers.UsedBy(c)
 let bur = (double) protectedMembersUsed.Count()/protectedMembers.Count()
 
@@ -305,25 +302,25 @@ let amw = amwFor(c)
 let childClassIgnoresBequest = 
  (
   // parent provides more than a few protected members 
-  ((nprotm &gt; Few) &amp;&amp; 
-  // child uses only little of parent's bequest
-  (bur &lt; OneThird)
+  ((nprotm &amp;gt; Few) &amp;amp;&amp;amp; 
+  // child uses only little of parent&#039;s bequest
+  (bur &amp;lt; OneThird)
  ) ||
  // overiding methods are rare in child 
- (bovr &lt; OneThird)) 
+ (bovr &amp;lt; OneThird)) 
 
 let childClassIsNotTooSmallAndSimple = 
 ( 
  // functional complexity above average 
- (amw &gt; amwAverage) ||
+ (amw &amp;gt; amwAverage) ||
  // class complexity not lower than average
- (wmc &gt; wmcAverage)
-) &amp;&amp;
+ (wmc &amp;gt; wmcAverage)
+) &amp;amp;&amp;amp;
 // class size is above average
-nom &gt; nomAverage
+nom &amp;gt; nomAverage
 
 where 
- childClassIgnoresBequest &amp;&amp; childClassIsNotTooSmallAndSimple 
+ childClassIgnoresBequest &amp;amp;&amp;amp; childClassIsNotTooSmallAndSimple 
 
 select new { c, 
  nprotm, bur, bovr, amw, wmc, nom, 
@@ -348,16 +345,7 @@ select new { c,
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-672" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-672" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-672" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -402,33 +390,6 @@ select new { c,
 
 	
 				
-<div id="comments" class="comments-area">
-
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="672" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8461f3ab8f"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="109"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
-</div>
-<!-- #comments -->
-
 				
 	<div class="loop-nav">
 		<div class="prev">Previous: <a href="./../identify-shotgun-surgery-using-ndepend/index.html" rel="prev">How to identify Shotgun Surgery using NDepend</a>
@@ -671,9 +632,7 @@ select new { c,
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/how-to-identify-refused-parent-bequest-using-ndepend\/":672};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -717,156 +676,12 @@ select new { c,
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"672\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "672" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

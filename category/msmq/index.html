@@ -46,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -170,18 +168,18 @@ creditCardProcessor.Charge(chargeRequest);
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>In the previous blog post we went over some of the <a href="./../../msmq-basics/index.html" target="_blank">MSMQ bascis</a>. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup MSMQ.</p>
+			<p>In the previous blog post we went over some of the <a href="./../../msmq-basics/index.html" target="_blank" rel="noopener">MSMQ bascis</a>. In this blog post we&#8217;ll touch on how to monitor, troubleshoot and backup MSMQ.</p>
 <p>I&#8217;ve been using NServiceBus with the MSMQ transport for a while now and have faced some issues. Unfortunately, information about MSMQ is pretty scarce and sometimes outdated. This blog post contains links to resources that I&#8217;ve found useful for understanding some of the best practices around MSMQ administration.</p>
 <h2>Monitoring</h2>
 <h3>Events</h3>
 <p>MSMQ logs informational, warning and error events under the <strong>Application Log</strong>. When accessing an object fails or succeeds, it also adds an audit entry in the<strong> Security Log</strong>. All message queuing events contain the &#8220;<em>MSMQ</em>&#8221; text in the <strong>Source</strong> column.</p>
-<p>If you have enabled <a href="https://technet.microsoft.com/en-us/library/cc730882(v=ws.11).aspx" target="_blank">End-to-End tracing</a>, you can find the trace events in <strong>Application and Services Logs/Microsoft/Windows/MSMQ/End2End</strong>.</p>
+<p>If you have enabled <a href="https://technet.microsoft.com/en-us/library/cc730882(v=ws.11).aspx" target="_blank" rel="noopener">End-to-End tracing</a>, you can find the trace events in <strong>Application and Services Logs/Microsoft/Windows/MSMQ/End2End</strong>.</p>
 <h3>Dead-Letter Queues</h3>
-<p>When a message expires, the queue manager puts it in one of the dead letter queues. This ensures that messages are not lost. A message expires when one of its timers (<strong>Time-To-Reach-Queue</strong> or <strong>Time-To-Be-Received</strong>) expire. There are two dead-letter queues, one for non-transactional messages and one for transactional messages. In order to keep track of expired messages, you should <a href="http://andreasohlund.net/2012/10/25/monitoring-your-dead-letter-queues/" target="_blank">monitor the dead-letter queues</a>.</p>
+<p>When a message expires, the queue manager puts it in one of the dead letter queues. This ensures that messages are not lost. A message expires when one of its timers (<strong>Time-To-Reach-Queue</strong> or <strong>Time-To-Be-Received</strong>) expire. There are two dead-letter queues, one for non-transactional messages and one for transactional messages. In order to keep track of expired messages, you should <a href="http://andreasohlund.net/2012/10/25/monitoring-your-dead-letter-queues/" target="_blank" rel="noopener">monitor the dead-letter queues</a>.</p>
 <h3>External Transactions</h3>
-<p>MSMQ can take part in external transactions. You can <a href="https://technet.microsoft.com/en-us/library/cc732032(v=ws.10).aspx" target="_blank">monitor these transactions</a> by using the Distributed Transaction Coordinator Transaction Statistics and Transaction List views. Since internal transactions don&#8217;t go through MSDTC, these can&#8217;t be monitored using this approach.</p>
+<p>MSMQ can take part in external transactions. You can <a href="https://technet.microsoft.com/en-us/library/cc732032(v=ws.10).aspx" target="_blank" rel="noopener">monitor these transactions</a> by using the Distributed Transaction Coordinator Transaction Statistics and Transaction List views. Since internal transactions don&#8217;t go through MSDTC, these can&#8217;t be monitored using this approach.</p>
 <h3>Performance Counters</h3>
-<p>MSMQ provides <a href="https://technet.microsoft.com/en-us/library/cc771098(v=ws.10).aspx" target="_blank">performance counters</a> that are helpful for monitoring its performance.</p>
+<p>MSMQ provides <a href="https://technet.microsoft.com/en-us/library/cc771098(v=ws.10).aspx" target="_blank" rel="noopener">performance counters</a> that are helpful for monitoring its performance.</p>
 <p>The <strong>MSMQ Service</strong> performance object contains global information about the Message Queuing Service:</p>
 <ul>
 <li>Total bytes in all queues &#8211; This is very important, since you don&#8217;t want to run out of disk space</li>
@@ -202,17 +200,17 @@ creditCardProcessor.Charge(chargeRequest);
 <p>Since MSMQ is disk intensive, it is recommended to spread out MSMQ&#8217;s storage files over multiple disks.</p>
 <h2>Troubleshooting</h2>
 <p>The good news is that, usually, MSMQ just works. Most of the problems that you encounter are caused by either DTC or not having enough disk space.</p>
-<p>For investigating DTC issues, you should use DTCPing. Here is a blog post documenting <a href="https://blogs.msdn.microsoft.com/puneetgupta/2008/11/12/troubleshooting-msdtc-issues-with-the-dtcping-tool/" target="_blank">how to troubleshoot DTC issues</a>.</p>
-<p>Disk space depends on the throughput of messages that flow through your system, their size, and the amount of time it takes to recover from a failure (and start processing messages again). You don&#8217;t want to start losing messages because you can&#8217;t store them on disk. You should monitor disk space using performance counters. If there is not enough disk space, you can either <a href="https://support.microsoft.com/en-us/kb/899612" target="_blank">increase the MSMQ computer quota</a> and maybe <a href="https://blogs.msdn.microsoft.com/johnbreakwell/2009/02/09/changing-the-msmq-storage-location/" target="_blank">change the MSMQ storage location</a>.</p>
+<p>For investigating DTC issues, you should use DTCPing. Here is a blog post documenting <a href="https://blogs.msdn.microsoft.com/puneetgupta/2008/11/12/troubleshooting-msdtc-issues-with-the-dtcping-tool/" target="_blank" rel="noopener">how to troubleshoot DTC issues</a>.</p>
+<p>Disk space depends on the throughput of messages that flow through your system, their size, and the amount of time it takes to recover from a failure (and start processing messages again). You don&#8217;t want to start losing messages because you can&#8217;t store them on disk. You should monitor disk space using performance counters. If there is not enough disk space, you can either <a href="https://support.microsoft.com/en-us/kb/899612" target="_blank" rel="noopener">increase the MSMQ computer quota</a> and maybe <a href="https://blogs.msdn.microsoft.com/johnbreakwell/2009/02/09/changing-the-msmq-storage-location/" target="_blank" rel="noopener">change the MSMQ storage location</a>.</p>
 <p>If you want to find out more about MSMQ troubleshooting, check out these links:</p>
 <ul>
-<li>As usual, <a href="https://particular.net/" target="_blank">Particular Software</a> provide top notch documentation. Even if you&#8217;re not using NServiceBus, their <a href="https://docs.particular.net/nservicebus/msmq/troubleshooting" target="_blank">MSMQ troubleshoot guide</a> is a must read when facing MSMQ related issues. Be sure to click on the <strong>Useful Links</strong> section for further reading.</li>
-<li><a href="http://www.planetgeek.ch/2014/09/02/administration-of-msmq/" target="_blank">Administration of MSMQ</a></li>
-<li><a href="https://blogs.msdn.microsoft.com/johnbreakwell/2008/05/07/technet-content-for-troubleshooting-msmq-on-windows-2008-and-vista/" target="_blank">Technet content for troubleshooting MSMQ</a></li>
-<li><a href="https://support.microsoft.com/kb/178517" target="_blank">TCP ports, UDP ports, and RPC ports that are used by Message Queuing</a></li>
+<li>As usual, <a href="https://particular.net/" target="_blank" rel="noopener">Particular Software</a> provide top notch documentation. Even if you&#8217;re not using NServiceBus, their <a href="https://docs.particular.net/nservicebus/msmq/troubleshooting" target="_blank" rel="noopener">MSMQ troubleshoot guide</a> is a must read when facing MSMQ related issues. Be sure to click on the <strong>Useful Links</strong> section for further reading.</li>
+<li><a href="http://www.planetgeek.ch/2014/09/02/administration-of-msmq/" target="_blank" rel="noopener">Administration of MSMQ</a></li>
+<li><a href="https://blogs.msdn.microsoft.com/johnbreakwell/2008/05/07/technet-content-for-troubleshooting-msmq-on-windows-2008-and-vista/" target="_blank" rel="noopener">Technet content for troubleshooting MSMQ</a></li>
+<li><a href="https://support.microsoft.com/kb/178517" target="_blank" rel="noopener">TCP ports, UDP ports, and RPC ports that are used by Message Queuing</a></li>
 </ul>
 <h2>Backup and Restore</h2>
-<p>MSMQ comes with a command line utility &#8211; <a href="https://technet.microsoft.com/en-us/library/cc771016(v=ws.10).aspx" target="_blank">mqbkup</a> &#8211; for backup and restore. Using this tool you can backup storage files, log files, transaction files, and Registry settings. I&#8217;ve also heard that <a href="http://www.cogin.com/mq/" target="_blank">QueueExplorer </a>is a good tool for managing MSMQ, although I haven&#8217;t tried it yet.</p>
+<p>MSMQ comes with a command line utility &#8211; <a href="https://technet.microsoft.com/en-us/library/cc771016(v=ws.10).aspx" target="_blank" rel="noopener">mqbkup</a> &#8211; for backup and restore. Using this tool you can backup storage files, log files, transaction files, and Registry settings. I&#8217;ve also heard that <a href="http://www.cogin.com/mq/" target="_blank" rel="noopener">QueueExplorer </a>is a good tool for managing MSMQ, although I haven&#8217;t tried it yet.</p>
 <h2>Conclusion</h2>
 <p>In my limited experience with MSMQ, I have ran into a couple of issues. Most of them were caused by the fact that I didn&#8217;t monitor it well enough or I didn&#8217;t understand how it works under the hood. In this blog post I&#8217;ve summarized some of the best practices around MSMQ monitoring and troubleshooting. I&#8217;ll probably update this post whenever I learn something new about MSMQ.</p>
 		</div>
@@ -236,7 +234,7 @@ creditCardProcessor.Charge(chargeRequest);
 <h2>Queues</h2>
 <p>The queue is one of the basic concepts of MSMQ. It is just a container that stores messages, decoupling the sender from the receiver. MSMQ Queues are not necessarily FIFO (First In, First Out), because messages can be prioritized.</p>
 <p>Queues can be <strong>transactional</strong> or <strong>nontransactional</strong>. Transactional Queues can only receive  messages sent within a transactional context. Nontransactional queues can only receive messages sent outside of a transactional context. Messages sent in a transactional context are processed in the order in which they were sent.</p>
-<p>There are two categories of queues: <a href="https://technet.microsoft.com/en-us/library/cc771351(v=ws.10).aspx" target="_blank">Application Queues</a> and <a href="https://technet.microsoft.com/en-us/library/cc732033(v=ws.10).aspx" target="_blank">System Queues</a>.</p>
+<p>There are two categories of queues: <a href="https://technet.microsoft.com/en-us/library/cc771351(v=ws.10).aspx" target="_blank" rel="noopener">Application Queues</a> and <a href="https://technet.microsoft.com/en-us/library/cc732033(v=ws.10).aspx" target="_blank" rel="noopener">System Queues</a>.</p>
 <p> <a href="./../../msmq-basics/index.html#more-371" class="more-link">Continue Reading</a></p>
 		</div>
 	

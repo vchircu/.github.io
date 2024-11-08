@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="Most of the static analysis tool in the .Net world report isolated code metrics. While this is useful, I would like to be able to detect coarse grained code smells. Being able to correlate several …">
 <meta property="article:published_time" content="2016-12-22T23:07:21+00:00">
-<meta property="article:modified_time" content="2016-12-27T11:45:45+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:10:20+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -140,7 +138,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>Most of the static analysis tool in the .Net world report isolated code metrics. While this is useful, I would like to be able to detect coarse grained code smells. Being able to correlate several metrics to identify design disharmonies allows you to treat a problem holistically. In this blog post we&#8217;ll see how we can use NDepend to detect potential God Classes.</p>
 <h2>God Class Detection Strategy</h2>
-<p>A God Class is a class that centralizes the intelligence in the system. It is large, complex, has low cohesion and uses data from other classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for a God Class:</p>
+<p>A God Class is a class that centralizes the intelligence in the system. It is large, complex, has low cohesion and uses data from other classes. <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" data-cke-saved-href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" rel="noopener">Object-Oriented Metrics in Practice</a>, by Michele Lanza and Radu Marinescu, proposes the following detection strategy for a God Class:</p>
 <p><strong>(ATFD &gt; Few) AND (WMC &gt;= Very High) AND (TCC &lt; One Third)</strong></p>
 <p><span id="more-592"></span></p>
 <p>This detection strategy uses <strong>three metrics</strong>:</p>
@@ -152,7 +150,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>This detection strategy uses three <strong>types of thresholds</strong>:</p>
 <ul>
 <li>ATFD uses a <strong>Generally-Accepted Meaning Threshold</strong>. FEW is defined between 2 and 5.</li>
-<li>WMC uses a<strong> Statistics-Based Threshold</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The Very High threshold for WMC is 47.</li>
+<li>WMC uses a<strong> Statistics-Based Threshold</strong>. For these types of thresholds, a large number of projects needs to be analyzed. The authors of <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748" target="_blank" rel="noopener">Object-Oriented Metrics in Practice</a> analyzed 45 Java projects and extracted Low, Average, High and Very High thresholds for some basic metrics. The Very High threshold for WMC is 47.</li>
 <li>TCC uses a <strong>Common Fraction Threshold</strong>. One Third is 0.33.</li>
 </ul>
 <h2>Metrics Definitions</h2>
@@ -160,25 +158,25 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h3>ATFD &#8211; Access To Foreign Data</h3>
 <p>This metric measures the number of attributes from unrelated classes that are accessed directly or through accessor methods.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;ATFD&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;ATFD&amp;lt;/Name&amp;gt;
 // ** Helper Functions **
-let isProperty = new Func&lt;ICodeElement, bool&gt;(member =&gt; 
- member.IsMethod &amp;&amp; 
+let isProperty = new Func&amp;lt;ICodeElement, bool&amp;gt;(member =&amp;gt; 
+ member.IsMethod &amp;amp;&amp;amp; 
  (member.AsMethod.IsPropertyGetter || member.AsMethod.IsPropertySetter)) 
 
-let classHierarchyFor = new Func&lt;IType, HashSet&lt;IType&gt;&gt;(t =&gt; 
+let classHierarchyFor = new Func&amp;lt;IType, HashSet&amp;lt;IType&amp;gt;&amp;gt;(t =&amp;gt; 
  t.BaseClasses.Append(t).ToHashSet())
 
 // ** Metric Functions **
-let atfdForMethod = new Func&lt;IMethod, int&gt;(m =&gt; 
- m.MembersUsed.Where(member=&gt; 
-   !classHierarchyFor(m.ParentType).Contains(member.ParentType) &amp;&amp;
+let atfdForMethod = new Func&amp;lt;IMethod, int&amp;gt;(m =&amp;gt; 
+ m.MembersUsed.Where(member=&amp;gt; 
+   !classHierarchyFor(m.ParentType).Contains(member.ParentType) &amp;amp;&amp;amp;
    (isProperty(member) || member.IsField))
  .Count())
 
-let atfdForClass = new Func&lt;IType, int&gt;(t =&gt; 
- t.Methods.Where(m =&gt; !m.IsAbstract)
-  .Select(m =&gt; atfdForMethod(m))
+let atfdForClass = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
+ t.Methods.Where(m =&amp;gt; !m.IsAbstract)
+  .Select(m =&amp;gt; atfdForMethod(m))
   .Sum())
 
 // ** Sample Usage **
@@ -190,10 +188,10 @@ select new { t, atfd }
 <h3>WMC &#8211; Weighted Method Count</h3>
 <p>This metric measures the complexity of a class. This is done by summing the complexity of all methods of a class. McCabe&#8217;s Cyclomatic Complexity is used to measure the complexity of a method.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;WMC&lt;/Name&gt;
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+// &amp;lt;Name&amp;gt;WMC&amp;lt;/Name&amp;gt;
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // ** Sample Usage **
@@ -206,29 +204,29 @@ select new { t, wmc }
 <p>This metric measures the cohesion of a class. It&#8217;s computed as the relative number of method pairs of a class that access in common at least one attribute of the measured class.</p>
 <p>Writing a NDepend CQLinq query for TCC proved to be a little trickier. I wanted to extract the metric definition as a function (like I did for ATFD). Here is the query:</p>
 <pre class="brush: csharp; highlight: [12,24,25]; title: ; notranslate" title="">
-// &lt;Name&gt;TCC&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;TCC&amp;lt;/Name&amp;gt;
 // ** Helper Functions **
-let fieldsUsedFromParentClass = new Func&lt;IMethod, HashSet&lt;IField&gt;&gt;(m =&gt; 
- m.FieldsUsed.Where(f =&gt; f.ParentType == m.ParentType)
+let fieldsUsedFromParentClass = new Func&amp;lt;IMethod, HashSet&amp;lt;IField&amp;gt;&amp;gt;(m =&amp;gt; 
+ m.FieldsUsed.Where(f =&amp;gt; f.ParentType == m.ParentType)
  .ToHashSet())
 
-let methodsToConsiderFor = new Func&lt;IType, IEnumerable&lt;IMethod&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; !m.IsAbstract))
+let methodsToConsiderFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMethod&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; !m.IsAbstract))
 
-let pairsFrom = new Func&lt;IEnumerable&lt;IMethod&gt;, IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;&gt;(methods =&gt; 
- methods.Select((m1, i) =&gt; 
-   methods.Where((m2, j) =&gt; j &gt; i).Select(m2 =&gt; new HashSet&lt;IMethod&gt; {m1, m2}))
- .SelectMany(_ =&gt; _))
+let pairsFrom = new Func&amp;lt;IEnumerable&amp;lt;IMethod&amp;gt;, IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;&amp;gt;(methods =&amp;gt; 
+ methods.Select((m1, i) =&amp;gt; 
+   methods.Where((m2, j) =&amp;gt; j &amp;gt; i).Select(m2 =&amp;gt; new HashSet&amp;lt;IMethod&amp;gt; {m1, m2}))
+ .SelectMany(_ =&amp;gt; _))
 
-let cohesivePairsFrom = new Func&lt;IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;, IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;&gt;(pairs =&gt; 
- pairs.Where(p =&gt; fieldsUsedFromParentClass(p.First()).Overlaps(fieldsUsedFromParentClass(p.Last()))))
+let cohesivePairsFrom = new Func&amp;lt;IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;, IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;&amp;gt;(pairs =&amp;gt; 
+ pairs.Where(p =&amp;gt; fieldsUsedFromParentClass(p.First()).Overlaps(fieldsUsedFromParentClass(p.Last()))))
 
 //number of combinations of all methods, taken 2 at a time, without repetition
-let numberOfPairsFor = new Func&lt;int, int&gt;(n =&gt;
+let numberOfPairsFor = new Func&amp;lt;int, int&amp;gt;(n =&amp;gt;
  (n * (n-1)) / 2)
 
 // ** Metric Functions **
-let tccFor = new Func&lt;IType, double&gt;(t =&gt; 
+let tccFor = new Func&amp;lt;IType, double&amp;gt;(t =&amp;gt; 
  (double) cohesivePairsFrom(pairsFrom(methodsToConsiderFor(t))).Count()
  / numberOfPairsFor(methodsToConsiderFor(t).Count()))
 
@@ -246,20 +244,20 @@ select new { t, tcc }
 </ul>
 <p>Another option would be to compute the pairs in the body of the main query, as follows:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;TCC&lt;/Name&gt;
+// &amp;lt;Name&amp;gt;TCC&amp;lt;/Name&amp;gt;
 // ** Helper Functions **
-let fieldsUsedFromParentClass = new Func&lt;IMethod, HashSet&lt;IField&gt;&gt;(m =&gt; 
- m.FieldsUsed.Where(f =&gt; f.ParentType == m.ParentType)
+let fieldsUsedFromParentClass = new Func&amp;lt;IMethod, HashSet&amp;lt;IField&amp;gt;&amp;gt;(m =&amp;gt; 
+ m.FieldsUsed.Where(f =&amp;gt; f.ParentType == m.ParentType)
  .ToHashSet())
 
 // ** Sample Usage **
 from t in JustMyCode.Types
-let methodsToConsider = t.Methods.Where(m =&gt; !m.IsAbstract)
-let pairs = methodsToConsider.Select((m1, i) =&gt; 
- methodsToConsider.Where((m2, j) =&gt; j &gt; i).Select(m2 =&gt; new {m1, m2}))
- .SelectMany(_ =&gt; _)
+let methodsToConsider = t.Methods.Where(m =&amp;gt; !m.IsAbstract)
+let pairs = methodsToConsider.Select((m1, i) =&amp;gt; 
+ methodsToConsider.Where((m2, j) =&amp;gt; j &amp;gt; i).Select(m2 =&amp;gt; new {m1, m2}))
+ .SelectMany(_ =&amp;gt; _)
 
-let cohesivePairs = pairs.Where(p =&gt; 
+let cohesivePairs = pairs.Where(p =&amp;gt; 
  fieldsUsedFromParentClass(p.m1).Overlaps(fieldsUsedFromParentClass(p.m2)))
 
 let pairsCount = pairs.Count()
@@ -271,58 +269,58 @@ select new { t, tcc }
 <h2>Putting it all together</h2>
 <p>Now that we know how to compute each of the required metrics, let&#8217;s see how the detection strategy looks like:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;Name&gt;God Class&lt;/Name&gt;
-warnif count &gt; 0
+// &amp;lt;Name&amp;gt;God Class&amp;lt;/Name&amp;gt;
+warnif count &amp;gt; 0
 // *** ATFD ***
 // ** Helper Functions **
-let isProperty = new Func&lt;ICodeElement, bool&gt;(member =&gt; 
- member.IsMethod &amp;&amp; 
+let isProperty = new Func&amp;lt;ICodeElement, bool&amp;gt;(member =&amp;gt; 
+ member.IsMethod &amp;amp;&amp;amp; 
  (member.AsMethod.IsPropertyGetter || member.AsMethod.IsPropertySetter)) 
 
-let classHierarchyFor = new Func&lt;IType, HashSet&lt;IType&gt;&gt;(t =&gt; 
+let classHierarchyFor = new Func&amp;lt;IType, HashSet&amp;lt;IType&amp;gt;&amp;gt;(t =&amp;gt; 
  t.BaseClasses.Append(t).ToHashSet())
 
 // ** Metric Functions **
-let atfdForMethod = new Func&lt;IMethod, int&gt;(m =&gt; 
- m.MembersUsed.Where(memeber =&gt; 
-    !classHierarchyFor(m.ParentType).Contains(memeber.ParentType) &amp;&amp;
+let atfdForMethod = new Func&amp;lt;IMethod, int&amp;gt;(m =&amp;gt; 
+ m.MembersUsed.Where(memeber =&amp;gt; 
+    !classHierarchyFor(m.ParentType).Contains(memeber.ParentType) &amp;amp;&amp;amp;
     (isProperty(memeber) || memeber.IsField))
  .Count())
 
-let atfdForClass = new Func&lt;IType, int&gt;(t =&gt; 
- t.Methods.Where(m =&gt; !m.IsAbstract)
-  .Select(m =&gt; atfdForMethod(m))
+let atfdForClass = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
+ t.Methods.Where(m =&amp;gt; !m.IsAbstract)
+  .Select(m =&amp;gt; atfdForMethod(m))
   .Sum())
 
 // *** WMC ***
-let wmcFor = new Func&lt;IType, int&gt;(t =&gt; 
+let wmcFor = new Func&amp;lt;IType, int&amp;gt;(t =&amp;gt; 
  t.MethodsAndContructors
-  .Select(m =&gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
+  .Select(m =&amp;gt; (int) m.CyclomaticComplexity.GetValueOrDefault())
   .Sum())
 
 // *** TCC ***
 // ** Helper Functions **
-let fieldsUsedFromParentClass = new Func&lt;IMethod, HashSet&lt;IField&gt;&gt;(m =&gt; 
- m.FieldsUsed.Where(f =&gt; f.ParentType == m.ParentType)
+let fieldsUsedFromParentClass = new Func&amp;lt;IMethod, HashSet&amp;lt;IField&amp;gt;&amp;gt;(m =&amp;gt; 
+ m.FieldsUsed.Where(f =&amp;gt; f.ParentType == m.ParentType)
   .ToHashSet())
 
-let methodsToConsiderFor = new Func&lt;IType, IEnumerable&lt;IMethod&gt;&gt;(t =&gt;
- t.Methods.Where(m =&gt; !m.IsAbstract))
+let methodsToConsiderFor = new Func&amp;lt;IType, IEnumerable&amp;lt;IMethod&amp;gt;&amp;gt;(t =&amp;gt;
+ t.Methods.Where(m =&amp;gt; !m.IsAbstract))
 
-let pairsFrom = new Func&lt;IEnumerable&lt;IMethod&gt;, IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;&gt;(methods =&gt; 
- methods.Select((m1, i) =&gt; 
-   methods.Where((m2, j) =&gt; j &gt; i).Select(m2 =&gt; new HashSet&lt;IMethod&gt; {m1, m2}))
- .SelectMany(_ =&gt; _))
+let pairsFrom = new Func&amp;lt;IEnumerable&amp;lt;IMethod&amp;gt;, IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;&amp;gt;(methods =&amp;gt; 
+ methods.Select((m1, i) =&amp;gt; 
+   methods.Where((m2, j) =&amp;gt; j &amp;gt; i).Select(m2 =&amp;gt; new HashSet&amp;lt;IMethod&amp;gt; {m1, m2}))
+ .SelectMany(_ =&amp;gt; _))
 
-let cohesivePairsFrom = new Func&lt;IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;, IEnumerable&lt;HashSet&lt;IMethod&gt;&gt;&gt;(pairs =&gt; 
- pairs.Where(p =&gt; fieldsUsedFromParentClass(p.First()).Overlaps(fieldsUsedFromParentClass(p.Last()))))
+let cohesivePairsFrom = new Func&amp;lt;IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;, IEnumerable&amp;lt;HashSet&amp;lt;IMethod&amp;gt;&amp;gt;&amp;gt;(pairs =&amp;gt; 
+ pairs.Where(p =&amp;gt; fieldsUsedFromParentClass(p.First()).Overlaps(fieldsUsedFromParentClass(p.Last()))))
 
 //number of combinations of all methods, taken 2 at a time, without repetition
-let numberOfPairsFor = new Func&lt;int, int&gt;(n =&gt;
+let numberOfPairsFor = new Func&amp;lt;int, int&amp;gt;(n =&amp;gt;
  (n * (n-1)) / 2)
 
 // ** Metric Functions **
-let tccFor = new Func&lt;IType, double&gt;(t =&gt; 
+let tccFor = new Func&amp;lt;IType, double&amp;gt;(t =&amp;gt; 
  (double) cohesivePairsFrom(pairsFrom(methodsToConsiderFor(t))).Count()
  / numberOfPairsFor(methodsToConsiderFor(t).Count()))
 
@@ -339,11 +337,11 @@ let tcc = tccFor(t)
 
 where 
  // Class uses directly more than a few attributes of other classes
- atfd &gt; Few &amp;&amp;
+ atfd &amp;gt; Few &amp;amp;&amp;amp;
  // Functional complexity of the class is very high
- wmc &gt;= wmcVeryHigh &amp;&amp;
+ wmc &amp;gt;= wmcVeryHigh &amp;amp;&amp;amp;
  // Class cohesion is low
- tcc &lt; OneThird
+ tcc &amp;lt; OneThird
 
 select new { t, atfd, wmc, tcc }
 </pre>
@@ -368,16 +366,7 @@ select new { t, atfd, wmc, tcc }
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-592" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-592" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-592" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -471,26 +460,9 @@ select new { t, atfd, wmc, tcc }
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="592" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="743da61132"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="219"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -736,9 +708,7 @@ select new { t, atfd, wmc, tcc }
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/how-to-identify-god-class-using-ndepend\/":592};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -782,156 +752,12 @@ select new { t, atfd, wmc, tcc }
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"592\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "592" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

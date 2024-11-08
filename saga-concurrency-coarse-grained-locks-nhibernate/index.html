@@ -14,7 +14,6 @@
 <link rel="dns-prefetch" href="//i0.wp.com">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Comments Feed" href="./../comments/feed/index.html">
-<link rel="alternate" type="application/rss+xml" title="Simple Oriented Architecture &raquo; Saga concurrency and coarse-grained locks when using NHibernate Persistence Comments Feed" href="./feed/index.html">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
@@ -47,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +73,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With NServiceBus, concurrent access to an existi…">
 <meta property="article:published_time" content="2016-08-14T12:46:49+00:00">
-<meta property="article:modified_time" content="2016-09-21T11:40:06+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:14:16+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
 <meta property="og:image:alt">
@@ -139,18 +136,18 @@ var related_posts_js_options = {"post_heading":"h4"};
 	<div class="entry-content" itemprop="articleBody">
 
 		<p>Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence.</p>
-<p>With NServiceBus, <a href="http://docs.particular.net/nservicebus/sagas/concurrency#concurrent-access-to-existing-saga-instances" target="_blank">concurrent access to an existing saga instance</a> works out of the box. This is because it relies on the underlying database system. With NHibernate, it relies on optimistic concurrency, by <a href="https://ayende.com/blog/3946/nhibernate-mapping-concurrency" target="_blank">adding a Version column</a> to your Saga Data. But there is a catch: NHibernate doesn&#8217;t support<a href="http://martinfowler.com/eaaCatalog/coarseGrainedLock.html" target="_blank"> Coarse-Grained Locks</a>. Let&#8217;s first explore this general problem and then we&#8217;ll get back to the NServiceBus Saga.</p>
+<p>With NServiceBus, <a href="http://docs.particular.net/nservicebus/sagas/concurrency#concurrent-access-to-existing-saga-instances" target="_blank" rel="noopener">concurrent access to an existing saga instance</a> works out of the box. This is because it relies on the underlying database system. With NHibernate, it relies on optimistic concurrency, by <a href="https://ayende.com/blog/3946/nhibernate-mapping-concurrency" target="_blank" rel="noopener">adding a Version column</a> to your Saga Data. But there is a catch: NHibernate doesn&#8217;t support<a href="http://martinfowler.com/eaaCatalog/coarseGrainedLock.html" target="_blank" rel="noopener"> Coarse-Grained Locks</a>. Let&#8217;s first explore this general problem and then we&#8217;ll get back to the NServiceBus Saga.</p>
 <h3>Coarse-Grained Locks</h3>
-<p>With a coarse-grained lock you basically lock a group of entities together. If you&#8217;re familiar with DDD, then you know that an aggregate should be a <a href="https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/" target="_blank">consistency boundary</a>. When I save an aggregate, I want to save the <strong><em>entire</em> </strong>aggregate, to ensure it&#8217;s consistent. Why would you need this? Here&#8217;s an example:</p>
+<p>With a coarse-grained lock you basically lock a group of entities together. If you&#8217;re familiar with DDD, then you know that an aggregate should be a <a href="https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/" target="_blank" rel="noopener">consistency boundary</a>. When I save an aggregate, I want to save the <strong><em>entire</em> </strong>aggregate, to ensure it&#8217;s consistent. Why would you need this? Here&#8217;s an example:</p>
 <p>Let&#8217;s take the already familiar example of an <strong>Order</strong> with <strong>OrderLines</strong>, Order being the aggregate root. We&#8217;re using optimistic concurrency control for each of our aggregate parts. In our domain there is an invariant that dictates that the <em>total number of items  in an order can&#8217;t be more than 10</em>. Two commands that would increase the quantity could be processed in parallel and break the invariant. This is because in each transaction, the invariant would hold and each transaction would commit, since they update different lines. Now you&#8217;re in an inconsistent state.</p>
 <p>If we could lock the entire aggregate (order and order lines), then the second transaction would fail and rollback, maintaining a consistent state. One way to achieve this when using optimistic concurrency is to update the root&#8217;s version whenever an aggregate part is updated.</p>
 <p><span id="more-295"></span></p>
 <h3>Use Listeners to lock the root</h3>
-<p>There are <a href="http://colinjack.blogspot.ro/2007/05/nhibernate-and-coarse-grained-locking.html" target="_blank">some posts</a>, <a href="http://stackoverflow.com/questions/37961956/nhibernate-not-detecting-changes-to-parent-when-child-collection-updates" target="_blank">stackoverflow </a><a href="http://stackoverflow.com/questions/8308586/version-does-not-increment-when-updating-child-item" target="_blank">questions</a> and <a href="https://groups.google.com/forum/#!topic/nhusers/sdzffWFtDnc" target="_blank">forum threads</a> on how to update the parent&#8217;s version when a child is modified. Even though most of them are pretty old, there is no definitive answer. <a href="https://ayende.com/blog" target="_blank">Ayende Rahien</a> proposes probably the most well known solution to this problem. He discusses it in a couple of blog posts. The first touches on how you could <a href="https://ayende.com/blog/4040/nhibernate-coarse-grained-locks" target="_blank">lock the aggregate root</a>:</p>
+<p>There are <a href="http://colinjack.blogspot.ro/2007/05/nhibernate-and-coarse-grained-locking.html" target="_blank" rel="noopener">some posts</a>, <a href="http://stackoverflow.com/questions/37961956/nhibernate-not-detecting-changes-to-parent-when-child-collection-updates" target="_blank" rel="noopener">stackoverflow </a><a href="http://stackoverflow.com/questions/8308586/version-does-not-increment-when-updating-child-item" target="_blank" rel="noopener">questions</a> and <a href="https://groups.google.com/forum/#!topic/nhusers/sdzffWFtDnc" target="_blank" rel="noopener">forum threads</a> on how to update the parent&#8217;s version when a child is modified. Even though most of them are pretty old, there is no definitive answer. <a href="https://ayende.com/blog" target="_blank" rel="noopener">Ayende Rahien</a> proposes probably the most well known solution to this problem. He discusses it in a couple of blog posts. The first touches on how you could <a href="https://ayende.com/blog/4040/nhibernate-coarse-grained-locks" target="_blank" rel="noopener">lock the aggregate root</a>:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 session.Lock(aggregateRoot, LockMode.Force);
 </pre>
-<p>This basically forces a version increment for versioned entities. The questions is: how do you know when to call this? One option could be to have a coding guideline to increment the version every time you load an aggregate for updating. The problem is that you can get some nasty bugs if you forget to call this. <a href="https://ayende.com/blog/4055/nhibernate-automatic-change-tracking-for-aggregate-roots-in-ddd-scenarios" target="_blank">The second post</a> tackles this problem. The proposed solution uses <a href="http://nhibernate.info/doc/nhibernate-reference/events.html" target="_blank">NHibernate event listners</a> and on every aggregate part update, finds the aggregate root and forces a version increment.</p>
+<p>This basically forces a version increment for versioned entities. The questions is: how do you know when to call this? One option could be to have a coding guideline to increment the version every time you load an aggregate for updating. The problem is that you can get some nasty bugs if you forget to call this. <a href="https://ayende.com/blog/4055/nhibernate-automatic-change-tracking-for-aggregate-roots-in-ddd-scenarios" target="_blank" rel="noopener">The second post</a> tackles this problem. The proposed solution uses <a href="http://nhibernate.info/doc/nhibernate-reference/events.html" target="_blank" rel="noopener">NHibernate event listners</a> and on every aggregate part update, finds the aggregate root and forces a version increment.</p>
 <p>The blog post also notes the constraints of this approach. Two of them are inherent to DDD: <em>the relation between aggregates and contained entities must be explicit</em> and you <em>access an aggregate part only by traversing from the root</em>.</p>
 <p>The third however is more restrictive in my view. It dictates that<strong> <em>you need to have a direct reference from the aggregate part to the aggregate root</em></strong>. Since the aggregate root needs to know its parts, this basically means that we need to have bidirectional associations across the entire aggregate for this to work. I prefer to use a single traversal direction if possible. Even more, a direct reference means you need to add a reference to the aggregate root, even if it&#8217;s not the direct parent of the entity:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
@@ -182,7 +179,7 @@ public class SagaData : IContainSagaData
 {
     public int Version { get; set; }
 
-    public List&lt;LongRunningTask&gt; Tasks { get; set; }
+    public List&amp;lt;LongRunningTask&amp;gt; Tasks { get; set; }
 
     public Guid Id { get; set; }
 
@@ -208,13 +205,13 @@ public enum Status
 </pre>
 <p>And here is the saga code:</p>
 <pre class="brush: csharp; highlight: [31]; title: ; notranslate" title="">
-public class Saga : Saga&lt;SagaData&gt;,
-                    IAmStartedByMessages&lt;StartSagaCommand&gt;,
-                    IHandleMessages&lt;DoTaskResponse&gt;
+public class Saga : Saga&amp;lt;SagaData&amp;gt;,
+                    IAmStartedByMessages&amp;lt;StartSagaCommand&amp;gt;,
+                    IHandleMessages&amp;lt;DoTaskResponse&amp;gt;
 {
     public void Handle(StartSagaCommand message)
     {
-        Data.Tasks = new List&lt;LongRunningTask&gt;();
+        Data.Tasks = new List&amp;lt;LongRunningTask&amp;gt;();
         foreach (var tasks in message.Tasks)
         {
             var newTask = new LongRunningTask
@@ -233,12 +230,12 @@ public class Saga : Saga&lt;SagaData&gt;,
 
     public void Handle(DoTaskResponse message)
     {
-        var task = Data.Tasks.Single(t =&gt; t.Id == message.TaskId);
+        var task = Data.Tasks.Single(t =&amp;gt; t.Id == message.TaskId);
 
         task.Status = Status.Completed;
         task.Result = message.Result;
 
-        if (Data.Tasks.All(t =&gt; t.Status == Status.Completed))
+        if (Data.Tasks.All(t =&amp;gt; t.Status == Status.Completed))
         {
             Bus.Send(new DoSomeOtherStuffCommand(Data));
             MarkAsComplete();
@@ -248,7 +245,7 @@ public class Saga : Saga&lt;SagaData&gt;,
 </pre>
 <p>The question is: what happens if we process the last two task responses concurrently? The completion condition highlighted above will be false for both messages. But since the <strong>DoTaskResponse</strong> handler doesn&#8217;t update the saga data (the parent), just the task (the child), will both transactions commit? If this is the case, then this saga instance will never send the <strong>DoSomeOtherStuffCommand</strong>.</p>
 <h3>Pessimistic locking of the saga instance</h3>
-<p>The good news is that <strong>you won&#8217;t have this problem if you use the default settings</strong>. This is because<a href="http://docs.particular.net/nservicebus/nhibernate/saga-concurrency#default-behavior" target="_blank"> since Version 4.1.0, the NHibernate saga persister uses an additional pessimistic concurrency control</a>. This means that it puts a lock on the saga data when it fetches it. Processing the second message will have to wait until the first transaction commits. <strong>So if you don&#8217;t adjust the lock strategy to Read, you should be OK</strong>. Thus, the additional pessimistic lock would ensure consistency, even if the optimistic lock fails to update the parent&#8217;s version on a child update. </p>
+<p>The good news is that <strong>you won&#8217;t have this problem if you use the default settings</strong>. This is because<a href="http://docs.particular.net/nservicebus/nhibernate/saga-concurrency#default-behavior" target="_blank" rel="noopener"> since Version 4.1.0, the NHibernate saga persister uses an additional pessimistic concurrency control</a>. This means that it puts a lock on the saga data when it fetches it. Processing the second message will have to wait until the first transaction commits. <strong>So if you don&#8217;t adjust the lock strategy to Read, you should be OK</strong>. Thus, the additional pessimistic lock would ensure consistency, even if the optimistic lock fails to update the parent&#8217;s version on a child update. </p>
 <h3>Force a version upgrade on the Saga Data</h3>
 <p>I was still wondering if there is a simple way to get the optimistic lock control to work like I wanted. One option would be to always force a version upgrade when handling a message. This isn&#8217;t an ideal solution if you&#8217;re handling messages that don&#8217;t update the saga data. Since in my case I do modify the saga data whenever I&#8217;m processing a message, this approach is OK.</p>
 <p>The NServiceBus framework always calls <strong>Save</strong> on the saga data class, so I hooked up in the Save event listener:</p>
@@ -257,7 +254,7 @@ public class ForceVerionUpgradeOnSagaDataListner : ISaveOrUpdateEventListener
 {
 	public void OnSaveOrUpdate(SaveOrUpdateEvent @event)
 	{
-		if (@event.Entity is IContainSagaData &amp;&amp; !@event.Session.IsDirtyEntity(@event.Entity))
+		if (@event.Entity is IContainSagaData &amp;amp;&amp;amp; !@event.Session.IsDirtyEntity(@event.Entity))
 		{
 			@event.Session.Lock(@event.Entity, LockMode.Force);
 		}
@@ -266,14 +263,14 @@ public class ForceVerionUpgradeOnSagaDataListner : ISaveOrUpdateEventListener
 </pre>
 <p>As you can see, I do this only for the parent saga data. Also, to prevent the multiple update per transaction issue that Ayende highlighted, I upgrade the version only if the saga data is not dirty. If it is dirty, it would be upgraded anyway.</p>
 <h3>Checking if an entity is dirty</h3>
-<p><strong>IsDirtyEntity</strong> is an extension method that checks if an entity has changed after it has been loaded into the session. My NHibernate skills are not good enough to implement such a method from scratch. I&#8217;ve searched for a way to do this and, to my surprise, I didn&#8217;t find a definitive answer. The first version I found is on <a href="http://nhibernate.info/doc/howto/various/finding-dirty-properties-in-nhibernate.html" target="_blank">NHibernate&#8217;s site</a> and does not work because of the following line:</p>
+<p><strong>IsDirtyEntity</strong> is an extension method that checks if an entity has changed after it has been loaded into the session. My NHibernate skills are not good enough to implement such a method from scratch. I&#8217;ve searched for a way to do this and, to my surprise, I didn&#8217;t find a definitive answer. The first version I found is on <a href="http://nhibernate.info/doc/howto/various/finding-dirty-properties-in-nhibernate.html" target="_blank" rel="noopener">NHibernate&#8217;s site</a> and does not work because of the following line:</p>
 <pre class="brush: csharp; highlight: [2]; title: ; notranslate" title="">
 Int32&#x5B;] dirtyProps = oldState
-    .Select((o, i) =&gt; (oldState&#x5B;i] == currentState&#x5B;i]) ? -1 : i)
-    .Where(x =&gt; x &gt;= 0)
+    .Select((o, i) =&amp;gt; (oldState&#x5B;i] == currentState&#x5B;i]) ? -1 : i)
+    .Where(x =&amp;gt; x &amp;gt;= 0)
     .ToArray();
 </pre>
-<p>If the property is a value type, this check will actually compare references to the boxed values, so it will always be false. The second version of this method is on <a href="http://www.nhforge.org/wikis/howtonh/finding-dirty-properties-in-nhibernate.aspx" target="_blank">nhforge</a> and replaces the line above with:</p>
+<p>If the property is a value type, this check will actually compare references to the boxed values, so it will always be false. The second version of this method is on <a href="http://www.nhforge.org/wikis/howtonh/finding-dirty-properties-in-nhibernate.aspx" target="_blank" rel="noopener">nhforge</a> and replaces the line above with:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 Int32 &#x5B;] dirtyProps = persister.FindDirty(currentState, oldState, entity, sessionImpl);
 </pre>
@@ -287,7 +284,7 @@ public static bool IsDirtyEntity(this ISession session, object entity)
 
 	var entityEntry = persistenceContext.GetEntry(entity);
 
-	if ((entityEntry == null) &amp;&amp; entity is INHibernateProxy)
+	if ((entityEntry == null) &amp;amp;&amp;amp; entity is INHibernateProxy)
 	{
 		var proxy = (INHibernateProxy)entity;
 		var obj = sessionImplementation.PersistenceContext.Unproxy(proxy);
@@ -299,7 +296,7 @@ public static bool IsDirtyEntity(this ISession session, object entity)
 
 	int&#x5B;] findDirty = entityEntry.Persister.FindDirty(currentState, oldState, entity, sessionImplementation);
 
-	var hasDirtyCollection = currentState.OfType&lt;IPersistentCollection&gt;().Any(x =&gt; x.IsDirty);
+	var hasDirtyCollection = currentState.OfType&amp;lt;IPersistentCollection&amp;gt;().Any(x =&amp;gt; x.IsDirty);
 
 	return (findDirty != null) || hasDirtyCollection;
 }
@@ -315,7 +312,7 @@ nhConfiguration.AppendListeners(ListenerType.Update, new&#x5B;] { new ForceVerio
 <h2>Conclusion</h2>
 <p>I must admit, I assumed that NHibernate supports coarse-grained locking out of the box. I&#8217;m wondering how are people ensuring aggregate consistency when using NHibernate?</p>
 <p>Fortunately, the problem I had was more specific, since it&#8217;s only about ensuring NServiceBus saga consistency when using NHibernate for persistence. So, in this particular case, the default pessimistic locking does its job, so no extra work is required. If you still want to update the saga data&#8217;s version on a child update, then you could force it.</p>
-<p>Another solution would be to check for saga completion on a timeout, not when processing a message. Jimmy Bogard has a great blog post on <a href="https://lostechies.com/jimmybogard/2014/02/27/reducing-nservicebus-saga-load/" target="_blank">how to reduce NServiceBus saga load</a> by using this approach. This would actually be a better solution, if there was a big number of message. In my case, the number of tasks was limited, so I didn&#8217;t want to introduce the timeout.</p>
+<p>Another solution would be to check for saga completion on a timeout, not when processing a message. Jimmy Bogard has a great blog post on <a href="https://lostechies.com/jimmybogard/2014/02/27/reducing-nservicebus-saga-load/" target="_blank" rel="noopener">how to reduce NServiceBus saga load</a> by using this approach. This would actually be a better solution, if there was a big number of message. In my case, the number of tasks was limited, so I didn&#8217;t want to introduce the timeout.</p>
 <p>If you can think of any other solution, please leave a comment. I&#8217;m definitely interested in seeing a better one!</p>
 
 <div id="jp-relatedposts" class="jp-relatedposts">
@@ -337,16 +334,7 @@ nhConfiguration.AppendListeners(ListenerType.Update, new&#x5B;] { new ForceVerio
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-295" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-295" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-295" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -391,33 +379,6 @@ nhConfiguration.AppendListeners(ListenerType.Update, new&#x5B;] { new ForceVerio
 
 	
 				
-<div id="comments" class="comments-area">
-
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="295" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8deda2e2f5"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="188"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
-</div>
-<!-- #comments -->
-
 				
 	<div class="loop-nav">
 		<div class="prev">Previous: <a href="./../book-review-soft-skills/index.html" rel="prev">Book Review: Soft Skills</a>
@@ -660,9 +621,7 @@ nhConfiguration.AppendListeners(ListenerType.Update, new&#x5B;] { new ForceVerio
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/saga-concurrency-coarse-grained-locks-nhibernate\/":295};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -706,156 +665,12 @@ nhConfiguration.AppendListeners(ListenerType.Update, new&#x5B;] { new ForceVerio
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"295\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "295" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

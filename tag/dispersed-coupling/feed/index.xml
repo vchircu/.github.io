@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 18 Oct 2024 07:36:47 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:09:02 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>How to identify common Code Smells using NDepend</title>
 		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-common-code-smells-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
@@ -46,8 +45,6 @@
 
 					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-common-code-smells-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>

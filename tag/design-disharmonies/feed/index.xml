@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Thu, 28 Feb 2019 17:30:03 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:10:57 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
 		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
-					<comments>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -48,8 +47,6 @@
 
 					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>

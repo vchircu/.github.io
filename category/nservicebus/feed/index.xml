@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 08 Nov 2024 09:13:53 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:15:15 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -63,7 +63,6 @@
 		<item>
 		<title>Handling Failure in Long Running Processes</title>
 		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
-					<comments>./../../../handling-failure-in-long-running-processes/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -82,15 +81,12 @@
 
 					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
 		<item>
 		<title>Storing the state of a Long Running Process</title>
 		<link>./../../../storing-the-state-of-a-long-running-process/index.html</link>
-					<comments>./../../../storing-the-state-of-a-long-running-process/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 04 Jul 2018 04:20:18 +0000</pubDate>
@@ -107,15 +103,12 @@
 
 					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">907</post-id>	</item>
 		<item>
 		<title>Modelling Long Running Processes: Choreography versus Orchestration</title>
 		<link>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html</link>
-					<comments>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Jun 2018 05:18:15 +0000</pubDate>
@@ -132,15 +125,12 @@
 
 					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../modelling-long-running-processes-choreography-versus-orchestration/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">873</post-id>	</item>
 		<item>
 		<title>Understanding the 8 fallacies of Distributed Systems</title>
 		<link>./../../../8-fallacies-of-distributed-systems/index.html</link>
-					<comments>./../../../8-fallacies-of-distributed-systems/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2018 19:27:39 +0000</pubDate>
@@ -155,15 +145,12 @@
 
 					<description><![CDATA[Are you working on a distributed system? Microservices, Web APIs, SOA, web server, application server, database server, cache server, load <a class="more-link" href="./../../../8-fallacies-of-distributed-systems/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../8-fallacies-of-distributed-systems/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">797</post-id>	</item>
 		<item>
 		<title>MSMQ Administration</title>
 		<link>./../../../msmq-administration/index.html</link>
-					<comments>./../../../msmq-administration/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 12 Oct 2016 05:59:24 +0000</pubDate>
@@ -177,15 +164,12 @@
 
 					<description><![CDATA[In the previous blog post we went over some of the MSMQ bascis. In this blog post we&#8217;ll touch on <a class="more-link" href="./../../../msmq-administration/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../msmq-administration/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">393</post-id>	</item>
 		<item>
 		<title>Saga concurrency and coarse-grained locks when using NHibernate Persistence</title>
 		<link>./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html</link>
-					<comments>./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 14 Aug 2016 12:46:49 +0000</pubDate>
@@ -199,15 +183,12 @@
 
 					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../saga-concurrency-coarse-grained-locks-nhibernate/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">295</post-id>	</item>
 		<item>
 		<title>Managing Units of Work in NServiceBus</title>
 		<link>./../../../managing-units-of-work-in-nservicebus/index.html</link>
-					<comments>./../../../managing-units-of-work-in-nservicebus/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 10 Jul 2016 15:54:17 +0000</pubDate>
@@ -217,8 +198,6 @@
 
 					<description><![CDATA[Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in <a class="more-link" href="./../../../managing-units-of-work-in-nservicebus/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../managing-units-of-work-in-nservicebus/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">240</post-id>	</item>

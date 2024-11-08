@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Sun, 02 Oct 2016 09:55:28 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:17:04 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
 		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
-					<comments>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -39,8 +38,6 @@
 
 					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">325</post-id>	</item>

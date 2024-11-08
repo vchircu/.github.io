@@ -46,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -122,7 +120,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in the form of hooks that you can use you to inject custom code. The benefit is twofold: you don&#8217;t have duplicated code and you don&#8217;t break the <a href="http://c2.com/cgi/wiki?SingleResponsibilityPrinciple" target="_blank">Single Responsibility Principle</a>. If you&#8217;re using ASP.NET Core/MVC/WebApi, then you have <strong>ActionFilters</strong>. NServiceBus has its own mechanisms that you can use. In this blog post we&#8217;ll discuss two ways of hooking into the message processing pipeline that are useful for managing units of work in NServiceBus : IManageUnitsOfWork and the NServiceBus pipeline. There are many use cases where these prove useful. Here are some examples:</p>
+			<p>Framework designers usually make sure there is a way to decouple infrastructure code from business code. Usually this comes in the form of hooks that you can use you to inject custom code. The benefit is twofold: you don&#8217;t have duplicated code and you don&#8217;t break the <a href="http://c2.com/cgi/wiki?SingleResponsibilityPrinciple" target="_blank" rel="noopener">Single Responsibility Principle</a>. If you&#8217;re using ASP.NET Core/MVC/WebApi, then you have <strong>ActionFilters</strong>. NServiceBus has its own mechanisms that you can use. In this blog post we&#8217;ll discuss two ways of hooking into the message processing pipeline that are useful for managing units of work in NServiceBus : IManageUnitsOfWork and the NServiceBus pipeline. There are many use cases where these prove useful. Here are some examples:</p>
 <ul>
 <li>Manage the unit of work (i.e. the session in NHibernate and RavenDB)</li>
 <li>Logging &amp; Monitoring</li>

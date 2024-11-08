@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 08 Nov 2017 06:30:44 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:17:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -78,7 +78,6 @@
 		<item>
 		<title>Book Review: Fifty Quick Ideas to Improve your User Stories</title>
 		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html</link>
-					<comments>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 04 Sep 2016 16:07:41 +0000</pubDate>
@@ -92,15 +91,12 @@
 
 					<description><![CDATA[User Stories are at the heart of agile delivery, yet creating user stories is a hard skill to master. I think everyone <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-user-stories/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">325</post-id>	</item>
 		<item>
 		<title>Book Review: Enterprise Integration Patterns</title>
 		<link>./../../../book-review-enterprise-integration-patterns/index.html</link>
-					<comments>./../../../book-review-enterprise-integration-patterns/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Mon, 02 May 2016 17:06:01 +0000</pubDate>
@@ -113,15 +109,12 @@
 
 					<description><![CDATA[Enterprise Integration Patterns by Gregor Hohpe and Bobby Woolf is a seminal book on Messaging. Every developer working on messaging solutions <a class="more-link" href="./../../../book-review-enterprise-integration-patterns/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-enterprise-integration-patterns/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">15</post-id>	</item>
 		<item>
 		<title>Book Review: Advanced API Security</title>
 		<link>./../../../book-review-advanced-api-security/index.html</link>
-					<comments>./../../../book-review-advanced-api-security/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
@@ -139,15 +132,12 @@
 
 					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-advanced-api-security/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>
 		<item>
 		<title>Book Review:  Fifty Quick Ideas to Improve Your Tests</title>
 		<link>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html</link>
-					<comments>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 10 Apr 2016 15:08:44 +0000</pubDate>
@@ -161,8 +151,6 @@
 
 					<description><![CDATA[Writing good tests is hard. Writing good specification is even harder. On my current project we treat test code with the <a class="more-link" href="./../../../book-review-fifty-quick-ideas-to-improve-your-tests/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-fifty-quick-ideas-to-improve-your-tests/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">68</post-id>	</item>

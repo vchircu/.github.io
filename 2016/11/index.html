@@ -45,8 +45,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -122,7 +120,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			<div class="entry-content" itemprop="articleBody">
 			<p>Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively track them? Should you? <a href="https://msdn.microsoft.com/en-us/library/bb385914.aspx">Visual Studio computes some of these metrics</a> out of the box. But if you want to define a custom metric, you&#8217;re out of luck. Yet, there are a bunch of code metrics that you might find useful for your code base. More so, a composite metric might be more helpful than the sum of its parts. For example, the <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=215899">C.R.A.P. Metric</a> detects complex code that is not covered by unit tests. How can you track such a metric in Visual Studio? In this article we&#8217;ll see how to visualize code metrics, add custom metrics and how to monitor trends with NDepend.</p>
 <h2>Code Metrics</h2>
-<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
+<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank" rel="noopener">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
 <p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-522 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=628%2C244" alt="Computer Code Metrics" width="628" height="244" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?w=800&amp;ssl=1 800w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=768%2C299&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>But it would be hard to extract information from these metrics if all we got was a bunch of numbers. We need other techniques to help us break down the complexity of the data. Visualization techniques complement metrics, by making it easier to synthesize and digest this information.</p>
 <p> <a href="./../../visualizing-code-metrics-with-ndepend/index.html#more-501" class="more-link">Continue Reading</a></p>
@@ -145,26 +143,26 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			<div class="entry-content" itemprop="articleBody">
 			<p>Your code base has a lot to tell you. The question is: How can you listen to it? You can identify code smells when you&#8217;re reading code or extending it, but this doesn&#8217;t give you an overview. After you have been working for a while in a project, you can name some of its strengths and weaknesses. But this approach takes a long time, relies on experience and is subjective. It would be nice if you could query a code base in a structured way. Basic search functionality from an IDE like Visual Studio isn&#8217;t powerful enough. NDepend allows you to query .Net code using LINQ syntax through CQLinq &#8211; Code Query LINQ. In this blog post we&#8217;ll discuss how to query your code base using CQLinq.</p>
 <h2 id="example">An Example</h2>
-<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank">default CQLinq rules</a>.</p>
+<p>Since I like to learn from examples, let&#8217;s first see a simple, yet very powerful query. The following code detects classes that are candidates to be turned into structures. This is one of the <a href="http://www.ndepend.com/default-rules/webframe.html" target="_blank" rel="noopener">default CQLinq rules</a>.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Types where
-  t.IsClass &amp;&amp;
- !t.IsGeneratedByCompiler &amp;&amp;
- !t.IsStatic &amp;&amp;
-  t.SizeOfInst &gt; 0 &amp;&amp;
+  t.IsClass &amp;amp;&amp;amp;
+ !t.IsGeneratedByCompiler &amp;amp;&amp;amp;
+ !t.IsStatic &amp;amp;&amp;amp;
+  t.SizeOfInst &amp;gt; 0 &amp;amp;&amp;amp;
 
   // Structure instance must not be too big,
   // else it degrades performance.
-  t.SizeOfInst &lt;= 16 &amp;&amp;
+  t.SizeOfInst &amp;lt;= 16 &amp;amp;&amp;amp;
   // Must not have children
-  t.NbChildren == 0 &amp;&amp;
+  t.NbChildren == 0 &amp;amp;&amp;amp;
 
   // Must not implement interfaces to avoid boxing mismatch
   // when structures implements interfaces.
-  t.InterfacesImplemented.Count() == 0 &amp;&amp;
+  t.InterfacesImplemented.Count() == 0 &amp;amp;&amp;amp;
 
   // Must derive directly from System.Object
-  t.DepthOfDeriveFrom(&quot;System.Object&quot;.AllowNoMatch()) == 1 &amp;&amp;
+  t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;.AllowNoMatch()) == 1 &amp;amp;&amp;amp;
 
   // Structures should be immutable type.
   t.IsImmutable

@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 08 Nov 2017 06:30:44 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:17:47 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Book Review: Advanced API Security</title>
 		<link>./../../../book-review-advanced-api-security/index.html</link>
-					<comments>./../../../book-review-advanced-api-security/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 24 Apr 2016 16:47:35 +0000</pubDate>
@@ -43,8 +42,6 @@
 
 					<description><![CDATA[On my current project we are using OAuth 2.0 and OpenID Connect for securing our Web APIs. I have used OAuth in the <a class="more-link" href="./../../../book-review-advanced-api-security/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-advanced-api-security/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">120</post-id>	</item>

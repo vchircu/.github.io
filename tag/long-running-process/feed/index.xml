@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Sat, 13 Jul 2019 09:41:46 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:34:12 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Handling Failure in Long Running Processes</title>
 		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
-					<comments>./../../../handling-failure-in-long-running-processes/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -44,15 +43,12 @@
 
 					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
 		<item>
 		<title>Storing the state of a Long Running Process</title>
 		<link>./../../../storing-the-state-of-a-long-running-process/index.html</link>
-					<comments>./../../../storing-the-state-of-a-long-running-process/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 04 Jul 2018 04:20:18 +0000</pubDate>
@@ -69,15 +65,12 @@
 
 					<description><![CDATA[In the previous two posts in this series, we&#8217;ve seen some examples of long running processes and how to model <a class="more-link" href="./../../../storing-the-state-of-a-long-running-process/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../storing-the-state-of-a-long-running-process/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">907</post-id>	</item>
 		<item>
 		<title>Modelling Long Running Processes: Choreography versus Orchestration</title>
 		<link>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html</link>
-					<comments>./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Jun 2018 05:18:15 +0000</pubDate>
@@ -94,15 +87,12 @@
 
 					<description><![CDATA[In the previous article we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to <a class="more-link" href="./../../../modelling-long-running-processes-choreography-versus-orchestration/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../modelling-long-running-processes-choreography-versus-orchestration/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">873</post-id>	</item>
 		<item>
 		<title>What are Long Running Processes?</title>
 		<link>./../../../what-are-long-running-processes/index.html</link>
-					<comments>./../../../what-are-long-running-processes/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 19 Jun 2018 15:06:22 +0000</pubDate>
@@ -115,8 +105,6 @@
 
 					<description><![CDATA[Most of us are working on distributed systems. Most of us are implementing long running processes. Of course we would <a class="more-link" href="./../../../what-are-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../what-are-long-running-processes/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">845</post-id>	</item>

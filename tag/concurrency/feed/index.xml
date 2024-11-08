@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 21 Sep 2016 11:40:06 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:14:16 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Saga concurrency and coarse-grained locks when using NHibernate Persistence</title>
 		<link>./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html</link>
-					<comments>./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 14 Aug 2016 12:46:49 +0000</pubDate>
@@ -39,8 +38,6 @@
 
 					<description><![CDATA[Recently, I stumbled upon an interesting problem related to NServiceBus Saga concurrency and coarse-grained locks when using NHibernate Persistence. With <a class="more-link" href="./../../../saga-concurrency-coarse-grained-locks-nhibernate/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../saga-concurrency-coarse-grained-locks-nhibernate/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">295</post-id>	</item>

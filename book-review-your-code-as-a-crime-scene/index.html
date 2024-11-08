@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some articles on how to use NDepend to extract a static view of the sy…">
 <meta property="article:published_time" content="2017-01-24T16:29:16+00:00">
-<meta property="article:modified_time" content="2017-01-25T19:16:09+00:00">
+<meta property="article:modified_time" content="2024-11-08T09:35:59+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2017/01/cover.png">
 <meta property="og:image:width" content="417">
@@ -141,7 +139,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	
 	<div class="entry-content" itemprop="articleBody">
 
-		<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some <a href="./../tag/ndepend/index.html" target="_blank">articles </a>on how to use <a href="http://www.ndepend.com/" target="_blank">NDepend</a> to extract a static view of the system&#8217;s quality. But this view is based only on the current state of the codebase. What about source code history? What can it tell us? How has the code changed? These are exactly the kind of questions that <a href="http://www.adamtornhill.com/" target="_blank">Adam Thornhill</a>&#8216;s book, <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank">Your Code as a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</a>, tries to answer.</p>
+		<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some <a href="./../tag/ndepend/index.html" target="_blank" rel="noopener">articles </a>on how to use <a href="http://www.ndepend.com/" target="_blank" rel="noopener">NDepend</a> to extract a static view of the system&#8217;s quality. But this view is based only on the current state of the codebase. What about source code history? What can it tell us? How has the code changed? These are exactly the kind of questions that <a href="http://www.adamtornhill.com/" target="_blank" rel="noopener">Adam Thornhill</a>&#8216;s book, <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank" rel="noopener">Your Code as a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</a>, tries to answer.</p>
 <p><a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384"><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-747" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/cover.png?resize=417%2C501" alt="" width="417" height="501"></a></p>
 <p><span id="more-719"></span></p>
 <h2>Summary</h2>
@@ -152,7 +150,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>For large codebases it&#8217;s hard to identify what improvements would be the most valuable. To find what module should be our highest priority, we need to answer several questions: is this module complex?, is this module error prone?, will I work on this module in the future? Answering these questions is a hard job even for smaller teams. When you&#8217;re dealing with multiple teams, you cannot rely on a developers&#8217; opinion, since intuition doesn&#8217;t scale. This book presents how to answer these questions by using automated techniques inspired by criminal psychology.</p>
 <p>The author shows how geographical offender profiling can be applied to code. There are tools that help visualize software (e.g. CodeCity). But these tools usually work only for a limited set of programming languages. Exploring the geography of code should work on the polyglot solutions that we develop nowadays. VCS systems contain the required data and should be used when we explore the geography of code.</p>
 <h4>Creating an Offender Profile</h4>
-<p>This chapter shows <strong>how to detect hotspots by analyzing change frequency and complexity</strong>. The author uses <a href="https://github.com/adamtornhill/code-maat" target="_blank">Code Maat</a> to extract file change frequency from git. This is an open source tool that the author created as a companion to the book. The number of lines of code is used as a proxy metric for complexity. <a href="http://cloc.sourceforge.net/" target="_blank">Cloc</a> is one tool that can compute this simple metric.</p>
+<p>This chapter shows <strong>how to detect hotspots by analyzing change frequency and complexity</strong>. The author uses <a href="https://github.com/adamtornhill/code-maat" target="_blank" rel="noopener">Code Maat</a> to extract file change frequency from git. This is an open source tool that the author created as a companion to the book. The number of lines of code is used as a proxy metric for complexity. <a href="http://cloc.sourceforge.net/" target="_blank" rel="noopener">Cloc</a> is one tool that can compute this simple metric.</p>
 <h4>Analyze Hotspots in Large-Scale Systems</h4>
 <p>To help make sense of a system&#8217;s complexity we need better tools. Raw metric data is hard to understand. This is where visualization techniques shine. They help us make sense of large volumes of data. Chapter 4 presents a visualization technique called an <strong>enclosure diagram</strong>. Enclosure diagrams are based on the <strong>zoomable circle parking algorithm</strong>. Here is an enclosure diagram for a Hibernate package:</p>
 <figure id="attachment_744" aria-describedby="caption-attachment-744" style="width: 920px" class="wp-caption aligncenter"><img data-recalc-dims="1" decoding="async" class="size-full wp-image-744" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=628%2C624" alt="Enclosure Diagram" width="628" height="624" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?w=920&amp;ssl=1 920w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/EnclosureDiagram.png?resize=768%2C763&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"><figcaption id="caption-attachment-744" class="wp-caption-text">Enclosure Diagram</figcaption></figure>
@@ -194,7 +192,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>I expected most of the hotspots that Code Maat detected on the codebase that I&#8217;m currently working on. But this is code that I&#8217;ve been working with for a while and I know pretty well. Running this kind of analysis on a new project can definitely help you ramp up and be productive in a shorter period of time. Also, it can help a team base its decision on facts and data, not only on intuition.</p>
 <p>Although powerful, Code Maat is a simple program. As more people are interested in code archaeology, I&#8217;m sure that future tools will support even more interesting analysis techniques. These techniques will help us dig even more in our project&#8217;s history. Couple that with the static view of the code and bug tracker information and you&#8217;ll have a lot more data to base your decisions on.</p>
 <h3>Temporal Coupling</h3>
-<p>I think the name temporal coupling is ambiguous, since this is already a <a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank">well-known type of coupling</a>. I prefer its synonym: change coupling. This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about <a href="./../identify-shotgun-surgery-using-ndepend/index.html" target="_blank">how to detect the shotgun surgery code smell</a> using NDepend. But that detection strategy relied on the static view of the code. Looking at the commit history and detecting change coupling is probably a better detection strategy for this code smell.</p>
+<p>I think the name temporal coupling is ambiguous, since this is already a <a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/" target="_blank" rel="noopener">well-known type of coupling</a>. I prefer its synonym: change coupling. This being said, this metric is a good indicator of design issues. I&#8217;ve blogged about <a href="./../identify-shotgun-surgery-using-ndepend/index.html" target="_blank" rel="noopener">how to detect the shotgun surgery code smell</a> using NDepend. But that detection strategy relied on the static view of the code. Looking at the commit history and detecting change coupling is probably a better detection strategy for this code smell.</p>
 <p>I like the grouping feature of Code Maat. This enables us to detect temporal coupling not only at a file level, but at an architectural level too. If two architecturally significant components (e.g. two layers or two microservices) that should be decoupled are frequently changed together, you would want to know as soon as possible, in order to fix this design issue.</p>
 <h3>The social aspects of code</h3>
 <p>Seeing a knowledge map of your system is insightful. One such map can tell you if some of the team members are becoming polls of knowledge, or if too many people are working on the same piece of code.</p>
@@ -202,7 +200,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h2>Improvements</h2>
 <p>The book is fairly short and the author emphasizes that the focus is on the techniques, not on the tools. This being said, Code Maat is used a lot in order to parse VCS logs and extract the required information. I think that a more thorough description of the different techniques and how to implement them would have enabled readers to better understand them. <span class="hardreadability"><span data-offset-key="bs3ac-0-0">Also, I would have liked to see even more practical examples of how these techniques can help improve larger codebases</span></span><span data-offset-key="bs3ac-1-0">.</span></p>
 <h2>Conclusion</h2>
-<p>Most of us use version control systems only as repositories for code. But they can be much more than that since they contain a lot of useful information about a project&#8217;s history. <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank">Your Code as a Crime Scene</a> describes how to mine them for new insights into our code and environment. It presents some novel techniques useful for detecting hot spots and error prone code. The book is accompanied by a tool, Code Maat, that you can use to apply the techniques on your own projects. Although the tool is a black box, having the ability to put theory into practice is a big win. The book takes a look at the source code of Code Maat, but also at more mature and larger projects like Craft.Net, Hibernate and Scala.</p>
+<p>Most of us use version control systems only as repositories for code. But they can be much more than that since they contain a lot of useful information about a project&#8217;s history. <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank" rel="noopener">Your Code as a Crime Scene</a> describes how to mine them for new insights into our code and environment. It presents some novel techniques useful for detecting hot spots and error prone code. The book is accompanied by a tool, Code Maat, that you can use to apply the techniques on your own projects. Although the tool is a black box, having the ability to put theory into practice is a big win. The book takes a look at the source code of Code Maat, but also at more mature and larger projects like Craft.Net, Hibernate and Scala.</p>
 <p>Most of the techniques rely on simple metrics. I was surprised by how powerful they can be. This simplicity has its strengths and weaknesses. On one hand, they are language agnostic, so they can be applied on any codebase, regardless of language. On the other hand, simplicity means they are less precise than other more complete metrics. But the author cites studies that prove these simple metrics are as good at detecting error prone code as other, more complex metrics.</p>
 <p>The author also draws from his personal experience and describes how these techniques helped him (or would have helped him) in the past. I always find this useful and I think it helps emphasize the effectiveness of these techniques.</p>
 <p>At under 200 pages, this book is packed with information. I recommend reading it and then employing the analysis techniques on your own projects. This data can help you get a better knowledge of a project and make better decisions.</p>
@@ -227,16 +225,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-719" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-719" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-719" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -306,7 +295,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 					<div class="comment-content comment-entry" itemprop="text">
 												<p>Thanks for the review &#8211; interesting to get your perspective on the book. The analyses have evolved since I wrote the book. I do have more examples on how the techniques help improve large codebases. For example this case study on Analyzing Patterns in the Evolution of Linux: <a href="http://www.empear.com/blog/software-revolution-part4/" rel="nofollow ugc">http://www.empear.com/blog/software-revolution-part4/</a></p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=49#respond" data-commentid="49" data-postid="719" data-belowelement="comment-49" data-respondelement="respond" data-replyto="Reply to Adam Tornhill" aria-label="Reply to Adam Tornhill"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -332,7 +321,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 					<div class="comment-content comment-entry" itemprop="text">
 												<p>Thanks for sharing the link! Really interesting to see how you approached analyzing a code base of that scale. I&#8217;ve just finished reading the Software (r)Evolution article series and they are a great addition to the book!</p>
 						<span class="reply">
-							<a rel="nofollow" class="comment-reply-link" href="./index.html?replytocom=50#respond" data-commentid="50" data-postid="719" data-belowelement="comment-50" data-respondelement="respond" data-replyto="Reply to Victor" aria-label="Reply to Victor"><i class="fa fa-reply"></i> Reply</a>						</span><!-- .reply -->
+													</span><!-- .reply -->
 					</div>
 <!-- .comment-content -->
 
@@ -351,26 +340,9 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="719" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e9e2ad5521"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="110"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -618,159 +590,13 @@ var related_posts_js_options = {"post_heading":"h4"};
 		<div class="grofile-hash-map-843f82766a3615b5d234eb6f7e3d4285">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/book-review-your-code-as-a-crime-scene\/":719};</script>
-				<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+		<script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"719\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "719" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 

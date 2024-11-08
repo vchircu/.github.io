@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 08 Nov 2024 09:13:53 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:32:18 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -83,7 +83,6 @@
 		<item>
 		<title>Handling Failure in Long Running Processes</title>
 		<link>./../../../handling-failure-in-long-running-processes/index.html</link>
-					<comments>./../../../handling-failure-in-long-running-processes/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sat, 13 Jul 2019 09:41:39 +0000</pubDate>
@@ -102,15 +101,12 @@
 
 					<description><![CDATA[In the previous posts in this series, we’ve seen some examples of long running processes, how to model them and <a class="more-link" href="./../../../handling-failure-in-long-running-processes/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../handling-failure-in-long-running-processes/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1116</post-id>	</item>
 		<item>
 		<title>7 Strategies for Assigning Ids</title>
 		<link>./../../../7-strategies-for-assigning-ids/index.html</link>
-					<comments>./../../../7-strategies-for-assigning-ids/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 21 Jun 2019 06:20:17 +0000</pubDate>
@@ -121,15 +117,12 @@
 
 					<description><![CDATA[Identities are the defining characteristic of an entity in Domain-Driven Design. And as soon as the Id is public and <a class="more-link" href="./../../../7-strategies-for-assigning-ids/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../7-strategies-for-assigning-ids/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1107</post-id>	</item>
 		<item>
 		<title>Defining a Test Strategy for Continuous Delivery</title>
 		<link>./../../../test-strategy-for-continuous-delivery/index.html</link>
-					<comments>./../../../test-strategy-for-continuous-delivery/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 14 Jun 2019 05:26:55 +0000</pubDate>
@@ -144,15 +137,12 @@
 
 					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../test-strategy-for-continuous-delivery/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1060</post-id>	</item>
 		<item>
 		<title>Defining Test Boundaries &#8211; An example</title>
 		<link>./../../../defining-test-boundaries/index.html</link>
-					<comments>./../../../defining-test-boundaries/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 07 Jun 2019 07:58:11 +0000</pubDate>
@@ -171,15 +161,12 @@
 
 					<description><![CDATA[I think that everybody agrees that testing is required in order to build a quality product. But there&#8217;s also a <a class="more-link" href="./../../../defining-test-boundaries/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../defining-test-boundaries/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1076</post-id>	</item>
 		<item>
 		<title>Never stop making Process Improvements</title>
 		<link>./../../../never-stop-making-process-improvements/index.html</link>
-					<comments>./../../../never-stop-making-process-improvements/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 16 Apr 2019 04:22:53 +0000</pubDate>
@@ -191,15 +178,12 @@
 
 					<description><![CDATA[Have you ever been on a project where, because of the tight schedule or tight budget, the focus was only <a class="more-link" href="./../../../never-stop-making-process-improvements/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../never-stop-making-process-improvements/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">875</post-id>	</item>
 		<item>
 		<title>Book Review: No Estimates</title>
 		<link>./../../../book-review-no-estimates/index.html</link>
-					<comments>./../../../book-review-no-estimates/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 29 Mar 2019 14:54:39 +0000</pubDate>
@@ -212,15 +196,12 @@
 
 					<description><![CDATA[As I&#8217;ve said in a previous post, I don&#8217;t like estimating. So I decided to have a look at Vasco <a class="more-link" href="./../../../book-review-no-estimates/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../book-review-no-estimates/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">960</post-id>	</item>
 		<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
 		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
-					<comments>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -243,8 +224,6 @@
 
 					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>

@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 08 Nov 2024 09:11:04 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 10:10:02 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -45,7 +45,6 @@
 		<item>
 		<title>Protecting the Design and Architecture of your application using NDepend</title>
 		<link>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html</link>
-					<comments>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Tue, 26 Feb 2019 04:21:20 +0000</pubDate>
@@ -68,15 +67,12 @@
 
 					<description><![CDATA[We have all used code analysis tools on our projects and these are useful for identifying some code smells. The <a class="more-link" href="./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../protecting-the-design-and-architecture-of-your-application-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">974</post-id>	</item>
 		<item>
 		<title>How to identify common Code Smells using NDepend</title>
 		<link>./../../../how-to-identify-common-code-smells-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-common-code-smells-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Thu, 12 Jan 2017 05:08:21 +0000</pubDate>
@@ -97,8 +93,6 @@
 
 					<description><![CDATA[This article recaps how to identify some of the most common code smells using NDepend. The basis of this series <a class="more-link" href="./../../../how-to-identify-common-code-smells-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-common-code-smells-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">687</post-id>	</item>
@@ -127,7 +121,6 @@
 		<item>
 		<title>How to identify Refused Parent Bequest using NDepend</title>
 		<link>./../../../how-to-identify-refused-parent-bequest-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-refused-parent-bequest-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Sun, 08 Jan 2017 19:06:13 +0000</pubDate>
@@ -141,8 +134,6 @@
 
 					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-refused-parent-bequest-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-refused-parent-bequest-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">672</post-id>	</item>
@@ -216,7 +207,6 @@
 		<item>
 		<title>How to identify a Data Class using NDepend</title>
 		<link>./../../../how-to-identify-data-class-using-ndepend/index.html</link>
-					<comments>./../../../how-to-identify-data-class-using-ndepend/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Wed, 28 Dec 2016 08:56:05 +0000</pubDate>
@@ -230,8 +220,6 @@
 
 					<description><![CDATA[In the previous articles in this series we&#8217;ve seen: How to identify a God Class How to identify Feature Envy <a class="more-link" href="./../../../how-to-identify-data-class-using-ndepend/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../how-to-identify-data-class-using-ndepend/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">639</post-id>	</item>

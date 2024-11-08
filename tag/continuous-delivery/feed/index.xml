@@ -15,7 +15,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 17 Jan 2020 13:51:03 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Nov 2024 09:30:40 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -25,7 +25,6 @@
 <site xmlns="com-wordpress:feed-additions:1">108420443</site>	<item>
 		<title>Defining a Test Strategy for Continuous Delivery</title>
 		<link>./../../../test-strategy-for-continuous-delivery/index.html</link>
-					<comments>./../../../test-strategy-for-continuous-delivery/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Victor Chircu]]></dc:creator>
 		<pubDate>Fri, 14 Jun 2019 05:26:55 +0000</pubDate>
@@ -40,8 +39,6 @@
 
 					<description><![CDATA[Testing is an important part of building a product right. Continuous Delivery makes that more explicit by building quality in. <a class="more-link" href="./../../../test-strategy-for-continuous-delivery/index.html">Continue Reading</a>]]></description>
 		
-					<wfw:commentRss>./../../../test-strategy-for-continuous-delivery/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1060</post-id>	</item>

@@ -46,8 +46,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../../../../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../../../../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../../../../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../../../../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" src="./../../../../wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script type="text/javascript" src="./../../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <!--[if lte IE 9]>
@@ -349,7 +347,7 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 	Data.OrderId = message.OrderId;
 	Data.TotalValue = message.TotalValue;
 
-	Log.Info($&quot;Placing Order with Id {message.OrderId}&quot;);
+	Log.Info($&amp;quot;Placing Order with Id {message.OrderId}&amp;quot;);
 
 	RequestTimeout(context, TimeSpan.FromSeconds(1), new BuyersRemorseTimeout());
 
@@ -365,7 +363,7 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 		Data.OrderId = message.OrderId;
 		Data.TotalValue = message.TotalValue;
 
-		Log.Info($&quot;Placing Order with Id {message.OrderId}&quot;);
+		Log.Info($&amp;quot;Placing Order with Id {message.OrderId}&amp;quot;);
 
 		RequestTimeout(context, TimeSpan.FromSeconds(1), new BuyersRemorseTimeout());
 
@@ -374,8 +372,8 @@ public Task Handle(PlaceOrder message, IMessageHandlerContext context)
 
 	public Task Timeout(BuyersRemorseTimeout state, IMessageHandlerContext context)
 	{
-		context.Publish&lt;IOrderPlaced&gt;(
-			o =&gt;
+		context.Publish&amp;lt;IOrderPlaced&amp;gt;(
+			o =&amp;gt;
 				{
 					o.OrderId = Data.OrderId;
 					o.TotalValue = Data.TotalValue;
@@ -418,11 +416,11 @@ FROM dbo.SampleTable
 </pre>
 <p>Then, you update its name:</p>
 <pre class="brush: sql; title: ; notranslate" title="">
-EXEC sp_rename 'InitialViewName', 'UpdatedViewName'
+EXEC sp_rename &#039;InitialViewName&#039;, &#039;UpdatedViewName&#039;
 </pre>
 <p>Now, when you get the view&#8217;s definition:</p>
 <pre class="brush: sql; title: ; notranslate" title="">
-SELECT OBJECT_DEFINITION(OBJECT_ID('UpdatedViewName'));
+SELECT OBJECT_DEFINITION(OBJECT_ID(&#039;UpdatedViewName&#039;));
 </pre>
 <p>The result might surprise you</p>
 <pre class="brush: sql; title: ; notranslate" title="">
@@ -546,7 +544,7 @@ creditCardProcessor.Charge(chargeRequest);
 
 	
 			<div class="entry-content" itemprop="articleBody">
-			<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some <a href="./../../../../tag/ndepend/index.html" target="_blank">articles </a>on how to use <a href="http://www.ndepend.com/" target="_blank">NDepend</a> to extract a static view of the system&#8217;s quality. But this view is based only on the current state of the codebase. What about source code history? What can it tell us? How has the code changed? These are exactly the kind of questions that <a href="http://www.adamtornhill.com/" target="_blank">Adam Thornhill</a>&#8216;s book, <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank">Your Code as a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</a>, tries to answer.</p>
+			<p>In the last couple of months I&#8217;ve been learning about what information can I extract from a codebase. I&#8217;ve written some <a href="./../../../../tag/ndepend/index.html" target="_blank" rel="noopener">articles </a>on how to use <a href="http://www.ndepend.com/" target="_blank" rel="noopener">NDepend</a> to extract a static view of the system&#8217;s quality. But this view is based only on the current state of the codebase. What about source code history? What can it tell us? How has the code changed? These are exactly the kind of questions that <a href="http://www.adamtornhill.com/" target="_blank" rel="noopener">Adam Thornhill</a>&#8216;s book, <a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384" target="_blank" rel="noopener">Your Code as a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs</a>, tries to answer.</p>
 <p><a href="https://www.amazon.com/Your-Code-Crime-Scene-Bottlenecks/dp/1680500384"><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-747" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2017/01/cover.png?resize=417%2C501" alt="" width="417" height="501"></a></p>
 <p> <a href="./../../../../book-review-your-code-as-a-crime-scene/index.html#more-719" class="more-link">Continue Reading</a></p>
 		</div>

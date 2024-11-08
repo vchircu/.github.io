@@ -47,8 +47,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="bulan-plugins-style-css" href="./../wp-content/themes/bulan/assets/css/plugins.min.css?ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-fonts-css" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C700%2C400italic%257COswald%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="bulan-style-css" href="./../wp-content/themes/bulan/style.min.css?ver=6.6.2" type="text/css" media="all">
-<link rel="stylesheet" id="sharedaddy-css" href="./../wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=14.0" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=14.0" type="text/css" media="all">
 <script type="text/javascript" id="jetpack_related-posts-js-extra">
 /* <![CDATA[ */
 var related_posts_js_options = {"post_heading":"h4"};
@@ -76,7 +74,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:url" content="./index.html">
 <meta property="og:description" content="Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively track them? Should you? Visual Studio computes s…">
 <meta property="article:published_time" content="2016-11-26T10:42:57+00:00">
-<meta property="article:modified_time" content="2016-12-22T23:29:07+00:00">
+<meta property="article:modified_time" content="2024-11-08T10:11:18+00:00">
 <meta property="og:site_name" content="Simple Oriented Architecture">
 <meta property="og:image" content="./../wp-content/uploads/2016/11/metrics.png">
 <meta property="og:image:width" content="800">
@@ -144,12 +142,12 @@ var related_posts_js_options = {"post_heading":"h4"};
 
 		<p>Lines of code, cyclomatic complexity, coupling, cohesion, code coverage. You&#8217;ve probably heard about these metrics before. But do you actively track them? Should you? <a href="https://msdn.microsoft.com/en-us/library/bb385914.aspx">Visual Studio computes some of these metrics</a> out of the box. But if you want to define a custom metric, you&#8217;re out of luck. Yet, there are a bunch of code metrics that you might find useful for your code base. More so, a composite metric might be more helpful than the sum of its parts. For example, the <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=215899">C.R.A.P. Metric</a> detects complex code that is not covered by unit tests. How can you track such a metric in Visual Studio? In this article we&#8217;ll see how to visualize code metrics, add custom metrics and how to monitor trends with NDepend.</p>
 <h2>Code Metrics</h2>
-<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
+<p>NDepend computes many <a href="http://www.ndepend.com/docs/code-metrics" target="_blank" rel="noopener">metrics out of the box</a>. You can use the intellisense support to discover the standard metrics for a given code element:</p>
 <p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-522 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=628%2C244" alt="Computer Code Metrics" width="628" height="244" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?w=800&amp;ssl=1 800w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/metrics.png?resize=768%2C299&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>But it would be hard to extract information from these metrics if all we got was a bunch of numbers. We need other techniques to help us break down the complexity of the data. Visualization techniques complement metrics, by making it easier to synthesize and digest this information.</p>
 <p><span id="more-501"></span></p>
 <h2>Treemaps</h2>
-<p>NDepend uses a visualization tool called a <a href="http://www.ndepend.com/docs/treemap-visualization-of-code-metrics#Size" target="_blank">Treemap</a>. A treemap displays hierarchical data through a set of nested rectangles. In the case of NDepend, the tree structure contains the basic elements of a code base: Assemblies, Namespaces, Types, Methods and Fields.</p>
+<p>NDepend uses a visualization tool called a <a href="http://www.ndepend.com/docs/treemap-visualization-of-code-metrics#Size" target="_blank" rel="noopener">Treemap</a>. A treemap displays hierarchical data through a set of nested rectangles. In the case of NDepend, the tree structure contains the basic elements of a code base: Assemblies, Namespaces, Types, Methods and Fields.</p>
 <p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-545" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/Treemap-1.png?resize=628%2C333" alt="treemap" width="628" height="333" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/Treemap-1.png?w=1453&amp;ssl=1 1453w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/Treemap-1.png?resize=768%2C408&amp;ssl=1 768w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/Treemap-1.png?w=1256&amp;ssl=1 1256w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>A Treemap is a good visualization tool because it relies on the visual attributes of the elements to display information:</p>
 <ul>
@@ -165,11 +163,11 @@ var related_posts_js_options = {"post_heading":"h4"};
 select new { m, m.NbLinesOfCode }).Take(20)
 </pre>
 <p>This is yet another useful feature: <strong>when you write a CQLinq query, the results are highlighted</strong> in the treemap view.</p>
-<p>NDepend&#8217;s <a href="http://www.ndepend.com/docs/code-search" target="_blank">code search</a> functionality is also integrated with the code metrics view. The treemap updates on the fly, as you change the search parameters.</p>
+<p>NDepend&#8217;s <a href="http://www.ndepend.com/docs/code-search" target="_blank" rel="noopener">code search</a> functionality is also integrated with the code metrics view. The treemap updates on the fly, as you change the search parameters.</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-542" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/codeSearch2.png?resize=628%2C298" alt="code search" width="628" height="298" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/codeSearch2.png?w=1853&amp;ssl=1 1853w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/codeSearch2.png?resize=768%2C365&amp;ssl=1 768w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/codeSearch2.png?w=1256&amp;ssl=1 1256w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>When you update a metric&#8217;s threshold by moving the slider, the treemap will change to match your criteria. This can help you set a threshold that is realistic for your code base. There&#8217;s no point in setting a low threshold that would match all of your code, since you wouldn&#8217;t know where to start cleaning it up. So you could put a higher threshold and lower it over time, as you refactor the code and improve its quality.</p>
 <h3>Simple Metrics</h3>
-<p>NDepend computes many of the well known <a href="http://www.ndepend.com/docs/code-metrics" target="_blank">code metrics</a> and some novel ones.</p>
+<p>NDepend computes many of the well known <a href="http://www.ndepend.com/docs/code-metrics" target="_blank" rel="noopener">code metrics</a> and some novel ones.</p>
 <h3>Size and Complexity</h3>
 <p>NDepend computes a lot of size related metrics: <strong>number of lines of code</strong>, <strong>number of assemblies</strong>, <strong>number of types</strong>, <strong>number of methods</strong>, etc. This can help you understand how big the code base is.</p>
 <p>For measuring complexity, NDepend uses <strong>Cyclomatic Complexity</strong>. This metric measures the complexity of a type or a method by calculating the number of branching points in code.</p>
@@ -182,43 +180,43 @@ select new { m, m.NbLinesOfCode }).Take(20)
 <p>For understanding how much is inheritance used in a code base, NDepend computes two metrics: <strong>Number of Children (NOC)</strong> and <strong>Depth of Inheritance Tree (DIT)</strong>.</p>
 <p><strong>NOC</strong> counts the number of subclasses for a class or the number of implementations for an interface. <strong>DIT</strong> counts the number of base classes (starting from <em>System.Object</em>).</p>
 <h3>Other</h3>
-<p>In order to display the <a href="./../visualize-dependencies-with-ndepend/index.html#avi" target="_blank">Abstractness vs. Instability graph</a>, NDepend also computes the <strong>Abstractness</strong> and <strong>Instability</strong> metrics for an assembly.</p>
-<p>The <strong>Rank</strong> metric applies the <a href="http://www.sirgroane.net/google-page-rank/" target="_blank">Google Page Rank algorithm</a> on the graph of dependencies for a type or a method. Changing a code element with a higher rank will have a bigger impact, so the change should be thoroughly tested.</p>
+<p>In order to display the <a href="./../visualize-dependencies-with-ndepend/index.html#avi" target="_blank" rel="noopener">Abstractness vs. Instability graph</a>, NDepend also computes the <strong>Abstractness</strong> and <strong>Instability</strong> metrics for an assembly.</p>
+<p>The <strong>Rank</strong> metric applies the <a href="http://www.sirgroane.net/google-page-rank/" target="_blank" rel="noopener">Google Page Rank algorithm</a> on the graph of dependencies for a type or a method. Changing a code element with a higher rank will have a bigger impact, so the change should be thoroughly tested.</p>
 <h2>Creating Custom Metrics</h2>
 <p>Although all these metrics are important, I think that the ability to easily define custom metrics is even more important. To showcase this, let&#8217;s implement two metrics described in <a href="https://www.amazon.com/Object-Oriented-Metrics-Practice-Software-Characterize/dp/3642063748">Object-Oriented Metrics in Practice</a> by Michele Lanza and Radu Marinescu. I picked two metrics that analyze how inheritance is used across the code base: <strong>Average Number of Derived Classes</strong> and <strong>Average Hierarchy Height</strong>.</p>
 <h3>ANDC &#8211; Average Number of Derived Classes</h3>
 <p>This characterizes the width of the inheritance tree by computing the average number of direct subclasses of a class.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 JustMyCode.Types
- .Where(t =&gt; !t.IsInterface)
- .Average(t =&gt; t.DirectDerivedTypes.Count())
+ .Where(t =&amp;gt; !t.IsInterface)
+ .Average(t =&amp;gt; t.DirectDerivedTypes.Count())
 </pre>
 <h3>AHH &#8211; Average Hierarchy Height</h3>
 <p>This is the average of the Height of the Inheritance Tree (HIT) for root classes. A class is a root if it is not derived from another class in the system. This metric characterizes the depth of the inheritance tree.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 let justMyTypes = JustMyCode.Types.ToHashSet()
-let rootClasses = JustMyCode.Types.Where(t =&gt;
- !t.IsInterface &amp;&amp;
+let rootClasses = JustMyCode.Types.Where(t =&amp;gt;
+ !t.IsInterface &amp;amp;&amp;amp;
  // a root class cannot have its base class in the system
  t.BaseClasses.Intersect(justMyTypes).Count() == 0)
-let hitSum = rootClasses.Sum(c =&gt; 
+let hitSum = rootClasses.Sum(c =&amp;gt; 
  // the maximum path from the root to its deepest subclass
- c.DerivedTypes.Max(d =&gt; d.DepthOfDeriveFrom(c)))
+ c.DerivedTypes.Max(d =&amp;gt; d.DepthOfDeriveFrom(c)))
 let rootCount = rootClasses.Count()
 let ahh = (double?) hitSum/rootCount
 select ahh
 </pre>
-<p>As you can see, it is quite easy to compute both metrics by relying on <a href="./../query-your-code-base-using-cqlinq/index.html" target="_blank">CQLinq</a>. It would certainly be much harder without it.</p>
+<p>As you can see, it is quite easy to compute both metrics by relying on <a href="./../query-your-code-base-using-cqlinq/index.html" target="_blank" rel="noopener">CQLinq</a>. It would certainly be much harder without it.</p>
 <h2>Trend Metrics</h2>
-<p>So now you know how to define a set of metric that you consider important. You will probably want to monitor trends over time. This can tell you if you&#8217;re moving in the right direction or if your code base is starting to rot. In NDepend you can use <a href="http://www.ndepend.com/docs/trend-monitoring" target="_blank">Trend Charts</a> to plot the evolution of a metric over time.</p>
+<p>So now you know how to define a set of metric that you consider important. You will probably want to monitor trends over time. This can tell you if you&#8217;re moving in the right direction or if your code base is starting to rot. In NDepend you can use <a href="http://www.ndepend.com/docs/trend-monitoring" target="_blank" rel="noopener">Trend Charts</a> to plot the evolution of a metric over time.</p>
 <p>In order to use a certain metric in a trend chart, it has to be defined as a <strong>trend metric</strong>. You can see default trend metrics under the <strong>Trend Metrics</strong> group in the <strong>Queries and Rules Explorer</strong> view.</p>
 <p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-548" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/trendMEtrics.png?resize=628%2C275" alt="trendmetrics" width="628" height="275" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/trendMEtrics.png?w=956&amp;ssl=1 956w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/trendMEtrics.png?resize=768%2C337&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></p>
 <p>You can define custom trend metrics by using a special formatted header comment. Here is the definition for the <strong>ANDC</strong> trend metric.</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
-// &lt;TrendMetric Name=&quot;ANDC&quot; Unit=&quot;Derived Types&quot; /&gt;
+// &amp;lt;TrendMetric Name=&amp;quot;ANDC&amp;quot; Unit=&amp;quot;Derived Types&amp;quot; /&amp;gt;
 JustMyCode.Types
- .Where(t =&gt; !t.IsInterface)
- .Average(t =&gt; t.DirectDerivedTypes.Count())
+ .Where(t =&amp;gt; !t.IsInterface)
+ .Average(t =&amp;gt; t.DirectDerivedTypes.Count())
 </pre>
 <h2>Conclusion</h2>
 <p>Code metrics are important. They can help you get an objective assessment of a code base. Although each metric in isolation can provide only a limited amount of information, several correlated metrics can tell you a lot more. NDepend makes it easier to identify code smells through custom and composite metrics, tailored for your context. By monitoring metrics and trends, <a href="./../visualize-dependencies-with-ndepend/index.html">visualizing dependencies</a> and <a href="./../query-your-code-base-using-cqlinq/index.html">querying your code base</a>, you can get an overview of the quality of your code base and where to start improving it.</p>
@@ -241,16 +239,7 @@ JustMyCode.Types
 	</footer>
 
 	<div class="jetpack-share-like">
-		<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-<h3 class="sd-title">Share this:</h3>
-<div class="sd-content"><ul>
-<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-501" class="share-facebook sd-button share-icon no-text" href="./index.html?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
-<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-501" class="share-twitter sd-button share-icon no-text" href="./index.html?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
-<li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-501" class="share-linkedin sd-button share-icon no-text" href="./index.html?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li>
-<li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="./index.html?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li>
-<li class="share-end">
-</ul></div>
-</div></div>			</div>
+					</div>
 
 </article><!-- #post-## -->
 
@@ -314,26 +303,9 @@ JustMyCode.Types
 
 		
 	
+			<p class="no-comments">Comments are closed.</p>
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="./index.html#respond" style="display:none;">Cancel reply</a></small>
-</h3>
-<form action=".//wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p>
-<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
-<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url"></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p>
-<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="501" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-</p>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="19929b2391"></p>
-<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="176"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
-</form>	</div>
-<!-- #respond -->
-	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	
 </div>
 <!-- #comments -->
 
@@ -579,9 +551,7 @@ JustMyCode.Types
 			<div class="grofile-hash-map-331148ee28fef6336a73beb488fc0bdc">
 		</div>
 		</div>
-		
-	<script type="text/javascript">window.WPCOM_sharing_counts = {".\/\/visualizing-code-metrics-with-ndepend\/":501};</script>
-				<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+		<script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
 <script type="text/javascript" src="./../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b" id="syntaxhighlighter-brush-csharp-js"></script>
 <script type="text/javascript">(function(){
 		var corecss = document.createElement('link');
@@ -625,156 +595,12 @@ JustMyCode.Types
 		} );
 	}</script>
 <script type="text/javascript" src="./../wp-content/themes/bulan/assets/js/bulan.min.js" id="bulan-scripts-js"></script>
-<script type="text/javascript" src="./../wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
 <script type="text/javascript" src="https://stats.wp.com/e-202445.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
 /* <![CDATA[ */
 _stq = window._stq || [];
 _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"108420443\",\"post\":\"501\",\"tz\":\"0\",\"srv\":\"www.simpleorientedarchitecture.com\",\"j\":\"1:14.0\"}") ]);
 _stq.push([ "clickTrackerInit", "108420443", "501" ]);
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="./../wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1720685985" id="akismet-frontend-js"></script>
-<script type="text/javascript" id="sharing-js-js-extra">
-/* <![CDATA[ */
-var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="./../wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=14.0" id="sharing-js-js"></script>
-<script type="text/javascript" id="sharing-js-js-after">
-/* <![CDATA[ */
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-facebook' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-twitter' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-linkedin' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
-						return false;
-					}
-				} );
-			} )();
-var windowOpen;
-			( function () {
-				function matches( el, sel ) {
-					return !! (
-						el.matches && el.matches( sel ) ||
-						el.msMatchesSelector && el.msMatchesSelector( sel )
-					);
-				}
-
-				document.body.addEventListener( 'click', function ( event ) {
-					if ( ! event.target ) {
-						return;
-					}
-
-					var el;
-					if ( matches( event.target, 'a.share-pocket' ) ) {
-						el = event.target;
-					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
-						el = event.target.parentNode;
-					}
-
-					if ( el ) {
-						event.preventDefault();
-
-						// If there's another sharing window open, close it.
-						if ( typeof windowOpen !== 'undefined' ) {
-							windowOpen.close();
-						}
-						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
-						return false;
-					}
-				} );
-			} )();
 /* ]]> */
 </script>
 
