@@ -121,7 +121,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 	
 			<div class="entry-content" itemprop="articleBody">
 			<p>In the previous two posts in this series, we&#8217;ve seen <a href="/what-are-long-running-processes/" target="_blank" rel="noopener">some examples of long running processes</a> and <a href="/modelling-long-running-processes-choreography-versus-orchestration/" target="_blank" rel="noopener">how to model</a> them. In this article we&#8217;ll see where to store the state of a long running process. This is an important topic when talking about long running processes because long running means stateful. We&#8217;ll discuss three patterns: storing the state in the domain entity, in the message or in a process instance. To better explain these patterns, we&#8217;ll implement subflows from the Order Fulfillment enterprise process.</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-863" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg?resize=500%2C213" alt="Order Fulfillment" width="500" height="213"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-863" src="/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg" alt="Order Fulfillment" width="500" height="213"></p>
 <p>You can find the code on <a href="https://github.com/vchircu/LongRunningProcesses" target="_blank" rel="noopener">my GitHub account</a>.</p>
 <h2>Store the state in the Domain Entity</h2>
 <p>This is probably the most used approach of the three, although it&#8217;s not the best choice in most cases. But it&#8217;s overused because it&#8217;s simple: you just store the state in the domain entity.</p>
@@ -135,7 +135,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 </ul>
 <h3>Implementation</h3>
 <p>Since we only have two transitions, we could store the state in the Order entity.</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-927" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/07/Entities_Example_small.png?resize=600%2C326" alt="Entities Example" width="600" height="326"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-927" src="/wp-content/uploads/2018/07/Entities_Example_small.png" alt="Entities Example" width="600" height="326"></p>
 <p>Let&#8217;s have a look at the code. We&#8217;ll use <a href="https://particular.net/nservicebus" target="_blank" rel="noopener">NServiceBus</a>, but the code is readable even if you don&#8217;t know NServiceBus or .Net.</p>
 <p> <a href="/storing-the-state-of-a-long-running-process/#more-907" class="more-link">Continue Reading</a></p>
 		</div>

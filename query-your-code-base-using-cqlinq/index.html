@@ -83,7 +83,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:locale" content="en_US">
 <meta name="twitter:site" content="@victorchircu">
 <meta name="twitter:text:title" content="Querying Your Code Base Using NDepend&#8217;s CQLinq">
-<meta name="twitter:image" content="/wp-content/uploads/2016/11/domains.png?w=640">
+<meta name="twitter:image" content="/wp-content/uploads/2016/11/domains.png">
 <meta name="twitter:image:alt" content="CQLinq Query Editor">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -177,7 +177,7 @@ select new { t, t.SizeOfInst, t.InstanceFields }
 from t in JustMyCode.Types
 </pre>
 <p>CQLinq allows you to query on a set of <a href="http://www.ndepend.com/docs/cqlinq-syntax#PredefinedDomains" target="_blank" rel="noopener">predefined domains</a>: <strong>assemblies</strong>, <strong>namespaces</strong>, <strong>types</strong>, <strong>methods</strong> and <strong>fields</strong>. The root domain, <strong>context.CodeBase</strong>, is an entry point to all other domains. You can use the built in intellisense support from the <strong>Query and Rules Editor</strong> to explore it:</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-481 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/domains.png?resize=510%2C289" alt="CQLinq Query Editor" width="510" height="289"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-481 size-full" src="/wp-content/uploads/2016/11/domains.png" alt="CQLinq Query Editor" width="510" height="289"></p>
 <p>But, since you&#8217;ll mainly use the subdomains, there are a set of shortcuts defined for these. For example, <strong>Types</strong> is just a shortcut for <strong>context.CodeBase.Types</strong>.</p>
 <p>Since many times you&#8217;re not interested in querying third party code, there are two disjoint predefined domains:</p>
 <ul>
@@ -196,7 +196,7 @@ notmycode from t in Types where
 select t
 </pre>
 <p><em><strong>Note</strong></em>: This is not required, since Specflow adds the <em>System.CodeDom.Compiler.GeneratedCodeAttribute</em> on generated types. NDepend already excludes these from <strong>JustMyCode</strong>. You can see all predefined <strong>notmycode</strong> queries in the <strong>Defining JustMyCode</strong> queries and rules group:</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-486" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/justMyCodeResized.png?resize=600%2C240" alt="Just My Code definition" width="600" height="240"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-486" src="/wp-content/uploads/2016/11/justMyCodeResized.png" alt="Just My Code definition" width="600" height="240"></p>
 <p>You can also refine the domain by using the query operator syntax to filter and narrow down your search:</p>
 <pre class="brush: csharp; title: ; notranslate" title="">
 from t in JustMyCode.Namespaces.WithNameLike(&amp;quot;Library&amp;quot;)
@@ -231,9 +231,9 @@ t.DepthOfDeriveFrom(&amp;quot;System.Object&amp;quot;.AllowNoMatch()) == 1
 warnif count &amp;gt; 0 from t in JustMyCode.Types where
 </pre>
 <p>This will trigger a warning when you break the rule. If you want to <strong>break the build</strong> (i.e. return exit code 1 after running NDepend) you can mark the rule as <strong>Critical</strong> by clicking the Critical button in the <em>Queries and Rules Editor</em>.</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-482 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/criticalRule.png?resize=600%2C375" alt="CQLinq critical rule" width="600" height="375"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter wp-image-482 size-full" src="/wp-content/uploads/2016/11/criticalRule.png" alt="CQLinq critical rule" width="600" height="375"></p>
 <p>In the <strong>Queries and Rules Explorer </strong>window, you can <strong>export rules to a rule file</strong>. This is useful when you want to share the same set of rules across the company:</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-483 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/11/RuleFile.png?resize=600%2C307" alt="CQLinq Rules file" width="600" height="307"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-483 size-full" src="/wp-content/uploads/2016/11/RuleFile.png" alt="CQLinq Rules file" width="600" height="307"></p>
 <h2>Code Diff</h2>
 <p>NDepend allows you to query the code differences between two different versions of the code base. The <strong>OlderVersion()</strong> and <strong>NewerVersion()</strong> extension methods allow getting the older or newer version of a code element. For a full list of methods, check out the <a href="http://www.ndepend.com/api/webframe.html?NDepend.API~NDepend.Reserved.CQLinq.ExtensionMethodsCQLinqCompare.html" target="_blank" rel="noopener">NDepend documentation</a>.</p>
 <p>This is useful when adopting NDepend on a legacy project. Usually, when you first run static code analysis (like FxCop/CodeAnalysis or StyleCop) on an existing code base, you are going to see two problem:</p>

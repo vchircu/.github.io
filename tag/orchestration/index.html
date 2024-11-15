@@ -123,11 +123,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			<p>In the <a href="/what-are-long-running-processes/">previous article</a> we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to show how to model long running processes by using choreography or orchestration.</p>
 <h2>Requirement</h2>
 <p>To better understand the differences between these two approaches, let&#8217;s take a long running process and implement it with both. Since we already talked about the Order Fulfillment enterprise process in the last post, let&#8217;s use that.</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-863" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg?resize=500%2C213" alt="Order Fulfillment" width="500" height="213"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-863" src="/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg" alt="Order Fulfillment" width="500" height="213"></p>
 <p>When a customer places an order, we need to approve it, charge the customer&#8217;s credit card, pack the order and ship it.</p>
 <h2>Choreography</h2>
 <p>Let&#8217;s first implement this requirement with choreography. Choreography is all about distributed decision making. When something important happens in a service (or bounded context), the service will publish an event. Other services can subscribe to that event and make decisions based on it.</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-887" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Choreography_Generic_small.png?resize=600%2C366" alt="Choreography " width="600" height="366"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-887" src="/wp-content/uploads/2018/06/Choreography_Generic_small.png" alt="Choreography " width="600" height="366"></p>
 <p> <a href="/modelling-long-running-processes-choreography-versus-orchestration/#more-873" class="more-link">Continue Reading</a></p>
 		</div>
 	

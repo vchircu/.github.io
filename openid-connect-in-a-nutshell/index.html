@@ -83,7 +83,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:locale" content="en_US">
 <meta name="twitter:site" content="@victorchircu">
 <meta name="twitter:text:title" content="OpenID Connect in a nutshell">
-<meta name="twitter:image" content="/wp-content/uploads/2016/03/OAuth-Code-OIDC-Code-1-e1459362107241.png?w=640">
+<meta name="twitter:image" content="/wp-content/uploads/2016/03/OAuth-Code-OIDC-Code-1-e1459362107241.png">
 <meta name="twitter:image:alt" content="OAuth - Code - OIDC - Code (1)">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -174,11 +174,11 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>OpenID Connect defines three types of flows: Code, Implicit and Hybrid.</p>
 <h3>Authorization Code Flow</h3>
 <p>The OpenID Connect authorization code flow is very similar to the OAuth 2.0 server side flow. The End-User gets redirected to the Authorization Server, which must authenticate the user and request consent for the client to access the user&#8217;s identity. After this step, the End-User is redirected to the client with an <em>authorization code</em> as a query string parameter. The client can then exchange the <em>authorization code</em> and the client&#8217;s <em>credentials</em> for an <em>ID token </em>and an access token through a server side (back channel) call to the token endpoint. Before using the ID token, the client must validate it.</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-113" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-OIDC-Code-1-e1459362107241.png?resize=628%2C576" alt="OAuth - Code - OIDC - Code (1)" width="628" height="576"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-113" src="/wp-content/uploads/2016/03/OAuth-Code-OIDC-Code-1-e1459362107241.png" alt="OAuth - Code - OIDC - Code (1)" width="628" height="576"></p>
 <p>&nbsp;</p>
 <h3>Implicit Flow</h3>
 <p>The Implicit flow is very similar to the OAuth 2.0 client side flow and it is best suited for client side applications. The <em>ID token</em> and, optionally, an <em>access token</em> are returned from the authorization endpoint. Before using the ID token, the client must validate it.</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-107" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-OIDC-Implicit-1-e1459314330351.png?resize=628%2C558" alt="OAuth - Code - OIDC - Implicit (1)" width="628" height="558"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-107" src="/wp-content/uploads/2016/03/OAuth-Code-OIDC-Implicit-1-e1459314330351.png" alt="OAuth - Code - OIDC - Implicit (1)" width="628" height="558"></p>
 <h3>Hybrid Flow</h3>
 <p>The Hybrid flow is a combination of the Authorization Code and Implicit flows. It allows the backend of the client to receive an <em>authorization code</em>, while the frontend can receive an <em>ID token </em>and/or an <em>access token.</em></p>
 <h2>Endpoints</h2>

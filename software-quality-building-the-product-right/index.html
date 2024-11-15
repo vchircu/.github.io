@@ -82,7 +82,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:locale" content="en_US">
 <meta name="twitter:site" content="@victorchircu">
 <meta name="twitter:text:title" content="Software Quality: Building the Product Right">
-<meta name="twitter:image" content="/wp-content/uploads/2016/06/testingPyramid-1.png?w=640">
+<meta name="twitter:image" content="/wp-content/uploads/2016/06/testingPyramid-1.png">
 <meta name="twitter:image:alt" content="Testing Pyramid">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -183,7 +183,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h2>Testing Strategy</h2>
 <p>To achieve a high conceptual integrity you need to clearly define the testing strategy. This should provide a guideline of when to test, what to test, and how to test. There are way too many <em>agile</em> projects that require a huge effort of manual regression tests before each release. In order keep the cost of adding a feature low, you need to have a safety net to protect you against regressions.</p>
 <p>Although the testing strategy depends on the type of product that you are building, there are some overarching themes. One of the most simple to understand but harder to follow concepts is the<a href="http://martinfowler.com/bliki/TestPyramid.html"> Test Pyramid</a>, pictured below:</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="wp-image-216 aligncenter" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/06/testingPyramid-1.png?resize=421%2C361" alt="Testing Pyramid" width="421" height="361"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="wp-image-216 aligncenter" src="/wp-content/uploads/2016/06/testingPyramid-1.png" alt="Testing Pyramid" width="421" height="361"></p>
 <p>You should focus most of your testing effort on the low level, fast and focused unit tests and less on end-to-end tests. The more broad the tests are, the fewer you should have. This is because as you go up the pyramid, tests become more brittle, harder to maintain and more expensive to run.</p>
 <p>Also, the Test Pyramid relies on the fact that you&#8217;ll automate as much as you can. There are some tests that are too expensive to automate and don&#8217;t provide a high return on investment. One example would be usability testing. Other tests cannot be automated &#8211; for example exploratory testing, which relies on the creativity of testers. So there will always be some manual testing. But to be agile and be able to adapt to ever-changing requirements, you must know as fast as possible if you have introduced a regression. This means that manual testing should be reduced to a minimum and regression tests should be automated and integrated into your deployment pipeline.</p>
 <h2>Conclusion</h2>

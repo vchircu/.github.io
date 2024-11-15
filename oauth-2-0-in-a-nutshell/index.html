@@ -83,7 +83,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <meta property="og:locale" content="en_US">
 <meta name="twitter:site" content="@victorchircu">
 <meta name="twitter:text:title" content="OAuth 2.0 in a nutshell">
-<meta name="twitter:image" content="/wp-content/uploads/2016/03/OAuth-Code-General-e1458993866359.png?w=640">
+<meta name="twitter:image" content="/wp-content/uploads/2016/03/OAuth-Code-General-e1458993866359.png">
 <meta name="twitter:image:alt" content="OAuth - Code - General">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -159,7 +159,7 @@ var related_posts_js_options = {"post_heading":"h4"};
 <p>The <strong>resource server</strong> hosts the resources. If we&#8217;re talking about securing a web APIs &#8211; that&#8217;s your resource server.</p>
 <p>The <strong>client</strong> is the application that wants to perform actions on the resources on behalf of the owner. A website that is consuming data from web APIs is a good example for a client.</p>
 <p>The <strong>authorization server</strong> grants access to the protected resources to the clients, with the approval of the resource owner.</p>
-<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-80 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-General-e1458993866359.png?resize=628%2C513" alt="OAuth - Code - General" width="628" height="513"></p>
+<p><img data-recalc-dims="1" fetchpriority="high" decoding="async" class="aligncenter wp-image-80 size-full" src="/wp-content/uploads/2016/03/OAuth-Code-General-e1458993866359.png" alt="OAuth - Code - General" width="628" height="513"></p>
 <h2>Tokens</h2>
 <p>Since the purpose of OAuth is to enable the resource owner to grant access to his resources without sharing his credentials, OAuth uses token-based authorization. A token is a unique identifier issued by the authorization server and used by the client to associate the request with the resource owner.</p>
 <h3>Access Token</h3>
@@ -177,16 +177,16 @@ var related_posts_js_options = {"post_heading":"h4"};
 <h3>Authorization Code Grant</h3>
 <p>The<strong> Authorization Code</strong> (or Server Side flow) was designed for <em>server applications</em>. After getting approval from the resource owner, the authorization server returns an authorization code to the client through a query string parameter. Then, using the <em>client ID</em> and <em>client secret</em>, the client can exchange the <em>authorization code</em> for an <em>access token</em> through a server side call. This means that the access token is never revealed to the resource owner, which ensures confidentiality of the access token and it&#8217;s less likely that the access token is hijacked by malicious JavaScript code in the browser.</p>
 <p>This grant type can be used to issue <em>refresh tokens</em> too, so it&#8217;s a good fit when requiring long lived access. This implies that the client application will store the refresh token, which might make it more vulnerable.</p>
-<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-83" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-Code-1-e1458993527578.png?resize=628%2C576" alt="OAuth - Code - Code" width="628" height="576"></p>
+<p><img data-recalc-dims="1" decoding="async" class="aligncenter size-full wp-image-83" src="/wp-content/uploads/2016/03/OAuth-Code-Code-1-e1458993527578.png" alt="OAuth - Code - Code" width="628" height="576"></p>
 <h3>Implicit Grant</h3>
 <p>The <strong>Implicit grant</strong> type was designed for <em>client side applications</em> &#8211; like a JavaScript app running in the browser. Since the entire application code is accesible, the client secret cannot be stored in the application. This is why an <em>access token is returned immediately</em> through a hash code URL fragment after the resource owner authorizes the client in the first step. This flow does <em>not</em> support refresh tokens, so you need to request a new access token after it expires.</p>
-<p><img data-recalc-dims="1" decoding="async" class="alignright wp-image-47 size-full" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-Implicit-e1458853610748.png?resize=628%2C558" alt="OAuth - Code - Implicit" width="628" height="558"></p>
+<p><img data-recalc-dims="1" decoding="async" class="alignright wp-image-47 size-full" src="/wp-content/uploads/2016/03/OAuth-Code-Implicit-e1458853610748.png" alt="OAuth - Code - Implicit" width="628" height="558"></p>
 <h3>Resource Owner Password Credentials Grant</h3>
 <p>In this flow, the resource owner passes his <em>username</em> and <em>password</em> to the Authorization Server, in exchange for an <em>access token</em>. Since the client must know the user&#8217;s password, it is recommended to implement this flow only in highly trusted clients &#8211; like official mobile apps.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-87" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-Resource-Owner-e1458995302405.png?resize=628%2C312" alt="OAuth - Code - Resource Owner" width="628" height="312"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-87" src="/wp-content/uploads/2016/03/OAuth-Code-Resource-Owner-e1458995302405.png" alt="OAuth - Code - Resource Owner" width="628" height="312"></p>
 <h3>Client Credentials Grant</h3>
 <p>In this flow, the client is the resource owner. He must pass his credentials in order to retrieve an access token. This grant type should be used when the client &#8211; usually an API &#8211; needs to access resources that he owns, like a database or a storage service.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-50 size-large" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2016/03/OAuth-Code-Client-1024x280.png?resize=628%2C172" alt="OAuth - Code - Client" width="628" height="172"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter wp-image-50 size-large" src="/wp-content/uploads/2016/03/OAuth-Code-Client-1024x280.png" alt="OAuth - Code - Client" width="628" height="172"></p>
 <h2>Endpoints</h2>
 <p>An endpoint is simply an HTTP resource that is used as part of an authorization flow. OAuth defines 3 endpoints: 2 authorization server endpoints &#8211; <em>authorization endpoint</em> and <em>token endpoint</em> and 1 client endpoint &#8211; the <em>redirect endpoint.</em></p>
 <p>The<strong> authorization endpoint</strong> is used in order to interact with the resource owner and retrieve the authorization grant (code) for the client. This endpoint must ensure that the client is authenticated.</p>

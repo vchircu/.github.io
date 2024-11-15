@@ -258,7 +258,7 @@ public Task Timeout(DidNotReceiveAResponseFromFanCourierTimeout state, IMessageH
 
 
 
-<figure class="wp-block-image"><img data-recalc-dims="1" decoding="async" width="628" height="190" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/07/Saga.png?resize=628%2C190&#038;ssl=1" alt="Splitting one large transaction in multiple transactions, each with a compensating action." class="wp-image-1122" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/07/Saga.png?w=849&amp;ssl=1 849w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/07/Saga.png?resize=768%2C232&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></figure>
+<figure class="wp-block-image"><img data-recalc-dims="1" decoding="async" width="628" height="190" src="/wp-content/uploads/2019/07/Saga.png" alt="Splitting one large transaction in multiple transactions, each with a compensating action." class="wp-image-1122" srcset="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/07/Saga.png?w=849&amp;ssl=1 849w, https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2019/07/Saga.png?resize=768%2C232&amp;ssl=1 768w" sizes="(max-width: 628px) 100vw, 628px"></figure>
 
 
 
@@ -373,7 +373,7 @@ public Task Timeout(DidNotReceiveAResponseFromFanCourierTimeout state, IMessageH
 	
 			<div class="entry-content" itemprop="articleBody">
 			<p>In the previous two posts in this series, we&#8217;ve seen <a href="/what-are-long-running-processes/" target="_blank" rel="noopener">some examples of long running processes</a> and <a href="/modelling-long-running-processes-choreography-versus-orchestration/" target="_blank" rel="noopener">how to model</a> them. In this article we&#8217;ll see where to store the state of a long running process. This is an important topic when talking about long running processes because long running means stateful. We&#8217;ll discuss three patterns: storing the state in the domain entity, in the message or in a process instance. To better explain these patterns, we&#8217;ll implement subflows from the Order Fulfillment enterprise process.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-863" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg?resize=500%2C213" alt="Order Fulfillment" width="500" height="213"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-863" src="/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg" alt="Order Fulfillment" width="500" height="213"></p>
 <p>You can find the code on <a href="https://github.com/vchircu/LongRunningProcesses" target="_blank" rel="noopener">my GitHub account</a>.</p>
 <h2>Store the state in the Domain Entity</h2>
 <p>This is probably the most used approach of the three, although it&#8217;s not the best choice in most cases. But it&#8217;s overused because it&#8217;s simple: you just store the state in the domain entity.</p>
@@ -387,7 +387,7 @@ public Task Timeout(DidNotReceiveAResponseFromFanCourierTimeout state, IMessageH
 </ul>
 <h3>Implementation</h3>
 <p>Since we only have two transitions, we could store the state in the Order entity.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-927" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/07/Entities_Example_small.png?resize=600%2C326" alt="Entities Example" width="600" height="326"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-927" src="/wp-content/uploads/2018/07/Entities_Example_small.png" alt="Entities Example" width="600" height="326"></p>
 <p>Let&#8217;s have a look at the code. We&#8217;ll use <a href="https://particular.net/nservicebus" target="_blank" rel="noopener">NServiceBus</a>, but the code is readable even if you don&#8217;t know NServiceBus or .Net.</p>
 <p> <a href="/storing-the-state-of-a-long-running-process/#more-907" class="more-link">Continue Reading</a></p>
 		</div>
@@ -410,11 +410,11 @@ public Task Timeout(DidNotReceiveAResponseFromFanCourierTimeout state, IMessageH
 			<p>In the <a href="/what-are-long-running-processes/">previous article</a> we&#8217;ve seen some examples of long running processes. The purpose of this blog post is to show how to model long running processes by using choreography or orchestration.</p>
 <h2>Requirement</h2>
 <p>To better understand the differences between these two approaches, let&#8217;s take a long running process and implement it with both. Since we already talked about the Order Fulfillment enterprise process in the last post, let&#8217;s use that.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-863" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg?resize=500%2C213" alt="Order Fulfillment" width="500" height="213"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-863" src="/wp-content/uploads/2018/06/Example_OrderFulfillment_small.jpg" alt="Order Fulfillment" width="500" height="213"></p>
 <p>When a customer places an order, we need to approve it, charge the customer&#8217;s credit card, pack the order and ship it.</p>
 <h2>Choreography</h2>
 <p>Let&#8217;s first implement this requirement with choreography. Choreography is all about distributed decision making. When something important happens in a service (or bounded context), the service will publish an event. Other services can subscribe to that event and make decisions based on it.</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-887" src="https://i0.wp.com/www.simpleorientedarchitecture.com/wp-content/uploads/2018/06/Choreography_Generic_small.png?resize=600%2C366" alt="Choreography " width="600" height="366"></p>
+<p><img data-recalc-dims="1" loading="lazy" decoding="async" class="aligncenter size-full wp-image-887" src="/wp-content/uploads/2018/06/Choreography_Generic_small.png" alt="Choreography " width="600" height="366"></p>
 <p> <a href="/modelling-long-running-processes-choreography-versus-orchestration/#more-873" class="more-link">Continue Reading</a></p>
 		</div>
 	
